@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -41,7 +41,7 @@
           </div>
           <div class="hero-metrics">
             <div>
-              <p class="metric">±0.01 mm</p>
+              <p class="metric">+-0.01 mm</p>
               <p class="metric-label">Thickness Tolerance</p>
             </div>
             <div>
@@ -103,91 +103,12 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Product Catalog</p>
-          <h2>Nickel strip options ready to ship or configure.</h2>
-          <p class="lead">Filter by thickness to match your welding parameters. All sizes available in coil (C) or cut (S) format.</p>
+          <h2>Configured products ready to ship or customize.</h2>
+          <p class="lead">This catalog is driven by `products.json`. Update the JSON and image folders to refresh the site.</p>
         </div>
 
-        <div class="filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="t-0-10">0.10 mm</button>
-          <button class="filter-btn" data-filter="t-0-15">0.15 mm</button>
-          <button class="filter-btn" data-filter="t-0-20">0.20 mm</button>
-          <button class="filter-btn" data-filter="t-0-30">0.30 mm</button>
-        </div>
-
-        <div class="catalog-grid">
-          <article class="catalog-card" data-tags="t-0-10">
-            <h3>AE-N10</h3>
-            <p class="sku">Ni200 • 0.10 mm • 4–10 mm width</p>
-            <p>Ideal for compact packs and fine pitch cell connections.</p>
-            <ul>
-              <li>Conductivity: 14.3 MS/m</li>
-              <li>Temper: Soft annealed</li>
-              <li>Finish: Bright</li>
-            </ul>
-            <span class="badge">Fast moving</span>
-          </article>
-
-          <article class="catalog-card" data-tags="t-0-15">
-            <h3>AE-N15</h3>
-            <p class="sku">Ni201 • 0.15 mm • 6–12 mm width</p>
-            <p>Balanced thickness for EV modules and ESS applications.</p>
-            <ul>
-              <li>Conductivity: 13.8 MS/m</li>
-              <li>Temper: Half-hard</li>
-              <li>Finish: Matte</li>
-            </ul>
-            <span class="badge">In stock</span>
-          </article>
-
-          <article class="catalog-card" data-tags="t-0-20">
-            <h3>AE-N20</h3>
-            <p class="sku">Ni200 • 0.20 mm • 8–16 mm width</p>
-            <p>High current capability with excellent weld consistency.</p>
-            <ul>
-              <li>Conductivity: 14.3 MS/m</li>
-              <li>Temper: Half-hard</li>
-              <li>Finish: Brushed</li>
-            </ul>
-            <span class="badge">Bulk pricing</span>
-          </article>
-
-          <article class="catalog-card" data-tags="t-0-30">
-            <h3>AE-N30</h3>
-            <p class="sku">Ni201 • 0.30 mm • 10–20 mm width</p>
-            <p>Thick strip for busbar transitions and large format cells.</p>
-            <ul>
-              <li>Conductivity: 13.8 MS/m</li>
-              <li>Temper: Hard</li>
-              <li>Finish: Matte</li>
-            </ul>
-            <span class="badge">Custom MOQ</span>
-          </article>
-
-          <article class="catalog-card" data-tags="t-0-10">
-            <h3>AE-NP10</h3>
-            <p class="sku">Nickel-plated Steel • 0.10 mm • 5–15 mm width</p>
-            <p>Cost-efficient option for consumer electronics.</p>
-            <ul>
-              <li>Coating: 4–6 µm Ni</li>
-              <li>Temper: Soft</li>
-              <li>Finish: Satin</li>
-            </ul>
-            <span class="badge">Value</span>
-          </article>
-
-          <article class="catalog-card" data-tags="t-0-20">
-            <h3>AE-NP20</h3>
-            <p class="sku">Nickel-plated Steel • 0.20 mm • 8–20 mm width</p>
-            <p>Durable for power tools and mid-range pack design.</p>
-            <ul>
-              <li>Coating: 6–8 µm Ni</li>
-              <li>Temper: Half-hard</li>
-              <li>Finish: Satin</li>
-            </ul>
-            <span class="badge">On request</span>
-          </article>
-        </div>
+        <div class="filters" id="categoryFilters"></div>
+        <div class="catalog-grid" id="catalogGrid"></div>
       </div>
     </section>
 
@@ -204,11 +125,11 @@
         <div class="spec-table">
           <div class="spec-row">
             <span>Thickness Range</span>
-            <span>0.10 – 0.30 mm</span>
+            <span>0.10 - 0.30 mm</span>
           </div>
           <div class="spec-row">
             <span>Width Range</span>
-            <span>4 – 20 mm (custom up to 30)</span>
+            <span>4 - 20 mm (custom up to 30)</span>
           </div>
           <div class="spec-row">
             <span>Form</span>
@@ -224,7 +145,7 @@
           </div>
           <div class="spec-row">
             <span>Traceability</span>
-            <span>Lot & heat number tracking</span>
+            <span>Lot and heat number tracking</span>
           </div>
         </div>
       </div>
@@ -238,7 +159,7 @@
         </div>
         <div class="app-grid">
           <div class="app-card">
-            <h3>EV & Mobility</h3>
+            <h3>EV and Mobility</h3>
             <p>High discharge modules, e-bikes, and fleet packs.</p>
           </div>
           <div class="app-card">
@@ -297,11 +218,11 @@
       </div>
       <div>
         <p class="footer-title">Operations</p>
-        <p>Sampling • Bulk supply • Custom stamping</p>
+        <p>Sampling â€¢ Bulk supply â€¢ Custom stamping</p>
       </div>
       <div>
         <p class="footer-title">Compliance</p>
-        <p>RoHS • ISO-aligned processes • MTC included</p>
+        <p>RoHS â€¢ ISO-aligned processes â€¢ MTC included</p>
       </div>
     </div>
   </footer>

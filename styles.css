@@ -300,6 +300,14 @@ img {
   gap: 20px;
 }
 
+.category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--muted);
+  margin: 10px 0 14px;
+}
+
 .catalog-card {
   background: var(--surface-strong);
   border-radius: 22px;
@@ -323,6 +331,63 @@ img {
   color: var(--muted);
   font-size: 0.9rem;
   margin-bottom: 12px;
+}
+
+.carousel {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f7ead9, #f5f1e9);
+  border: 1px solid var(--line);
+  margin-bottom: 14px;
+  aspect-ratio: 4 / 3;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel-controls {
+  position: absolute;
+  inset: auto 12px 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.carousel-btn {
+  border: none;
+  background: rgba(10, 14, 22, 0.75);
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.carousel-dot.active {
+  background: #fff;
 }
 
 .catalog-card ul {
