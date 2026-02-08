@@ -249,6 +249,31 @@ img {
   padding: 70px 0;
 }
 
+.credits {
+  padding: 70px 0;
+  background: #fffaf4;
+  border-top: 1px solid var(--line);
+}
+
+.credits h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 18px;
+}
+
+.credits-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.credits-list a {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
 .cap-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
