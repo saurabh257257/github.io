@@ -268,7 +268,7 @@ const buildImageList = (row) => {
 };
 
 const loadCatalogFromExcel = async () => {
-  const response = await fetch("products.xlsx");
+  const response = await fetch("products.xlsx", { cache: "no-store" });
   if (!response.ok) {
     throw new Error("products.xlsx not found");
   }
@@ -300,21 +300,49 @@ const loadCatalogFromExcel = async () => {
   return Object.entries(categories).map(([name, products]) => ({ name, products }));
 };
 
+const loadCatalogFromJson = async () => {
+  const response = await fetch("products.json", { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error("products.json not found");
+  }
+  const data = await response.json();
+  return (data.categories || []).map((cat) => ({
+    name: cat.name,
+    products: (cat.products || []).map((product) => ({
+      ...product,
+      price: product.price || "",
+      minQuantity: product.minQuantity || ""
+    }))
+  }));
+};
+
+const renderCatalog = (categories) => {
+  catalogGrid.innerHTML = "";
+  categories.forEach((category) => {
+    (category.products || []).forEach((product) => {
+      catalogGrid.appendChild(createCard(product, category.name));
+    });
+  });
+  renderFilters(categories);
+  renderCart();
+};
+
 const loadCatalog = async () => {
   try {
     const categories = await loadCatalogFromExcel();
-
-    catalogGrid.innerHTML = "";
-    categories.forEach((category) => {
-      (category.products || []).forEach((product) => {
-        catalogGrid.appendChild(createCard(product, category.name));
-      });
-    });
-
-    renderFilters(categories);
-    renderCart();
+    renderCatalog(categories);
   } catch (error) {
-    catalogGrid.innerHTML = "<p>Unable to load catalog. Please check products.xlsx.</p>";
+    try {
+      const categories = await loadCatalogFromJson();
+      renderCatalog(categories);
+      catalogGrid.insertAdjacentHTML(
+        "afterbegin",
+        "<p class='form-note'>Loaded fallback from products.json. Ensure products.xlsx is available when hosted.</p>"
+      );
+    } catch (fallbackError) {
+      catalogGrid.innerHTML =
+        "<p>Unable to load catalog. If you opened this file directly, use a local server or GitHub Pages so the browser can fetch products.xlsx.</p>";
+    }
   }
 };
 
