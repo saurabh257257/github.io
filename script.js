@@ -104,6 +104,11 @@ const createCarousel = (images, label) => {
   const wrapper = document.createElement("div");
   wrapper.className = "carousel";
 
+  const hint = document.createElement("div");
+  hint.className = "zoom-hint";
+  hint.textContent = "Hover to zoom";
+  wrapper.appendChild(hint);
+
   const safeImages = (images && images.length ? images : [placeholderImage(label)]);
 
   safeImages.forEach((src, index) => {
@@ -185,8 +190,14 @@ const createCard = (product, categoryName) => {
     <p class="category-title">${categoryName}</p>
     <h3>${product.name}</h3>
     <p class="sku">${product.subtitle || ""}</p>
-    <p>${product.summary || ""}</p>
-    <ul>${specs}</ul>
+    <button class="details-toggle" type="button" data-details="${product.id}">
+      <span>+</span>
+      More details
+    </button>
+    <div class="details" data-details-panel="${product.id}">
+      <p>${product.summary || ""}</p>
+      <ul>${specs}</ul>
+    </div>
     <div class="card-actions">
       <a class="button ghost" href="mailto:sales@arambhika-enablers.com?subject=Request%20Order%20-%20${encodeURIComponent(product.name)}">Request Order</a>
       <button class="button" type="button" data-sample="${product.id}">+1 Sample</button>
@@ -200,6 +211,13 @@ const createCard = (product, categoryName) => {
   sampleBtn.addEventListener("click", () => {
     addToCart(product);
     samplePanel.classList.add("is-open");
+  });
+
+  const detailsToggle = card.querySelector(`[data-details="${product.id}"]`);
+  const detailsPanel = card.querySelector(`[data-details-panel="${product.id}"]`);
+  detailsToggle.addEventListener("click", () => {
+    const isOpen = detailsPanel.classList.toggle("is-open");
+    detailsToggle.querySelector("span").textContent = isOpen ? "-" : "+";
   });
 
   return card;

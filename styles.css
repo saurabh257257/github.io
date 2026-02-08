@@ -372,13 +372,13 @@ img {
 }
 
 .catalog-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   margin-bottom: 6px;
 }
 
 .catalog-card .sku {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-bottom: 12px;
 }
 
@@ -394,6 +394,39 @@ img {
   font-size: 0.9rem;
 }
 
+.details-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.details-toggle span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #11151f;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.details {
+  display: none;
+  margin-top: 12px;
+}
+
+.details.is-open {
+  display: block;
+}
+
 .carousel {
   position: relative;
   border-radius: 16px;
@@ -401,7 +434,7 @@ img {
   background: linear-gradient(135deg, #f7ead9, #f5f1e9);
   border: 1px solid var(--line);
   margin-bottom: 14px;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
 }
 
 .carousel img {
@@ -409,10 +442,32 @@ img {
   height: 100%;
   object-fit: cover;
   display: none;
+  transition: transform 0.3s ease;
 }
 
 .carousel img.active {
   display: block;
+}
+
+.carousel:hover img.active {
+  transform: scale(1.08);
+}
+
+.zoom-hint {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.carousel:hover .zoom-hint {
+  opacity: 1;
 }
 
 .carousel-controls {
