@@ -5,6 +5,8 @@ const sampleCount = document.querySelector("#sampleCount");
 const sampleList = document.querySelector("#sampleList");
 const sampleForm = document.querySelector("#sampleForm");
 const sampleClear = document.querySelector("#sampleClear");
+const sampleToggle = document.querySelector("#sampleToggle");
+const samplePanel = document.querySelector("#samplePanel");
 
 const CART_KEY = "sampleCart";
 
@@ -92,6 +94,10 @@ const removeFromCart = (productId) => {
 const clearCart = () => {
   sessionStorage.removeItem(CART_KEY);
   renderCart();
+};
+
+const toggleSamplePanel = () => {
+  samplePanel.classList.toggle("is-open");
 };
 
 const createCarousel = (images, label) => {
@@ -193,7 +199,7 @@ const createCard = (product, categoryName) => {
   const sampleBtn = card.querySelector("[data-sample]");
   sampleBtn.addEventListener("click", () => {
     addToCart(product);
-    document.querySelector("#sample").scrollIntoView({ behavior: "smooth" });
+    samplePanel.classList.add("is-open");
   });
 
   return card;
@@ -286,6 +292,11 @@ sampleForm.addEventListener("submit", (event) => {
 
   const mailto = `mailto:sales@arambhika-enablers.com?subject=${encodeURIComponent("Sample Request")}&body=${encodeURIComponent(body)}`;
   window.location.href = mailto;
+});
+
+sampleToggle.addEventListener("click", () => {
+  samplePanel.classList.add("drawer");
+  toggleSamplePanel();
 });
 
 loadCatalog();

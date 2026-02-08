@@ -544,6 +544,23 @@ img {
   top: 110px;
 }
 
+.sample-panel.drawer {
+  position: fixed;
+  top: 96px;
+  right: 20px;
+  width: min(360px, 90vw);
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+  transform: translateX(120%);
+  transition: transform 0.25s ease;
+  z-index: 30;
+  box-shadow: 0 20px 50px rgba(7, 12, 24, 0.2);
+}
+
+.sample-panel.drawer.is-open {
+  transform: translateX(0);
+}
+
 .sample-panel-header {
   display: flex;
   justify-content: space-between;
@@ -673,6 +690,14 @@ img {
 
   .sample-panel {
     position: static;
+  }
+
+  .sample-panel.drawer {
+    position: fixed;
+    top: 80px;
+    right: 12px;
+    left: 12px;
+    width: auto;
   }
 }
 
