@@ -267,39 +267,6 @@ const buildImageList = (row) => {
   return [];
 };
 
-const loadCatalogFromExcel = async () => {
-  const response = await fetch("products.xlsx", { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error("products.xlsx not found");
-  }
-  const arrayBuffer = await response.arrayBuffer();
-  const workbook = XLSX.read(arrayBuffer, { type: "array" });
-  const sheetName = workbook.SheetNames[0];
-  const sheet = workbook.Sheets[sheetName];
-  const rows = XLSX.utils.sheet_to_json(sheet, { defval: "" });
-
-  const categories = {};
-  rows.forEach((row) => {
-    const category = row.category || "Uncategorized";
-    if (!categories[category]) {
-      categories[category] = [];
-    }
-    categories[category].push({
-      id: row.line_item || row.title,
-      name: row.title || row.name,
-      subtitle: row.type || row.subtitle,
-      summary: row.description || row.summary,
-      specs: row.specs ? String(row.specs).split("|").map((s) => s.trim()).filter(Boolean) : [],
-      badge: row.badge || "",
-      images: buildImageList(row),
-      price: row.price || "",
-      minQuantity: row.min_quantity || ""
-    });
-  });
-
-  return Object.entries(categories).map(([name, products]) => ({ name, products }));
-};
-
 const loadCatalogFromJson = async () => {
   const response = await fetch("products.json", { cache: "no-store" });
   if (!response.ok) {
@@ -329,16 +296,10 @@ const renderCatalog = (categories) => {
 
 const loadCatalog = async () => {
   try {
-    const categories = await loadCatalogFromExcel();
+    const categories = await loadCatalogFromJson();
     renderCatalog(categories);
   } catch (error) {
-    try {
-      const categories = await loadCatalogFromJson();
-      renderCatalog(categories);
-    } catch (fallbackError) {
-      catalogGrid.innerHTML =
-        "<p>Unable to load catalog. If you opened this file directly, use a local server or GitHub Pages so the browser can fetch products.xlsx.</p>";
-    }
+    catalogGrid.innerHTML = "<p>Unable to load catalog. Please check products.json.</p>";
   }
 };
 
