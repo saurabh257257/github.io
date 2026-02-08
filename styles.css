@@ -319,6 +319,30 @@ img {
   border-color: transparent;
 }
 
+.catalog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.catalog:hover .catalog-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.download-btn {
+  background: #0b1d39;
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(11, 29, 57, 0.3);
+}
+
+.download-btn:hover {
+  background: #12325f;
+}
+
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
