@@ -1,7 +1,5 @@
 ﻿const categoryFilters = document.querySelector("#categoryFilters");
 const catalogGrid = document.querySelector("#catalogGrid");
-const sampleBadge = document.querySelector("#sampleBadge");
-const sampleCount = document.querySelector("#sampleCount");
 const sampleList = document.querySelector("#sampleList");
 const sampleForm = document.querySelector("#sampleForm");
 const sampleClear = document.querySelector("#sampleClear");
@@ -29,14 +27,8 @@ const setCart = (cart) => {
   sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
 };
 
-const updateBadge = (cart) => {
-  const total = Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
-  sampleCount.textContent = total;
-};
-
 const renderCart = () => {
   const cart = getCart();
-  updateBadge(cart);
   sampleList.innerHTML = "";
 
   const entries = Object.values(cart);
@@ -184,12 +176,16 @@ const createCard = (product, categoryName) => {
 
   const badge = product.badge ? `<span class="badge">${product.badge}</span>` : "";
   const specs = (product.specs || []).map((spec) => `<li>${spec}</li>`).join("");
+  const priceLine = product.price ? `<p class="sku">Price: ${product.price}</p>` : "";
+  const moqLine = product.minQuantity ? `<p class="sku">Min Qty: ${product.minQuantity}</p>` : "";
 
   card.innerHTML = `
     ${badge}
     <p class="category-title">${categoryName}</p>
     <h3>${product.name}</h3>
     <p class="sku">${product.subtitle || ""}</p>
+    ${priceLine}
+    ${moqLine}
     <button class="details-toggle" type="button" data-details="${product.id}">
       <span>+</span>
       More details
@@ -262,14 +258,51 @@ const filterCatalog = (filter) => {
   });
 };
 
+const buildImageList = (row) => {
+  const direct = [row.image_1, row.image_2, row.image_3].filter(Boolean);
+  if (direct.length > 0) return direct;
+  if (row.image_folder) {
+    return [1, 2, 3].map((i) => `${row.image_folder}/${i}.jpg`);
+  }
+  return [];
+};
+
+const loadCatalogFromExcel = async () => {
+  const response = await fetch("products.xlsx");
+  if (!response.ok) {
+    throw new Error("products.xlsx not found");
+  }
+  const arrayBuffer = await response.arrayBuffer();
+  const workbook = XLSX.read(arrayBuffer, { type: "array" });
+  const sheetName = workbook.SheetNames[0];
+  const sheet = workbook.Sheets[sheetName];
+  const rows = XLSX.utils.sheet_to_json(sheet, { defval: "" });
+
+  const categories = {};
+  rows.forEach((row) => {
+    const category = row.category || "Uncategorized";
+    if (!categories[category]) {
+      categories[category] = [];
+    }
+    categories[category].push({
+      id: row.line_item || row.title,
+      name: row.title || row.name,
+      subtitle: row.type || row.subtitle,
+      summary: row.description || row.summary,
+      specs: row.specs ? String(row.specs).split("|").map((s) => s.trim()).filter(Boolean) : [],
+      badge: row.badge || "",
+      images: buildImageList(row),
+      price: row.price || "",
+      minQuantity: row.min_quantity || ""
+    });
+  });
+
+  return Object.entries(categories).map(([name, products]) => ({ name, products }));
+};
+
 const loadCatalog = async () => {
   try {
-    const response = await fetch("products.json");
-    if (!response.ok) {
-      throw new Error("Failed to load products.json");
-    }
-    const data = await response.json();
-    const categories = data.categories || [];
+    const categories = await loadCatalogFromExcel();
 
     catalogGrid.innerHTML = "";
     categories.forEach((category) => {
@@ -281,7 +314,7 @@ const loadCatalog = async () => {
     renderFilters(categories);
     renderCart();
   } catch (error) {
-    catalogGrid.innerHTML = "<p>Unable to load catalog. Please check products.json.</p>";
+    catalogGrid.innerHTML = "<p>Unable to load catalog. Please check products.xlsx.</p>";
   }
 };
 

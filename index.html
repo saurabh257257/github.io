@@ -30,10 +30,6 @@
   </header>
 
   <main>
-    <div class="sample-badge" id="sampleBadge">
-      <span>Samples</span>
-      <strong id="sampleCount">0</strong>
-    </div>
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -146,7 +142,7 @@
         <div class="section-head">
           <p class="eyebrow">Product Catalog</p>
           <h2>Configured products ready to ship or customize.</h2>
-          <p class="lead">This catalog is driven by `products.json`. Update the JSON and image folders to refresh the site.</p>
+          <p class="lead">This catalog is driven by `products.xlsx`. Update the Excel file and image folders to refresh the site.</p>
         </div>
 
         <div class="filters" id="categoryFilters"></div>
@@ -287,6 +283,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.20.2/dist/xlsx.full.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
