@@ -522,9 +522,13 @@ img {
   border-top: 1px solid var(--line);
 }
 
+.sample-floating {
+  position: relative;
+}
+
 .sample-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: minmax(240px, 1fr) minmax(280px, 360px);
   gap: 30px;
   align-items: start;
 }
@@ -536,6 +540,8 @@ img {
   padding: 24px;
   display: grid;
   gap: 18px;
+  position: sticky;
+  top: 110px;
 }
 
 .sample-panel-header {
@@ -659,6 +665,14 @@ img {
 
   .nav-links {
     flex-wrap: wrap;
+  }
+
+  .sample-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sample-panel {
+    position: static;
   }
 }
 
