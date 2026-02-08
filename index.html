@@ -29,6 +29,10 @@
   </header>
 
   <main>
+    <div class="sample-badge" id="sampleBadge">
+      <span>Samples</span>
+      <strong id="sampleCount">0</strong>
+    </div>
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -209,6 +213,43 @@
       </div>
     </section>
   </main>
+
+  <section id="sample" class="sample">
+    <div class="container sample-grid">
+      <div>
+        <p class="eyebrow">Sample Request</p>
+        <h2>Build a sample order and submit once ready.</h2>
+        <p class="lead">Click “+1 Sample” on any product. Your selections are stored per session and reset when the browser is closed.</p>
+      </div>
+      <div class="sample-panel">
+        <div class="sample-panel-header">
+          <h3>Sample Order</h3>
+          <button class="button ghost small" type="button" id="sampleClear">Clear</button>
+        </div>
+        <div id="sampleList" class="sample-list"></div>
+        <form class="sample-form" id="sampleForm">
+          <label>
+            Company Name
+            <input type="text" name="company" required placeholder="Your company" />
+          </label>
+          <label>
+            Email Address
+            <input type="email" name="email" required placeholder="you@company.com" />
+          </label>
+          <label>
+            Delivery Address
+            <textarea name="address" rows="3" required placeholder="Full address"></textarea>
+          </label>
+          <label>
+            Notes
+            <textarea name="notes" rows="3" placeholder="Qty, timeline, other requirements"></textarea>
+          </label>
+          <button class="button" type="submit">Request Sample</button>
+          <p class="form-note">This sends an email draft using your email client.</p>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <section id="credits" class="credits">
     <div class="container">

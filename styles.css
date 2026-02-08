@@ -99,6 +99,30 @@ img {
   color: var(--accent-dark);
 }
 
+.sample-badge {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #11151f;
+  color: #fff;
+  font-size: 0.85rem;
+  box-shadow: 0 10px 24px rgba(7, 12, 24, 0.35);
+}
+
+.sample-badge strong {
+  background: var(--accent);
+  color: #1d1205;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -358,6 +382,18 @@ img {
   margin-bottom: 12px;
 }
 
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.card-actions .button {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
 .carousel {
   position: relative;
   border-radius: 16px;
@@ -478,6 +514,87 @@ img {
 
 .contact {
   background: #fdf8f2;
+}
+
+.sample {
+  padding: 70px 0;
+  background: #f8f1e7;
+  border-top: 1px solid var(--line);
+}
+
+.sample-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.sample-panel {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.sample-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.sample-list {
+  display: grid;
+  gap: 12px;
+}
+
+.sample-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #f7f3ec;
+  border: 1px solid #ebe2d5;
+  font-size: 0.9rem;
+}
+
+.sample-item strong {
+  font-weight: 600;
+}
+
+.sample-item button {
+  border: none;
+  background: #121826;
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.sample-form {
+  display: grid;
+  gap: 14px;
+}
+
+.sample-form label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+
+.sample-form input,
+.sample-form textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #e5e0d4;
+  padding: 10px 12px;
+  font-family: inherit;
 }
 
 .contact-grid {

@@ -1,9 +1,97 @@
 ﻿const categoryFilters = document.querySelector("#categoryFilters");
 const catalogGrid = document.querySelector("#catalogGrid");
+const sampleBadge = document.querySelector("#sampleBadge");
+const sampleCount = document.querySelector("#sampleCount");
+const sampleList = document.querySelector("#sampleList");
+const sampleForm = document.querySelector("#sampleForm");
+const sampleClear = document.querySelector("#sampleClear");
+
+const CART_KEY = "sampleCart";
 
 const placeholderImage = (label) => {
   const safe = encodeURIComponent(label || "Product");
   return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='100%' height='100%' fill='%23f3e9da'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Space Grotesk, Arial' font-size='36' fill='%23908a80'>${safe}</text></svg>`;
+};
+
+const getCart = () => {
+  const raw = sessionStorage.getItem(CART_KEY);
+  if (!raw) return {};
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+};
+
+const setCart = (cart) => {
+  sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
+};
+
+const updateBadge = (cart) => {
+  const total = Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
+  sampleCount.textContent = total;
+};
+
+const renderCart = () => {
+  const cart = getCart();
+  updateBadge(cart);
+  sampleList.innerHTML = "";
+
+  const entries = Object.values(cart);
+  if (entries.length === 0) {
+    sampleList.innerHTML = "<p class='form-note'>No samples added yet. Click “+1 Sample” on any product.</p>";
+    return;
+  }
+
+  entries.forEach((item) => {
+    const row = document.createElement("div");
+    row.className = "sample-item";
+    row.innerHTML = `
+      <div>
+        <strong>${item.name}</strong>
+        <div>${item.subtitle || ""}</div>
+      </div>
+      <div>
+        <span>Qty: ${item.qty}</span>
+        <button type="button" data-id="${item.id}">-1</button>
+      </div>
+    `;
+    row.querySelector("button").addEventListener("click", () => {
+      removeFromCart(item.id);
+    });
+    sampleList.appendChild(row);
+  });
+};
+
+const addToCart = (product) => {
+  const cart = getCart();
+  if (!cart[product.id]) {
+    cart[product.id] = {
+      id: product.id,
+      name: product.name,
+      subtitle: product.subtitle,
+      qty: 0
+    };
+  }
+  cart[product.id].qty += 1;
+  setCart(cart);
+  renderCart();
+};
+
+const removeFromCart = (productId) => {
+  const cart = getCart();
+  if (!cart[productId]) return;
+  cart[productId].qty -= 1;
+  if (cart[productId].qty <= 0) {
+    delete cart[productId];
+  }
+  setCart(cart);
+  renderCart();
+};
+
+const clearCart = () => {
+  sessionStorage.removeItem(CART_KEY);
+  renderCart();
 };
 
 const createCarousel = (images, label) => {
@@ -93,10 +181,21 @@ const createCard = (product, categoryName) => {
     <p class="sku">${product.subtitle || ""}</p>
     <p>${product.summary || ""}</p>
     <ul>${specs}</ul>
+    <div class="card-actions">
+      <a class="button ghost" href="mailto:sales@arambhika-enablers.com?subject=Request%20Order%20-%20${encodeURIComponent(product.name)}">Request Order</a>
+      <button class="button" type="button" data-sample="${product.id}">+1 Sample</button>
+    </div>
   `;
 
   const carousel = createCarousel(product.images || [], product.name);
   card.insertBefore(carousel, card.firstChild);
+
+  const sampleBtn = card.querySelector("[data-sample]");
+  sampleBtn.addEventListener("click", () => {
+    addToCart(product);
+    document.querySelector("#sample").scrollIntoView({ behavior: "smooth" });
+  });
+
   return card;
 };
 
@@ -156,9 +255,37 @@ const loadCatalog = async () => {
     });
 
     renderFilters(categories);
+    renderCart();
   } catch (error) {
     catalogGrid.innerHTML = "<p>Unable to load catalog. Please check products.json.</p>";
   }
 };
+
+sampleClear.addEventListener("click", clearCart);
+
+sampleForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const cart = getCart();
+  const items = Object.values(cart);
+  if (items.length === 0) {
+    alert("Add at least one sample before submitting.");
+    return;
+  }
+
+  const formData = new FormData(sampleForm);
+  const lines = items.map((item) => `${item.name} (${item.subtitle || ""}) x ${item.qty}`);
+  const body = [
+    `Company: ${formData.get("company")}`,
+    `Email: ${formData.get("email")}`,
+    `Address: ${formData.get("address")}`,
+    `Notes: ${formData.get("notes") || ""}`,
+    "",
+    "Sample Request:",
+    ...lines
+  ].join("\n");
+
+  const mailto = `mailto:sales@arambhika-enablers.com?subject=${encodeURIComponent("Sample Request")}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+});
 
 loadCatalog();
