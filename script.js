@@ -310,6 +310,38 @@ const buildPdfDom = (categories) => {
   `;
   root.appendChild(header);
 
+  const overview = document.createElement("div");
+  overview.className = "pdf-category";
+  overview.innerHTML = `
+    <h2>About Arambhika Enablers</h2>
+    <p>Arambhika Enablers supplies precision-rolled nickel strips, copper bus bars, and prismatic cells for battery packs, electronics, and energy storage systems. Consistent thickness, tight tolerances, and reliable fulfillment.</p>
+  `;
+  root.appendChild(overview);
+
+  const capabilities = document.createElement("div");
+  capabilities.className = "pdf-category";
+  capabilities.innerHTML = `
+    <h2>Capabilities</h2>
+    <p>Precision rolling, clean surface finish, custom cut and form, and bulk logistics with flexible MOQ.</p>
+  `;
+  root.appendChild(capabilities);
+
+  const quality = document.createElement("div");
+  quality.className = "pdf-category";
+  quality.innerHTML = `
+    <h2>Quality & Standards</h2>
+    <p>Each batch includes mill test certificates, mechanical properties, and visual inspection reports. ISO-aligned processes available.</p>
+  `;
+  root.appendChild(quality);
+
+  const applications = document.createElement("div");
+  applications.className = "pdf-category";
+  applications.innerHTML = `
+    <h2>Applications</h2>
+    <p>EV and mobility, energy storage systems, consumer devices, and OEM assembly.</p>
+  `;
+  root.appendChild(applications);
+
   categories.forEach((category) => {
     const section = document.createElement("div");
     section.className = "pdf-category";
@@ -340,6 +372,16 @@ const buildPdfDom = (categories) => {
     });
     root.appendChild(grid);
   });
+
+  const contact = document.createElement("div");
+  contact.className = "pdf-category";
+  contact.innerHTML = `
+    <h2>Contact</h2>
+    <p>Email: sales@arambhika-enablers.com</p>
+    <p>Phone: +91-XXXXXXXXXX</p>
+    <p>Location: Pune, India (global shipping)</p>
+  `;
+  root.appendChild(contact);
 
   document.body.appendChild(root);
   return root;
