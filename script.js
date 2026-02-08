@@ -5,6 +5,7 @@ const sampleForm = document.querySelector("#sampleForm");
 const sampleClear = document.querySelector("#sampleClear");
 const sampleToggle = document.querySelector("#sampleToggle");
 const samplePanel = document.querySelector("#samplePanel");
+const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
 
 const CART_KEY = "sampleCart";
 
@@ -292,6 +293,96 @@ const renderCatalog = (categories) => {
   });
   renderFilters(categories);
   renderCart();
+  window.catalogData = categories;
+};
+
+const buildPdfDom = (categories) => {
+  let root = document.querySelector("#pdfRoot");
+  if (root) root.remove();
+  root = document.createElement("div");
+  root.id = "pdfRoot";
+  root.className = "pdf-root";
+
+  const header = document.createElement("div");
+  header.innerHTML = `
+    <h1>Arambhika Enablers</h1>
+    <div class="pdf-meta">Product Catalog · sales@arambhika-enablers.com</div>
+  `;
+  root.appendChild(header);
+
+  categories.forEach((category) => {
+    const section = document.createElement("div");
+    section.className = "pdf-category";
+    section.innerHTML = `
+      <h2>${category.name}</h2>
+      <p>${category.description || ""}</p>
+    `;
+    root.appendChild(section);
+
+    const grid = document.createElement("div");
+    grid.className = "pdf-grid";
+    (category.products || []).forEach((product) => {
+      const card = document.createElement("div");
+      card.className = "pdf-card";
+      const specs = (product.specs || []).map((s) => `<li>${s}</li>`).join("");
+      const images = (product.images || [])
+        .slice(0, 3)
+        .map((src) => `<img src="${src}" alt="${product.name}">`)
+        .join("");
+      card.innerHTML = `
+        <h3>${product.name}</h3>
+        <div class="sku">${product.subtitle || ""}</div>
+        <div>${product.summary || ""}</div>
+        <ul class="pdf-specs">${specs}</ul>
+        <div class="pdf-images">${images}</div>
+      `;
+      grid.appendChild(card);
+    });
+    root.appendChild(grid);
+  });
+
+  document.body.appendChild(root);
+  return root;
+};
+
+const generatePdf = async () => {
+  if (!window.catalogData || window.catalogData.length === 0) {
+    alert("Catalog data not loaded yet.");
+    return;
+  }
+
+  generateCatalogPdf.disabled = true;
+  generateCatalogPdf.textContent = "Generating...";
+
+  const root = buildPdfDom(window.catalogData);
+  const canvas = await html2canvas(root, { scale: 2, useCORS: true });
+  const imgData = canvas.toDataURL("image/png");
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF("p", "pt", "a4");
+
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const pageHeight = pdf.internal.pageSize.getHeight();
+  const imgWidth = pageWidth;
+  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+  let heightLeft = imgHeight;
+  let position = 0;
+
+  pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+  heightLeft -= pageHeight;
+
+  while (heightLeft > 0) {
+    position = heightLeft - imgHeight;
+    pdf.addPage();
+    pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+    heightLeft -= pageHeight;
+  }
+
+  pdf.save("catalog.pdf");
+  root.remove();
+
+  generateCatalogPdf.disabled = false;
+  generateCatalogPdf.textContent = "Generate PDF";
 };
 
 const loadCatalog = async () => {
@@ -334,5 +425,9 @@ sampleToggle.addEventListener("click", () => {
   samplePanel.classList.add("drawer");
   toggleSamplePanel();
 });
+
+if (generateCatalogPdf) {
+  generateCatalogPdf.addEventListener("click", generatePdf);
+}
 
 loadCatalog();
