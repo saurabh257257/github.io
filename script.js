@@ -335,10 +335,6 @@ const loadCatalog = async () => {
     try {
       const categories = await loadCatalogFromJson();
       renderCatalog(categories);
-      catalogGrid.insertAdjacentHTML(
-        "afterbegin",
-        "<p class='form-note'>Loaded fallback from products.json. Ensure products.xlsx is available when hosted.</p>"
-      );
     } catch (fallbackError) {
       catalogGrid.innerHTML =
         "<p>Unable to load catalog. If you opened this file directly, use a local server or GitHub Pages so the browser can fetch products.xlsx.</p>";
