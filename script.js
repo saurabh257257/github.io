@@ -614,7 +614,9 @@ if (sampleForm) {
 
     const formData = new FormData(sampleForm);
     const lines = items.map((item) => `${item.name} (${item.subtitle || ""}) x ${item.qty}`);
-    const countryCode = formData.get("countryCode") || "+91";
+    const countryCode = formData.get("countryCode") === "other"
+      ? (formData.get("countryOther") || "+91")
+      : (formData.get("countryCode") || "+91");
     const mobile = formData.get("mobile") || "";
     const body = [
       "Sample Request",
@@ -671,7 +673,9 @@ if (orderForm) {
 
     const formData = new FormData(orderForm);
     const lines = items.map((item) => `${item.name} (${item.subtitle || ""}) x ${item.kg} kg`);
-    const countryCode = formData.get("countryCode") || "+91";
+    const countryCode = formData.get("countryCode") === "other"
+      ? (formData.get("countryOther") || "+91")
+      : (formData.get("countryCode") || "+91");
     const mobile = formData.get("mobile") || "";
     const body = [
       "Quote Request",
@@ -695,7 +699,9 @@ if (aboutContactForm) {
   aboutContactForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const formData = new FormData(aboutContactForm);
-    const countryCode = formData.get("countryCode") || "+91";
+    const countryCode = formData.get("countryCode") === "other"
+      ? (formData.get("countryOther") || "+91")
+      : (formData.get("countryCode") || "+91");
     const mobile = formData.get("mobile") || "";
     const body = [
       "General Inquiry",
@@ -724,3 +730,15 @@ document.querySelectorAll("[data-explore]").forEach((button) => {
 });
 
 loadCatalog();
+
+document.querySelectorAll(".phone-row select").forEach((select) => {
+  const wrapper = select.closest("form");
+  if (!wrapper) return;
+  const otherField = wrapper.querySelector(".country-other");
+  const update = () => {
+    if (!otherField) return;
+    otherField.classList.toggle("is-visible", select.value === "other");
+  };
+  select.addEventListener("change", update);
+  update();
+});

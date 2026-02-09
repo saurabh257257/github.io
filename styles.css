@@ -44,9 +44,9 @@ img {
   position: sticky;
   top: 0;
   backdrop-filter: blur(16px);
-  background: #1e5eff;
+  background: #1f4ecb;
   z-index: 10;
-  border-bottom: 1px solid #1e5eff;
+  border-bottom: 1px solid #1f4ecb;
 }
 
 .top-bar {
@@ -1076,7 +1076,7 @@ img {
   border-radius: 14px;
   background: #edf3ff;
   border: 1px solid #d6e2f5;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
 }
 
 .sample-item-header {
@@ -1140,6 +1140,14 @@ img {
   font-family: inherit;
   font-size: 0.85rem;
   background: #ffffff;
+}
+
+.country-other {
+  display: none;
+}
+
+.country-other.is-visible {
+  display: grid;
 }
 
 .contact-grid {
