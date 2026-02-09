@@ -26,13 +26,14 @@
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
         <button class="button ghost" id="sampleToggle" type="button">Sample Order</button>
-        <a href="contact.html" class="button ghost">Request Quote</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section id="home" class="home-anchor"></section>
+    <div class="main-layout">
+      <div class="main-content">
     <section class="solutions" id="solutions">
       <div class="container">
         <div class="section-head">
@@ -45,16 +46,52 @@
             <h3>Small B2B Manufacturers</h3>
             <p class="solution-tag">Nickel‑plated strip</p>
             <p>Cost‑effective plated strips for compact packs.</p>
+            <button class="details-toggle" type="button" data-explore="small">
+              <span>+</span>
+              Explore
+            </button>
+            <div class="details" data-explore-panel="small">
+              <div class="solution-images">
+                <img src="assets/products/nickel-plated/np-10-1.jpg" alt="Nickel plated strip" />
+                <img src="assets/products/nickel-plated/np-20-1.jpg" alt="Nickel plated strip" />
+                <img src="assets/products/nickel-plated/np-30-1.jpg" alt="Nickel plated strip" />
+              </div>
+              <p class="solution-detail">Best for small batch production with faster turnaround and value pricing.</p>
+            </div>
           </article>
           <article class="solution-card">
             <h3>Mid‑Sized B2B Manufacturers</h3>
             <p class="solution-tag">Pure nickel strip</p>
             <p>High‑purity nickel for repeatable welding.</p>
+            <button class="details-toggle" type="button" data-explore="mid">
+              <span>+</span>
+              Explore
+            </button>
+            <div class="details" data-explore-panel="mid">
+              <div class="solution-images">
+                <img src="assets/products/nickel-pure/n-10-1.jpg" alt="Pure nickel strip" />
+                <img src="assets/products/nickel-pure/n-15-1.jpg" alt="Pure nickel strip" />
+                <img src="assets/products/nickel-pure/n-20-1.jpg" alt="Pure nickel strip" />
+              </div>
+              <p class="solution-detail">For stable production runs that need consistent conductivity and weld quality.</p>
+            </div>
           </article>
           <article class="solution-card">
             <h3>Large Factories</h3>
             <p class="solution-tag">Copper busbars</p>
             <p>High‑current copper busbars for ESS lines.</p>
+            <button class="details-toggle" type="button" data-explore="large">
+              <span>+</span>
+              Explore
+            </button>
+            <div class="details" data-explore-panel="large">
+              <div class="solution-images">
+                <img src="assets/products/copper-bus-bars/cb-5-1.jpg" alt="Copper bus bar" />
+                <img src="assets/products/copper-bus-bars/cb-10-1.jpg" alt="Copper bus bar" />
+                <img src="assets/products/copper-bus-bars/cb-15-1.jpg" alt="Copper bus bar" />
+              </div>
+              <p class="solution-detail">Optimized for high-current distribution and large format assemblies.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -108,63 +145,65 @@
         </div>
       </div>
     </section>
+      </div>
+      <aside class="side-forms" id="sideForms">
+        <div class="sample-panel" id="samplePanel">
+          <div class="sample-panel-header">
+            <h3>Sample Order</h3>
+            <button class="button ghost small" type="button" id="sampleClear">Clear</button>
+          </div>
+          <div id="sampleList" class="sample-list"></div>
+          <form class="sample-form" id="sampleForm">
+            <label>
+              Company Name
+              <input type="text" name="company" required placeholder="Your company" />
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="email" required placeholder="you@company.com" />
+            </label>
+            <label>
+              Delivery Address
+              <textarea name="address" rows="3" required placeholder="Full address"></textarea>
+            </label>
+            <label>
+              Notes
+              <textarea name="notes" rows="3" placeholder="Qty, timeline, other requirements"></textarea>
+            </label>
+            <button class="button" type="submit">Request Sample</button>
+            <p class="form-note">This sends an email draft using your email client.</p>
+          </form>
+        </div>
+        <div class="sample-panel" id="orderPanel">
+          <div class="sample-panel-header">
+            <h3>Request Order</h3>
+            <button class="button ghost small" type="button" id="orderClear">Clear</button>
+          </div>
+          <div id="orderList" class="sample-list"></div>
+          <form class="sample-form" id="orderForm">
+            <label>
+              Company Name
+              <input type="text" name="company" required placeholder="Your company" />
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="email" required placeholder="you@company.com" />
+            </label>
+            <label>
+              Delivery Address
+              <textarea name="address" rows="3" required placeholder="Full address"></textarea>
+            </label>
+            <label>
+              Notes
+              <textarea name="notes" rows="3" placeholder="KG, timeline, other requirements"></textarea>
+            </label>
+            <button class="button" type="submit">Request Order</button>
+            <p class="form-note">This sends an email draft using your email client.</p>
+          </form>
+        </div>
+      </aside>
+    </div>
   </main>
-
-  <div class="sample-panel drawer" id="samplePanel">
-    <div class="sample-panel-header">
-      <h3>Sample Order</h3>
-      <button class="button ghost small" type="button" id="sampleClear">Clear</button>
-    </div>
-    <div id="sampleList" class="sample-list"></div>
-    <form class="sample-form" id="sampleForm">
-      <label>
-        Company Name
-        <input type="text" name="company" required placeholder="Your company" />
-      </label>
-      <label>
-        Email Address
-        <input type="email" name="email" required placeholder="you@company.com" />
-      </label>
-      <label>
-        Delivery Address
-        <textarea name="address" rows="3" required placeholder="Full address"></textarea>
-      </label>
-      <label>
-        Notes
-        <textarea name="notes" rows="3" placeholder="Qty, timeline, other requirements"></textarea>
-      </label>
-      <button class="button" type="submit">Request Sample</button>
-      <p class="form-note">This sends an email draft using your email client.</p>
-    </form>
-  </div>
-
-  <div class="sample-panel drawer" id="orderPanel">
-    <div class="sample-panel-header">
-      <h3>Request Order</h3>
-      <button class="button ghost small" type="button" id="orderClear">Clear</button>
-    </div>
-    <div id="orderList" class="sample-list"></div>
-    <form class="sample-form" id="orderForm">
-      <label>
-        Company Name
-        <input type="text" name="company" required placeholder="Your company" />
-      </label>
-      <label>
-        Email Address
-        <input type="email" name="email" required placeholder="you@company.com" />
-      </label>
-      <label>
-        Delivery Address
-        <textarea name="address" rows="3" required placeholder="Full address"></textarea>
-      </label>
-      <label>
-        Notes
-        <textarea name="notes" rows="3" placeholder="KG, timeline, other requirements"></textarea>
-      </label>
-      <button class="button" type="submit">Request Order</button>
-      <p class="form-note">This sends an email draft using your email client.</p>
-    </form>
-  </div>
 
   <footer class="site-footer">
     <div class="container footer-grid">

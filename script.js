@@ -5,6 +5,7 @@ const sampleForm = document.querySelector("#sampleForm");
 const sampleClear = document.querySelector("#sampleClear");
 const sampleToggle = document.querySelector("#sampleToggle");
 const samplePanel = document.querySelector("#samplePanel");
+const sideForms = document.querySelector("#sideForms");
 const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
 const orderList = document.querySelector("#orderList");
 const orderForm = document.querySelector("#orderForm");
@@ -282,8 +283,8 @@ const createCard = (product, categoryName) => {
       <ul>${specs}</ul>
     </div>
     <div class="card-actions">
-      <button class="button ghost" type="button" data-order="${product.id}">Request Order</button>
-      <button class="button" type="button" data-sample="${product.id}">+1 Sample</button>
+      <button class="button ghost" type="button" data-order="${product.id}">Add to Quote +</button>
+      <button class="button" type="button" data-sample="${product.id}">Add Sample +</button>
     </div>
   `;
 
@@ -566,10 +567,9 @@ if (sampleForm) {
   });
 }
 
-if (sampleToggle && samplePanel) {
+if (sampleToggle && sideForms) {
   sampleToggle.addEventListener("click", () => {
-    samplePanel.classList.add("drawer");
-    toggleSamplePanel();
+    sideForms.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
 
@@ -607,5 +607,15 @@ if (orderForm) {
     window.location.href = mailto;
   });
 }
+
+document.querySelectorAll("[data-explore]").forEach((button) => {
+  const key = button.dataset.explore;
+  const panel = document.querySelector(`[data-explore-panel="${key}"]`);
+  if (!panel) return;
+  button.addEventListener("click", () => {
+    const isOpen = panel.classList.toggle("is-open");
+    button.querySelector("span").textContent = isOpen ? "-" : "+";
+  });
+});
 
 loadCatalog();
