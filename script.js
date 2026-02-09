@@ -49,7 +49,7 @@ const renderCart = () => {
 
   const entries = Object.values(cart);
   if (entries.length === 0) {
-    sampleList.innerHTML = "<p class='form-note'>No samples added yet. Click “+1 Sample” on any product.</p>";
+    sampleList.innerHTML = "<p class='form-note'>No samples added yet. Click “Request Sample” on any product.</p>";
     updateSideFormsState();
     return;
   }
@@ -102,7 +102,7 @@ const renderOrder = () => {
 
   const entries = Object.values(order);
   if (entries.length === 0) {
-    orderList.innerHTML = "<p class='form-note'>No items added yet. Click “Request Order” on any product.</p>";
+    orderList.innerHTML = "<p class='form-note'>No items added yet. Click “Add to Quote” on any product.</p>";
     updateSideFormsState();
     return;
   }
@@ -319,7 +319,7 @@ const createCard = (product, categoryName) => {
           <ul>${specs}</ul>
         </div>
         <div class="card-actions">
-          <button class="button ghost" type="button" data-order="${product.id}">Request Order</button>
+          <button class="button ghost" type="button" data-order="${product.id}">Add to Quote</button>
           <button class="button" type="button" data-sample="${product.id}">Request Sample</button>
         </div>
       </div>

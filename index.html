@@ -6,7 +6,7 @@
   <title>Arambhika Enablers | Nickel Strips B2B</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="_theme_overrides.css" />
 </head>
@@ -23,8 +23,8 @@
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#catalog">Product Catalog</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="#capabilities">Our Capabilities</a>
+        <a href="#about">About & Contact</a>
       </nav>
     </div>
   </header>
@@ -94,6 +94,38 @@
       </div>
     </section>
 
+    <section id="capabilities" class="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Our Capabilities</p>
+          <h2>Manufacturing built for precision nickel and copper.</h2>
+          <p class="lead">From slitting to stamping, we support high-volume and custom requirements with consistent quality.</p>
+        </div>
+        <div class="cap-grid">
+          <div class="cap-card">
+            <img class="cap-photo" src="assets/products/nickel-plated/np-20-1.jpg" alt="Slitting and leveling line" />
+            <h3>Precision Slitting</h3>
+            <p>Consistent widths, clean edges, and tight tolerances for battery tabs and interconnects.</p>
+          </div>
+          <div class="cap-card">
+            <img class="cap-photo" src="assets/products/nickel-pure/n-15-1.jpg" alt="Annealing and surface control" />
+            <h3>Surface Control</h3>
+            <p>Finish and temper options tuned for weldability, conductivity, and repeatable performance.</p>
+          </div>
+          <div class="cap-card">
+            <img class="cap-photo" src="assets/products/copper-bus-bars/cb-10-1.jpg" alt="Stamping and custom shapes" />
+            <h3>Custom Stamping</h3>
+            <p>Tooling support for tabs, busbars, and custom profiles designed for your pack layout.</p>
+          </div>
+          <div class="cap-card">
+            <img class="cap-photo" src="assets/products/prismatic-batteries/pb-50-1.jpg" alt="Quality inspection" />
+            <h3>Quality Assurance</h3>
+            <p>In-process inspection and batch traceability aligned with industrial QA practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="catalog" class="catalog">
       <div class="container catalog-layout">
         <aside class="catalog-filters">
@@ -116,7 +148,7 @@
 
           <div class="sample-panel is-active" id="samplePanel" data-panel="sample">
             <div class="sample-panel-header">
-              <h3>Sample Order</h3>
+              <h3>Request Sample</h3>
               <button class="button ghost small" type="button" id="sampleClear">Clear</button>
             </div>
             <div id="sampleList" class="sample-list"></div>
@@ -144,7 +176,7 @@
 
           <div class="sample-panel" id="orderPanel" data-panel="order">
             <div class="sample-panel-header">
-              <h3>Request Order</h3>
+              <h3>Add to Quote</h3>
               <button class="button ghost small" type="button" id="orderClear">Clear</button>
             </div>
             <div id="orderList" class="sample-list"></div>
@@ -165,7 +197,7 @@
                 Notes
                 <textarea name="notes" rows="3" placeholder="KG, timeline, other requirements"></textarea>
               </label>
-              <button class="button" type="submit">Request Order</button>
+              <button class="button" type="submit">Add to Quote</button>
               <p class="form-note">This sends an email draft using your email client.</p>
             </form>
           </div>
