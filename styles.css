@@ -77,7 +77,7 @@ img {
 }
 
 .top-bar-inner .wa-link {
-  color: #8ec5ff;
+  color: #25d366;
 }
 
 .top-bar-inner .divider {
@@ -1150,7 +1150,7 @@ img {
 
 .phone-row {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: 150px 1fr;
   gap: 8px;
 }
 
@@ -1163,13 +1163,6 @@ img {
   background: #ffffff;
 }
 
-.country-other {
-  display: none;
-}
-
-.country-other.is-visible {
-  display: grid;
-}
 
 .contact-grid {
   display: grid;
