@@ -643,8 +643,8 @@ img {
 
 .catalog-layout {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr) minmax(300px, 340px);
-  gap: 24px;
+  grid-template-columns: 200px minmax(0, 1fr) minmax(260px, 300px);
+  gap: 20px;
   align-items: start;
 }
 
@@ -683,6 +683,8 @@ img {
   gap: 16px;
   max-height: calc(100vh - 180px);
   overflow: hidden;
+  width: 100%;
+  min-width: 0;
 }
 
 .catalog-side.is-empty {
