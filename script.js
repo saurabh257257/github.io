@@ -63,23 +63,11 @@ const renderCart = () => {
           <strong>${item.name}</strong>
           <div>${item.subtitle || ""}</div>
         </div>
-        <div class="sample-qty">Qty: ${item.qty}</div>
         <button class="remove-item" type="button" data-action="remove" aria-label="Remove item">×</button>
       </div>
-      <div class="sample-controls">
-        <button type="button" data-action="dec" data-id="${item.id}">-</button>
-        <button type="button" data-action="inc" data-id="${item.id}">+</button>
-      </div>
     `;
-    row.querySelectorAll("button").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (btn.dataset.action === "remove") {
-          updateSampleQty(item.id, -9999);
-          return;
-        }
-        const delta = btn.dataset.action === "inc" ? 1 : -1;
-        updateSampleQty(item.id, delta);
-      });
+    row.querySelector(".remove-item").addEventListener("click", () => {
+      updateSampleQty(item.id, -9999);
     });
     sampleList.appendChild(row);
   });
@@ -183,10 +171,10 @@ const addToCart = (product) => {
       id: product.id,
       name: product.name,
       subtitle: product.subtitle,
-      qty: 0
+      qty: 1
     };
   }
-  cart[product.id].qty += 1;
+  cart[product.id].qty = 1;
   setCart(cart);
   renderCart();
   setActiveTab("sample");

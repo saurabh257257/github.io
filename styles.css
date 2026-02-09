@@ -678,10 +678,10 @@ img {
 
 .catalog-side {
   position: sticky;
-  top: 100px;
+  top: 140px;
   display: grid;
   gap: 16px;
-  max-height: calc(100vh - 140px);
+  max-height: calc(100vh - 180px);
   overflow: hidden;
 }
 
@@ -713,13 +713,13 @@ img {
 .catalog-card {
   background: var(--surface-strong);
   border-radius: 22px;
-  padding: 22px;
+  padding: 16px;
   border: 1px solid var(--line);
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 20px;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
   align-items: start;
 }
 
@@ -833,7 +833,8 @@ img {
   background: linear-gradient(135deg, #f7ead9, #f5f1e9);
   border: 1px solid var(--line);
   margin-bottom: 0;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 4;
+  max-height: 220px;
 }
 
 .carousel img {
