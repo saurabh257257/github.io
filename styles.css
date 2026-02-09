@@ -249,6 +249,126 @@ img {
   padding: 70px 0;
 }
 
+.solutions,
+.pipeline,
+.about {
+  padding: 70px 0;
+}
+
+.solutions {
+  background: #f5f8ff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.solution-card {
+  background: var(--surface-strong);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 20px rgba(9, 23, 54, 0.08);
+  display: grid;
+  gap: 12px;
+}
+
+.solution-card h3 {
+  font-size: 1.2rem;
+}
+
+.solution-tag {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: #e6efff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.solution-card ul {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.pipeline {
+  background: #0b1d39;
+  color: #fdf6e9;
+}
+
+.pipeline .lead {
+  color: rgba(253, 246, 233, 0.75);
+}
+
+.pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.pipeline-form {
+  background: #ffffff;
+  color: var(--ink);
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid #d9e2ef;
+  display: grid;
+  gap: 14px;
+}
+
+.pipeline-form label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+
+.pipeline-form input,
+.pipeline-form textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d8e3f2;
+  padding: 10px 12px;
+  font-family: inherit;
+}
+
+.about {
+  background: #f7f9fc;
+  border-top: 1px solid var(--line);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.about-card {
+  background: var(--surface-strong);
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  padding: 22px;
+  box-shadow: 0 12px 20px rgba(9, 23, 54, 0.08);
+}
+
+.about-card ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
 .credits {
   padding: 70px 0;
   background: #f6f9ff;
