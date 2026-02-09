@@ -14,12 +14,27 @@
   <header class="site-header">
     <div class="top-bar">
       <div class="container top-bar-inner">
-        <span>Call:</span>
+        <span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.2-.2.5-.3.8-.2 1 .3 2 .5 3.1.5.5 0 .9.4.9.9v3c0 .5-.4.9-.9.9C10.4 19 5 13.6 5 7.1c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9 0 1.1.2 2.1.5 3.1.1.3 0 .6-.2.8l-1.5 1.2z"/>
+          </svg>
+          Call:
+        </span>
         <a href="tel:+918112662827">+91-8112662827</a>
-        <a class="wa-link" href="https://wa.me/918112662827" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="wa-link" href="https://wa.me/918112662827" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 3.5A10 10 0 0 0 3.2 17.9L2 22l4.2-1.1a10 10 0 0 0 14.3-17.4zm-8.5 16a8 8 0 0 1-4.1-1.1l-.3-.2-2.4.6.6-2.3-.2-.3A8 8 0 1 1 12 19.5zm4.4-6.1c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1-.2.2-.7.7-.9.9-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.4-1.9-.1-.2 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.4.5.6.2 1.1.2 1.5.1.5-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.2-.2-.4-.3z"/>
+          </svg>
+          WhatsApp
+        </a>
         <span class="divider">|</span>
         <a href="tel:+91811233245">+91-811233245</a>
-        <a class="wa-link" href="https://wa.me/91811233245" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="wa-link" href="https://wa.me/91811233245" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 3.5A10 10 0 0 0 3.2 17.9L2 22l4.2-1.1a10 10 0 0 0 14.3-17.4zm-8.5 16a8 8 0 0 1-4.1-1.1l-.3-.2-2.4.6.6-2.3-.2-.3A8 8 0 1 1 12 19.5zm4.4-6.1c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1-.2.2-.7.7-.9.9-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.4-1.9-.1-.2 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.4.5.6.2 1.1.2 1.5.1.5-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.2-.2-.4-.3z"/>
+          </svg>
+          WhatsApp
+        </a>
       </div>
     </div>
     <div class="container nav">
@@ -58,16 +73,24 @@
         <form class="contact-form" id="aboutContactForm">
           <p class="eyebrow">Contact Us</p>
           <label>
-            Mobile Number (with country code)
-            <input type="tel" name="mobile" required placeholder="+91XXXXXXXXXX" />
+            Mobile Number
+            <div class="phone-row">
+              <select name="countryCode">
+                <option value="+91" selected>+91 (India)</option>
+                <option value="+1">+1 (USA)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+971">+971 (UAE)</option>
+              </select>
+              <input type="tel" name="mobile" required placeholder="Mobile number" />
+            </div>
           </label>
           <label>
             Email Address
-            <input type="email" name="email" required placeholder="you@company.com" />
+            <input type="email" name="email" placeholder="you@company.com" />
           </label>
           <label>
             Description
-            <textarea name="notes" rows="5" required placeholder="Tell us what you need"></textarea>
+            <textarea name="notes" rows="5" placeholder="Tell us what you need"></textarea>
           </label>
           <button class="button" type="submit">Send Inquiry</button>
           <p class="form-note">Opens WhatsApp with your request details.</p>

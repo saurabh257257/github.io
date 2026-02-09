@@ -61,7 +61,7 @@ img {
   gap: 10px;
   align-items: center;
   color: #ffffff;
-  padding: 8px 0;
+  padding: 6px 0;
 }
 
 .top-bar-inner a {
@@ -71,18 +71,27 @@ img {
 }
 
 .top-bar-inner .wa-link {
-  color: var(--accent);
+  color: #8ec5ff;
 }
 
 .top-bar-inner .divider {
   opacity: 0.6;
 }
 
+.top-bar-inner .icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 4px;
+  fill: currentColor;
+}
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0;
+  padding: 10px 0;
   gap: 20px;
 }
 
@@ -666,6 +675,8 @@ img {
   top: 100px;
   display: grid;
   gap: 16px;
+  max-height: calc(100vh - 140px);
+  overflow: hidden;
 }
 
 .catalog-side.is-empty {
@@ -1053,6 +1064,9 @@ img {
 .sample-list {
   display: grid;
   gap: 8px;
+  max-height: 180px;
+  overflow: auto;
+  padding-right: 4px;
 }
 
 .sample-item {
@@ -1111,6 +1125,21 @@ img {
   padding: 8px 10px;
   font-family: inherit;
   font-size: 0.85rem;
+}
+
+.phone-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px;
+}
+
+.phone-row select {
+  border-radius: 12px;
+  border: 1px solid #d8e3f2;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  background: #ffffff;
 }
 
 .contact-grid {

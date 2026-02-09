@@ -614,13 +614,15 @@ if (sampleForm) {
 
     const formData = new FormData(sampleForm);
     const lines = items.map((item) => `${item.name} (${item.subtitle || ""}) x ${item.qty}`);
+    const countryCode = formData.get("countryCode") || "+91";
+    const mobile = formData.get("mobile") || "";
     const body = [
       "Sample Request",
       "",
       "Selected products:",
       ...lines,
       "",
-      `Mobile: ${formData.get("mobile") || "N/A"}`,
+      `Mobile: ${countryCode} ${mobile}`.trim(),
       `Email: ${formData.get("email") || "N/A"}`,
       `Description: ${formData.get("notes") || "N/A"}`
     ].join("\n");
@@ -669,13 +671,15 @@ if (orderForm) {
 
     const formData = new FormData(orderForm);
     const lines = items.map((item) => `${item.name} (${item.subtitle || ""}) x ${item.kg} kg`);
+    const countryCode = formData.get("countryCode") || "+91";
+    const mobile = formData.get("mobile") || "";
     const body = [
       "Quote Request",
       "",
       "Selected products:",
       ...lines,
       "",
-      `Mobile: ${formData.get("mobile") || "N/A"}`,
+      `Mobile: ${countryCode} ${mobile}`.trim(),
       `Email: ${formData.get("email") || "N/A"}`,
       `Description: ${formData.get("notes") || "N/A"}`
     ].join("\n");
@@ -691,12 +695,14 @@ if (aboutContactForm) {
   aboutContactForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const formData = new FormData(aboutContactForm);
+    const countryCode = formData.get("countryCode") || "+91";
+    const mobile = formData.get("mobile") || "";
     const body = [
       "General Inquiry",
       "",
       "Selected products: None",
       "",
-      `Mobile: ${formData.get("mobile") || "N/A"}`,
+      `Mobile: ${countryCode} ${mobile}`.trim(),
       `Email: ${formData.get("email") || "N/A"}`,
       `Description: ${formData.get("notes") || "N/A"}`
     ].join("\n");
