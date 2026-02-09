@@ -1,13 +1,15 @@
 :root {
   color-scheme: light;
-  --ink: #0b1220;
-  --muted: #4f6378;
-  --accent: #1f6feb;
-  --accent-dark: #174ea6;
-  --surface: #f3f6fb;
+  --ink: #1e293b;
+  --muted: #475569;
+  --accent: #1e5eff;
+  --accent-dark: #1a4fd9;
+  --navy: #0f172a;
+  --surface: #ffffff;
   --surface-strong: #ffffff;
-  --line: #d9e2ef;
-  --shadow: 0 22px 60px rgba(9, 23, 54, 0.14);
+  --surface-alt: #f5f8ff;
+  --line: #e2e8f0;
+  --shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
 }
 
 * {
@@ -19,7 +21,7 @@
 body {
   font-family: "Space Grotesk", system-ui, sans-serif;
   color: var(--ink);
-  background: radial-gradient(circle at top left, #e7f1ff 0%, #f2f7ff 40%, #f7f9fc 100%);
+  background: #ffffff;
   line-height: 1.6;
 }
 
@@ -42,9 +44,9 @@ img {
   position: sticky;
   top: 0;
   backdrop-filter: blur(16px);
-  background: rgba(245, 248, 252, 0.9);
+  background: var(--navy);
   z-index: 10;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--navy);
 }
 
 .nav {
@@ -69,18 +71,19 @@ img {
   border-radius: 14px;
   font-weight: 700;
   font-family: "Fraunces", serif;
-  background: linear-gradient(135deg, #0b1d39, #1e2f54);
-  color: #fdf6e9;
+  background: var(--accent);
+  color: #ffffff;
 }
 
 .brand-name {
   font-weight: 600;
   letter-spacing: 0.4px;
+  color: #f8fbff;
 }
 
 .brand-tag {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: #cbd5f5;
 }
 
 .nav-links {
@@ -91,12 +94,12 @@ img {
 }
 
 .nav-links a {
-  color: var(--ink);
+  color: #f8fbff;
   transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: var(--accent-dark);
+  color: #cfe1ff;
 }
 
 .button {
@@ -106,9 +109,9 @@ img {
   padding: 12px 22px;
   border-radius: 999px;
   background: var(--accent);
-  color: #1d1205;
+  color: #ffffff;
   font-weight: 600;
-  box-shadow: 0 12px 24px rgba(31, 111, 235, 0.25);
+  box-shadow: 0 12px 24px rgba(30, 94, 255, 0.25);
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -116,7 +119,7 @@ img {
 
 .button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 16px 30px rgba(31, 111, 235, 0.3);
+  box-shadow: 0 16px 30px rgba(26, 79, 217, 0.28);
   background: var(--accent-dark);
   color: #fff;
 }
@@ -256,7 +259,7 @@ img {
 }
 
 .solutions {
-  background: #eef4ff;
+  background: var(--surface-alt);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   padding: 32px 0;
@@ -896,7 +899,7 @@ img {
 }
 
 .contact {
-  background: #f2f7ff;
+  background: var(--surface-alt);
 }
 
 .main-layout {
@@ -1073,8 +1076,9 @@ img {
 
 .site-footer {
   padding: 30px 0 50px;
-  border-top: 1px solid var(--line);
-  background: #edf3fb;
+  border-top: 1px solid var(--navy);
+  background: var(--navy);
+  color: #f8fbff;
 }
 
 .footer-grid {
