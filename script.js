@@ -1275,10 +1275,8 @@ const renderCart = () => {
     row.className = "sample-item";
     row.innerHTML = `
       <div class="sample-item-header">
-        <div>
-          <strong>${item.name}</strong>
-          <div>${item.subtitle || ""}</div>
-        </div>
+        <div><strong>${item.name}</strong></div>
+        <div class="sample-qty">Qty: 1</div>
         <button class="remove-item" type="button" data-action="remove" aria-label="Remove item">×</button>
       </div>
     `;
@@ -1321,10 +1319,7 @@ const renderOrder = () => {
     row.className = "sample-item";
     row.innerHTML = `
       <div class="sample-item-header">
-        <div>
-          <strong>${item.name}</strong>
-          <div>${item.subtitle || ""}</div>
-        </div>
+        <div><strong>${item.name}</strong></div>
         <div class="sample-qty">${item.kg} kg</div>
         <button class="remove-item" type="button" data-action="remove" aria-label="Remove item">×</button>
       </div>
