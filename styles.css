@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   color-scheme: light;
   --ink: #2b2b2b;
   --muted: #9ea3a8;
@@ -685,7 +685,9 @@ img {
   overflow: hidden;
   width: 100%;
   min-width: 0;
+  padding-right: 2px;
 }
+
 
 .catalog-side.is-empty {
   opacity: 0.25;
@@ -1019,16 +1021,22 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
+  width: 100%;
 }
+
 
 .side-tab {
   border: 1px solid var(--line);
   background: #ffffff;
-  padding: 10px 12px;
+  padding: 8px 10px;
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
+  min-width: 0;
+  width: 100%;
+  text-align: center;
 }
+
 
 .side-tab.is-active {
   background: var(--accent);
@@ -1061,7 +1069,9 @@ img {
   display: grid;
   gap: 12px;
   max-width: 100%;
+  overflow: hidden;
 }
+
 
 
 .sample-panel-header {
@@ -1245,8 +1255,17 @@ img {
   }
 
   .catalog-side {
-    position: static;
-  }
+  position: sticky;
+  top: 140px;
+  display: grid;
+  gap: 16px;
+  max-height: calc(100vh - 180px);
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+  padding-right: 2px;
+}
+
 
   .solutions-layout {
     grid-template-columns: 1fr;
@@ -1353,9 +1372,18 @@ img {
 }
 
 .sample-panel {
-  display: none;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  max-width: 100%;
+  overflow: hidden;
 }
+
 
 .sample-panel.is-active {
   display: grid;
 }
+
