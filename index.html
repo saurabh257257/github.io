@@ -74,71 +74,6 @@
       </div>
     </section>
 
-    <section id="sample" class="sample sample-floating">
-      <div class="container sample-grid">
-        <div>
-          <p class="eyebrow">Sample Request</p>
-          <h2>Build a sample order and submit once ready.</h2>
-          <p class="lead">Click “+1 Sample” on any product. Your selections are stored per session and reset when the browser is closed.</p>
-        </div>
-        <div class="sample-panel" id="samplePanel">
-          <div class="sample-panel-header">
-            <h3>Sample Order</h3>
-            <button class="button ghost small" type="button" id="sampleClear">Clear</button>
-          </div>
-          <div id="sampleList" class="sample-list"></div>
-          <form class="sample-form" id="sampleForm">
-            <label>
-              Company Name
-              <input type="text" name="company" required placeholder="Your company" />
-            </label>
-            <label>
-              Email Address
-              <input type="email" name="email" required placeholder="you@company.com" />
-            </label>
-            <label>
-              Delivery Address
-              <textarea name="address" rows="3" required placeholder="Full address"></textarea>
-            </label>
-            <label>
-              Notes
-              <textarea name="notes" rows="3" placeholder="Qty, timeline, other requirements"></textarea>
-            </label>
-            <button class="button" type="submit">Request Sample</button>
-            <p class="form-note">This sends an email draft using your email client.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section id="capabilities" class="capabilities">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Capabilities</p>
-          <h2>Manufacturing consistency you can design around.</h2>
-          <p class="lead">We stock pure nickel (Ni200 / Ni201) and nickel-plated options in standard and custom widths. Coiled or cut-to-length, with serialization for production traceability.</p>
-        </div>
-        <div class="cap-grid">
-          <div class="cap-card">
-            <h3>Precision Rolling</h3>
-            <p>Uniform grain structure with stable mechanical properties across batches.</p>
-          </div>
-          <div class="cap-card">
-            <h3>Clean Surface</h3>
-            <p>Low oxide finish for predictable spot-weld performance.</p>
-          </div>
-          <div class="cap-card">
-            <h3>Cut & Form</h3>
-            <p>Custom stamping, perforations, and bends for pack assembly.</p>
-          </div>
-          <div class="cap-card">
-            <h3>Bulk Logistics</h3>
-            <p>Flexible MOQ, scheduled releases, and export-ready packaging.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="solutions" id="solutions">
       <div class="container">
         <div class="section-head">
@@ -227,6 +162,7 @@
         <div class="catalog-grid" id="catalogGrid"></div>
       </div>
     </section>
+
 
     <section id="about" class="about">
       <div class="container about-grid">
@@ -342,7 +278,63 @@
         </form>
       </div>
     </section>
+
+    <section id="capabilities" class="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Factory-ready supply with custom design support.</h2>
+          <p class="lead">We support OEM factories with custom widths, stamping, and cut-to-length solutions, alongside reliable bulk supply programs.</p>
+        </div>
+        <div class="cap-grid">
+          <div class="cap-card">
+            <h3>Precision Rolling</h3>
+            <p>Uniform grain structure with stable mechanical properties across batches.</p>
+          </div>
+          <div class="cap-card">
+            <h3>Clean Surface</h3>
+            <p>Low oxide finish for predictable spot-weld performance.</p>
+          </div>
+          <div class="cap-card">
+            <h3>Custom Design</h3>
+            <p>Cut, form, and stamped layouts matched to your battery pack design.</p>
+          </div>
+          <div class="cap-card">
+            <h3>Factory Logistics</h3>
+            <p>Scheduled releases, export-ready packaging, and traceable lots.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <div class="sample-panel drawer" id="samplePanel">
+    <div class="sample-panel-header">
+      <h3>Sample Order</h3>
+      <button class="button ghost small" type="button" id="sampleClear">Clear</button>
+    </div>
+    <div id="sampleList" class="sample-list"></div>
+    <form class="sample-form" id="sampleForm">
+      <label>
+        Company Name
+        <input type="text" name="company" required placeholder="Your company" />
+      </label>
+      <label>
+        Email Address
+        <input type="email" name="email" required placeholder="you@company.com" />
+      </label>
+      <label>
+        Delivery Address
+        <textarea name="address" rows="3" required placeholder="Full address"></textarea>
+      </label>
+      <label>
+        Notes
+        <textarea name="notes" rows="3" placeholder="Qty, timeline, other requirements"></textarea>
+      </label>
+      <button class="button" type="submit">Request Sample</button>
+      <p class="form-note">This sends an email draft using your email client.</p>
+    </form>
+  </div>
 
   <section id="credits" class="credits">
     <div class="container">

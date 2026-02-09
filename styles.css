@@ -775,23 +775,6 @@ img {
   background: #f2f7ff;
 }
 
-.sample {
-  padding: 70px 0;
-  background: #eef4ff;
-  border-top: 1px solid var(--line);
-}
-
-.sample-floating {
-  position: relative;
-}
-
-.sample-grid {
-  display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(280px, 360px);
-  gap: 30px;
-  align-items: start;
-}
-
 .sample-panel {
   background: #fff;
   border-radius: 20px;
@@ -799,8 +782,6 @@ img {
   padding: 24px;
   display: grid;
   gap: 18px;
-  position: sticky;
-  top: 110px;
 }
 
 .sample-panel.drawer {
@@ -941,14 +922,6 @@ img {
 
   .nav-links {
     flex-wrap: wrap;
-  }
-
-  .sample-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sample-panel {
-    position: static;
   }
 
   .sample-panel.drawer {
