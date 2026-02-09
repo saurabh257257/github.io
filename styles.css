@@ -643,7 +643,7 @@ img {
 
 .catalog-layout {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr) 260px;
+  grid-template-columns: 200px minmax(0, 1fr) minmax(300px, 340px);
   gap: 24px;
   align-items: start;
 }
@@ -1058,6 +1058,7 @@ img {
   padding: 16px;
   display: grid;
   gap: 12px;
+  max-width: 100%;
 }
 
 
