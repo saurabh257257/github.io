@@ -562,13 +562,13 @@ img {
 
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
 .catalog-layout {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
+  grid-template-columns: 200px minmax(0, 1fr) 320px;
   gap: 24px;
   align-items: start;
 }
@@ -599,6 +599,30 @@ img {
 
 .catalog-main {
   min-width: 0;
+}
+
+.catalog-side {
+  position: sticky;
+  top: 100px;
+  display: grid;
+  gap: 16px;
+}
+
+.catalog-side.is-empty {
+  opacity: 0.25;
+  pointer-events: none;
+  filter: grayscale(0.3);
+}
+
+.catalog-side.is-empty::before {
+  content: "Add products to enable Sample & Order";
+  display: block;
+  padding: 12px 14px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  background: #f7faff;
+  font-size: 0.9rem;
 }
 
 .category-title {
@@ -841,6 +865,27 @@ img {
   gap: 16px;
 }
 
+.side-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.side-tab {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-tab.is-active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: transparent;
+}
+
 .side-forms.is-empty {
   opacity: 0.25;
   pointer-events: none;
@@ -867,22 +912,6 @@ img {
   gap: 18px;
 }
 
-.sample-panel.drawer {
-  position: fixed;
-  top: 96px;
-  right: 20px;
-  width: min(360px, 90vw);
-  max-height: calc(100vh - 140px);
-  overflow: auto;
-  transform: translateX(120%);
-  transition: transform 0.25s ease;
-  z-index: 30;
-  box-shadow: 0 20px 50px rgba(7, 12, 24, 0.2);
-}
-
-.sample-panel.drawer.is-open {
-  transform: translateX(0);
-}
 
 .sample-panel-header {
   display: flex;
@@ -1007,12 +1036,8 @@ img {
     flex-wrap: wrap;
   }
 
-  .main-layout {
+  .catalog-grid {
     grid-template-columns: 1fr;
-  }
-
-  .side-forms {
-    position: static;
   }
 
   .catalog-layout {
@@ -1023,12 +1048,8 @@ img {
     position: static;
   }
 
-  .sample-panel.drawer {
-    position: fixed;
-    top: 80px;
-    right: 12px;
-    left: 12px;
-    width: auto;
+  .catalog-side {
+    position: static;
   }
 }
 

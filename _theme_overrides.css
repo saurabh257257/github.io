@@ -90,13 +90,33 @@ body {
 }
 
 .solutions {
-  background: #eef4ff;
+  background: #0f2748;
+  color: #f5f9ff;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
+.solutions .lead,
+.solutions .solution-detail {
+  color: rgba(245, 249, 255, 0.8);
+}
+
+.solution-card {
+  background: #ffffff;
+}
+
+.solution-tag {
+  background: #e6efff;
+  color: #0b1a2b;
+}
+
 .contact {
-  background: #f5f8ff;
+  background: #0b1d39;
+  color: #f5f9ff;
+}
+
+.contact .lead {
+  color: rgba(245, 249, 255, 0.8);
 }
 
 .sample-panel,
@@ -128,8 +148,14 @@ a {
 }
 
 .site-footer {
-  background: #eef3ff;
+  background: #0b1d39;
+  color: #f5f9ff;
   border-top: 1px solid var(--line);
+}
+
+.site-footer .footer-title,
+.site-footer p {
+  color: rgba(245, 249, 255, 0.85);
 }
 
 .home-anchor {

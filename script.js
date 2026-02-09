@@ -3,14 +3,14 @@ const catalogGrid = document.querySelector("#catalogGrid");
 const sampleList = document.querySelector("#sampleList");
 const sampleForm = document.querySelector("#sampleForm");
 const sampleClear = document.querySelector("#sampleClear");
-const sampleToggle = document.querySelector("#sampleToggle");
 const samplePanel = document.querySelector("#samplePanel");
-const sideForms = document.querySelector("#sideForms");
 const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
 const orderList = document.querySelector("#orderList");
 const orderForm = document.querySelector("#orderForm");
 const orderClear = document.querySelector("#orderClear");
 const orderPanel = document.querySelector("#orderPanel");
+const sideTabs = document.querySelectorAll(".side-tab");
+const catalogSide = document.querySelector(".catalog-side");
 
 const CART_KEY = "sampleCart";
 const ORDER_KEY = "orderCart";
@@ -35,11 +35,11 @@ const setCart = (cart) => {
 };
 
 const updateSideFormsState = () => {
-  if (!sideForms) return;
+  if (!catalogSide) return;
   const sampleCount = Object.values(getCart()).reduce((sum, item) => sum + item.qty, 0);
   const orderCount = Object.values(getOrder()).reduce((sum, item) => sum + item.kg, 0);
   const empty = sampleCount === 0 && orderCount === 0;
-  sideForms.classList.toggle("is-empty", empty);
+  catalogSide.classList.toggle("is-empty", empty);
 };
 
 const renderCart = () => {
@@ -139,6 +139,7 @@ const addToOrder = (product) => {
   order[product.id].kg += 1;
   setOrder(order);
   renderOrder();
+  setActiveTab("order");
 };
 
 const updateOrderQty = (productId, delta) => {
@@ -170,6 +171,7 @@ const addToCart = (product) => {
   cart[product.id].qty += 1;
   setCart(cart);
   renderCart();
+  setActiveTab("sample");
 };
 
 const removeFromCart = (productId) => {
@@ -580,11 +582,23 @@ if (sampleForm) {
   });
 }
 
-if (sampleToggle && sideForms) {
-  sampleToggle.addEventListener("click", () => {
-    sideForms.scrollIntoView({ behavior: "smooth", block: "start" });
+const setActiveTab = (key) => {
+  sideTabs.forEach((tab) => {
+    tab.classList.toggle("is-active", tab.dataset.tab === key);
   });
-}
+  if (samplePanel) {
+    samplePanel.classList.toggle("is-active", key === "sample");
+  }
+  if (orderPanel) {
+    orderPanel.classList.toggle("is-active", key === "order");
+  }
+};
+
+sideTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    setActiveTab(tab.dataset.tab);
+  });
+});
 
 if (generateCatalogPdf) {
   generateCatalogPdf.addEventListener("click", generatePdf);

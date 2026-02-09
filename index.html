@@ -25,15 +25,12 @@
         <a href="#catalog">Product Catalog</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
-        <button class="button ghost" id="sampleToggle" type="button">Sample Order</button>
       </nav>
     </div>
   </header>
 
   <main>
     <section id="home" class="home-anchor"></section>
-    <div class="main-layout">
-      <div class="main-content">
     <section class="solutions" id="solutions">
       <div class="container">
         <div class="section-head">
@@ -117,6 +114,68 @@
 
         <div class="catalog-grid" id="catalogGrid"></div>
         </div>
+        <aside class="catalog-side">
+          <div class="side-tabs">
+            <button class="side-tab is-active" type="button" data-tab="sample">Sample</button>
+            <button class="side-tab" type="button" data-tab="order">Quote</button>
+          </div>
+
+          <div class="sample-panel is-active" id="samplePanel" data-panel="sample">
+            <div class="sample-panel-header">
+              <h3>Sample Order</h3>
+              <button class="button ghost small" type="button" id="sampleClear">Clear</button>
+            </div>
+            <div id="sampleList" class="sample-list"></div>
+            <form class="sample-form" id="sampleForm">
+              <label>
+                Company Name
+                <input type="text" name="company" required placeholder="Your company" />
+              </label>
+              <label>
+                Email Address
+                <input type="email" name="email" required placeholder="you@company.com" />
+              </label>
+              <label>
+                Delivery Address
+                <textarea name="address" rows="3" required placeholder="Full address"></textarea>
+              </label>
+              <label>
+                Notes
+                <textarea name="notes" rows="3" placeholder="Qty, timeline, other requirements"></textarea>
+              </label>
+              <button class="button" type="submit">Request Sample</button>
+              <p class="form-note">This sends an email draft using your email client.</p>
+            </form>
+          </div>
+
+          <div class="sample-panel" id="orderPanel" data-panel="order">
+            <div class="sample-panel-header">
+              <h3>Request Order</h3>
+              <button class="button ghost small" type="button" id="orderClear">Clear</button>
+            </div>
+            <div id="orderList" class="sample-list"></div>
+            <form class="sample-form" id="orderForm">
+              <label>
+                Company Name
+                <input type="text" name="company" required placeholder="Your company" />
+              </label>
+              <label>
+                Email Address
+                <input type="email" name="email" required placeholder="you@company.com" />
+              </label>
+              <label>
+                Delivery Address
+                <textarea name="address" rows="3" required placeholder="Full address"></textarea>
+              </label>
+              <label>
+                Notes
+                <textarea name="notes" rows="3" placeholder="KG, timeline, other requirements"></textarea>
+              </label>
+              <button class="button" type="submit">Request Order</button>
+              <p class="form-note">This sends an email draft using your email client.</p>
+            </form>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -150,64 +209,6 @@
         </div>
       </div>
     </section>
-      </div>
-      <aside class="side-forms" id="sideForms">
-        <div class="sample-panel" id="samplePanel">
-          <div class="sample-panel-header">
-            <h3>Sample Order</h3>
-            <button class="button ghost small" type="button" id="sampleClear">Clear</button>
-          </div>
-          <div id="sampleList" class="sample-list"></div>
-          <form class="sample-form" id="sampleForm">
-            <label>
-              Company Name
-              <input type="text" name="company" required placeholder="Your company" />
-            </label>
-            <label>
-              Email Address
-              <input type="email" name="email" required placeholder="you@company.com" />
-            </label>
-            <label>
-              Delivery Address
-              <textarea name="address" rows="3" required placeholder="Full address"></textarea>
-            </label>
-            <label>
-              Notes
-              <textarea name="notes" rows="3" placeholder="Qty, timeline, other requirements"></textarea>
-            </label>
-            <button class="button" type="submit">Request Sample</button>
-            <p class="form-note">This sends an email draft using your email client.</p>
-          </form>
-        </div>
-        <div class="sample-panel" id="orderPanel">
-          <div class="sample-panel-header">
-            <h3>Request Order</h3>
-            <button class="button ghost small" type="button" id="orderClear">Clear</button>
-          </div>
-          <div id="orderList" class="sample-list"></div>
-          <form class="sample-form" id="orderForm">
-            <label>
-              Company Name
-              <input type="text" name="company" required placeholder="Your company" />
-            </label>
-            <label>
-              Email Address
-              <input type="email" name="email" required placeholder="you@company.com" />
-            </label>
-            <label>
-              Delivery Address
-              <textarea name="address" rows="3" required placeholder="Full address"></textarea>
-            </label>
-            <label>
-              Notes
-              <textarea name="notes" rows="3" placeholder="KG, timeline, other requirements"></textarea>
-            </label>
-            <button class="button" type="submit">Request Order</button>
-            <p class="form-note">This sends an email draft using your email client.</p>
-          </form>
-        </div>
-      </aside>
-    </div>
   </main>
 
   <footer class="site-footer">
