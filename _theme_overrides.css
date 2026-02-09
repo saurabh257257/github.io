@@ -18,8 +18,8 @@ body {
 }
 
 .site-header {
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid var(--line);
+  background: #0b1d39;
+  border-bottom: 1px solid #0b1d39;
 }
 
 .brand-mark {
@@ -27,11 +27,26 @@ body {
   color: #ffffff;
 }
 
-.eyebrow {
-  color: var(--accent-dark);
+.brand-name,
+.brand-tag,
+.nav-links a {
+  color: #f5f9ff;
 }
 
 .nav-links a:hover {
+  color: #cfe1ff;
+}
+
+.button.ghost {
+  color: #f5f9ff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.button.ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.eyebrow {
   color: var(--accent-dark);
 }
 

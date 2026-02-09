@@ -34,6 +34,14 @@ const setCart = (cart) => {
   sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
 };
 
+const updateSideFormsState = () => {
+  if (!sideForms) return;
+  const sampleCount = Object.values(getCart()).reduce((sum, item) => sum + item.qty, 0);
+  const orderCount = Object.values(getOrder()).reduce((sum, item) => sum + item.kg, 0);
+  const empty = sampleCount === 0 && orderCount === 0;
+  sideForms.classList.toggle("is-empty", empty);
+};
+
 const renderCart = () => {
   if (!sampleList) return;
   const cart = getCart();
@@ -42,6 +50,7 @@ const renderCart = () => {
   const entries = Object.values(cart);
   if (entries.length === 0) {
     sampleList.innerHTML = "<p class='form-note'>No samples added yet. Click “+1 Sample” on any product.</p>";
+    updateSideFormsState();
     return;
   }
 
@@ -63,6 +72,7 @@ const renderCart = () => {
     });
     sampleList.appendChild(row);
   });
+  updateSideFormsState();
 };
 
 const getOrder = () => {
@@ -87,6 +97,7 @@ const renderOrder = () => {
   const entries = Object.values(order);
   if (entries.length === 0) {
     orderList.innerHTML = "<p class='form-note'>No items added yet. Click “Request Order” on any product.</p>";
+    updateSideFormsState();
     return;
   }
 
@@ -112,6 +123,7 @@ const renderOrder = () => {
     });
     orderList.appendChild(row);
   });
+  updateSideFormsState();
 };
 
 const addToOrder = (product) => {
@@ -392,6 +404,7 @@ const renderCatalog = (categories) => {
   }
   renderCart();
   renderOrder();
+  updateSideFormsState();
   window.catalogData = categories;
 };
 

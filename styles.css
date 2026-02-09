@@ -566,6 +566,41 @@ img {
   gap: 20px;
 }
 
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.catalog-filters {
+  position: sticky;
+  top: 100px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.catalog-filters h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.catalog-filters .filters {
+  display: grid;
+  gap: 8px;
+}
+
+.catalog-filters .filter-btn {
+  width: 100%;
+  text-align: left;
+}
+
+.catalog-main {
+  min-width: 0;
+}
+
 .category-title {
   font-size: 1rem;
   font-weight: 600;
@@ -806,6 +841,23 @@ img {
   gap: 16px;
 }
 
+.side-forms.is-empty {
+  opacity: 0.25;
+  pointer-events: none;
+  filter: grayscale(0.3);
+}
+
+.side-forms.is-empty::before {
+  content: "Add products to enable Sample & Order";
+  display: block;
+  padding: 12px 14px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  background: #f7faff;
+  font-size: 0.9rem;
+}
+
 .sample-panel {
   background: #fff;
   border-radius: 20px;
@@ -960,6 +1012,14 @@ img {
   }
 
   .side-forms {
+    position: static;
+  }
+
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-filters {
     position: static;
   }
 
