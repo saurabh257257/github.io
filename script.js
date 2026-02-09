@@ -64,6 +64,7 @@ const renderCart = () => {
           <div>${item.subtitle || ""}</div>
         </div>
         <div class="sample-qty">Qty: ${item.qty}</div>
+        <button class="remove-item" type="button" data-action="remove" aria-label="Remove item">×</button>
       </div>
       <div class="sample-controls">
         <button type="button" data-action="dec" data-id="${item.id}">-</button>
@@ -72,6 +73,10 @@ const renderCart = () => {
     `;
     row.querySelectorAll("button").forEach((btn) => {
       btn.addEventListener("click", () => {
+        if (btn.dataset.action === "remove") {
+          updateSampleQty(item.id, -9999);
+          return;
+        }
         const delta = btn.dataset.action === "inc" ? 1 : -1;
         updateSampleQty(item.id, delta);
       });
@@ -117,6 +122,7 @@ const renderOrder = () => {
           <div>${item.subtitle || ""}</div>
         </div>
         <div class="sample-qty">${item.kg} kg</div>
+        <button class="remove-item" type="button" data-action="remove" aria-label="Remove item">×</button>
       </div>
       <div class="sample-controls">
         <button type="button" data-action="dec" data-id="${item.id}">-</button>
@@ -125,6 +131,10 @@ const renderOrder = () => {
     `;
     row.querySelectorAll("button").forEach((btn) => {
       btn.addEventListener("click", () => {
+        if (btn.dataset.action === "remove") {
+          updateOrderQty(item.id, -9999);
+          return;
+        }
         const delta = btn.dataset.action === "inc" ? 1 : -1;
         updateOrderQty(item.id, delta);
       });
@@ -618,6 +628,7 @@ if (sampleForm) {
       ? (formData.get("countryOther") || "+91")
       : (formData.get("countryCode") || "+91");
     const mobile = formData.get("mobile") || "";
+    const description = formData.get("notes");
     const body = [
       "Sample Request",
       "",
@@ -625,11 +636,12 @@ if (sampleForm) {
       ...lines,
       "",
       `Mobile: ${countryCode} ${mobile}`.trim(),
-      `Email: ${formData.get("email") || "N/A"}`,
-      `Description: ${formData.get("notes") || "N/A"}`
-    ].join("\n");
+      `Email: ${formData.get("email") || "N/A"}`
+    ]
+      .concat(description ? [`Description: ${description}`] : [])
+      .join("\n");
 
-    const whatsapp = `https://wa.me/919999999999?text=${encodeURIComponent(body)}`;
+    const whatsapp = `https://wa.me/918882162827?text=${encodeURIComponent(body)}`;
     window.open(whatsapp, "_blank");
     sampleForm.reset();
   });
@@ -677,6 +689,7 @@ if (orderForm) {
       ? (formData.get("countryOther") || "+91")
       : (formData.get("countryCode") || "+91");
     const mobile = formData.get("mobile") || "";
+    const description = formData.get("notes");
     const body = [
       "Quote Request",
       "",
@@ -684,11 +697,12 @@ if (orderForm) {
       ...lines,
       "",
       `Mobile: ${countryCode} ${mobile}`.trim(),
-      `Email: ${formData.get("email") || "N/A"}`,
-      `Description: ${formData.get("notes") || "N/A"}`
-    ].join("\n");
+      `Email: ${formData.get("email") || "N/A"}`
+    ]
+      .concat(description ? [`Description: ${description}`] : [])
+      .join("\n");
 
-    const whatsapp = `https://wa.me/919999999999?text=${encodeURIComponent(body)}`;
+    const whatsapp = `https://wa.me/918882162827?text=${encodeURIComponent(body)}`;
     window.open(whatsapp, "_blank");
     orderForm.reset();
   });
@@ -703,17 +717,19 @@ if (aboutContactForm) {
       ? (formData.get("countryOther") || "+91")
       : (formData.get("countryCode") || "+91");
     const mobile = formData.get("mobile") || "";
+    const description = formData.get("notes");
     const body = [
       "General Inquiry",
       "",
       "Selected products: None",
       "",
       `Mobile: ${countryCode} ${mobile}`.trim(),
-      `Email: ${formData.get("email") || "N/A"}`,
-      `Description: ${formData.get("notes") || "N/A"}`
-    ].join("\n");
+      `Email: ${formData.get("email") || "N/A"}`
+    ]
+      .concat(description ? [`Description: ${description}`] : [])
+      .join("\n");
 
-    const whatsapp = `https://wa.me/919999999999?text=${encodeURIComponent(body)}`;
+    const whatsapp = `https://wa.me/918882162827?text=${encodeURIComponent(body)}`;
     window.open(whatsapp, "_blank");
     aboutContactForm.reset();
   });
