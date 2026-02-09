@@ -12,6 +12,16 @@
 </head>
 <body>
   <header class="site-header">
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <span>Call:</span>
+        <a href="tel:+918112662827">+91-8112662827</a>
+        <a class="wa-link" href="https://wa.me/918112662827" target="_blank" rel="noopener">WhatsApp</a>
+        <span class="divider">|</span>
+        <a href="tel:+91811233245">+91-811233245</a>
+        <a class="wa-link" href="https://wa.me/91811233245" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
     <div class="container nav">
       <div class="brand">
         <span class="brand-mark">AE</span>
@@ -22,9 +32,9 @@
       </div>
       <nav class="nav-links">
         <a href="#home">Home</a>
-        <a href="#catalog">Product Catalog</a>
-        <a href="#capabilities">Our Capabilities</a>
-        <a href="#about">About & Contact</a>
+        <a href="#catalog">Product Store</a>
+        <a href="capabilities.html">Our Capabilities</a>
+        <a href="about.html">About & Contact</a>
       </nav>
     </div>
   </header>
@@ -134,7 +144,7 @@
         </aside>
         <div class="catalog-main">
         <div class="section-head catalog-head">
-          <p class="eyebrow">Product Catalog</p>
+          <p class="eyebrow">Product Store</p>
           <button class="catalog-link" type="button" id="generateCatalogPdf">Download Catalog (PDF)</button>
         </div>
 
@@ -154,23 +164,19 @@
             <div id="sampleList" class="sample-list"></div>
             <form class="sample-form" id="sampleForm">
               <label>
-                Company Name
-                <input type="text" name="company" required placeholder="Your company" />
+                Mobile Number (with country code)
+                <input type="tel" name="mobile" required placeholder="+91XXXXXXXXXX" />
               </label>
               <label>
                 Email Address
                 <input type="email" name="email" required placeholder="you@company.com" />
               </label>
               <label>
-                Delivery Address
-                <textarea name="address" rows="3" required placeholder="Full address"></textarea>
-              </label>
-              <label>
-                Notes
-                <textarea name="notes" rows="3" placeholder="Qty, timeline, other requirements"></textarea>
+                Description
+                <textarea name="notes" rows="4" required placeholder="Qty, timeline, other requirements"></textarea>
               </label>
               <button class="button" type="submit">Request Sample</button>
-              <p class="form-note">This sends an email draft using your email client.</p>
+              <p class="form-note">Opens WhatsApp with your request details.</p>
             </form>
           </div>
 
@@ -182,23 +188,19 @@
             <div id="orderList" class="sample-list"></div>
             <form class="sample-form" id="orderForm">
               <label>
-                Company Name
-                <input type="text" name="company" required placeholder="Your company" />
+                Mobile Number (with country code)
+                <input type="tel" name="mobile" required placeholder="+91XXXXXXXXXX" />
               </label>
               <label>
                 Email Address
                 <input type="email" name="email" required placeholder="you@company.com" />
               </label>
               <label>
-                Delivery Address
-                <textarea name="address" rows="3" required placeholder="Full address"></textarea>
-              </label>
-              <label>
-                Notes
-                <textarea name="notes" rows="3" placeholder="KG, timeline, other requirements"></textarea>
+                Description
+                <textarea name="notes" rows="4" required placeholder="KG, timeline, other requirements"></textarea>
               </label>
               <button class="button" type="submit">Add to Quote</button>
-              <p class="form-note">This sends an email draft using your email client.</p>
+              <p class="form-note">Opens WhatsApp with your request details.</p>
             </form>
           </div>
         </aside>

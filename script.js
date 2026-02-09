@@ -134,7 +134,7 @@ const renderOrder = () => {
   updateSideFormsState();
 };
 
-const addToOrder = (product) => {
+const addToOrder = (product, qty) => {
   const order = getOrder();
   if (!order[product.id]) {
     order[product.id] = {
@@ -144,7 +144,7 @@ const addToOrder = (product) => {
       kg: 0
     };
   }
-  order[product.id].kg += 1;
+  order[product.id].kg += qty;
   setOrder(order);
   renderOrder();
   setActiveTab("order");
@@ -298,7 +298,8 @@ const createCard = (product, categoryName) => {
   const badge = "";
   const specs = (product.specs || []).map((spec) => `<li>${spec}</li>`).join("");
   const priceLine = product.price ? `<span class="price">Price: ${product.price}</span>` : "";
-  const moqLine = product.minQuantity ? `<span class="price">Min Qty: ${product.minQuantity}</span>` : "";
+  const minQty = Number(product.minQuantity) || 1;
+  const moqLine = product.minQuantity ? `<span class="price">Min Qty: ${minQty} kg</span>` : "";
 
   card.innerHTML = `
     ${badge}
@@ -319,7 +320,12 @@ const createCard = (product, categoryName) => {
           <ul>${specs}</ul>
         </div>
         <div class="card-actions">
-          <button class="button ghost" type="button" data-order="${product.id}">Add to Quote</button>
+          <div class="quote-controls" data-qty="${minQty}">
+            <button class="qty-btn" type="button" data-action="dec">-</button>
+            <span class="qty-value">${minQty} kg</span>
+            <button class="qty-btn" type="button" data-action="inc">+</button>
+          </div>
+          <button class="button" type="button" data-order="${product.id}">Add to Quote</button>
           <button class="button" type="button" data-sample="${product.id}">Request Sample</button>
         </div>
       </div>
@@ -336,8 +342,25 @@ const createCard = (product, categoryName) => {
   });
 
   const orderBtn = card.querySelector("[data-order]");
+  const qtyControl = card.querySelector(".quote-controls");
+  const qtyValue = card.querySelector(".qty-value");
+  const updateQty = (delta) => {
+    const current = Number(qtyControl.dataset.qty) || minQty;
+    const next = Math.max(minQty, current + delta);
+    qtyControl.dataset.qty = String(next);
+    qtyValue.textContent = `${next} kg`;
+  };
+
+  qtyControl.querySelectorAll(".qty-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const delta = btn.dataset.action === "inc" ? 1 : -1;
+      updateQty(delta);
+    });
+  });
+
   orderBtn.addEventListener("click", () => {
-    addToOrder(product);
+    const qty = Number(qtyControl.dataset.qty) || minQty;
+    addToOrder(product, qty);
     if (orderPanel) {
       orderPanel.classList.add("is-open");
     }
@@ -581,28 +604,30 @@ if (sampleClear) {
 
 if (sampleForm) {
   sampleForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const cart = getCart();
-  const items = Object.values(cart);
-  if (items.length === 0) {
-    alert("Add at least one sample before submitting.");
-    return;
-  }
+    event.preventDefault();
+    const cart = getCart();
+    const items = Object.values(cart);
+    if (items.length === 0) {
+      alert("Add at least one sample before submitting.");
+      return;
+    }
 
-  const formData = new FormData(sampleForm);
-  const lines = items.map((item) => `${item.name} (${item.subtitle || ""}) x ${item.qty}`);
-  const body = [
-    `Company: ${formData.get("company")}`,
-    `Email: ${formData.get("email")}`,
-    `Address: ${formData.get("address")}`,
-    `Notes: ${formData.get("notes") || ""}`,
-    "",
-    "Sample Request:",
-    ...lines
-  ].join("\n");
+    const formData = new FormData(sampleForm);
+    const lines = items.map((item) => `${item.name} (${item.subtitle || ""}) x ${item.qty}`);
+    const body = [
+      "Sample Request",
+      "",
+      "Selected products:",
+      ...lines,
+      "",
+      `Mobile: ${formData.get("mobile") || "N/A"}`,
+      `Email: ${formData.get("email") || "N/A"}`,
+      `Description: ${formData.get("notes") || "N/A"}`
+    ].join("\n");
 
-  const mailto = `mailto:sales@arambhika-enablers.com?subject=${encodeURIComponent("Sample Request")}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailto;
+    const whatsapp = `https://wa.me/919999999999?text=${encodeURIComponent(body)}`;
+    window.open(whatsapp, "_blank");
+    sampleForm.reset();
   });
 }
 
@@ -645,17 +670,40 @@ if (orderForm) {
     const formData = new FormData(orderForm);
     const lines = items.map((item) => `${item.name} (${item.subtitle || ""}) x ${item.kg} kg`);
     const body = [
-      `Company: ${formData.get("company")}`,
-      `Email: ${formData.get("email")}`,
-      `Address: ${formData.get("address")}`,
-      `Notes: ${formData.get("notes") || ""}`,
+      "Quote Request",
       "",
-      "Order Request:",
-      ...lines
+      "Selected products:",
+      ...lines,
+      "",
+      `Mobile: ${formData.get("mobile") || "N/A"}`,
+      `Email: ${formData.get("email") || "N/A"}`,
+      `Description: ${formData.get("notes") || "N/A"}`
     ].join("\n");
 
-    const mailto = `mailto:sales@arambhika-enablers.com?subject=${encodeURIComponent("Order Request")}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    const whatsapp = `https://wa.me/919999999999?text=${encodeURIComponent(body)}`;
+    window.open(whatsapp, "_blank");
+    orderForm.reset();
+  });
+}
+
+const aboutContactForm = document.querySelector("#aboutContactForm");
+if (aboutContactForm) {
+  aboutContactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(aboutContactForm);
+    const body = [
+      "General Inquiry",
+      "",
+      "Selected products: None",
+      "",
+      `Mobile: ${formData.get("mobile") || "N/A"}`,
+      `Email: ${formData.get("email") || "N/A"}`,
+      `Description: ${formData.get("notes") || "N/A"}`
+    ].join("\n");
+
+    const whatsapp = `https://wa.me/919999999999?text=${encodeURIComponent(body)}`;
+    window.open(whatsapp, "_blank");
+    aboutContactForm.reset();
   });
 }
 

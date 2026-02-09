@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arambhika Enablers | Contact</title>
+  <title>Arambhika Enablers | About & Contact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
@@ -12,6 +12,16 @@
 </head>
 <body>
   <header class="site-header">
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <span>Call:</span>
+        <a href="tel:+918112662827">+91-8112662827</a>
+        <a class="wa-link" href="https://wa.me/918112662827" target="_blank" rel="noopener">WhatsApp</a>
+        <span class="divider">|</span>
+        <a href="tel:+91811233245">+91-811233245</a>
+        <a class="wa-link" href="https://wa.me/91811233245" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
     <div class="container nav">
       <div class="brand">
         <span class="brand-mark">AE</span>
@@ -22,101 +32,49 @@
       </div>
       <nav class="nav-links">
         <a href="index.html#home">Home</a>
-        <a href="index.html#catalog">Product Catalog</a>
-        <a href="index.html#capabilities">Our Capabilities</a>
-        <a href="index.html#about">About & Contact</a>
+        <a href="index.html#catalog">Product Store</a>
+        <a href="capabilities.html">Our Capabilities</a>
+        <a href="about.html">About & Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="contact" class="contact">
-      <div class="container contact-grid">
+    <section id="about" class="about">
+      <div class="container about-grid">
         <div>
-          <p class="eyebrow">Get in touch</p>
-          <h2>Share your specs. We will quote within 24 hours.</h2>
-          <p class="lead">Send your required thickness, width, quantity, and delivery timeline. We support trial orders, recurring supply, and long-term procurement.</p>
-          <div class="contact-meta">
-            <p><strong>Email:</strong> sales@arambhika-enablers.com</p>
-            <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
-            <p><strong>Location:</strong> Pune, India (global shipping)</p>
+          <p class="eyebrow">About Us</p>
+          <h2>Arambhika Enablers is focused on reliable battery interconnect supply.</h2>
+          <p class="lead">From plated and pure nickel strips to copper busbars and prismatic cells, we support B2B manufacturers with consistent quality, traceability, and responsive logistics.</p>
+          <div class="about-card">
+            <h3>Why partners choose us</h3>
+            <ul>
+              <li>Stable sourcing with documented inspection</li>
+              <li>Custom widths, stamping, and bending</li>
+              <li>Support for sampling and long-term contracts</li>
+            </ul>
           </div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" id="aboutContactForm">
+          <p class="eyebrow">Contact Us</p>
           <label>
-            Company Name
-            <input type="text" placeholder="Your company" />
+            Mobile Number (with country code)
+            <input type="tel" name="mobile" required placeholder="+91XXXXXXXXXX" />
           </label>
           <label>
             Email Address
-            <input type="email" placeholder="you@company.com" />
+            <input type="email" name="email" required placeholder="you@company.com" />
           </label>
           <label>
-            Requirements
-            <textarea rows="5" placeholder="Thickness, width, qty, delivery timeline"></textarea>
+            Description
+            <textarea name="notes" rows="5" required placeholder="Tell us what you need"></textarea>
           </label>
-          <button class="button" type="button">Send Inquiry</button>
-          <p class="form-note">This form is a UI placeholder. Connect it to your email or CRM later.</p>
+          <button class="button" type="submit">Send Inquiry</button>
+          <p class="form-note">Opens WhatsApp with your request details.</p>
         </form>
       </div>
     </section>
   </main>
-
-  <div class="sample-panel drawer" id="samplePanel">
-    <div class="sample-panel-header">
-      <h3>Sample Order</h3>
-      <button class="button ghost small" type="button" id="sampleClear">Clear</button>
-    </div>
-    <div id="sampleList" class="sample-list"></div>
-    <form class="sample-form" id="sampleForm">
-      <label>
-        Company Name
-        <input type="text" name="company" required placeholder="Your company" />
-      </label>
-      <label>
-        Email Address
-        <input type="email" name="email" required placeholder="you@company.com" />
-      </label>
-      <label>
-        Delivery Address
-        <textarea name="address" rows="3" required placeholder="Full address"></textarea>
-      </label>
-      <label>
-        Notes
-        <textarea name="notes" rows="3" placeholder="Qty, timeline, other requirements"></textarea>
-      </label>
-      <button class="button" type="submit">Request Sample</button>
-      <p class="form-note">This sends an email draft using your email client.</p>
-    </form>
-  </div>
-
-  <div class="sample-panel drawer" id="orderPanel">
-    <div class="sample-panel-header">
-      <h3>Request Order</h3>
-      <button class="button ghost small" type="button" id="orderClear">Clear</button>
-    </div>
-    <div id="orderList" class="sample-list"></div>
-    <form class="sample-form" id="orderForm">
-      <label>
-        Company Name
-        <input type="text" name="company" required placeholder="Your company" />
-      </label>
-      <label>
-        Email Address
-        <input type="email" name="email" required placeholder="you@company.com" />
-      </label>
-      <label>
-        Delivery Address
-        <textarea name="address" rows="3" required placeholder="Full address"></textarea>
-      </label>
-      <label>
-        Notes
-        <textarea name="notes" rows="3" placeholder="KG, timeline, other requirements"></textarea>
-      </label>
-      <button class="button" type="submit">Request Order</button>
-      <p class="form-note">This sends an email draft using your email client.</p>
-    </form>
-  </div>
 
   <footer class="site-footer">
     <div class="container footer-grid">
@@ -135,8 +93,6 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

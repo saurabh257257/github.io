@@ -44,9 +44,38 @@ img {
   position: sticky;
   top: 0;
   backdrop-filter: blur(16px);
-  background: var(--navy);
+  background: #1e5eff;
   z-index: 10;
-  border-bottom: 1px solid var(--navy);
+  border-bottom: 1px solid #1e5eff;
+}
+
+.top-bar {
+  background: #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
+  font-size: 0.85rem;
+}
+
+.top-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: #ffffff;
+  padding: 8px 0;
+}
+
+.top-bar-inner a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-bar-inner .wa-link {
+  color: var(--accent);
+}
+
+.top-bar-inner .divider {
+  opacity: 0.6;
 }
 
 .nav {
@@ -705,6 +734,43 @@ img {
   flex-wrap: wrap;
 }
 
+.quote-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 0.85rem;
+}
+
+.qty-btn {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink);
+  border-radius: 999px;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.qty-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.qty-value {
+  min-width: 56px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .card-actions .button {
   padding: 10px 16px;
   font-size: 0.9rem;
@@ -971,9 +1037,9 @@ img {
   background: #fff;
   border-radius: 20px;
   border: 1px solid var(--line);
-  padding: 24px;
+  padding: 16px;
   display: grid;
-  gap: 18px;
+  gap: 12px;
 }
 
 
@@ -986,17 +1052,17 @@ img {
 
 .sample-list {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .sample-item {
   display: grid;
-  gap: 8px;
-  padding: 10px 12px;
+  gap: 6px;
+  padding: 8px 10px;
   border-radius: 14px;
   background: #edf3ff;
   border: 1px solid #d6e2f5;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
 
 .sample-item-header {
@@ -1008,7 +1074,7 @@ img {
 
 .sample-controls {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .sample-item strong {
@@ -1020,21 +1086,21 @@ img {
   background: #121826;
   color: #fff;
   border-radius: 999px;
-  padding: 4px 10px;
-  font-size: 0.8rem;
+  padding: 3px 8px;
+  font-size: 0.75rem;
   cursor: pointer;
 }
 
 .sample-form {
   display: grid;
-  gap: 14px;
+  gap: 10px;
 }
 
 .sample-form label {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--muted);
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
 .sample-form input,
@@ -1042,8 +1108,9 @@ img {
   width: 100%;
   border-radius: 12px;
   border: 1px solid #d8e3f2;
-  padding: 10px 12px;
+  padding: 8px 10px;
   font-family: inherit;
+  font-size: 0.85rem;
 }
 
 .contact-grid {
