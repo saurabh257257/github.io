@@ -262,6 +262,26 @@ img {
   padding: 32px 0;
 }
 
+.solutions-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.solutions-label {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+}
+
+.solutions-label h2 {
+  font-size: 1.1rem;
+}
+
+.solutions-label .lead {
+  font-size: 0.85rem;
+}
+
 .solutions-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -568,7 +588,7 @@ img {
 
 .catalog-layout {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr) 320px;
+  grid-template-columns: 200px minmax(0, 1fr) 260px;
   gap: 24px;
   align-items: start;
 }
@@ -641,7 +661,7 @@ img {
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 320px 1fr;
   gap: 20px;
   align-items: start;
 }
@@ -652,14 +672,19 @@ img {
 }
 
 .catalog-card h3 {
-  font-size: 1.35rem;
+  font-size: 1.1rem;
   margin-bottom: 6px;
 }
 
 .catalog-card .sku {
   color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 12px;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.catalog-card p,
+.catalog-card li {
+  font-size: 0.85rem;
 }
 
 .card-actions {
@@ -1054,6 +1079,17 @@ img {
 
   .catalog-side {
     position: static;
+  }
+
+  .solutions-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .solutions-label {
+    border-left: none;
+    border-bottom: 3px solid var(--accent);
+    padding-left: 0;
+    padding-bottom: 12px;
   }
 
   .catalog-card {
