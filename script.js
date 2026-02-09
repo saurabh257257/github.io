@@ -283,22 +283,24 @@ const createCard = (product, categoryName) => {
 
   card.innerHTML = `
     ${badge}
-    <p class="category-title">${categoryName}</p>
-    <h3>${product.name}</h3>
-    <p class="sku">${product.subtitle || ""}</p>
-    ${priceLine}
-    ${moqLine}
-    <button class="details-toggle" type="button" data-details="${product.id}">
-      <span>+</span>
-      More details
-    </button>
-    <div class="details" data-details-panel="${product.id}">
-      <p>${product.summary || ""}</p>
-      <ul>${specs}</ul>
-    </div>
-    <div class="card-actions">
-      <button class="button ghost" type="button" data-order="${product.id}">Add to Quote +</button>
-      <button class="button" type="button" data-sample="${product.id}">Add Sample +</button>
+    <div class="catalog-body">
+      <p class="category-title">${categoryName}</p>
+      <h3>${product.name}</h3>
+      <p class="sku">${product.subtitle || ""}</p>
+      ${priceLine}
+      ${moqLine}
+      <button class="details-toggle" type="button" data-details="${product.id}">
+        <span>+</span>
+        More details
+      </button>
+      <div class="details" data-details-panel="${product.id}">
+        <p>${product.summary || ""}</p>
+        <ul>${specs}</ul>
+      </div>
+      <div class="card-actions">
+        <button class="button ghost" type="button" data-order="${product.id}">Add to Quote +</button>
+        <button class="button" type="button" data-sample="${product.id}">Add Sample +</button>
+      </div>
     </div>
   `;
 

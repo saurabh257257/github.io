@@ -14,12 +14,12 @@
 
 body {
   color: var(--ink);
-  background: #ffffff;
+  background: #ffffff !important;
 }
 
 .site-header {
-  background: #0b1d39;
-  border-bottom: 1px solid #0b1d39;
+  background: #0b1d39 !important;
+  border-bottom: 1px solid #0b1d39 !important;
 }
 
 .brand-mark {

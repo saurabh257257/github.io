@@ -562,7 +562,7 @@ img {
 
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -640,6 +640,10 @@ img {
   border: 1px solid var(--line);
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+  align-items: start;
 }
 
 .catalog-card:hover {
@@ -709,8 +713,8 @@ img {
   overflow: hidden;
   background: linear-gradient(135deg, #f7ead9, #f5f1e9);
   border: 1px solid var(--line);
-  margin-bottom: 14px;
-  aspect-ratio: 16 / 10;
+  margin-bottom: 0;
+  aspect-ratio: 4 / 3;
 }
 
 .carousel img {
@@ -1051,6 +1055,10 @@ img {
   .catalog-side {
     position: static;
   }
+
+  .catalog-card {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1111,4 +1119,40 @@ img {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.catalog-card .details {
+  margin-top: 8px;
+}
+
+.catalog-card .card-actions {
+  margin-top: 12px;
+}
+
+.catalog-card .sku {
+  margin-bottom: 6px;
+}
+
+.catalog-card p {
+  margin-bottom: 6px;
+}
+
+.catalog-card ul {
+  margin-top: 8px;
+}
+
+.catalog-card .details-toggle {
+  margin: 6px 0;
+}
+
+.catalog-card .catalog-body {
+  display: grid;
+  gap: 6px;
+}
+
+.sample-panel {
+  display: none;
+}
+
+.sample-panel.is-active {
+  display: grid;
 }
