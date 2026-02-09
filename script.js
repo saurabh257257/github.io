@@ -58,17 +58,23 @@ const renderCart = () => {
     const row = document.createElement("div");
     row.className = "sample-item";
     row.innerHTML = `
-      <div>
-        <strong>${item.name}</strong>
-        <div>${item.subtitle || ""}</div>
+      <div class="sample-item-header">
+        <div>
+          <strong>${item.name}</strong>
+          <div>${item.subtitle || ""}</div>
+        </div>
+        <div class="sample-qty">Qty: ${item.qty}</div>
       </div>
-      <div>
-        <span>Qty: ${item.qty}</span>
-        <button type="button" data-id="${item.id}">-1</button>
+      <div class="sample-controls">
+        <button type="button" data-action="dec" data-id="${item.id}">-</button>
+        <button type="button" data-action="inc" data-id="${item.id}">+</button>
       </div>
     `;
-    row.querySelector("button").addEventListener("click", () => {
-      removeFromCart(item.id);
+    row.querySelectorAll("button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const delta = btn.dataset.action === "inc" ? 1 : -1;
+        updateSampleQty(item.id, delta);
+      });
     });
     sampleList.appendChild(row);
   });
@@ -105,14 +111,16 @@ const renderOrder = () => {
     const row = document.createElement("div");
     row.className = "sample-item";
     row.innerHTML = `
-      <div>
-        <strong>${item.name}</strong>
-        <div>${item.subtitle || ""}</div>
+      <div class="sample-item-header">
+        <div>
+          <strong>${item.name}</strong>
+          <div>${item.subtitle || ""}</div>
+        </div>
+        <div class="sample-qty">${item.kg} kg</div>
       </div>
-      <div>
-        <span>${item.kg} kg</span>
-        <button type="button" data-action="dec" data-id="${item.id}">-1</button>
-        <button type="button" data-action="inc" data-id="${item.id}">+1</button>
+      <div class="sample-controls">
+        <button type="button" data-action="dec" data-id="${item.id}">-</button>
+        <button type="button" data-action="inc" data-id="${item.id}">+</button>
       </div>
     `;
     row.querySelectorAll("button").forEach((btn) => {
@@ -172,6 +180,17 @@ const addToCart = (product) => {
   setCart(cart);
   renderCart();
   setActiveTab("sample");
+};
+
+const updateSampleQty = (productId, delta) => {
+  const cart = getCart();
+  if (!cart[productId]) return;
+  cart[productId].qty += delta;
+  if (cart[productId].qty <= 0) {
+    delete cart[productId];
+  }
+  setCart(cart);
+  renderCart();
 };
 
 const removeFromCart = (productId) => {
@@ -276,30 +295,33 @@ const createCard = (product, categoryName) => {
   card.className = "catalog-card";
   card.dataset.category = categoryName;
 
-  const badge = product.badge ? `<span class="badge">${product.badge}</span>` : "";
+  const badge = "";
   const specs = (product.specs || []).map((spec) => `<li>${spec}</li>`).join("");
-  const priceLine = product.price ? `<p class="sku">Price: ${product.price}</p>` : "";
-  const moqLine = product.minQuantity ? `<p class="sku">Min Qty: ${product.minQuantity}</p>` : "";
+  const priceLine = product.price ? `<span class="price">Price: ${product.price}</span>` : "";
+  const moqLine = product.minQuantity ? `<span class="price">Min Qty: ${product.minQuantity}</span>` : "";
 
   card.innerHTML = `
     ${badge}
     <div class="catalog-body">
-      <p class="category-title">${categoryName}</p>
-      <h3>${product.name}</h3>
-      <p class="sku">${product.subtitle || ""}</p>
-      ${priceLine}
-      ${moqLine}
-      <button class="details-toggle" type="button" data-details="${product.id}">
-        <span>+</span>
-        More details
-      </button>
-      <div class="details" data-details-panel="${product.id}">
+      <div class="details-bottom">
+        <h3>${product.name}</h3>
+        <p class="sku">${product.subtitle || ""}</p>
         <p>${product.summary || ""}</p>
-        <ul>${specs}</ul>
-      </div>
-      <div class="card-actions">
-        <button class="button ghost" type="button" data-order="${product.id}">Add to Quote +</button>
-        <button class="button" type="button" data-sample="${product.id}">Add Sample +</button>
+        <div class="price-row">
+          ${priceLine}
+          ${moqLine}
+        </div>
+        <button class="details-toggle" type="button" data-details="${product.id}">
+          <span>+</span>
+          More details
+        </button>
+        <div class="details" data-details-panel="${product.id}">
+          <ul>${specs}</ul>
+        </div>
+        <div class="card-actions">
+          <button class="button ghost" type="button" data-order="${product.id}">Request Order</button>
+          <button class="button" type="button" data-sample="${product.id}">Request Sample</button>
+        </div>
       </div>
     </div>
   `;

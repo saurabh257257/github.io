@@ -472,29 +472,28 @@ img {
   border-color: transparent;
 }
 
-.catalog-actions {
+.catalog-head {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 16px;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-.catalog:hover .catalog-actions {
-  opacity: 1;
-  transform: translateY(0);
+.catalog-link {
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-.download-btn {
-  background: #0b1d39;
-  color: #fff;
-  box-shadow: 0 12px 24px rgba(11, 29, 57, 0.3);
-}
-
-.download-btn:hover {
-  background: #12325f;
+.catalog-link:hover {
+  color: var(--accent-strong, #0b1d39);
 }
 
 .pdf-root {
@@ -831,6 +830,30 @@ img {
   color: #fff;
 }
 
+.badge {
+  display: none;
+}
+
+.details-bottom {
+  align-self: end;
+}
+
+.price-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-weight: 600;
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  margin: 6px 0;
+}
+
+.price-row .price {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .specs {
   background: #0b1d39;
   color: #fdf6e9;
@@ -955,15 +978,25 @@ img {
 }
 
 .sample-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
+  display: grid;
+  gap: 8px;
   padding: 10px 12px;
   border-radius: 14px;
   background: #edf3ff;
   border: 1px solid #d6e2f5;
   font-size: 0.9rem;
+}
+
+.sample-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sample-controls {
+  display: flex;
+  gap: 8px;
 }
 
 .sample-item strong {
