@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arambhika Enablers | Nickel Strips B2B</title>
+  <title>Arambhika Enablers | Contact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -21,8 +21,8 @@
         </div>
       </div>
       <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#catalog">Product Catalog</a>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#catalog">Product Catalog</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
         <button class="button ghost" id="sampleToggle" type="button">Sample Order</button>
@@ -32,80 +32,34 @@
   </header>
 
   <main>
-    <section id="home" class="home-anchor"></section>
-    <section class="solutions" id="solutions">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Solutions</p>
-          <h2>Solutions for battery manufacturers.</h2>
-          <p class="lead">Matched to your production scale.</p>
-        </div>
-        <div class="solutions-grid">
-          <article class="solution-card">
-            <h3>Small B2B Manufacturers</h3>
-            <p class="solution-tag">Nickel‑plated strip</p>
-            <p>Cost‑effective plated strips for compact packs.</p>
-          </article>
-          <article class="solution-card">
-            <h3>Mid‑Sized B2B Manufacturers</h3>
-            <p class="solution-tag">Pure nickel strip</p>
-            <p>High‑purity nickel for repeatable welding.</p>
-          </article>
-          <article class="solution-card">
-            <h3>Large Factories</h3>
-            <p class="solution-tag">Copper busbars</p>
-            <p>High‑current copper busbars for ESS lines.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="catalog" class="catalog">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Product Catalog</p>
-          <h2>Configured products ready to ship or customize.</h2>
-          <p class="lead">Update product details and images to refresh the catalog.</p>
-        </div>
-
-        <div class="catalog-actions">
-          <a class="button download-btn" href="catalog.pdf" download>Download Catalog (PDF)</a>
-          <button class="button ghost" type="button" id="generateCatalogPdf">Generate PDF</button>
-        </div>
-
-        <div class="filters" id="categoryFilters"></div>
-        <div class="catalog-grid" id="catalogGrid"></div>
-      </div>
-    </section>
-
-
-    <section id="about" class="about">
-      <div class="container about-grid">
-        <div>
-          <p class="eyebrow">About Us</p>
-          <h2>Arambhika Enablers is focused on reliable battery interconnect supply.</h2>
-          <p class="lead">From plated and pure nickel strips to copper busbars and prismatic cells, we support B2B manufacturers with consistent quality, traceability, and responsive logistics.</p>
-        </div>
-        <div class="about-card">
-          <h3>Why partners choose us</h3>
-          <ul>
-            <li>Stable sourcing with documented inspection</li>
-            <li>Custom widths, stamping, and bending</li>
-            <li>Support for sampling and long‑term contracts</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-
     <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Contact Us</p>
-          <h2>Reach our team for pricing, samples, and supply planning.</h2>
-          <p class="lead">Visit the Contact Us page to send your requirements and get a response within 24 hours.</p>
-          <a class="button" href="contact.html">Go to Contact Page</a>
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2>Share your specs. We will quote within 24 hours.</h2>
+          <p class="lead">Send your required thickness, width, quantity, and delivery timeline. We support trial orders, recurring supply, and long-term procurement.</p>
+          <div class="contact-meta">
+            <p><strong>Email:</strong> sales@arambhika-enablers.com</p>
+            <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+            <p><strong>Location:</strong> Pune, India (global shipping)</p>
+          </div>
         </div>
+        <form class="contact-form">
+          <label>
+            Company Name
+            <input type="text" placeholder="Your company" />
+          </label>
+          <label>
+            Email Address
+            <input type="email" placeholder="you@company.com" />
+          </label>
+          <label>
+            Requirements
+            <textarea rows="5" placeholder="Thickness, width, qty, delivery timeline"></textarea>
+          </label>
+          <button class="button" type="button">Send Inquiry</button>
+          <p class="form-note">This form is a UI placeholder. Connect it to your email or CRM later.</p>
+        </form>
       </div>
     </section>
   </main>

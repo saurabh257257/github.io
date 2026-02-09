@@ -6,8 +6,13 @@ const sampleClear = document.querySelector("#sampleClear");
 const sampleToggle = document.querySelector("#sampleToggle");
 const samplePanel = document.querySelector("#samplePanel");
 const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
+const orderList = document.querySelector("#orderList");
+const orderForm = document.querySelector("#orderForm");
+const orderClear = document.querySelector("#orderClear");
+const orderPanel = document.querySelector("#orderPanel");
 
 const CART_KEY = "sampleCart";
+const ORDER_KEY = "orderCart";
 
 const placeholderImage = (label) => {
   const safe = encodeURIComponent(label || "Product");
@@ -29,6 +34,7 @@ const setCart = (cart) => {
 };
 
 const renderCart = () => {
+  if (!sampleList) return;
   const cart = getCart();
   sampleList.innerHTML = "";
 
@@ -56,6 +62,86 @@ const renderCart = () => {
     });
     sampleList.appendChild(row);
   });
+};
+
+const getOrder = () => {
+  const raw = sessionStorage.getItem(ORDER_KEY);
+  if (!raw) return {};
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+};
+
+const setOrder = (order) => {
+  sessionStorage.setItem(ORDER_KEY, JSON.stringify(order));
+};
+
+const renderOrder = () => {
+  if (!orderList) return;
+  const order = getOrder();
+  orderList.innerHTML = "";
+
+  const entries = Object.values(order);
+  if (entries.length === 0) {
+    orderList.innerHTML = "<p class='form-note'>No items added yet. Click “Request Order” on any product.</p>";
+    return;
+  }
+
+  entries.forEach((item) => {
+    const row = document.createElement("div");
+    row.className = "sample-item";
+    row.innerHTML = `
+      <div>
+        <strong>${item.name}</strong>
+        <div>${item.subtitle || ""}</div>
+      </div>
+      <div>
+        <span>${item.kg} kg</span>
+        <button type="button" data-action="dec" data-id="${item.id}">-1</button>
+        <button type="button" data-action="inc" data-id="${item.id}">+1</button>
+      </div>
+    `;
+    row.querySelectorAll("button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const delta = btn.dataset.action === "inc" ? 1 : -1;
+        updateOrderQty(item.id, delta);
+      });
+    });
+    orderList.appendChild(row);
+  });
+};
+
+const addToOrder = (product) => {
+  const order = getOrder();
+  if (!order[product.id]) {
+    order[product.id] = {
+      id: product.id,
+      name: product.name,
+      subtitle: product.subtitle,
+      kg: 0
+    };
+  }
+  order[product.id].kg += 1;
+  setOrder(order);
+  renderOrder();
+};
+
+const updateOrderQty = (productId, delta) => {
+  const order = getOrder();
+  if (!order[productId]) return;
+  order[productId].kg += delta;
+  if (order[productId].kg <= 0) {
+    delete order[productId];
+  }
+  setOrder(order);
+  renderOrder();
+};
+
+const clearOrder = () => {
+  sessionStorage.removeItem(ORDER_KEY);
+  renderOrder();
 };
 
 const addToCart = (product) => {
@@ -196,7 +282,7 @@ const createCard = (product, categoryName) => {
       <ul>${specs}</ul>
     </div>
     <div class="card-actions">
-      <a class="button ghost" href="mailto:sales@arambhika-enablers.com?subject=Request%20Order%20-%20${encodeURIComponent(product.name)}">Request Order</a>
+      <button class="button ghost" type="button" data-order="${product.id}">Request Order</button>
       <button class="button" type="button" data-sample="${product.id}">+1 Sample</button>
     </div>
   `;
@@ -208,6 +294,14 @@ const createCard = (product, categoryName) => {
   sampleBtn.addEventListener("click", () => {
     addToCart(product);
     samplePanel.classList.add("is-open");
+  });
+
+  const orderBtn = card.querySelector("[data-order]");
+  orderBtn.addEventListener("click", () => {
+    addToOrder(product);
+    if (orderPanel) {
+      orderPanel.classList.add("is-open");
+    }
   });
 
   const detailsToggle = card.querySelector(`[data-details="${product.id}"]`);
@@ -285,14 +379,18 @@ const loadCatalogFromJson = async () => {
 };
 
 const renderCatalog = (categories) => {
+  if (!catalogGrid) return;
   catalogGrid.innerHTML = "";
   categories.forEach((category) => {
     (category.products || []).forEach((product) => {
       catalogGrid.appendChild(createCard(product, category.name));
     });
   });
-  renderFilters(categories);
+  if (categoryFilters) {
+    renderFilters(categories);
+  }
   renderCart();
+  renderOrder();
   window.catalogData = categories;
 };
 
@@ -428,6 +526,7 @@ const generatePdf = async () => {
 };
 
 const loadCatalog = async () => {
+  if (!catalogGrid) return;
   try {
     const categories = await loadCatalogFromJson();
     renderCatalog(categories);
@@ -436,9 +535,12 @@ const loadCatalog = async () => {
   }
 };
 
-sampleClear.addEventListener("click", clearCart);
+if (sampleClear) {
+  sampleClear.addEventListener("click", clearCart);
+}
 
-sampleForm.addEventListener("submit", (event) => {
+if (sampleForm) {
+  sampleForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const cart = getCart();
   const items = Object.values(cart);
@@ -461,15 +563,49 @@ sampleForm.addEventListener("submit", (event) => {
 
   const mailto = `mailto:sales@arambhika-enablers.com?subject=${encodeURIComponent("Sample Request")}&body=${encodeURIComponent(body)}`;
   window.location.href = mailto;
-});
+  });
+}
 
-sampleToggle.addEventListener("click", () => {
-  samplePanel.classList.add("drawer");
-  toggleSamplePanel();
-});
+if (sampleToggle && samplePanel) {
+  sampleToggle.addEventListener("click", () => {
+    samplePanel.classList.add("drawer");
+    toggleSamplePanel();
+  });
+}
 
 if (generateCatalogPdf) {
   generateCatalogPdf.addEventListener("click", generatePdf);
+}
+
+if (orderClear) {
+  orderClear.addEventListener("click", clearOrder);
+}
+
+if (orderForm) {
+  orderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const order = getOrder();
+    const items = Object.values(order);
+    if (items.length === 0) {
+      alert("Add at least one item before submitting.");
+      return;
+    }
+
+    const formData = new FormData(orderForm);
+    const lines = items.map((item) => `${item.name} (${item.subtitle || ""}) x ${item.kg} kg`);
+    const body = [
+      `Company: ${formData.get("company")}`,
+      `Email: ${formData.get("email")}`,
+      `Address: ${formData.get("address")}`,
+      `Notes: ${formData.get("notes") || ""}`,
+      "",
+      "Order Request:",
+      ...lines
+    ].join("\n");
+
+    const mailto = `mailto:sales@arambhika-enablers.com?subject=${encodeURIComponent("Order Request")}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  });
 }
 
 loadCatalog();

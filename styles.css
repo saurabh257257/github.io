@@ -256,29 +256,30 @@ img {
 }
 
 .solutions {
-  background: #f5f8ff;
+  background: #eef4ff;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  padding: 32px 0;
 }
 
 .solutions-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  gap: 12px;
 }
 
 .solution-card {
   background: var(--surface-strong);
   border-radius: 20px;
-  padding: 24px;
+  padding: 16px;
   border: 1px solid var(--line);
   box-shadow: 0 12px 20px rgba(9, 23, 54, 0.08);
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .solution-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 .solution-tag {
@@ -291,13 +292,6 @@ img {
   font-size: 0.85rem;
 }
 
-.solution-card ul {
-  list-style: none;
-  display: grid;
-  gap: 6px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
 
 .pipeline {
   background: #0b1d39;
