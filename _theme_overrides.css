@@ -1,31 +1,30 @@
 ﻿:root {
   color-scheme: light;
-  --ink: #121212;
-  --muted: #5b6168;
-  --accent: #f5b400;
-  --accent-dark: #d99b00;
+  --ink: #0b1220;
+  --muted: #4f6378;
+  --accent: #1f6feb;
+  --accent-dark: #174ea6;
   --surface: #ffffff;
   --surface-strong: #ffffff;
-  --line: #e6e6e6;
-  --shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
-  --blue-link: #0a59b0;
-  --nav-gray: #f3f3f3;
+  --line: #d9e2ef;
+  --shadow: 0 18px 45px rgba(9, 23, 54, 0.12);
+  --blue-link: #1f6feb;
+  --nav-gray: #f3f7ff;
 }
 
 body {
   color: var(--ink);
-  background: #ffffff;
-  background-image: linear-gradient(#ffffff, #ffffff);
+  background: linear-gradient(180deg, #edf4ff 0%, #ffffff 45%, #f7faff 100%);
 }
 
 .site-header {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--line);
 }
 
 .brand-mark {
-  background: linear-gradient(135deg, #ffbf00, #f5b400);
-  color: #111;
+  background: linear-gradient(135deg, #1f6feb, #174ea6);
+  color: #ffffff;
 }
 
 .eyebrow {
@@ -38,23 +37,27 @@ body {
 
 .button {
   background: var(--accent);
-  color: #111;
-  box-shadow: 0 10px 20px rgba(245, 180, 0, 0.25);
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(31, 111, 235, 0.25);
 }
 
 .button:hover {
   background: var(--accent-dark);
-  box-shadow: 0 12px 24px rgba(245, 180, 0, 0.3);
+  box-shadow: 0 12px 24px rgba(31, 111, 235, 0.3);
+}
+
+.button.ghost {
+  color: var(--ink);
 }
 
 .button.ghost:hover {
-  background: #fff3cc;
+  background: #e9f1ff;
 }
 
 .filter-btn.active,
 .filter-btn:hover {
   background: var(--accent);
-  color: #111;
+  color: #ffffff;
 }
 
 .catalog-card .sku,
@@ -67,26 +70,22 @@ body {
 }
 
 .solution-tag {
-  color: #111;
-  background: #ffefb8;
+  color: #0b1220;
+  background: #e6efff;
 }
 
-.pipeline {
-  background: #111111;
-  color: #ffffff;
-}
-
-.pipeline .lead {
-  color: rgba(255, 255, 255, 0.75);
+.solutions {
+  background: #f3f7ff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .contact {
-  background: var(--nav-gray);
+  background: #f5f8ff;
 }
 
 .sample-panel,
 .contact-form,
-.pipeline-form,
 .about-card,
 .cap-card,
 .app-card,
@@ -95,13 +94,13 @@ body {
 }
 
 .download-btn {
-  background: #111111;
+  background: #0b1d39;
   color: #ffffff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(11, 29, 57, 0.25);
 }
 
 .download-btn:hover {
-  background: #1b1b1b;
+  background: #12325f;
 }
 
 a {
@@ -114,6 +113,10 @@ a {
 }
 
 .site-footer {
-  background: #f7f7f7;
+  background: #eef3ff;
   border-top: 1px solid var(--line);
+}
+
+.home-anchor {
+  height: 0;
 }
