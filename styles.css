@@ -121,6 +121,11 @@ img {
   fill: currentColor;
 }
 
+.nav-contact .divider {
+  opacity: 0.6;
+  color: #ffffff;
+}
+
 .brand {
   display: flex;
   gap: 14px;
