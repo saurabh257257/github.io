@@ -2,7 +2,8 @@
   "brand": {
     "name": "Arambhika Enablers",
     "tagline": "Nickel Strips for Battery Manufacturing",
-    "mark": "AE"
+    "mark": "AE",
+    "image": "assets/products/nickel-pure/n-15-1.jpg"
   },
   "topBar": {
     "phones": [
