@@ -189,16 +189,16 @@ img {
 }
 
 .mobile-fab.is-shake {
-  animation: fab-shake 0.4s ease-in-out;
+  animation: fab-shake 0.45s ease-in-out;
 }
 
 @keyframes fab-shake {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-3px); }
-  40% { transform: translateX(3px); }
-  60% { transform: translateX(-2px); }
-  80% { transform: translateX(2px); }
-  100% { transform: translateX(0); }
+  0% { transform: translate3d(0, 0, 0); }
+  20% { transform: translate3d(-6px, 0, 0); }
+  40% { transform: translate3d(6px, 0, 0); }
+  60% { transform: translate3d(-4px, 0, 0); }
+  80% { transform: translate3d(4px, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
 .brand-name {
@@ -936,8 +936,9 @@ img {
   gap: 8px;
   align-items: center;
   justify-content: center;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: transform;
   pointer-events: auto;
 }
 

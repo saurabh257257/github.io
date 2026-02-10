@@ -1273,6 +1273,9 @@ const triggerShake = (el) => {
   el.classList.remove("is-shake");
   void el.offsetWidth;
   el.classList.add("is-shake");
+  window.setTimeout(() => {
+    el.classList.remove("is-shake");
+  }, 450);
 };
 
 const updateActionCounts = () => {
