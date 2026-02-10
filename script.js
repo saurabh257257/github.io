@@ -1833,6 +1833,7 @@ const applySiteConfig = (config) => {
   const about = config.about || {};
   const contactCta = config.contactCta || {};
   const fab = config.fab || {};
+  const capabilities = config.capabilities || {};
 
   const setText = (id, value) => {
     const el = document.getElementById(id);
@@ -1915,6 +1916,28 @@ const applySiteConfig = (config) => {
         </div>
       `;
       initSolutionsCarousel();
+    }
+  }
+
+  setText("capEyebrow", capabilities.eyebrow);
+  setText("capTitle", capabilities.title);
+  setText("capLead", capabilities.lead);
+  if (Array.isArray(capabilities.cards)) {
+    const grid = document.getElementById("capGrid");
+    if (grid) {
+      const gallery = Array.isArray(capabilities.gallery) ? capabilities.gallery : [];
+      grid.innerHTML = capabilities.cards
+        .map((card, idx) => {
+          const image = gallery[idx % Math.max(gallery.length, 1)] || "assets/products/nickel-plated/np-20-1.jpg";
+          return `
+            <div class="cap-card">
+              <img class="cap-photo" src="${image}" alt="${card.title}" />
+              <h3>${card.title}</h3>
+              <p>${card.text}</p>
+            </div>
+          `;
+        })
+        .join("");
     }
   }
 

@@ -65,5 +65,33 @@
   "fab": {
     "label": "Sample / Order",
     "icon": "assets/icons/fab-chat.svg"
+  },
+  "capabilities": {
+    "eyebrow": "Our Capabilities",
+    "title": "Manufacturing units built for precision and scale.",
+    "lead": "Tooling, slitting, stamping, and quality checks aligned to battery pack requirements.",
+    "cards": [
+      {
+        "title": "Precision Slitting",
+        "text": "Consistent width control with clean edges for stable welding."
+      },
+      {
+        "title": "Custom Stamping",
+        "text": "Tabs, holes, and bends tailored to your pack design."
+      },
+      {
+        "title": "Surface Finish",
+        "text": "Bright, matte, or brushed finishes with inspection reports."
+      },
+      {
+        "title": "Bulk Logistics",
+        "text": "Flexible MOQ, bulk reels, and repeatable deliveries."
+      }
+    ],
+    "gallery": [
+      "assets/products/nickel-plated/np-10-1.jpg",
+      "assets/products/nickel-pure/n-10-1.jpg",
+      "assets/products/copper-bus-bars/cb-10-1.jpg"
+    ]
   }
 }

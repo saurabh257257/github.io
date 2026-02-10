@@ -8,15 +8,15 @@
                                             {
                                                 "id":  "np-10",
                                                 "name":  "NP-10",
-                                                "subtitle":  "Nickel-plated Steel · 0.10 mm · 5–15 mm width",
+                                                "subtitle":  "Nickel-plated Steel ï¿½ 0.10 mm ï¿½ 5ï¿½15 mm width",
                                                 "summary":  "Best for consumer electronics and compact battery packs.",
                                                 "specs":  [
-                                                              "Coating: 4–6 µm Ni",
+                                                              "Coating: 4ï¿½6 ï¿½m Ni",
                                                               "Temper: Soft",
                                                               "Finish: Satin"
                                                           ],
                                                 "badge":  "Value",
-                                                "price":  "?620",
+                                                "price":  "6300",
                                                 "minQuantity":  3,
                                                 "images":  [
                                                                "assets/products/nickel-plated/np-10-1.jpg",
@@ -27,10 +27,10 @@
                                             {
                                                 "id":  "np-20",
                                                 "name":  "NP-20",
-                                                "subtitle":  "Nickel-plated Steel · 0.20 mm · 8–20 mm width",
+                                                "subtitle":  "Nickel-plated Steel ï¿½ 0.20 mm ï¿½ 8ï¿½20 mm width",
                                                 "summary":  "Durable option for power tools and mid-range packs.",
                                                 "specs":  [
-                                                              "Coating: 6–8 µm Ni",
+                                                              "Coating: 6ï¿½8 ï¿½m Ni",
                                                               "Temper: Half-hard",
                                                               "Finish: Satin"
                                                           ],
@@ -46,10 +46,10 @@
                                             {
                                                 "id":  "np-30",
                                                 "name":  "NP-30",
-                                                "subtitle":  "Nickel-plated Steel · 0.30 mm · 10–25 mm width",
+                                                "subtitle":  "Nickel-plated Steel ï¿½ 0.30 mm ï¿½ 10ï¿½25 mm width",
                                                 "summary":  "Higher thickness for heavy-duty tabbing.",
                                                 "specs":  [
-                                                              "Coating: 6–10 µm Ni",
+                                                              "Coating: 6ï¿½10 ï¿½m Ni",
                                                               "Temper: Half-hard",
                                                               "Finish: Brushed"
                                                           ],
@@ -72,7 +72,7 @@
                                             {
                                                 "id":  "n-10",
                                                 "name":  "N-10",
-                                                "subtitle":  "Ni200 · 0.10 mm · 4–10 mm width",
+                                                "subtitle":  "Ni200 ï¿½ 0.10 mm ï¿½ 4ï¿½10 mm width",
                                                 "summary":  "Ideal for compact packs and fine pitch connections.",
                                                 "specs":  [
                                                               "Conductivity: 14.3 MS/m",
@@ -91,7 +91,7 @@
                                             {
                                                 "id":  "n-15",
                                                 "name":  "N-15",
-                                                "subtitle":  "Ni201 · 0.15 mm · 6–12 mm width",
+                                                "subtitle":  "Ni201 ï¿½ 0.15 mm ï¿½ 6ï¿½12 mm width",
                                                 "summary":  "Balanced thickness for EV and ESS modules.",
                                                 "specs":  [
                                                               "Conductivity: 13.8 MS/m",
@@ -110,7 +110,7 @@
                                             {
                                                 "id":  "n-20",
                                                 "name":  "N-20",
-                                                "subtitle":  "Ni200 · 0.20 mm · 8–16 mm width",
+                                                "subtitle":  "Ni200 ï¿½ 0.20 mm ï¿½ 8ï¿½16 mm width",
                                                 "summary":  "Higher current handling with consistent welding.",
                                                 "specs":  [
                                                               "Conductivity: 14.3 MS/m",
@@ -136,7 +136,7 @@
                                             {
                                                 "id":  "cb-5",
                                                 "name":  "CB-5",
-                                                "subtitle":  "C110 Copper · 0.5 mm · 8–20 mm width",
+                                                "subtitle":  "C110 Copper ï¿½ 0.5 mm ï¿½ 8ï¿½20 mm width",
                                                 "summary":  "Compact bus bars for tight enclosure layouts.",
                                                 "specs":  [
                                                               "Conductivity: 58 MS/m",
@@ -155,7 +155,7 @@
                                             {
                                                 "id":  "cb-10",
                                                 "name":  "CB-10",
-                                                "subtitle":  "C110 Copper · 1.0 mm · 10–30 mm width",
+                                                "subtitle":  "C110 Copper ï¿½ 1.0 mm ï¿½ 10ï¿½30 mm width",
                                                 "summary":  "Versatile bus bars for high current connections.",
                                                 "specs":  [
                                                               "Conductivity: 58 MS/m",
@@ -174,7 +174,7 @@
                                             {
                                                 "id":  "cb-15",
                                                 "name":  "CB-15",
-                                                "subtitle":  "C110 Copper · 1.5 mm · 15–40 mm width",
+                                                "subtitle":  "C110 Copper ï¿½ 1.5 mm ï¿½ 15ï¿½40 mm width",
                                                 "summary":  "Heavy-duty bus bars for industrial ESS.",
                                                 "specs":  [
                                                               "Conductivity: 58 MS/m",
@@ -200,11 +200,11 @@
                                             {
                                                 "id":  "pb-50",
                                                 "name":  "PB-50",
-                                                "subtitle":  "50 Ah · 3.2 V · LFP",
+                                                "subtitle":  "50 Ah ï¿½ 3.2 V ï¿½ LFP",
                                                 "summary":  "Reliable cell for modular ESS systems.",
                                                 "specs":  [
                                                               "Cycle life: 4000+",
-                                                              "Operating temp: -20°C to 60°C",
+                                                              "Operating temp: -20ï¿½C to 60ï¿½C",
                                                               "Grade A cells"
                                                           ],
                                                 "badge":  "Fast moving",
@@ -219,11 +219,11 @@
                                             {
                                                 "id":  "pb-100",
                                                 "name":  "PB-100",
-                                                "subtitle":  "100 Ah · 3.2 V · LFP",
+                                                "subtitle":  "100 Ah ï¿½ 3.2 V ï¿½ LFP",
                                                 "summary":  "Balanced energy density for commercial storage.",
                                                 "specs":  [
                                                               "Cycle life: 3500+",
-                                                              "Operating temp: -20°C to 60°C",
+                                                              "Operating temp: -20ï¿½C to 60ï¿½C",
                                                               "Grade A cells"
                                                           ],
                                                 "badge":  "In stock",
@@ -238,11 +238,11 @@
                                             {
                                                 "id":  "pb-200",
                                                 "name":  "PB-200",
-                                                "subtitle":  "200 Ah · 3.2 V · LFP",
+                                                "subtitle":  "200 Ah ï¿½ 3.2 V ï¿½ LFP",
                                                 "summary":  "High capacity cell for utility scale projects.",
                                                 "specs":  [
                                                               "Cycle life: 3000+",
-                                                              "Operating temp: -20°C to 55°C",
+                                                              "Operating temp: -20ï¿½C to 55ï¿½C",
                                                               "Grade A cells"
                                                           ],
                                                 "badge":  "On request",
