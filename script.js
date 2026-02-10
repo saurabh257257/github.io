@@ -2099,3 +2099,16 @@ renderOrderList();
 initSolutionsCarousel();
 loadSiteConfig();
 
+const applyMobileFabVisibility = () => {
+  const isMobile =
+    window.matchMedia("(max-width: 900px)").matches ||
+    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  document.body.classList.toggle("is-mobile", isMobile);
+  if (mobileFab) {
+    mobileFab.style.display = isMobile ? "inline-flex" : "none";
+  }
+};
+
+applyMobileFabVisibility();
+window.addEventListener("resize", applyMobileFabVisibility);
+

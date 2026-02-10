@@ -860,6 +860,10 @@ img {
   pointer-events: auto;
 }
 
+.is-mobile .mobile-fab {
+  display: inline-flex !important;
+}
+
 .mobile-fab.has-icon {
   padding-left: 44px;
   position: relative;
