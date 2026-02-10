@@ -764,6 +764,7 @@ img {
   border: 1px solid var(--line);
   background: #ffffff;
   font-size: 0.85rem;
+  max-width: 100%;
 }
 
 .qty-btn {
@@ -771,13 +772,14 @@ img {
   background: #ffffff;
   color: var(--ink);
   border-radius: 999px;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.75rem;
 }
 
 .qty-btn:hover {
@@ -786,7 +788,7 @@ img {
 }
 
 .qty-value {
-  min-width: 56px;
+  min-width: 44px;
   text-align: center;
   font-weight: 600;
   color: var(--ink);
@@ -1066,12 +1068,13 @@ img {
   border-radius: 20px;
   border: 1px solid var(--line);
   padding: 16px;
-  display: grid;
+  display: none;
   gap: 12px;
   max-width: 100%;
   overflow: hidden;
   box-sizing: border-box;
 }
+
 
 
 
@@ -1088,6 +1091,13 @@ img {
   max-height: 180px;
   overflow: auto;
   padding-right: 4px;
+}
+
+.sample-list,
+.sample-item,
+.sample-panel {
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .sample-item {
@@ -1403,14 +1413,18 @@ img {
   border-radius: 20px;
   border: 1px solid var(--line);
   padding: 16px;
-  display: grid;
+  display: none;
   gap: 12px;
   max-width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
 }
+
 
 
 .sample-panel.is-active {
   display: grid;
 }
+
+
 

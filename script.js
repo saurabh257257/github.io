@@ -1547,7 +1547,10 @@ const createCard = (product, categoryName) => {
   const sampleBtn = card.querySelector("[data-sample]");
   sampleBtn.addEventListener("click", () => {
     addToCart(product);
-    samplePanel.classList.add("is-open");
+    setActiveTab("sample");
+    if (orderPanel) {
+      orderPanel.classList.remove("is-open");
+    }
   });
 
   const orderBtn = card.querySelector("[data-order]");
@@ -1570,8 +1573,9 @@ const createCard = (product, categoryName) => {
   orderBtn.addEventListener("click", () => {
     const qty = Number(qtyControl.dataset.qty) || minQty;
     addToOrder(product, qty);
-    if (orderPanel) {
-      orderPanel.classList.add("is-open");
+    setActiveTab("order");
+    if (samplePanel) {
+      samplePanel.classList.remove("is-open");
     }
   });
 
