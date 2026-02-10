@@ -721,9 +721,10 @@ img {
 
 .card-actions {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto auto auto;
   gap: 10px;
   align-items: center;
+  justify-content: start;
   margin-top: 14px;
 }
 
@@ -760,6 +761,7 @@ img {
   background: #ffffff;
   font-size: 0.85rem;
   max-width: 100%;
+  width: max-content;
 }
 
 .qty-btn {
