@@ -719,6 +719,76 @@ img {
   font-size: 0.85rem;
 }
 
+.card-actions {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.card-actions .button {
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.sample-btn {
+  background: #1e5eff;
+}
+
+.sample-btn:hover {
+  background: #1847d1;
+}
+
+.order-btn {
+  background: #b87333;
+}
+
+.order-btn:hover {
+  background: #965d2a;
+}
+
+.order-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 0.85rem;
+  max-width: 100%;
+}
+
+.qty-btn {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink);
+  border-radius: 999px;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.qty-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.qty-value {
+  min-width: 44px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--ink);
+}
+
 
 .details-toggle {
   display: inline-flex;

@@ -1329,6 +1329,15 @@ const createCard = (product, categoryName) => {
         <div class="details" data-details-panel="${product.id}">
           <ul>${specs}</ul>
         </div>
+        <div class="card-actions">
+          <button class="button sample-btn" type="button" data-sample="${product.id}">Request Sample</button>
+          <div class="order-controls" data-qty="${minQty}">
+            <button class="qty-btn" type="button" data-action="dec" aria-label="Decrease quantity">-</button>
+            <span class="qty-value">${minQty} kg</span>
+            <button class="qty-btn" type="button" data-action="inc" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="button order-btn" type="button" data-order="${product.id}">Order</button>
+        </div>
       </div>
     </div>
   `;
@@ -1341,6 +1350,21 @@ const createCard = (product, categoryName) => {
   detailsToggle.addEventListener("click", () => {
     const isOpen = detailsPanel.classList.toggle("is-open");
     detailsToggle.querySelector("span").textContent = isOpen ? "-" : "+";
+  });
+
+  const qtyControl = card.querySelector(".order-controls");
+  const qtyValue = card.querySelector(".qty-value");
+  const updateQty = (delta) => {
+    const current = Number(qtyControl.dataset.qty) || minQty;
+    const next = Math.max(minQty, current + delta);
+    qtyControl.dataset.qty = String(next);
+    qtyValue.textContent = `${next} kg`;
+  };
+  qtyControl.querySelectorAll(".qty-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const delta = btn.dataset.action === "inc" ? 1 : -1;
+      updateQty(delta);
+    });
   });
 
   return card;
