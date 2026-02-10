@@ -1939,7 +1939,26 @@ const applySiteConfig = (config) => {
   if (Array.isArray(about.whyItems)) {
     const list = document.getElementById("aboutWhyList");
     if (list) {
-      list.innerHTML = about.whyItems.map((item) => `<li>${item}</li>`).join("");
+      let html = "";
+      let inSublist = false;
+      about.whyItems.forEach((item) => {
+        if (item.startsWith("sub:")) {
+          const text = item.replace(/^sub:\s*/, "");
+          if (!inSublist) {
+            html += "<ul class=\"about-sublist\">";
+            inSublist = true;
+          }
+          html += `<li>${text}</li>`;
+        } else {
+          if (inSublist) {
+            html += "</ul>";
+            inSublist = false;
+          }
+          html += `<li>${item}</li>`;
+        }
+      });
+      if (inSublist) html += "</ul>";
+      list.innerHTML = html;
     }
   }
 
