@@ -1144,6 +1144,13 @@ img {
   gap: 10px;
 }
 
+.sample-form .button {
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  width: 100%;
+  border-radius: 12px;
+}
+
 .sample-form label {
   font-size: 0.82rem;
   color: var(--muted);
