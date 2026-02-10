@@ -1090,16 +1090,6 @@ img {
   gap: 12px;
 }
 
-.sample-list {
-  display: grid;
-  gap: 8px;
-  max-height: 180px;
-  overflow: auto;
-  padding-right: 4px;
-}
-
-.sample-list,
-.sample-item,
 .sample-panel {
   background: #fff;
   border-radius: 20px;
@@ -1109,6 +1099,16 @@ img {
   gap: 12px;
   max-width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+.sample-list {
+  display: grid;
+  gap: 8px;
+  max-height: 180px;
+  overflow: auto;
+  padding-right: 4px;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
