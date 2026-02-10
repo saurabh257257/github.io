@@ -946,6 +946,11 @@ img {
   display: inline-flex !important;
 }
 
+.mobile-fab.has-items {
+  background: #f59e0b;
+  color: #1f2937;
+}
+
 .mobile-fab.has-icon {
   padding-left: 44px;
   position: relative;

@@ -1298,6 +1298,7 @@ const updateActionCounts = () => {
 
   if (mobileFab) {
     mobileFab.textContent = `Sample (${sampleCount}) / Order (${orderCount})`;
+    mobileFab.classList.toggle("has-items", sampleCount + orderCount > 0);
   }
 
   if (sampleCount > lastSampleCount || orderCount > lastOrderCount) {
@@ -1371,6 +1372,7 @@ const addToCart = (product) => {
     cart[product.id] = { id: product.id, name: product.name };
     setCart(cart);
     renderSampleList();
+    triggerShake(mobileFab);
   }
 };
 
@@ -1392,6 +1394,7 @@ const addToOrder = (product, qty) => {
   order[product.id] = { id: product.id, name: product.name, kg: qty };
   setOrder(order);
   renderOrderList();
+  triggerShake(mobileFab);
 };
 
 const updateOrderQty = (productId, qty) => {
@@ -1400,6 +1403,7 @@ const updateOrderQty = (productId, qty) => {
   order[productId].kg = qty;
   setOrder(order);
   renderOrderList();
+  triggerShake(mobileFab);
 };
 
 const removeFromOrder = (productId) => {
