@@ -1145,6 +1145,12 @@ img {
   gap: 10px;
 }
 
+.form-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .sample-form .button {
   padding: 6px 10px;
   font-size: 0.78rem;

@@ -1975,3 +1975,14 @@ const populateCountrySelects = () => {
 loadCatalog();
 populateCountrySelects();
 
+document.querySelectorAll("[data-clear]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const type = btn.dataset.clear;
+    if (type === "sample") {
+      clearCart();
+    } else if (type === "order") {
+      clearOrder();
+    }
+  });
+});
+
