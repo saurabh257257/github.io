@@ -95,9 +95,9 @@ img {
 }
 
 .nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
   padding: 10px 0;
   gap: 20px;
 }
@@ -105,9 +105,11 @@ img {
 .nav-contact {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-self: center;
+  gap: 10px;
   color: #ffffff;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .nav-contact .phone-link,
