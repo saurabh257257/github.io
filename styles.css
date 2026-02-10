@@ -839,7 +839,7 @@ img {
   right: 16px;
   bottom: 16px;
   z-index: 30;
-  display: inline-flex;
+  display: none;
   border: none;
   background: var(--accent);
   color: #ffffff;
@@ -1325,7 +1325,9 @@ img {
   }
 
   .mobile-fab {
-    display: inline-flex;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
   }
 
 
@@ -1358,12 +1360,6 @@ img {
 @media (min-width: 901px) {
   .mobile-fab {
     display: none;
-  }
-}
-
-@media (pointer: coarse) {
-  .mobile-fab {
-    display: inline-flex;
   }
 }
 
