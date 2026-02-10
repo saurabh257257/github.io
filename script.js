@@ -1265,6 +1265,16 @@ const setOrder = (order) => {
   sessionStorage.setItem(ORDER_KEY, JSON.stringify(order));
 };
 
+let lastSampleCount = 0;
+let lastOrderCount = 0;
+
+const triggerShake = (el) => {
+  if (!el) return;
+  el.classList.remove("is-shake");
+  void el.offsetWidth;
+  el.classList.add("is-shake");
+};
+
 const updateActionCounts = () => {
   const sampleCount = Object.keys(getCart()).length;
   const orderCount = Object.keys(getOrder()).length;
@@ -1286,6 +1296,12 @@ const updateActionCounts = () => {
   if (mobileFab) {
     mobileFab.textContent = `Sample (${sampleCount}) / Order (${orderCount})`;
   }
+
+  if (sampleCount > lastSampleCount || orderCount > lastOrderCount) {
+    triggerShake(mobileFab);
+  }
+  lastSampleCount = sampleCount;
+  lastOrderCount = orderCount;
 };
 
 const renderSampleList = () => {
