@@ -1520,10 +1520,14 @@ const createCard = (product, categoryName) => {
   const orderBtn = card.querySelector("[data-order]");
   sampleBtn.addEventListener("click", () => {
     addToCart(product);
+    setActivePanel(document.querySelector(".catalog-side"), "sample");
+    setActivePanel(mobileSheet, "sample");
   });
   orderBtn.addEventListener("click", () => {
     const qty = Number(qtyControl.dataset.qty) || minQty;
     addToOrder(product, qty);
+    setActivePanel(document.querySelector(".catalog-side"), "order");
+    setActivePanel(mobileSheet, "order");
   });
 
   return card;
@@ -1811,6 +1815,18 @@ const initTabs = (root) => {
         panel.classList.toggle("is-active", panel.dataset.panel === key);
       });
     });
+  });
+};
+
+const setActivePanel = (root, key) => {
+  if (!root) return;
+  const tabs = root.querySelectorAll(".side-tab");
+  const panels = root.querySelectorAll(".side-panel");
+  tabs.forEach((tab) => {
+    tab.classList.toggle("is-active", tab.dataset.tab === key);
+  });
+  panels.forEach((panel) => {
+    panel.classList.toggle("is-active", panel.dataset.panel === key);
   });
 };
 

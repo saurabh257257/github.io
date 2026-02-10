@@ -644,7 +644,7 @@ img {
 .catalog-layout {
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr) minmax(260px, 25%);
-  gap: 20px;
+  gap: 28px;
   align-items: start;
 }
 
@@ -685,7 +685,7 @@ img {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 12px;
-  margin-left: 8px;
+  margin-left: 16px;
 }
 
 .side-tabs {
