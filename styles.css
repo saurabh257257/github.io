@@ -1147,8 +1147,9 @@ img {
 .sample-form .button {
   padding: 8px 12px;
   font-size: 0.82rem;
-  width: 100%;
   border-radius: 12px;
+  width: auto;
+  align-self: start;
 }
 
 .sample-form label {
