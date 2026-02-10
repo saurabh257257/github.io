@@ -839,7 +839,7 @@ img {
   right: 16px;
   bottom: 16px;
   z-index: 30;
-  display: none;
+  display: inline-flex;
   border: none;
   background: var(--accent);
   color: #ffffff;
@@ -1326,8 +1326,6 @@ img {
 
   .mobile-fab {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
 
 
@@ -1354,6 +1352,12 @@ img {
 
   .catalog-card {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-fab {
+    display: none;
   }
 }
 
