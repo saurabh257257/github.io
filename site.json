@@ -64,7 +64,7 @@
   },
   "fab": {
     "label": "Sample / Order",
-    "icon": "assets/icons/fab-chat.svg"
+    "icon": "assets/fabicon.jpg"
   },
   "capabilities": {
     "eyebrow": "Our Capabilities",
