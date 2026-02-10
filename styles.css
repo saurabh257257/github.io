@@ -681,10 +681,11 @@ img {
   top: 120px;
   display: grid;
   gap: 12px;
-  background: #f5f8ff;
+  background: #e6ebf5;
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 12px;
+  margin-left: 8px;
 }
 
 .side-tabs {

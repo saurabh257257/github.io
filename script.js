@@ -1789,26 +1789,13 @@ const populateCountrySelects = () => {
   const selects = document.querySelectorAll(".phone-row select");
   if (!selects.length) return;
 
-  const options = COUNTRY_CODES
-    .filter((item) => item.code && item.dial_code)
-    .map((item) => {
-      const flag = codeToEmoji(item.code);
-      const label = `${flag} ${item.name} (${item.dial_code})`.trim();
-      return { value: item.dial_code, label, code: item.code };
-    })
-    .sort((a, b) => a.label.localeCompare(b.label));
-
   selects.forEach((select) => {
     select.innerHTML = "";
-    options.forEach((opt) => {
-      const option = document.createElement("option");
-      option.value = opt.value;
-      option.textContent = opt.label;
-      if (opt.code === "IN") {
-        option.selected = true;
-      }
-      select.appendChild(option);
-    });
+    const option = document.createElement("option");
+    option.value = "+91";
+    option.textContent = "🇮🇳 India (+91)";
+    option.selected = true;
+    select.appendChild(option);
   });
 };
 
