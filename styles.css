@@ -156,6 +156,10 @@ img {
   align-items: center;
 }
 
+.brand > div {
+  margin-top: 0.2cm;
+}
+
 .brand-logo {
   height: 42px;
   width: auto;
