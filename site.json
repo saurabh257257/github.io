@@ -63,8 +63,7 @@
     "buttonLabel": "Go to Contact Page"
   },
   "fab": {
-    "label": "Sample / Order",
-    "icon": "assets/fabicon.jpg"
+    "label": "Sample Request/ Order"
   },
   "capabilities": {
     "eyebrow": "Our Capabilities",
