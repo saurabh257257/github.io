@@ -686,7 +686,10 @@ img {
   width: 100%;
   min-width: 0;
   padding-right: 2px;
+  padding-left: 6px;
+  box-sizing: border-box;
 }
+
 
 
 .catalog-side.is-empty {
@@ -1067,13 +1070,14 @@ img {
   background: #fff;
   border-radius: 20px;
   border: 1px solid var(--line);
-  padding: 16px;
+  padding: 14px;
   display: none;
   gap: 12px;
   max-width: 100%;
   overflow: hidden;
   box-sizing: border-box;
 }
+
 
 
 
@@ -1096,9 +1100,17 @@ img {
 .sample-list,
 .sample-item,
 .sample-panel {
-  word-break: break-word;
-  overflow-wrap: anywhere;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  padding: 14px;
+  display: none;
+  gap: 12px;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
+
 
 .sample-item {
   display: grid;
@@ -1181,6 +1193,16 @@ img {
   box-sizing: border-box;
 }
 
+.sample-form .button,
+.sample-form label,
+.sample-form input,
+.sample-form textarea,
+.form-note {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
 .sample-form label {
   font-size: 0.82rem;
   color: var(--muted);
@@ -1196,6 +1218,8 @@ img {
   padding: 8px 10px;
   font-family: inherit;
   font-size: 0.85rem;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .phone-row {
@@ -1301,7 +1325,10 @@ img {
   width: 100%;
   min-width: 0;
   padding-right: 2px;
+  padding-left: 6px;
+  box-sizing: border-box;
 }
+
 
 
   .solutions-layout {
@@ -1412,7 +1439,7 @@ img {
   background: #fff;
   border-radius: 20px;
   border: 1px solid var(--line);
-  padding: 16px;
+  padding: 14px;
   display: none;
   gap: 12px;
   max-width: 100%;
@@ -1422,9 +1449,11 @@ img {
 
 
 
+
 .sample-panel.is-active {
   display: grid;
 }
+
 
 
 
