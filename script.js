@@ -1276,9 +1276,9 @@ const renderCart = () => {
     row.innerHTML = `
       <div class="sample-item-header">
         <div><strong>${item.name}</strong></div>
-        <div class="sample-qty">Qty: 1</div>
         <button class="remove-item" type="button" data-action="remove" aria-label="Remove item">×</button>
       </div>
+      <div class="sample-qty">Qty: 1</div>
     `;
     row.querySelector(".remove-item").addEventListener("click", () => {
       updateSampleQty(item.id, -9999);
@@ -1320,12 +1320,12 @@ const renderOrder = () => {
     row.innerHTML = `
       <div class="sample-item-header">
         <div><strong>${item.name}</strong></div>
-        <div class="sample-qty">${item.kg} kg</div>
         <button class="remove-item" type="button" data-action="remove" aria-label="Remove item">×</button>
       </div>
-      <div class="sample-controls">
-        <button type="button" data-action="dec" data-id="${item.id}">-</button>
+      <div class="sample-qty">${item.kg} kg</div>
+      <div class="sample-controls vertical">
         <button type="button" data-action="inc" data-id="${item.id}">+</button>
+        <button type="button" data-action="dec" data-id="${item.id}">-</button>
       </div>
     `;
     row.querySelectorAll("button").forEach((btn) => {
