@@ -1824,6 +1824,120 @@ const populateCountrySelects = () => {
   });
 };
 
+const applySiteConfig = (config) => {
+  if (!config) return;
+  const brand = config.brand || {};
+  const nav = config.nav || {};
+  const topBar = config.topBar || {};
+  const solutions = config.solutions || {};
+  const about = config.about || {};
+  const contactCta = config.contactCta || {};
+  const fab = config.fab || {};
+
+  const setText = (id, value) => {
+    const el = document.getElementById(id);
+    if (el && value) el.textContent = value;
+  };
+
+  setText("brandMark", brand.mark);
+  setText("brandName", brand.name);
+  setText("brandTag", brand.tagline);
+
+  setText("navHome", nav.home);
+  setText("navCatalog", nav.catalog);
+  setText("navCapabilities", nav.capabilities);
+  setText("navAbout", nav.about);
+
+  if (Array.isArray(topBar.phones)) {
+    const [p1, p2] = topBar.phones;
+    const setPhone = (phone, phoneId, waId) => {
+      if (!phone) return;
+      const phoneEl = document.getElementById(phoneId);
+      const waEl = document.getElementById(waId);
+      if (phoneEl) {
+        phoneEl.textContent = phone.label || phone.tel || "";
+        if (phone.tel) phoneEl.href = `tel:${phone.tel}`;
+      }
+      if (waEl) {
+        const waNum = phone.whatsapp || "";
+        if (waNum) waEl.href = `https://wa.me/${waNum}`;
+      }
+    };
+    setPhone(p1, "topPhone1", "topWa1");
+    setPhone(p2, "topPhone2", "topWa2");
+  }
+
+  setText("solutionsEyebrow", solutions.eyebrow);
+  setText("solutionsTitle", solutions.title);
+  setText("solutionsSubtitle", solutions.subtitle);
+
+  setText("aboutEyebrow", about.eyebrow);
+  setText("aboutTitle", about.title);
+  setText("aboutLead", about.lead);
+  setText("aboutWhyTitle", about.whyTitle);
+  if (Array.isArray(about.whyItems)) {
+    const list = document.getElementById("aboutWhyList");
+    if (list) {
+      list.innerHTML = about.whyItems.map((item) => `<li>${item}</li>`).join("");
+    }
+  }
+
+  setText("contactEyebrow", contactCta.eyebrow);
+  setText("contactTitle", contactCta.title);
+  setText("contactLead", contactCta.lead);
+  const cta = document.getElementById("contactCta");
+  if (cta && contactCta.buttonLabel) {
+    cta.textContent = contactCta.buttonLabel;
+  }
+
+  if (Array.isArray(solutions.items)) {
+    const carousel = document.getElementById("solutionsCarousel");
+    if (carousel) {
+      const cardsHtml = solutions.items
+        .map((item, idx) => `
+          <article class="solution-card ${idx === 0 ? "is-active" : ""}" data-solution="${item.id || idx}">
+            <div class="solution-media">
+              <img src="${item.image}" alt="${item.title}" />
+            </div>
+            <div class="solution-copy">
+              <h3>${item.title}</h3>
+              <p class="solution-tag">${item.tag || ""}</p>
+              <p class="solution-line">${item.line || ""}</p>
+            </div>
+          </article>
+        `)
+        .join("");
+      const nextLabel = solutions.nextLabel || "Next";
+      carousel.innerHTML = `
+        ${cardsHtml}
+        <div class="solutions-controls">
+          <button class="button ghost tiny" type="button" id="solutionsNext">${nextLabel}</button>
+        </div>
+      `;
+      initSolutionsCarousel();
+    }
+  }
+
+  if (mobileFab && fab.label) {
+    mobileFab.textContent = fab.label;
+  }
+  if (mobileFab && fab.icon) {
+    mobileFab.classList.add("has-icon");
+    mobileFab.style.setProperty("--fab-icon", `url('${fab.icon}')`);
+  }
+};
+
+const loadSiteConfig = async () => {
+  try {
+    const response = await fetch("site.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const data = await response.json();
+    applySiteConfig(data);
+  } catch {
+    // ignore config errors
+  }
+};
+
 const initTabs = (root) => {
   if (!root) return;
   const tabs = root.querySelectorAll(".side-tab");
@@ -1960,4 +2074,5 @@ populateCountrySelects();
 renderSampleList();
 renderOrderList();
 initSolutionsCarousel();
+loadSiteConfig();
 

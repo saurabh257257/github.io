@@ -1,0 +1,69 @@
+{
+  "brand": {
+    "name": "Arambhika Enablers",
+    "tagline": "Nickel Strips for Battery Manufacturing",
+    "mark": "AE"
+  },
+  "topBar": {
+    "phones": [
+      { "label": "+91-8112662827", "tel": "+918112662827", "whatsapp": "918112662827" },
+      { "label": "+91-811233245", "tel": "+91811233245", "whatsapp": "91811233245" }
+    ]
+  },
+  "nav": {
+    "home": "Home",
+    "catalog": "Product Store",
+    "capabilities": "Our Capabilities",
+    "about": "About & Contact"
+  },
+  "solutions": {
+    "eyebrow": "Solutions",
+    "title": "Solutions for battery manufacturers.",
+    "subtitle": "Matched to your production scale.",
+    "items": [
+      {
+        "id": "small",
+        "title": "Small B2B Manufacturers",
+        "tag": "Nickel‑plated strip",
+        "line": "Cost‑effective plated strips for compact packs.",
+        "image": "assets/products/nickel-plated/np-20-1.jpg"
+      },
+      {
+        "id": "mid",
+        "title": "Mid‑Sized B2B Manufacturers",
+        "tag": "Pure nickel strip",
+        "line": "High‑purity nickel for repeatable welding.",
+        "image": "assets/products/nickel-pure/n-15-1.jpg"
+      },
+      {
+        "id": "large",
+        "title": "Large Factories",
+        "tag": "Copper busbars",
+        "line": "High‑current copper busbars for ESS lines.",
+        "image": "assets/products/copper-bus-bars/cb-10-1.jpg"
+      }
+    ],
+    "nextLabel": "Next"
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "title": "Arambhika Enablers is focused on reliable battery interconnect supply.",
+    "lead": "From plated and pure nickel strips to copper busbars and prismatic cells, we support B2B manufacturers with consistent quality, traceability, and responsive logistics.",
+    "whyTitle": "Why partners choose us",
+    "whyItems": [
+      "Stable sourcing with documented inspection",
+      "Custom widths, stamping, and bending",
+      "Support for sampling and long‑term contracts"
+    ]
+  },
+  "contactCta": {
+    "eyebrow": "Contact Us",
+    "title": "Reach our team for pricing, samples, and supply planning.",
+    "lead": "Visit the Contact Us page to send your requirements and get a response within 24 hours.",
+    "buttonLabel": "Go to Contact Page"
+  },
+  "fab": {
+    "label": "Sample / Order",
+    "icon": "assets/icons/fab-chat.svg"
+  }
+}

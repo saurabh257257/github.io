@@ -847,6 +847,23 @@ img {
   border-radius: 999px;
   font-weight: 600;
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.2);
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-fab.has-icon {
+  padding-left: 44px;
+  position: relative;
+}
+
+.mobile-fab.has-icon::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  background: var(--fab-icon) center/contain no-repeat;
 }
 
 .mobile-sheet {
