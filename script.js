@@ -1782,6 +1782,27 @@ document.querySelectorAll("[data-explore]").forEach((button) => {
   });
 });
 
+const initSolutionsCarousel = () => {
+  const carousel = document.querySelector("#solutionsCarousel");
+  const nextBtn = document.querySelector("#solutionsNext");
+  if (!carousel || !nextBtn) return;
+  const cards = Array.from(carousel.querySelectorAll(".solution-card"));
+  if (cards.length === 0) return;
+  let index = cards.findIndex((card) => card.classList.contains("is-active"));
+  if (index < 0) index = 0;
+
+  const showAt = (idx) => {
+    cards.forEach((card, i) => {
+      card.classList.toggle("is-active", i === idx);
+    });
+  };
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % cards.length;
+    showAt(index);
+  });
+};
+
 const codeToEmoji = (code) => {
   if (!code || code.length !== 2) return "";
   const base = 0x1f1e6;
@@ -1938,4 +1959,5 @@ loadCatalog();
 populateCountrySelects();
 renderSampleList();
 renderOrderList();
+initSolutionsCarousel();
 
