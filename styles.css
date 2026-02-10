@@ -835,10 +835,10 @@ img {
 }
 
 .mobile-fab {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 30;
+  position: fixed !important;
+  right: 16px !important;
+  bottom: 16px !important;
+  z-index: 9999;
   display: inline-flex;
   border: none;
   background: var(--accent);
