@@ -7,7 +7,7 @@
   "topBar": {
     "phones": [
       { "label": "+91-8112662827", "tel": "+918112662827", "whatsapp": "918112662827" },
-      { "label": "+91-811233245", "tel": "+91811233245", "whatsapp": "91811233245" }
+      { "label": "+91-9953255677", "tel": "+9953255677", "whatsapp": "919953255677" }
     ]
   },
   "nav": {
@@ -22,24 +22,24 @@
     "subtitle": "Matched to your production scale.",
     "items": [
       {
-        "id": "small",
-        "title": "Small B2B Manufacturers",
-        "tag": "Nickel‑plated strip",
-        "line": "Cost‑effective plated strips for compact packs.",
+        "id": "compact",
+        "title": "Battery Pack Assemblers",
+        "tag": "Nickel strips & bus bars",
+        "line": "Flexible nickel strips and bus bars for cell-level interconnections and spot-welded battery packs.",
         "image": "assets/products/nickel-plated/np-20-1.jpg"
       },
       {
-        "id": "mid",
-        "title": "Mid‑Sized B2B Manufacturers",
-        "tag": "Pure nickel strip",
-        "line": "High‑purity nickel for repeatable welding.",
+        "id": "ev",
+        "title": "EV Battery Assemblers & Manufacturers",
+        "tag": "Bus bars & prismatic batteries",
+        "line": "High-current bus bars and prismatic batteries for reliable EV battery modules and systems.",
         "image": "assets/products/nickel-pure/n-15-1.jpg"
       },
       {
-        "id": "large",
-        "title": "Large Factories",
-        "tag": "Copper busbars",
-        "line": "High‑current copper busbars for ESS lines.",
+        "id": "industrial",
+        "title": "Industrial Battery Manufacturers",
+        "tag": "High-precision custom components",
+        "line": "Custom-engineered, high-precision metals and battery components for automated production lines.",
         "image": "assets/products/copper-bus-bars/cb-10-1.jpg"
       }
     ],
