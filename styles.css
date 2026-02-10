@@ -95,26 +95,48 @@ img {
 }
 
 .nav {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 0;
   gap: 20px;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.nav-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 0.5cm;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  align-self: stretch;
 }
 
 .nav-contact {
   display: inline-flex;
   align-items: center;
-  justify-self: center;
+  justify-content: center;
   gap: 10px;
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 600;
 }
 
-.nav-contact .phone-link,
-.nav-contact .wa-link {
+.nav-contact .phone-link {
   color: #ffffff;
+}
+
+.nav-contact .wa-link {
+  color: #25d366;
 }
 
 .nav-contact .icon {
