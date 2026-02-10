@@ -1,96 +1,111 @@
 {
-  "brand": {
-    "name": "Arambhika Enablers",
-    "tagline": "Li-Ion Battery Component Manufacturer & Distributor",
-     "logo": "assets/company_logo.jpg"
-  },
-  "topBar": {
-    "phones": [
-      { "label": "+91-8112662827", "tel": "+918112662827", "whatsapp": "918112662827" },
-      { "label": "+91-9953255677", "tel": "+9953255677", "whatsapp": "919953255677" }
-    ]
-  },
-  "nav": {
-    "home": "Home",
-    "catalog": "Product Store",
-    "capabilities": "Our Capabilities",
-    "about": "About & Contact"
-  },
-  "solutions": {
-    "eyebrow": "Solutions",
-    "title": "Solutions for battery manufacturers.",
-    "subtitle": "Matched to your production scale.",
-    "items": [
-      {
-        "id": "compact",
-        "title": "Battery Pack Assemblers",
-        "tag": "Nickel strips & bus bars",
-        "line": "Flexible nickel strips and bus bars for cell-level interconnections and spot-welded battery packs.",
-        "image": "assets/solutions/compact.jpg"
-      },
-      {
-        "id": "ev",
-        "title": "EV Battery Assemblers & Manufacturers",
-        "tag": "Bus bars & prismatic batteries",
-        "line": "High-current bus bars and prismatic batteries for reliable EV battery modules and systems.",
-        "image": "assets/solutions/ev.jpg"
-      },
-      {
-        "id": "industrial",
-        "title": "Industrial Battery Manufacturers",
-        "tag": "High-precision custom components like HoneyComb Nickel Strips, Copper Bus Bars",
-        "line": "Custom-engineered, high-precision metals and battery components for automated production lines.",
-        "image": "assets/solutions/industrial.jpg"
-      }
-    ],
-    "nextLabel": "Next"
-  },
-  "about": {
-    "eyebrow": "About Us",
-    "title": "Arambhika Enablers is focused on reliable battery interconnect supply.",
-    "lead": "From plated and pure nickel strips to copper busbars and prismatic cells, we support B2B manufacturers with consistent quality, traceability, and responsive logistics.",
-    "whyTitle": "Why partners choose us",
-    "whyItems": [
-      "Stable sourcing with documented inspection",
-      "Custom widths, stamping, and bending",
-      "Support for sampling and long‑term contracts"
-    ]
-  },
-  "contactCta": {
-    "eyebrow": "Contact Us",
-    "title": "Reach our team for pricing, samples, and supply planning.",
-    "lead": "Visit the Contact Us page to send your requirements and get a response within 24 hours.",
-    "buttonLabel": "Go to Contact Page"
-  },
-  "fab": {
-    "label": "Sample Request/ Order"
-  },
-  "capabilities": {
-    "eyebrow": "Our Capabilities",
-    "title": "Manufacturing units built for precision and scale.",
-    "lead": "Tooling, slitting, stamping, and quality checks aligned to battery pack requirements.",
-    "cards": [
-      {
-        "title": "Precision Slitting",
-        "text": "Consistent width control with clean edges for stable welding."
-      },
-      {
-        "title": "Custom Stamping",
-        "text": "Tabs, holes, and bends tailored to your pack design."
-      },
-      {
-        "title": "Surface Finish",
-        "text": "Bright, matte, or brushed finishes with inspection reports."
-      },
-      {
-        "title": "Bulk Logistics",
-        "text": "Flexible MOQ, bulk reels, and repeatable deliveries."
-      }
-    ],
-    "gallery": [
-      "assets/products/nickel-plated/np-10-1.jpg",
-      "assets/products/nickel-pure/n-10-1.jpg",
-      "assets/products/copper-bus-bars/cb-10-1.jpg"
-    ]
-  }
+    "brand":  {
+                  "name":  "Arambhika Enablers",
+                  "tagline":  "Li-Ion Battery Component Manufacturer \u0026 Distributor",
+                  "logo":  "assets/company_logo.jpg"
+              },
+    "topBar":  {
+                   "phones":  [
+                                  {
+                                      "label":  "+91-8112662827",
+                                      "tel":  "+918112662827",
+                                      "whatsapp":  "918112662827"
+                                  },
+                                  {
+                                      "label":  "+91-9953255677",
+                                      "tel":  "+9953255677",
+                                      "whatsapp":  "919953255677"
+                                  }
+                              ]
+               },
+    "nav":  {
+                "home":  "Home",
+                "catalog":  "Product Store",
+                "capabilities":  "Our Capabilities",
+                "about":  "About \u0026 Contact"
+            },
+    "solutions":  {
+                      "eyebrow":  "Solutions",
+                      "title":  "Solutions for battery manufacturers.",
+                      "subtitle":  "Matched to your production scale.",
+                      "items":  [
+                                    {
+                                        "id":  "compact",
+                                        "title":  "Battery Pack Assemblers",
+                                        "tag":  "Nickel strips \u0026 bus bars",
+                                        "line":  "Flexible nickel strips and bus bars for cell-level interconnections and spot-welded battery packs.",
+                                        "image":  "assets/solutions/compact.jpg"
+                                    },
+                                    {
+                                        "id":  "ev",
+                                        "title":  "EV Battery Assemblers \u0026 Manufacturers",
+                                        "tag":  "Bus bars \u0026 prismatic batteries",
+                                        "line":  "High-current bus bars and prismatic batteries for reliable EV battery modules and systems.",
+                                        "image":  "assets/solutions/ev.jpg"
+                                    },
+                                    {
+                                        "id":  "industrial",
+                                        "title":  "Industrial Battery Manufacturers",
+                                        "tag":  "High-precision custom components like HoneyComb Nickel Strips, Copper Bus Bars",
+                                        "line":  "Custom-engineered, high-precision metals and battery components for automated production lines.",
+                                        "image":  "assets/solutions/industrial.jpg"
+                                    }
+                                ],
+                      "nextLabel":  "Next"
+                  },
+    "about":  {
+                  "eyebrow":  "About Us",
+                  "title":  "Our Key Strengths \u0026 Capabilities",
+                  "lead":  "We believe the above strengths enable us to deliver consistent quality.",
+                  "whyTitle":  "Why partners choose us",
+                  "whyItems":  [
+                                   "Production support during emergency and urgent requirements.",
+                                   "Complete in-house setup of all machineries along with an integrated plating plant.",
+                                   "No tooling cost charged for running / repeat products.",
+                                   "Very low development lead time, enabling faster product finalization.",
+                                   "Proven experience in catering to reputed brands, public listed companies, etc.",
+                                   "Core specialization in:",
+                                   "Nickel Strips",
+                                   "Copper Busbars",
+                                   "Aluminium Busbars"
+                               ]
+              },
+    "contactCta":  {
+                       "eyebrow":  "Contact Us",
+                       "title":  "Reach our team for pricing, samples, and supply planning.",
+                       "lead":  "Visit the Contact Us page to send your requirements and get a response within 24 hours.",
+                       "buttonLabel":  "Go to Contact Page"
+                   },
+    "fab":  {
+                "label":  "Sample Request/ Order"
+            },
+    "capabilities":  {
+                         "eyebrow":  "Our Capabilities",
+                         "title":  "Manufacturing units built for precision and scale.",
+                         "lead":  "Tooling, slitting, stamping, and quality checks aligned to battery pack requirements.",
+                         "cards":  [
+                                       {
+                                           "title":  "Precision Slitting",
+                                           "text":  "Consistent width control with clean edges for stable welding."
+                                       },
+                                       {
+                                           "title":  "Custom Stamping",
+                                           "text":  "Tabs, holes, and bends tailored to your pack design."
+                                       },
+                                       {
+                                           "title":  "Surface Finish",
+                                           "text":  "Bright, matte, or brushed finishes with inspection reports."
+                                       },
+                                       {
+                                           "title":  "Bulk Logistics",
+                                           "text":  "Flexible MOQ, bulk reels, and repeatable deliveries."
+                                       }
+                                   ],
+                         "gallery":  [
+                                         "assets/products/nickel-plated/np-10-1.jpg",
+                                         "assets/products/nickel-pure/n-10-1.jpg",
+                                         "assets/products/copper-bus-bars/cb-10-1.jpg"
+                                     ]
+                     }
 }
+
