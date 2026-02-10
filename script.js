@@ -1868,6 +1868,15 @@ const applySiteConfig = (config) => {
   setText("brandMark", brand.mark);
   setText("brandName", brand.name);
   setText("brandTag", brand.tagline);
+  const logo = document.getElementById("brandLogo");
+  if (logo) {
+    if (brand.logo) {
+      logo.src = brand.logo;
+      logo.classList.remove("is-hidden");
+    } else {
+      logo.classList.add("is-hidden");
+    }
+  }
 
   setText("navHome", nav.home);
   setText("navCatalog", nav.catalog);

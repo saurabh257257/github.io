@@ -156,6 +156,20 @@ img {
   align-items: center;
 }
 
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #ffffff;
+  flex: 0 0 auto;
+}
+
+.brand-logo.is-hidden {
+  display: none;
+}
+
 .brand-mark {
   display: grid;
   place-items: center;
