@@ -26,21 +26,21 @@
         "title": "Battery Pack Assemblers",
         "tag": "Nickel strips & bus bars",
         "line": "Flexible nickel strips and bus bars for cell-level interconnections and spot-welded battery packs.",
-        "image": "assets/products/nickel-plated/np-20-1.jpg"
+        "image": "assets/solutions/compact.jpg"
       },
       {
         "id": "ev",
         "title": "EV Battery Assemblers & Manufacturers",
         "tag": "Bus bars & prismatic batteries",
         "line": "High-current bus bars and prismatic batteries for reliable EV battery modules and systems.",
-        "image": "assets/products/nickel-pure/n-15-1.jpg"
+        "image": "assets/solutions/ev.jpg"
       },
       {
         "id": "industrial",
         "title": "Industrial Battery Manufacturers",
         "tag": "High-precision custom components",
         "line": "Custom-engineered, high-precision metals and battery components for automated production lines.",
-        "image": "assets/products/copper-bus-bars/cb-10-1.jpg"
+        "image": "assets/solutions/industrial.jpg"
       }
     ],
     "nextLabel": "Next"
