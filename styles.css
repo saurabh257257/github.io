@@ -169,7 +169,7 @@ img {
   border: none;
   padding: 0;
   flex: 0 0 auto;
-  transform: scale(1.65);
+  transform: none;
   transform-origin: center;
 }
 
