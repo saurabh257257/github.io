@@ -1074,8 +1074,9 @@ img {
   display: none;
   gap: 12px;
   max-width: 100%;
-  overflow: hidden;
+  overflow: auto;
   box-sizing: border-box;
+  max-height: calc(100vh - 220px);
 }
 
 
