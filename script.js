@@ -2004,9 +2004,13 @@ const applySiteConfig = (config) => {
   if (mobileFab && fab.label) {
     mobileFab.textContent = fab.label;
   }
-  if (mobileFab && fab.icon) {
-    mobileFab.classList.add("has-icon");
-    mobileFab.style.setProperty("--fab-icon", `url('${fab.icon}')`);
+  if (mobileFab) {
+    if (fab.icon) {
+      mobileFab.classList.add("has-icon");
+      mobileFab.style.setProperty("--fab-icon", `url('${fab.icon}')`);
+    } else {
+      mobileFab.classList.remove("has-icon");
+    }
   }
 };
 
