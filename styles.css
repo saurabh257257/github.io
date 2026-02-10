@@ -102,6 +102,25 @@ img {
   gap: 20px;
 }
 
+.nav-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+.nav-contact .phone-link,
+.nav-contact .wa-link {
+  color: #ffffff;
+}
+
+.nav-contact .icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
 .brand {
   display: flex;
   gap: 14px;
