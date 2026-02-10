@@ -1,6 +1,20 @@
 ﻿const categoryFilters = document.querySelector("#categoryFilters");
 const catalogGrid = document.querySelector("#catalogGrid");
 const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
+const sampleList = document.querySelector("#sampleList");
+const orderList = document.querySelector("#orderList");
+const mobileSampleList = document.querySelector("#mobileSampleList");
+const mobileOrderList = document.querySelector("#mobileOrderList");
+const sampleForm = document.querySelector("#sampleForm");
+const orderForm = document.querySelector("#orderForm");
+const mobileSampleForm = document.querySelector("#mobileSampleForm");
+const mobileOrderForm = document.querySelector("#mobileOrderForm");
+const mobileFab = document.querySelector("#mobileFab");
+const mobileSheet = document.querySelector("#mobileSheet");
+const mobileSheetClose = document.querySelector("#mobileSheetClose");
+
+const CART_KEY = "sampleCart";
+const ORDER_KEY = "orderCart";
 
 const COUNTRY_CODES = [
     {
@@ -1223,6 +1237,140 @@ const placeholderImage = (label) => {
   return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='100%' height='100%' fill='%23f3e9da'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Space Grotesk, Arial' font-size='36' fill='%23908a80'>${safe}</text></svg>`;
 };
 
+const getCart = () => {
+  const raw = sessionStorage.getItem(CART_KEY);
+  if (!raw) return {};
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+};
+
+const setCart = (cart) => {
+  sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
+};
+
+const getOrder = () => {
+  const raw = sessionStorage.getItem(ORDER_KEY);
+  if (!raw) return {};
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+};
+
+const setOrder = (order) => {
+  sessionStorage.setItem(ORDER_KEY, JSON.stringify(order));
+};
+
+const renderSampleList = () => {
+  const targets = [sampleList, mobileSampleList].filter(Boolean);
+  const cart = getCart();
+  const entries = Object.values(cart);
+  targets.forEach((list) => {
+    list.innerHTML = "";
+    if (entries.length === 0) {
+      list.innerHTML = "<p class='form-note'>No samples added yet. Click “Request Sample” on any product.</p>";
+      return;
+    }
+    entries.forEach((item) => {
+      const row = document.createElement("div");
+      row.className = "panel-item";
+      row.innerHTML = `
+        <div class="panel-item-header">
+          <div><strong>${item.name}</strong></div>
+          <button class="remove-item" type="button" aria-label="Remove item">×</button>
+        </div>
+        <div>Qty: 1</div>
+      `;
+      row.querySelector(".remove-item").addEventListener("click", () => {
+        removeFromCart(item.id);
+      });
+      list.appendChild(row);
+    });
+  });
+};
+
+const renderOrderList = () => {
+  const targets = [orderList, mobileOrderList].filter(Boolean);
+  const order = getOrder();
+  const entries = Object.values(order);
+  targets.forEach((list) => {
+    list.innerHTML = "";
+    if (entries.length === 0) {
+      list.innerHTML = "<p class='form-note'>No items added yet. Click “Order” on any product.</p>";
+      return;
+    }
+    entries.forEach((item) => {
+      const row = document.createElement("div");
+      row.className = "panel-item";
+      row.innerHTML = `
+        <div class="panel-item-header">
+          <div><strong>${item.name}</strong></div>
+          <button class="remove-item" type="button" aria-label="Remove item">×</button>
+        </div>
+        <div>Qty: ${item.kg} kg</div>
+      `;
+      row.querySelector(".remove-item").addEventListener("click", () => {
+        removeFromOrder(item.id);
+      });
+      list.appendChild(row);
+    });
+  });
+};
+
+const addToCart = (product) => {
+  const cart = getCart();
+  if (!cart[product.id]) {
+    cart[product.id] = { id: product.id, name: product.name };
+    setCart(cart);
+    renderSampleList();
+  }
+};
+
+const removeFromCart = (productId) => {
+  const cart = getCart();
+  if (!cart[productId]) return;
+  delete cart[productId];
+  setCart(cart);
+  renderSampleList();
+};
+
+const clearCart = () => {
+  sessionStorage.removeItem(CART_KEY);
+  renderSampleList();
+};
+
+const addToOrder = (product, qty) => {
+  const order = getOrder();
+  order[product.id] = { id: product.id, name: product.name, kg: qty };
+  setOrder(order);
+  renderOrderList();
+};
+
+const updateOrderQty = (productId, qty) => {
+  const order = getOrder();
+  if (!order[productId]) return;
+  order[productId].kg = qty;
+  setOrder(order);
+  renderOrderList();
+};
+
+const removeFromOrder = (productId) => {
+  const order = getOrder();
+  if (!order[productId]) return;
+  delete order[productId];
+  setOrder(order);
+  renderOrderList();
+};
+
+const clearOrder = () => {
+  sessionStorage.removeItem(ORDER_KEY);
+  renderOrderList();
+};
+
 const createCarousel = (images, label) => {
   const wrapper = document.createElement("div");
   wrapper.className = "carousel";
@@ -1359,12 +1507,26 @@ const createCard = (product, categoryName) => {
     const next = Math.max(minQty, current + delta);
     qtyControl.dataset.qty = String(next);
     qtyValue.textContent = `${next} kg`;
+    const order = getOrder();
+    if (order[product.id]) {
+      updateOrderQty(product.id, next);
+    }
   };
   qtyControl.querySelectorAll(".qty-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const delta = btn.dataset.action === "inc" ? 1 : -1;
       updateQty(delta);
     });
+  });
+
+  const sampleBtn = card.querySelector("[data-sample]");
+  const orderBtn = card.querySelector("[data-order]");
+  sampleBtn.addEventListener("click", () => {
+    addToCart(product);
+  });
+  orderBtn.addEventListener("click", () => {
+    const qty = Number(qtyControl.dataset.qty) || minQty;
+    addToOrder(product, qty);
   });
 
   return card;
