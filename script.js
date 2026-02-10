@@ -1265,6 +1265,29 @@ const setOrder = (order) => {
   sessionStorage.setItem(ORDER_KEY, JSON.stringify(order));
 };
 
+const updateActionCounts = () => {
+  const sampleCount = Object.keys(getCart()).length;
+  const orderCount = Object.keys(getOrder()).length;
+  const sampleTabs = document.querySelectorAll('.side-tab[data-tab="sample"]');
+  const orderTabs = document.querySelectorAll('.side-tab[data-tab="order"]');
+
+  sampleTabs.forEach((tab) => {
+    const base = tab.dataset.baseLabel || tab.textContent.replace(/\s*\(\d+\)\s*/g, "").trim();
+    tab.dataset.baseLabel = base;
+    tab.textContent = `${base} (${sampleCount})`;
+  });
+
+  orderTabs.forEach((tab) => {
+    const base = tab.dataset.baseLabel || tab.textContent.replace(/\s*\(\d+\)\s*/g, "").trim();
+    tab.dataset.baseLabel = base;
+    tab.textContent = `${base} (${orderCount})`;
+  });
+
+  if (mobileFab) {
+    mobileFab.textContent = `Sample (${sampleCount}) / Order (${orderCount})`;
+  }
+};
+
 const renderSampleList = () => {
   const targets = [sampleList, mobileSampleList].filter(Boolean);
   const cart = getCart();
@@ -1291,6 +1314,7 @@ const renderSampleList = () => {
       list.appendChild(row);
     });
   });
+  updateActionCounts();
 };
 
 const renderOrderList = () => {
@@ -1319,6 +1343,7 @@ const renderOrderList = () => {
       list.appendChild(row);
     });
   });
+  updateActionCounts();
 };
 
 const addToCart = (product) => {
@@ -1956,6 +1981,7 @@ const loadSiteConfig = async () => {
     if (!response.ok) return;
     const data = await response.json();
     applySiteConfig(data);
+    updateActionCounts();
   } catch {
     // ignore config errors
   }
