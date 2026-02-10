@@ -836,10 +836,13 @@ img {
 
 .mobile-fab {
   position: fixed !important;
+  inset: auto 16px max(16px, env(safe-area-inset-bottom)) auto !important;
   right: 16px !important;
   bottom: max(16px, env(safe-area-inset-bottom)) !important;
   left: auto !important;
   top: auto !important;
+  margin: 0 !important;
+  float: none !important;
   z-index: 9999;
   display: inline-flex !important;
   border: none;
