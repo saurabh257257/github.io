@@ -837,9 +837,11 @@ img {
 .mobile-fab {
   position: fixed !important;
   right: 16px !important;
-  bottom: 16px !important;
+  bottom: max(16px, env(safe-area-inset-bottom)) !important;
+  left: auto !important;
+  top: auto !important;
   z-index: 9999;
-  display: inline-flex;
+  display: inline-flex !important;
   border: none;
   background: var(--accent);
   color: #ffffff;
@@ -850,6 +852,9 @@ img {
   gap: 8px;
   align-items: center;
   justify-content: center;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  pointer-events: auto;
 }
 
 .mobile-fab.has-icon {
