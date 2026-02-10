@@ -1070,6 +1070,7 @@ img {
   gap: 12px;
   max-width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 
@@ -1148,8 +1149,13 @@ img {
   padding: 8px 12px;
   font-size: 0.82rem;
   border-radius: 12px;
-  width: auto;
+  width: max-content;
   align-self: start;
+}
+
+.catalog-side * {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .sample-form label {
