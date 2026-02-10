@@ -1507,10 +1507,7 @@ const createCard = (product, categoryName) => {
     const next = Math.max(minQty, current + delta);
     qtyControl.dataset.qty = String(next);
     qtyValue.textContent = `${next} kg`;
-    const order = getOrder();
-    if (order[product.id]) {
-      updateOrderQty(product.id, next);
-    }
+    addToOrder(product, next);
   };
   qtyControl.querySelectorAll(".qty-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -1815,6 +1812,127 @@ const populateCountrySelects = () => {
   });
 };
 
+const initTabs = (root) => {
+  if (!root) return;
+  const tabs = root.querySelectorAll(".side-tab");
+  const panels = root.querySelectorAll(".side-panel");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const key = tab.dataset.tab;
+      tabs.forEach((t) => t.classList.toggle("is-active", t === tab));
+      panels.forEach((panel) => {
+        panel.classList.toggle("is-active", panel.dataset.panel === key);
+      });
+    });
+  });
+};
+
+const openWhatsApp = (title, items, form) => {
+  const formData = new FormData(form);
+  const countryCode = formData.get("countryCode") || "+91";
+  const mobile = String(formData.get("mobile") || "").trim();
+  if (!mobile) return;
+  const lines = items.length ? items : ["No products selected."];
+  const body = [
+    title,
+    "",
+    "Selected products:",
+    ...lines,
+    "",
+    `Mobile: ${countryCode} ${mobile}`.trim()
+  ].join("\n");
+  const whatsapp = `https://wa.me/918112662827?text=${encodeURIComponent(body)}`;
+  window.open(whatsapp, "_blank");
+  form.reset();
+};
+
+document.querySelectorAll("[data-clear]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const type = btn.dataset.clear;
+    if (type === "sample") {
+      clearCart();
+    } else if (type === "order") {
+      clearOrder();
+    }
+  });
+});
+
+if (sampleForm) {
+  sampleForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const items = Object.values(getCart()).map((item) => `• ${item.name} (Qty: 1)`);
+    if (items.length === 0) {
+      alert("Add at least one sample before submitting.");
+      return;
+    }
+    openWhatsApp("Sample Request", items, sampleForm);
+  });
+}
+
+if (mobileSampleForm) {
+  mobileSampleForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const items = Object.values(getCart()).map((item) => `• ${item.name} (Qty: 1)`);
+    if (items.length === 0) {
+      alert("Add at least one sample before submitting.");
+      return;
+    }
+    openWhatsApp("Sample Request", items, mobileSampleForm);
+  });
+}
+
+if (orderForm) {
+  orderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const items = Object.values(getOrder()).map((item) => `• ${item.name} (${item.kg} kg)`);
+    if (items.length === 0) {
+      alert("Add at least one item before submitting.");
+      return;
+    }
+    openWhatsApp("Order Request", items, orderForm);
+  });
+}
+
+if (mobileOrderForm) {
+  mobileOrderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const items = Object.values(getOrder()).map((item) => `• ${item.name} (${item.kg} kg)`);
+    if (items.length === 0) {
+      alert("Add at least one item before submitting.");
+      return;
+    }
+    openWhatsApp("Order Request", items, mobileOrderForm);
+  });
+}
+
+if (mobileFab && mobileSheet) {
+  mobileFab.addEventListener("click", () => {
+    mobileSheet.classList.add("is-open");
+    mobileSheet.setAttribute("aria-hidden", "false");
+  });
+}
+
+if (mobileSheetClose && mobileSheet) {
+  mobileSheetClose.addEventListener("click", () => {
+    mobileSheet.classList.remove("is-open");
+    mobileSheet.setAttribute("aria-hidden", "true");
+  });
+}
+
+if (mobileSheet) {
+  mobileSheet.addEventListener("click", (event) => {
+    if (event.target === mobileSheet) {
+      mobileSheet.classList.remove("is-open");
+      mobileSheet.setAttribute("aria-hidden", "true");
+    }
+  });
+}
+
+initTabs(document.querySelector(".catalog-side"));
+initTabs(mobileSheet);
+
 loadCatalog();
 populateCountrySelects();
+renderSampleList();
+renderOrderList();
 
