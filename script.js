@@ -191,6 +191,28 @@ const updateActionCounts = () => {
   }
 };
 
+const applySiteConfig = (config) => {
+  if (!config) return;
+  const brand = config.brand || {};
+  const logo = document.getElementById("brandLogo");
+  const mark = document.getElementById("brandMark");
+  if (logo && brand.logo) {
+    logo.src = brand.logo;
+    if (mark) mark.classList.add("is-hidden");
+  }
+};
+
+const loadSiteConfig = async () => {
+  try {
+    const response = await fetch("site.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const data = await response.json();
+    applySiteConfig(data);
+  } catch {
+    // ignore config errors
+  }
+};
+
 const createCard = (product, categoryName) => {
   const card = document.createElement("article");
   card.className = "catalog-card";
@@ -415,3 +437,4 @@ populateCountrySelects();
 renderOrderList();
 applyMobileFabVisibility();
 window.addEventListener("resize", applyMobileFabVisibility);
+loadSiteConfig();
