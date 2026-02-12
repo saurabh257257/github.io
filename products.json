@@ -1,7 +1,7 @@
 ﻿{
   "categories": [
     {
-      "name": "Nickel Strip Plated",
+      "Category": "Nickel Strip Plated",
       "products": [
         {
           "Category": "Nickel Strip Plated",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "name": "Nickel Strip Pure",
+      "Category": "Nickel Strip Pure",
       "products": [
         {
           "Category": "Nickel Strip Pure",
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "name": "Copper Bus Bars",
+      "Category": "Copper Bus Bars",
       "products": [
         {
           "Category": "Copper Bus Bars",
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "name": "Prismatic Batteries",
+      "Category": "Prismatic Batteries",
       "products": [
         {
           "Category": "Prismatic Batteries",

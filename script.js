@@ -11,6 +11,296 @@ const mobileSheetClose = document.querySelector("#mobileSheetClose");
 
 const ORDER_KEY = "orderCart";
 
+const FALLBACK_CATALOG = {
+  categories: [
+    {
+      Category: "Nickel Strip Plated",
+      products: [
+        {
+          Category: "Nickel Strip Plated",
+          ProductCode: "NP-10",
+          Image_Link: [
+            "assets/products/nickel-plated/np-10-1.jpg",
+            "assets/products/nickel-plated/np-10-2.jpg",
+            "assets/products/nickel-plated/np-10-3.jpg"
+          ],
+          Price: "620",
+          Availability: "Now",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "Strip size: 6 x 0.10 mm\nMaterial: Nickel-plated",
+          Additional_Details: "Balanced thickness for compact packs\nGood corrosion resistance\nEasy spot-welding"
+        },
+        {
+          Category: "Nickel Strip Plated",
+          ProductCode: "NP-30",
+          Image_Link: [
+            "assets/products/nickel-plated/np-30-1.jpg",
+            "assets/products/nickel-plated/np-30-2.jpg",
+            "assets/products/nickel-plated/np-30-3.jpg"
+          ],
+          Price: "890",
+          Availability: "On Request",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "Strip size: 10 x 0.30 mm\nMaterial: Nickel-plated",
+          Additional_Details: "Higher current handling\nStable surface finish\nIndustrial use"
+        }
+      ]
+    },
+    {
+      Category: "Nickel Strip Pure",
+      products: [
+        {
+          Category: "Nickel Strip Pure",
+          ProductCode: "N-10",
+          Image_Link: [
+            "assets/products/nickel-pure/n-10-1.jpg",
+            "assets/products/nickel-pure/n-10-2.jpg",
+            "assets/products/nickel-pure/n-10-3.jpg"
+          ],
+          Price: "680",
+          Availability: "Now",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "Strip size: 6 x 0.10 mm\nMaterial: Pure Nickel",
+          Additional_Details: "Low resistance for welding\nBright finish\nConsistent conductivity"
+        },
+        {
+          Category: "Nickel Strip Pure",
+          ProductCode: "N-20",
+          Image_Link: [
+            "assets/products/nickel-pure/n-20-1.jpg",
+            "assets/products/nickel-pure/n-20-2.jpg",
+            "assets/products/nickel-pure/n-20-3.jpg"
+          ],
+          Price: "920",
+          Availability: "On Request",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "Strip size: 8 x 0.20 mm\nMaterial: Pure Nickel",
+          Additional_Details: "Higher current handling\nStable weld quality\nMatte finish"
+        }
+      ]
+    },
+    {
+      Category: "Copper Bus Bars",
+      products: [
+        {
+          Category: "Copper Bus Bars",
+          ProductCode: "CB-5",
+          Image_Link: [
+            "assets/products/copper-bus-bars/cb-5-1.jpg",
+            "assets/products/copper-bus-bars/cb-5-2.jpg",
+            "assets/products/copper-bus-bars/cb-5-3.jpg"
+          ],
+          Price: "560",
+          Availability: "Now",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "C110 Copper\n0.5 mm thickness",
+          Additional_Details: "High conductivity\nCompact layouts\nBright finish"
+        },
+        {
+          Category: "Copper Bus Bars",
+          ProductCode: "CB-15",
+          Image_Link: [
+            "assets/products/copper-bus-bars/cb-15-1.jpg",
+            "assets/products/copper-bus-bars/cb-15-2.jpg",
+            "assets/products/copper-bus-bars/cb-15-3.jpg"
+          ],
+          Price: "980",
+          Availability: "On Request",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "C110 Copper\n1.5 mm thickness",
+          Additional_Details: "Industrial ESS use\nBrushed finish\nCustom lengths"
+        }
+      ]
+    },
+    {
+      Category: "Prismatic Batteries",
+      products: [
+        {
+          Category: "Prismatic Batteries",
+          ProductCode: "PB-50",
+          Image_Link: [
+            "assets/products/prismatic-batteries/pb-50-1.jpg",
+            "assets/products/prismatic-batteries/pb-50-2.jpg",
+            "assets/products/prismatic-batteries/pb-50-3.jpg"
+          ],
+          Price: "640",
+          Availability: "Now",
+          Unit: "Piece",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "50 Ah · 3.2 V · LFP",
+          Additional_Details: "Cycle life 4000+\nGrade A cells\nReliable ESS"
+        },
+        {
+          Category: "Prismatic Batteries",
+          ProductCode: "PB-200",
+          Image_Link: [
+            "assets/products/prismatic-batteries/pb-200-1.jpg",
+            "assets/products/prismatic-batteries/pb-200-2.jpg",
+            "assets/products/prismatic-batteries/pb-200-3.jpg"
+          ],
+          Price: "950",
+          Availability: "On Request",
+          Unit: "Piece",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "200 Ah · 3.2 V · LFP",
+          Additional_Details: "Utility scale use\nHigh capacity\nGrade A cells"
+        }
+      ]
+    }
+  ]
+};
+
+const FALLBACK_CATALOG = {
+  categories: [
+    {
+      Category: "Nickel Strip Plated",
+      products: [
+        {
+          Category: "Nickel Strip Plated",
+          ProductCode: "NP-10",
+          Image_Link: [
+            "assets/products/nickel-plated/np-10-1.jpg",
+            "assets/products/nickel-plated/np-10-2.jpg",
+            "assets/products/nickel-plated/np-10-3.jpg"
+          ],
+          Price: "620",
+          Availability: "Now",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "Strip size: 6 x 0.10 mm\nMaterial: Nickel-plated",
+          Additional_Details: "Balanced thickness for compact packs\nGood corrosion resistance\nEasy spot-welding"
+        },
+        {
+          Category: "Nickel Strip Plated",
+          ProductCode: "NP-30",
+          Image_Link: [
+            "assets/products/nickel-plated/np-30-1.jpg",
+            "assets/products/nickel-plated/np-30-2.jpg",
+            "assets/products/nickel-plated/np-30-3.jpg"
+          ],
+          Price: "890",
+          Availability: "On Request",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "Strip size: 10 x 0.30 mm\nMaterial: Nickel-plated",
+          Additional_Details: "Higher current handling\nStable surface finish\nIndustrial use"
+        }
+      ]
+    },
+    {
+      Category: "Nickel Strip Pure",
+      products: [
+        {
+          Category: "Nickel Strip Pure",
+          ProductCode: "N-10",
+          Image_Link: [
+            "assets/products/nickel-pure/n-10-1.jpg",
+            "assets/products/nickel-pure/n-10-2.jpg",
+            "assets/products/nickel-pure/n-10-3.jpg"
+          ],
+          Price: "680",
+          Availability: "Now",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "Strip size: 6 x 0.10 mm\nMaterial: Pure Nickel",
+          Additional_Details: "Low resistance for welding\nBright finish\nConsistent conductivity"
+        },
+        {
+          Category: "Nickel Strip Pure",
+          ProductCode: "N-20",
+          Image_Link: [
+            "assets/products/nickel-pure/n-20-1.jpg",
+            "assets/products/nickel-pure/n-20-2.jpg",
+            "assets/products/nickel-pure/n-20-3.jpg"
+          ],
+          Price: "920",
+          Availability: "On Request",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "Strip size: 8 x 0.20 mm\nMaterial: Pure Nickel",
+          Additional_Details: "Higher current handling\nStable weld quality\nMatte finish"
+        }
+      ]
+    },
+    {
+      Category: "Copper Bus Bars",
+      products: [
+        {
+          Category: "Copper Bus Bars",
+          ProductCode: "CB-5",
+          Image_Link: [
+            "assets/products/copper-bus-bars/cb-5-1.jpg",
+            "assets/products/copper-bus-bars/cb-5-2.jpg",
+            "assets/products/copper-bus-bars/cb-5-3.jpg"
+          ],
+          Price: "560",
+          Availability: "Now",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "C110 Copper\n0.5 mm thickness",
+          Additional_Details: "High conductivity\nCompact layouts\nBright finish"
+        },
+        {
+          Category: "Copper Bus Bars",
+          ProductCode: "CB-15",
+          Image_Link: [
+            "assets/products/copper-bus-bars/cb-15-1.jpg",
+            "assets/products/copper-bus-bars/cb-15-2.jpg",
+            "assets/products/copper-bus-bars/cb-15-3.jpg"
+          ],
+          Price: "980",
+          Availability: "On Request",
+          Unit: "KG",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "C110 Copper\n1.5 mm thickness",
+          Additional_Details: "Industrial ESS use\nBrushed finish\nCustom lengths"
+        }
+      ]
+    },
+    {
+      Category: "Prismatic Batteries",
+      products: [
+        {
+          Category: "Prismatic Batteries",
+          ProductCode: "PB-50",
+          Image_Link: [
+            "assets/products/prismatic-batteries/pb-50-1.jpg",
+            "assets/products/prismatic-batteries/pb-50-2.jpg",
+            "assets/products/prismatic-batteries/pb-50-3.jpg"
+          ],
+          Price: "640",
+          Availability: "Now",
+          Unit: "Piece",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "50 Ah · 3.2 V · LFP",
+          Additional_Details: "Cycle life 4000+\nGrade A cells\nReliable ESS"
+        },
+        {
+          Category: "Prismatic Batteries",
+          ProductCode: "PB-200",
+          Image_Link: [
+            "assets/products/prismatic-batteries/pb-200-1.jpg",
+            "assets/products/prismatic-batteries/pb-200-2.jpg",
+            "assets/products/prismatic-batteries/pb-200-3.jpg"
+          ],
+          Price: "950",
+          Availability: "On Request",
+          Unit: "Piece",
+          "Minimum Quantity": 3,
+          Product_Dimensions: "200 Ah · 3.2 V · LFP",
+          Additional_Details: "Utility scale use\nHigh capacity\nGrade A cells"
+        }
+      ]
+    }
+  ]
+};
+
 const COUNTRY_CODES = [
     {
         "name":  "Afghanistan",
@@ -1555,19 +1845,19 @@ const filterCatalog = (filter) => {
   });
 };
 
-const loadCatalogFromJson = async () => {
-  const response = await fetch("products.json", { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error("products.json not found");
-  }
-  const data = await response.json();
-  return (data.categories || []).map((cat) => ({
-    name: cat.name,
-    products: (cat.products || []).map((product) => {
-      const availabilityRaw = String(product.Availability || "Now").trim();
-      const availability =
-        availabilityRaw.toLowerCase() === "on request" ? "On Request" : "Now";
-      return {
+const normalizeCatalogData = (data) => {
+  return (data.categories || []).map((cat) => {
+    const fallbackName =
+      cat.Category ||
+      (Array.isArray(cat.products) && cat.products[0] && cat.products[0].Category) ||
+      "";
+    return {
+      name: cat.name || fallbackName || "Category",
+      products: (cat.products || []).map((product) => {
+        const availabilityRaw = String(product.Availability || "Now").trim();
+        const availability =
+          availabilityRaw.toLowerCase() === "on request" ? "On Request" : "Now";
+        return {
         ...product,
         Price: product.Price || "",
         Availability: availability,
@@ -1587,19 +1877,41 @@ const loadCatalogFromJson = async () => {
                 .map((line) => line.trim())
                 .filter(Boolean)
             : []
-      };
-    })
-  }));
+        };
+      })
+    };
+  });
+};
+
+const loadCatalogFromJson = async () => {
+  let data = null;
+  try {
+    const response = await fetch("products.json", { cache: "no-store" });
+    if (response.ok) {
+      data = await response.json();
+    }
+  } catch {
+    data = null;
+  }
+  if (!data || !Array.isArray(data.categories) || data.categories.length === 0) {
+    data = FALLBACK_CATALOG;
+  }
+  return normalizeCatalogData(data);
 };
 
 const renderCatalog = (categories) => {
   if (!catalogGrid) return;
   catalogGrid.innerHTML = "";
+  let cardCount = 0;
   categories.forEach((category) => {
     (category.products || []).forEach((product) => {
       catalogGrid.appendChild(createCard(product, category.name));
+      cardCount += 1;
     });
   });
+  if (cardCount === 0) {
+    catalogGrid.innerHTML = "<p>No products found. Please update products.json.</p>";
+  }
   if (categoryFilters) {
     renderFilters(categories);
   }
@@ -1666,15 +1978,21 @@ const buildPdfDom = (categories) => {
     (category.products || []).forEach((product) => {
       const card = document.createElement("div");
       card.className = "pdf-card";
-      const specs = (product.specs || []).map((s) => `<li>${s}</li>`).join("");
-      const images = (product.images || [])
+      const name = product.ProductCode || "";
+      const dimension = product.Product_Dimensions || "";
+      const details = Array.isArray(product.Additional_Details)
+        ? product.Additional_Details
+        : product.Additional_Details
+          ? String(product.Additional_Details).split(/\r?\n/).filter(Boolean)
+          : [];
+      const specs = details.map((s) => `<li>${s}</li>`).join("");
+      const images = (product.Image_Link || [])
         .slice(0, 3)
-        .map((src) => `<img src="${src}" alt="${product.name}">`)
+        .map((src) => `<img src="${src}" alt="${name}">`)
         .join("");
       card.innerHTML = `
-        <h3>${product.name}</h3>
-        <div class="sku">${product.subtitle || ""}</div>
-        <div>${product.summary || ""}</div>
+        <h3>${name}</h3>
+        <div class="sku">${dimension}</div>
         <ul class="pdf-specs">${specs}</ul>
         <div class="pdf-images">${images}</div>
       `;
@@ -1742,8 +2060,14 @@ const loadCatalog = async () => {
   try {
     const categories = await loadCatalogFromJson();
     renderCatalog(categories);
+    if (!catalogGrid.querySelector(".catalog-card")) {
+      renderCatalog(normalizeCatalogData(FALLBACK_CATALOG));
+    }
   } catch (error) {
-    catalogGrid.innerHTML = "<p>Unable to load catalog. Please check products.json.</p>";
+    renderCatalog(normalizeCatalogData(FALLBACK_CATALOG));
+    if (!catalogGrid.querySelector(".catalog-card")) {
+      catalogGrid.innerHTML = "<p>Unable to load catalog. Please check products.json.</p>";
+    }
   }
 };
 
