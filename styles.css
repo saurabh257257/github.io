@@ -27,7 +27,7 @@ body {
   background: var(--surface);
   line-height: 1.6;
   font-size: 15px;
-  padding-top: calc(var(--search-bar-height) + var(--search-bar-gap) + var(--header-height));
+  padding-top: calc(var(--search-bar-height) + var(--search-bar-gap));
 }
 
 a {
@@ -46,10 +46,7 @@ img {
 }
 
 .site-header {
-  position: fixed;
-  top: calc(var(--search-bar-height) + var(--search-bar-gap));
-  left: 0;
-  right: 0;
+  position: static;
   backdrop-filter: blur(16px);
   background: var(--navy);
   z-index: 10;

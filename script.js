@@ -322,7 +322,8 @@ const clearOrder = () => {
 };
 
 const updateActionCounts = () => {
-  const orderCount = Object.keys(getOrder()).length;
+  const items = Object.values(getOrder());
+  const orderCount = items.reduce((sum, item) => sum + (Number(item.qty) || 0), 0);
   if (mobileFab) {
     mobileFab.textContent = `View Quote (${orderCount})`;
     mobileFab.classList.toggle("has-items", orderCount > 0);
