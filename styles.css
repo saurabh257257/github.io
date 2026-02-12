@@ -1406,6 +1406,10 @@ img {
 }
 
 @media (max-width: 900px) {
+  .site-header {
+    position: static;
+  }
+
   .nav {
     flex-direction: column;
     align-items: flex-start;
