@@ -2,6 +2,7 @@
 const catalogGrid = document.querySelector("#catalogGrid");
 const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
 const catalogSearch = document.querySelector("#catalogSearch");
+const globalSearch = document.querySelector("#globalSearch");
 const orderList = document.querySelector("#orderList");
 const mobileOrderList = document.querySelector("#mobileOrderList");
 const orderForm = document.querySelector("#orderForm");
@@ -458,9 +459,26 @@ applyMobileFabVisibility();
 window.addEventListener("resize", applyMobileFabVisibility);
 loadSiteConfig();
 
+const handleSearchInput = (value) => {
+  currentSearchTerm = String(value || "").trim().toLowerCase();
+  filterCatalog();
+  if (currentSearchTerm) {
+    document.body.classList.add("search-active");
+    const catalog = document.querySelector("#catalog");
+    if (catalog) catalog.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    document.body.classList.remove("search-active");
+  }
+};
+
 if (catalogSearch) {
   catalogSearch.addEventListener("input", (event) => {
-    currentSearchTerm = String(event.target.value || "").trim().toLowerCase();
-    filterCatalog();
+    handleSearchInput(event.target.value);
+  });
+}
+
+if (globalSearch) {
+  globalSearch.addEventListener("input", (event) => {
+    handleSearchInput(event.target.value);
   });
 }
