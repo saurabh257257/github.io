@@ -1297,7 +1297,7 @@ const renderOrderList = () => {
           <div><strong>${item.name}</strong></div>
           <button class="remove-item" type="button" aria-label="Remove item">×</button>
         </div>
-        <div>Qty: ${item.kg} kg</div>
+        <div>Qty: ${item.qty} ${item.unit}</div>
       `;
       row.querySelector(".remove-item").addEventListener("click", () => {
         removeFromOrder(item.id);
@@ -1311,7 +1311,9 @@ const renderOrderList = () => {
 
 const addToOrder = (product, qty) => {
   const order = getOrder();
-  order[product.id] = { id: product.id, name: product.name, kg: qty };
+  const name = product.ProductCode || "";
+  const unit = product.Unit || "KG";
+  order[name] = { id: name, name, qty, unit };
   setOrder(order);
   renderOrderList();
   triggerShake(mobileFab);
@@ -1320,7 +1322,7 @@ const addToOrder = (product, qty) => {
 const updateOrderQty = (productId, qty) => {
   const order = getOrder();
   if (!order[productId]) return;
-  order[productId].kg = qty;
+  order[productId].qty = qty;
   setOrder(order);
   renderOrderList();
   triggerShake(mobileFab);
@@ -1422,50 +1424,70 @@ const createCard = (product, categoryName) => {
   card.dataset.category = categoryName;
 
   const badge = "";
-  const specs = (product.specs || []).map((spec) => `<li>${spec}</li>`).join("");
-  const priceLine = product.price ? `<span class="price">Price: ${product.price}</span>` : "";
-  const minQty = Number(product.minQuantity) || 1;
-  const moqLine = product.minQuantity ? `<span class="price">Min Qty: ${minQty} kg</span>` : "";
+  const name = product.ProductCode || "";
+  const dataId = name
+    ? name.toString().trim().replace(/[^a-z0-9_-]+/gi, "_")
+    : `product_${Math.random().toString(36).slice(2, 9)}`;
+  const unit = product.Unit || "KG";
+  const minQty = Number(product["Minimum Quantity"]) || 1;
+  const dimensions = product.Product_Dimensions || "";
+  const dimensionHtml = dimensions ? dimensions.replace(/\r?\n/g, "<br>") : "";
+  const detailsList = Array.isArray(product.Additional_Details)
+    ? product.Additional_Details
+    : product.Additional_Details
+      ? String(product.Additional_Details)
+          .split(/\r?\n/)
+          .map((line) => line.trim())
+          .filter(Boolean)
+      : [];
+  const specs = detailsList.map((spec) => `<li>${spec}</li>`).join("");
+  const priceText = String(product.Price || "");
+  const showUnit = priceText && !/per\\s+/i.test(priceText) && !/\\//.test(priceText);
+  const priceLine = priceText
+    ? `<span class="price">Price: ${priceText}${showUnit ? `/${unit}` : ""}</span>`
+    : "";
+  const moqLine = `<span class="price">Min Qty: ${minQty} ${unit}</span>`;
 
   card.innerHTML = `
     ${badge}
     <div class="catalog-body">
       <div class="details-bottom">
-        <h3>${product.name}</h3>
-        <p class="sku">${product.subtitle || ""}</p>
-        <p>${product.summary || ""}</p>
+        <h3>${name}</h3>
+        <p class="sku">${dimensionHtml}</p>
         <div class="price-row">
           ${priceLine}
           ${moqLine}
         </div>
-        <button class="details-toggle" type="button" data-details="${product.id}">
+        <button class="details-toggle" type="button" data-details="${dataId}">
           <span>+</span>
           More details
         </button>
-        <div class="details" data-details-panel="${product.id}">
+        <div class="details" data-details-panel="${dataId}">
           <ul>${specs}</ul>
         </div>
         <div class="card-actions">
           <div class="order-controls" data-qty="${minQty}">
             <button class="qty-btn" type="button" data-action="dec" aria-label="Decrease quantity">-</button>
-            <span class="qty-value">${minQty} kg</span>
+            <span class="qty-value">${minQty} ${unit}</span>
             <button class="qty-btn" type="button" data-action="inc" aria-label="Increase quantity">+</button>
           </div>
-          <button class="button order-btn" type="button" data-order="${product.id}">Order</button>
+          <button class="button order-btn" type="button" data-order="${dataId}">Order</button>
         </div>
       </div>
     </div>
   `;
 
-  const carousel = createCarousel(product.images || [], product.name);
+  const carousel = createCarousel(product.Image_Link || [], name);
   card.insertBefore(carousel, card.firstChild);
 
-  const detailsToggle = card.querySelector(`[data-details="${product.id}"]`);
-  const detailsPanel = card.querySelector(`[data-details-panel="${product.id}"]`);
-  detailsToggle.addEventListener("click", () => {
-    const isOpen = detailsPanel.classList.toggle("is-open");
-    detailsToggle.querySelector("span").textContent = isOpen ? "-" : "+";
-  });
+  const detailsToggle = card.querySelector(`[data-details="${dataId}"]`);
+  const detailsPanel = card.querySelector(`[data-details-panel="${dataId}"]`);
+  if (detailsToggle && detailsPanel) {
+    detailsToggle.addEventListener("click", () => {
+      const isOpen = detailsPanel.classList.toggle("is-open");
+      detailsToggle.querySelector("span").textContent = isOpen ? "-" : "+";
+    });
+  }
 
   const qtyControl = card.querySelector(".order-controls");
   const qtyValue = card.querySelector(".qty-value");
@@ -1473,7 +1495,7 @@ const createCard = (product, categoryName) => {
     const current = Number(qtyControl.dataset.qty) || minQty;
     const next = Math.max(minQty, current + delta);
     qtyControl.dataset.qty = String(next);
-    qtyValue.textContent = `${next} kg`;
+    qtyValue.textContent = `${next} ${unit}`;
     addToOrder(product, next);
   };
   qtyControl.querySelectorAll(".qty-btn").forEach((btn) => {
@@ -1541,11 +1563,32 @@ const loadCatalogFromJson = async () => {
   const data = await response.json();
   return (data.categories || []).map((cat) => ({
     name: cat.name,
-    products: (cat.products || []).map((product) => ({
-      ...product,
-      price: product.price || "",
-      minQuantity: product.minQuantity || ""
-    }))
+    products: (cat.products || []).map((product) => {
+      const availabilityRaw = String(product.Availability || "Now").trim();
+      const availability =
+        availabilityRaw.toLowerCase() === "on request" ? "On Request" : "Now";
+      return {
+        ...product,
+        Price: product.Price || "",
+        Availability: availability,
+        Unit: product.Unit || "KG",
+        "Minimum Quantity": Number(product["Minimum Quantity"] || 1),
+        Image_Link: Array.isArray(product.Image_Link)
+          ? product.Image_Link
+          : product.Image_Link
+            ? [product.Image_Link]
+            : [],
+        Product_Dimensions: String(product.Product_Dimensions || "").trim(),
+        Additional_Details: Array.isArray(product.Additional_Details)
+          ? product.Additional_Details
+          : product.Additional_Details
+            ? String(product.Additional_Details)
+                .split(/\r?\n/)
+                .map((line) => line.trim())
+                .filter(Boolean)
+            : []
+      };
+    })
   }));
 };
 
@@ -2016,7 +2059,7 @@ document.querySelectorAll("[data-clear]").forEach((btn) => {
 if (orderForm) {
   orderForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const items = Object.values(getOrder()).map((item) => `• ${item.name} (${item.kg} kg)`);
+    const items = Object.values(getOrder()).map((item) => `• ${item.name} (${item.qty} ${item.unit})`);
     if (items.length === 0) {
       alert("Add at least one item before submitting.");
       return;
@@ -2028,7 +2071,7 @@ if (orderForm) {
 if (mobileOrderForm) {
   mobileOrderForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const items = Object.values(getOrder()).map((item) => `• ${item.name} (${item.kg} kg)`);
+    const items = Object.values(getOrder()).map((item) => `• ${item.name} (${item.qty} ${item.unit})`);
     if (items.length === 0) {
       alert("Add at least one item before submitting.");
       return;
