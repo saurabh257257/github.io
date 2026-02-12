@@ -649,6 +649,19 @@ img {
   margin-bottom: 12px;
 }
 
+.catalog-search {
+  margin: 10px 0 18px;
+}
+
+.catalog-search input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
 .catalog-link {
   border: none;
   background: transparent;
@@ -1433,6 +1446,14 @@ img {
 
   .catalog-side {
     display: none;
+  }
+
+  .catalog-search {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--surface);
+    padding-top: 8px;
   }
 
   .mobile-fab {

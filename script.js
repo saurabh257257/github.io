@@ -1,6 +1,7 @@
 ﻿const categoryFilters = document.querySelector("#categoryFilters");
 const catalogGrid = document.querySelector("#catalogGrid");
 const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
+const catalogSearch = document.querySelector("#catalogSearch");
 const orderList = document.querySelector("#orderList");
 const mobileOrderList = document.querySelector("#mobileOrderList");
 const orderForm = document.querySelector("#orderForm");
@@ -65,6 +66,9 @@ const normalizeCatalogData = (data) => {
   });
 };
 
+let currentCategoryFilter = "all";
+let currentSearchTerm = "";
+
 const renderFilters = (categories) => {
   if (!categoryFilters) return;
   categoryFilters.innerHTML = "";
@@ -88,17 +92,21 @@ const renderFilters = (categories) => {
     btn.addEventListener("click", () => {
       buttons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-      const filter = btn.dataset.filter;
-      filterCatalog(filter);
+      currentCategoryFilter = btn.dataset.filter;
+      filterCatalog();
     });
   });
 };
 
-const filterCatalog = (filter) => {
+const filterCatalog = () => {
   if (!catalogGrid) return;
   const cards = catalogGrid.querySelectorAll(".catalog-card");
   cards.forEach((card) => {
-    if (filter === "all" || card.dataset.category === filter) {
+    const matchesCategory =
+      currentCategoryFilter === "all" || card.dataset.category === currentCategoryFilter;
+    const haystack = `${card.dataset.search || ""}`.toLowerCase();
+    const matchesSearch = !currentSearchTerm || haystack.includes(currentSearchTerm);
+    if (matchesCategory && matchesSearch) {
       card.style.display = "block";
     } else {
       card.style.display = "none";
@@ -270,6 +278,16 @@ const createCard = (product, categoryName) => {
   const carousel = createCarousel(product.Image_Link || [], name);
   card.insertBefore(carousel, card.firstChild);
 
+  const searchText = [
+    name,
+    categoryName,
+    dimensions,
+    detailsList.join(" ")
+  ]
+    .filter(Boolean)
+    .join(" ");
+  card.dataset.search = searchText;
+
   const detailsToggle = card.querySelector(`[data-details="${dataId}"]`);
   const detailsPanel = card.querySelector(`[data-details-panel="${dataId}"]`);
   if (detailsToggle && detailsPanel) {
@@ -318,6 +336,7 @@ const renderCatalog = (categories) => {
     catalogGrid.innerHTML = "<p>No products found. Please update products.json.</p>";
   }
   renderFilters(categories);
+  filterCatalog();
 };
 
 const loadCatalogFromJson = async () => {
@@ -438,3 +457,10 @@ renderOrderList();
 applyMobileFabVisibility();
 window.addEventListener("resize", applyMobileFabVisibility);
 loadSiteConfig();
+
+if (catalogSearch) {
+  catalogSearch.addEventListener("input", (event) => {
+    currentSearchTerm = String(event.target.value || "").trim().toLowerCase();
+    filterCatalog();
+  });
+}
