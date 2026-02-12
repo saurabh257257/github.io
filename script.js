@@ -372,8 +372,9 @@ const createCard = (product, categoryName) => {
       : [];
   const specs = detailsList.map((spec) => `<li>${spec}</li>`).join("");
   const availability = product.Availability || "Now";
-  const availabilityClass =
-    availability.toLowerCase() === "on request" ? "request" : "now";
+  const isRequest = availability.toLowerCase() === "on request";
+  const availabilityClass = isRequest ? "request" : "now";
+  const availabilityLabel = isRequest ? "On request" : "Available";
   const priceText = String(product.Price || "");
   const showUnit = priceText && !/per\s+/i.test(priceText) && !/\//.test(priceText);
   const priceLine = priceText
@@ -382,7 +383,7 @@ const createCard = (product, categoryName) => {
   const moqLine = `<span class="price">Min Qty: ${minQty} ${unit}</span>`;
 
   card.innerHTML = `
-    <span class="badge badge-${availabilityClass}">${availability}</span>
+    <span class="badge badge-${availabilityClass}">${availabilityLabel}</span>
     <div class="catalog-body">
       <div class="details-bottom">
         <h3>${name}</h3>
