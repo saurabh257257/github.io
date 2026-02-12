@@ -131,6 +131,7 @@ const createCarousel = (images, label) => {
     img.alt = label;
     img.loading = "lazy";
     img.className = index === 0 ? "active" : "";
+    img.dataset.index = String(index);
     img.onerror = () => {
       img.onerror = null;
       img.src = placeholderImage(label);
@@ -138,7 +139,135 @@ const createCarousel = (images, label) => {
     wrapper.appendChild(img);
   });
 
+  if (safeImages.length > 1) {
+    const controls = document.createElement("div");
+    controls.className = "carousel-controls";
+
+    const prev = document.createElement("button");
+    prev.className = "carousel-btn prev";
+    prev.type = "button";
+    prev.setAttribute("aria-label", "Previous image");
+    prev.textContent = "‹";
+
+    const next = document.createElement("button");
+    next.className = "carousel-btn next";
+    next.type = "button";
+    next.setAttribute("aria-label", "Next image");
+    next.textContent = "›";
+
+    const dots = document.createElement("div");
+    dots.className = "carousel-dots";
+    safeImages.forEach((_, idx) => {
+      const dot = document.createElement("span");
+      dot.className = idx === 0 ? "carousel-dot active" : "carousel-dot";
+      dots.appendChild(dot);
+    });
+
+    const updateActive = (direction) => {
+      const imgs = wrapper.querySelectorAll("img");
+      const currentIndex = Array.from(imgs).findIndex((img) =>
+        img.classList.contains("active")
+      );
+      const nextIndex =
+        currentIndex === -1
+          ? 0
+          : (currentIndex + direction + imgs.length) % imgs.length;
+      imgs.forEach((img, idx) => img.classList.toggle("active", idx === nextIndex));
+      dots.querySelectorAll(".carousel-dot").forEach((dot, idx) => {
+        dot.classList.toggle("active", idx === nextIndex);
+      });
+    };
+
+    prev.addEventListener("click", (event) => {
+      event.stopPropagation();
+      updateActive(-1);
+    });
+    next.addEventListener("click", (event) => {
+      event.stopPropagation();
+      updateActive(1);
+    });
+
+    controls.appendChild(prev);
+    controls.appendChild(dots);
+    controls.appendChild(next);
+    wrapper.appendChild(controls);
+  }
+
+  wrapper.addEventListener("click", (event) => {
+    const img = event.target.closest("img");
+    if (!img) return;
+    const allImgs = Array.from(wrapper.querySelectorAll("img"));
+    openLightbox(allImgs, Number(img.dataset.index) || 0);
+  });
+
   return wrapper;
+};
+
+const openLightbox = (images, startIndex) => {
+  if (!images.length) return;
+
+  const existing = document.querySelector(".lightbox");
+  if (existing) existing.remove();
+
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.innerHTML = `
+    <div class="lightbox-inner">
+      <button class="lightbox-close" type="button" aria-label="Close">×</button>
+      <button class="lightbox-nav prev" type="button" aria-label="Previous image">‹</button>
+      <img class="lightbox-image" alt="" />
+      <button class="lightbox-nav next" type="button" aria-label="Next image">›</button>
+    </div>
+  `;
+
+  const body = document.body;
+  body.appendChild(lightbox);
+  body.classList.add("lightbox-open");
+
+  const imgEl = lightbox.querySelector(".lightbox-image");
+  let index = startIndex;
+
+  const render = () => {
+    const src = images[index]?.src || images[0].src;
+    imgEl.src = src;
+    imgEl.alt = images[index]?.alt || "Product image";
+  };
+
+  const close = () => {
+    lightbox.remove();
+    body.classList.remove("lightbox-open");
+    document.removeEventListener("keydown", handleKey);
+  };
+
+  const handleKey = (event) => {
+    if (event.key === "Escape") close();
+    if (event.key === "ArrowLeft") {
+      index = (index - 1 + images.length) % images.length;
+      render();
+    }
+    if (event.key === "ArrowRight") {
+      index = (index + 1) % images.length;
+      render();
+    }
+  };
+
+  lightbox.querySelector(".lightbox-close").addEventListener("click", close);
+  lightbox.querySelector(".lightbox-nav.prev").addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    render();
+  });
+  lightbox.querySelector(".lightbox-nav.next").addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    render();
+  });
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) close();
+  });
+  document.addEventListener("keydown", handleKey);
+
+  render();
 };
 
 const renderOrderList = () => {
@@ -148,7 +277,7 @@ const renderOrderList = () => {
   targets.forEach((list) => {
     list.innerHTML = "";
     if (entries.length === 0) {
-      list.innerHTML = "<p class='form-note'>No items added yet. Click “Order” on any product.</p>";
+      list.innerHTML = "<p class='form-note'>No items added yet. Click “Add to Quote” on any product.</p>";
       return;
     }
     entries.forEach((item) => {
@@ -195,7 +324,7 @@ const clearOrder = () => {
 const updateActionCounts = () => {
   const orderCount = Object.keys(getOrder()).length;
   if (mobileFab) {
-    mobileFab.textContent = `Order (${orderCount})`;
+    mobileFab.textContent = `View Quote (${orderCount})`;
     mobileFab.classList.toggle("has-items", orderCount > 0);
   }
 };
@@ -270,7 +399,7 @@ const createCard = (product, categoryName) => {
             <span class="qty-value">${minQty} ${unit}</span>
             <button class="qty-btn" type="button" data-action="inc" aria-label="Increase quantity">+</button>
           </div>
-          <button class="button order-btn" type="button" data-order="${dataId}">Order</button>
+          <button class="button order-btn" type="button" data-order="${dataId}">Add to Quote</button>
         </div>
       </div>
     </div>
@@ -377,7 +506,7 @@ const openWhatsApp = (items, form) => {
   if (!mobile) return;
   const lines = items.length ? items : ["No products selected."];
   const body = [
-    "Order Request",
+    "Quote Request",
     "",
     "Selected products:",
     ...lines,
