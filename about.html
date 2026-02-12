@@ -120,39 +120,14 @@
     </div>
   </footer>
 
-  <button class="mobile-fab" type="button" id="mobileFab">Sample / Order</button>
+  <button class="mobile-fab" type="button" id="mobileFab">Order</button>
   <div class="mobile-sheet" id="mobileSheet" aria-hidden="true">
     <div class="mobile-sheet-inner">
       <div class="mobile-sheet-header">
-        <div class="side-tabs">
-          <button class="side-tab is-active" type="button" data-tab="sample">Sample Request</button>
-          <button class="side-tab" type="button" data-tab="order">Order</button>
-        </div>
         <button class="sheet-close" type="button" id="mobileSheetClose" aria-label="Close">×</button>
       </div>
 
-      <div class="side-panel is-active" data-panel="sample">
-        <div class="panel-header">
-          <h3>Request Sample</h3>
-          <button class="button ghost tiny" type="button" data-clear="sample">Clear</button>
-        </div>
-        <div id="mobileSampleList" class="panel-list"></div>
-        <form class="panel-form" id="mobileSampleForm">
-          <label>
-            Mobile Number
-            <div class="phone-row">
-              <select name="countryCode" aria-label="Country code"></select>
-            </div>
-            <input type="tel" name="mobile" required placeholder="Mobile number" />
-          </label>
-          <div class="form-actions">
-            <button class="button tiny" type="submit">Request Sample</button>
-          </div>
-          <p class="form-note">Opens WhatsApp with your request details.</p>
-        </form>
-      </div>
-
-      <div class="side-panel" data-panel="order">
+      <div class="side-panel is-active" data-panel="order">
         <div class="panel-header">
           <h3>Order Request</h3>
           <button class="button ghost tiny" type="button" data-clear="order">Clear</button>

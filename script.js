@@ -1,19 +1,14 @@
 ﻿const categoryFilters = document.querySelector("#categoryFilters");
 const catalogGrid = document.querySelector("#catalogGrid");
 const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
-const sampleList = document.querySelector("#sampleList");
 const orderList = document.querySelector("#orderList");
-const mobileSampleList = document.querySelector("#mobileSampleList");
 const mobileOrderList = document.querySelector("#mobileOrderList");
-const sampleForm = document.querySelector("#sampleForm");
 const orderForm = document.querySelector("#orderForm");
-const mobileSampleForm = document.querySelector("#mobileSampleForm");
 const mobileOrderForm = document.querySelector("#mobileOrderForm");
 const mobileFab = document.querySelector("#mobileFab");
 const mobileSheet = document.querySelector("#mobileSheet");
 const mobileSheetClose = document.querySelector("#mobileSheetClose");
 
-const CART_KEY = "sampleCart";
 const ORDER_KEY = "orderCart";
 
 const COUNTRY_CODES = [
@@ -1237,20 +1232,6 @@ const placeholderImage = (label) => {
   return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='100%' height='100%' fill='%23f3e9da'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Space Grotesk, Arial' font-size='36' fill='%23908a80'>${safe}</text></svg>`;
 };
 
-const getCart = () => {
-  const raw = sessionStorage.getItem(CART_KEY);
-  if (!raw) return {};
-  try {
-    return JSON.parse(raw);
-  } catch {
-    return {};
-  }
-};
-
-const setCart = (cart) => {
-  sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
-};
-
 const getOrder = () => {
   const raw = sessionStorage.getItem(ORDER_KEY);
   if (!raw) return {};
@@ -1265,7 +1246,6 @@ const setOrder = (order) => {
   sessionStorage.setItem(ORDER_KEY, JSON.stringify(order));
 };
 
-let lastSampleCount = 0;
 let lastOrderCount = 0;
 
 const triggerShake = (el) => {
@@ -1279,16 +1259,8 @@ const triggerShake = (el) => {
 };
 
 const updateActionCounts = () => {
-  const sampleCount = Object.keys(getCart()).length;
   const orderCount = Object.keys(getOrder()).length;
-  const sampleTabs = document.querySelectorAll('.side-tab[data-tab="sample"]');
   const orderTabs = document.querySelectorAll('.side-tab[data-tab="order"]');
-
-  sampleTabs.forEach((tab) => {
-    const base = tab.dataset.baseLabel || tab.textContent.replace(/\s*\(\d+\)\s*/g, "").trim();
-    tab.dataset.baseLabel = base;
-    tab.textContent = `${base} (${sampleCount})`;
-  });
 
   orderTabs.forEach((tab) => {
     const base = tab.dataset.baseLabel || tab.textContent.replace(/\s*\(\d+\)\s*/g, "").trim();
@@ -1297,44 +1269,14 @@ const updateActionCounts = () => {
   });
 
   if (mobileFab) {
-    mobileFab.textContent = `Sample (${sampleCount}) / Order (${orderCount})`;
-    mobileFab.classList.toggle("has-items", sampleCount + orderCount > 0);
+    mobileFab.textContent = `Order (${orderCount})`;
+    mobileFab.classList.toggle("has-items", orderCount > 0);
   }
 
-  if (sampleCount > lastSampleCount || orderCount > lastOrderCount) {
+  if (orderCount > lastOrderCount) {
     triggerShake(mobileFab);
   }
-  lastSampleCount = sampleCount;
   lastOrderCount = orderCount;
-};
-
-const renderSampleList = () => {
-  const targets = [sampleList, mobileSampleList].filter(Boolean);
-  const cart = getCart();
-  const entries = Object.values(cart);
-  targets.forEach((list) => {
-    list.innerHTML = "";
-    if (entries.length === 0) {
-      list.innerHTML = "<p class='form-note'>No samples added yet. Click “Request Sample” on any product.</p>";
-      return;
-    }
-    entries.forEach((item) => {
-      const row = document.createElement("div");
-      row.className = "panel-item";
-      row.innerHTML = `
-        <div class="panel-item-header">
-          <div><strong>${item.name}</strong></div>
-          <button class="remove-item" type="button" aria-label="Remove item">×</button>
-        </div>
-        <div>Qty: 1</div>
-      `;
-      row.querySelector(".remove-item").addEventListener("click", () => {
-        removeFromCart(item.id);
-      });
-      list.appendChild(row);
-    });
-  });
-  updateActionCounts();
 };
 
 const renderOrderList = () => {
@@ -1366,28 +1308,6 @@ const renderOrderList = () => {
   updateActionCounts();
 };
 
-const addToCart = (product) => {
-  const cart = getCart();
-  if (!cart[product.id]) {
-    cart[product.id] = { id: product.id, name: product.name };
-    setCart(cart);
-    renderSampleList();
-    triggerShake(mobileFab);
-  }
-};
-
-const removeFromCart = (productId) => {
-  const cart = getCart();
-  if (!cart[productId]) return;
-  delete cart[productId];
-  setCart(cart);
-  renderSampleList();
-};
-
-const clearCart = () => {
-  sessionStorage.removeItem(CART_KEY);
-  renderSampleList();
-};
 
 const addToOrder = (product, qty) => {
   const order = getOrder();
@@ -1526,7 +1446,6 @@ const createCard = (product, categoryName) => {
           <ul>${specs}</ul>
         </div>
         <div class="card-actions">
-          <button class="button sample-btn" type="button" data-sample="${product.id}">Request Sample</button>
           <div class="order-controls" data-qty="${minQty}">
             <button class="qty-btn" type="button" data-action="dec" aria-label="Decrease quantity">-</button>
             <span class="qty-value">${minQty} kg</span>
@@ -1564,13 +1483,7 @@ const createCard = (product, categoryName) => {
     });
   });
 
-  const sampleBtn = card.querySelector("[data-sample]");
   const orderBtn = card.querySelector("[data-order]");
-  sampleBtn.addEventListener("click", () => {
-    addToCart(product);
-    setActivePanel(document.querySelector(".catalog-side"), "sample");
-    setActivePanel(mobileSheet, "sample");
-  });
   orderBtn.addEventListener("click", () => {
     const qty = Number(qtyControl.dataset.qty) || minQty;
     addToOrder(product, qty);
@@ -2094,37 +2007,11 @@ const openWhatsApp = (title, items, form) => {
 document.querySelectorAll("[data-clear]").forEach((btn) => {
   btn.addEventListener("click", () => {
     const type = btn.dataset.clear;
-    if (type === "sample") {
-      clearCart();
-    } else if (type === "order") {
+    if (type === "order") {
       clearOrder();
     }
   });
 });
-
-if (sampleForm) {
-  sampleForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const items = Object.values(getCart()).map((item) => `• ${item.name} (Qty: 1)`);
-    if (items.length === 0) {
-      alert("Add at least one sample before submitting.");
-      return;
-    }
-    openWhatsApp("Sample Request", items, sampleForm);
-  });
-}
-
-if (mobileSampleForm) {
-  mobileSampleForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const items = Object.values(getCart()).map((item) => `• ${item.name} (Qty: 1)`);
-    if (items.length === 0) {
-      alert("Add at least one sample before submitting.");
-      return;
-    }
-    openWhatsApp("Sample Request", items, mobileSampleForm);
-  });
-}
 
 if (orderForm) {
   orderForm.addEventListener("submit", (event) => {
@@ -2178,7 +2065,6 @@ initTabs(mobileSheet);
 
 loadCatalog();
 populateCountrySelects();
-renderSampleList();
 renderOrderList();
 initSolutionsCarousel();
 loadSiteConfig();
