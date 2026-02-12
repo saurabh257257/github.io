@@ -1377,10 +1377,15 @@ img {
   border-radius: 999px;
   background: #121826;
   color: #fff;
+  z-index: 2;
 }
 
-.badge {
-  display: none;
+.badge.badge-now {
+  background: #0f766e;
+}
+
+.badge.badge-request {
+  background: #b45309;
 }
 
 .details-bottom {
