@@ -1509,7 +1509,7 @@ img {
 }
 
 .site-footer {
-  padding: 30px 0 50px;
+  padding: 8px 0;
   border-top: 1px solid var(--navy);
   background: var(--navy);
   color: #f8fbff;
@@ -1518,7 +1518,8 @@ img {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 8px;
+  font-size: 0.78rem;
 }
 
 .footer-title {
