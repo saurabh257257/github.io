@@ -1231,6 +1231,7 @@ img {
   margin-bottom: 0;
   aspect-ratio: 4 / 3;
   max-height: 150px;
+  grid-column: 1;
 }
 
 .carousel img {
@@ -1698,6 +1699,7 @@ img {
 .catalog-card .catalog-body {
   display: grid;
   gap: 6px;
+  grid-column: 2;
 }
 
 
