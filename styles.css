@@ -1086,7 +1086,7 @@ img {
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: grid;
-  grid-template-columns: minmax(0, 0.32fr) minmax(0, 0.68fr);
+  grid-template-columns: minmax(0, 0.28fr) minmax(0, 0.72fr);
   gap: 16px;
   align-items: start;
 }
@@ -1097,19 +1097,19 @@ img {
 }
 
 .catalog-card h3 {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
+  font-size: 0.98rem;
+  margin-bottom: 4px;
 }
 
 .catalog-card .sku {
   color: var(--muted);
-  font-size: 0.85rem;
-  margin-bottom: 8px;
+  font-size: 0.78rem;
+  margin-bottom: 6px;
 }
 
 .catalog-card p,
 .catalog-card li {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
 }
 
 .details-row {
@@ -1229,8 +1229,8 @@ img {
   background: linear-gradient(135deg, #f7ead9, #f5f1e9);
   border: 1px solid var(--line);
   margin-bottom: 0;
-  aspect-ratio: 5 / 4;
-  max-height: 180px;
+  aspect-ratio: 4 / 3;
+  max-height: 150px;
 }
 
 .carousel img {
@@ -1598,7 +1598,7 @@ img {
   }
 
   .catalog-card {
-    grid-template-columns: minmax(0, 0.32fr) minmax(0, 0.68fr);
+    grid-template-columns: minmax(0, 0.28fr) minmax(0, 0.72fr);
   }
 }
 
