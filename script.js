@@ -392,20 +392,24 @@ const createCard = (product, categoryName) => {
           ${priceLine}
           ${moqLine}
         </div>
-        <button class="details-toggle" type="button" data-details="${dataId}">
-          <span>+</span>
-          More details
-        </button>
-        <div class="details" data-details-panel="${dataId}">
-          <ul>${specs}</ul>
-        </div>
-        <div class="card-actions">
-          <div class="order-controls" data-qty="${minQty}">
-            <button class="qty-btn" type="button" data-action="dec" aria-label="Decrease quantity">-</button>
-            <span class="qty-value">${minQty} ${unit}</span>
-            <button class="qty-btn" type="button" data-action="inc" aria-label="Increase quantity">+</button>
+        <div class="details-row">
+          <div class="details-block">
+            <button class="details-toggle" type="button" data-details="${dataId}">
+              <span>+</span>
+              More details
+            </button>
+            <div class="details" data-details-panel="${dataId}">
+              <ul>${specs}</ul>
+            </div>
           </div>
-          <button class="button order-btn" type="button" data-order="${dataId}">Add to Quote</button>
+          <div class="card-actions">
+            <div class="order-controls" data-qty="${minQty}">
+              <button class="qty-btn" type="button" data-action="dec" aria-label="Decrease quantity">-</button>
+              <span class="qty-value">${minQty} ${unit}</span>
+              <button class="qty-btn" type="button" data-action="inc" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="button order-btn" type="button" data-order="${dataId}">Add to Quote</button>
+          </div>
         </div>
       </div>
     </div>

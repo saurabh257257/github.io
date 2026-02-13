@@ -1086,7 +1086,7 @@ img {
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
   gap: 16px;
   align-items: start;
 }
@@ -1112,13 +1112,24 @@ img {
   font-size: 0.88rem;
 }
 
+.details-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  margin-top: 12px;
+}
+
+.details-block {
+  min-width: 0;
+}
+
 .card-actions {
   display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 10px;
-  align-items: center;
-  justify-content: start;
-  margin-top: 14px;
+  grid-template-columns: auto;
+  gap: 8px;
+  align-items: start;
+  justify-content: end;
 }
 
 .card-actions .button {
