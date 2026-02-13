@@ -1535,6 +1535,36 @@ img {
   font-size: 0.78rem;
 }
 
+.footer-contact {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.footer-contact a {
+  color: #f8fbff;
+  text-decoration: none;
+}
+
+.footer-contact .divider {
+  opacity: 0.6;
+}
+
+.footer-contact .contact-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-contact .contact-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
 .footer-title {
   font-weight: 600;
   margin-bottom: 6px;

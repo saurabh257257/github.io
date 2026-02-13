@@ -20,7 +20,7 @@
   },
   {
     "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated_1P_8*0.15",
+    "ProductCode": "Nickel Strip Plated 1P 8x0.15 mm",
     "Image_Link": [
      "assets/products/nickel-pure/n-10-1.jpg",
             "assets/products/nickel-pure/n-10-2.jpg",
@@ -35,7 +35,7 @@
   },
   {
     "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated_1P_10*0.15",
+    "ProductCode": "Nickel Strip Plated 1P 10x0.15 mm",
     "Image_Link": [
      "assets/products/nickel-pure/n-10-1.jpg",
             "assets/products/nickel-pure/n-10-2.jpg",
@@ -50,7 +50,7 @@
   },
   {
     "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated_2P_26*0.15",
+    "ProductCode": "Nickel Strip Plated 2P 26x0.15 mm",
     "Image_Link": [
      "assets/products/nickel-pure/n-10-1.jpg",
             "assets/products/nickel-pure/n-10-2.jpg",
@@ -65,7 +65,7 @@
   },
   {
     "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated_2P_31*0.15",
+    "ProductCode": "Nickel Strip Plated 2P 31x0.15 mm",
     "Image_Link": [
       "assets/products/nickel-pure/n-10-1.jpg",
             "assets/products/nickel-pure/n-10-2.jpg",
@@ -80,7 +80,7 @@
   },
   {
     "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated_2P_46.5*0.15",
+    "ProductCode": "Nickel Strip Plated 2P 46.5x0.15 mm",
     "Image_Link": [
       "assets/products/nickel-pure/n-10-1.jpg",
             "assets/products/nickel-pure/n-10-2.jpg",
@@ -96,7 +96,7 @@
 
   {
     "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated_1P_0.12_multi",
+    "ProductCode": "Nickel Strip Plated 1P 0.12mm custom widths",
     "Image_Link": [
      "assets/products/nickel-pure/n-10-1.jpg",
             "assets/products/nickel-pure/n-10-2.jpg",
@@ -112,7 +112,7 @@
 
   {
     "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated_2P_46.5*0.20",
+    "ProductCode": "Nickel Strip Plated 2P 46.5x0.20 mm",
     "Image_Link": [
       "assets/products/nickel-pure/n-10-1.jpg",
             "assets/products/nickel-pure/n-10-2.jpg",
@@ -133,7 +133,7 @@
       "products": [
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_1P_6*0.15",
+    "ProductCode": "Nickel Strip Pure 1P 6x0.15 mm",
     "Image_Link": [
     "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -148,7 +148,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_1P_8*0.15",
+    "ProductCode": "Nickel Strip Pure 1P 8x0.15 mm",
     "Image_Link": [
       "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -163,7 +163,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_1P_10*0.15",
+    "ProductCode": "Nickel Strip Pure 1P 10x0.15 mm",
     "Image_Link": [
       "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -178,7 +178,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_2P_26*0.15",
+    "ProductCode": "Nickel Strip Pure 2P 26x0.15 mm",
     "Image_Link": [
     "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -193,7 +193,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_2P_46.5*0.20",
+    "ProductCode": "Nickel Strip Pure 2P 46.5x0.20 mm",
     "Image_Link": [
      "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -212,7 +212,7 @@
   
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_Zig Zag_32.96*.15mm",
+    "ProductCode": "Nickel Strip Pure ZigZag 32.96x.15 mm",
     "Image_Link": [
       "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -230,7 +230,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_1P_0.12_multi",
+    "ProductCode": "Nickel Strip Pure 1P 0.12mm custom widths",
     "Image_Link": [
       "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -248,7 +248,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_1P_0.20_multi",
+    "ProductCode": "Nickel Strip Pure 1P 0.20mm custom width",
     "Image_Link": [
       "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -266,7 +266,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_2P_26*0.12",
+    "ProductCode": "Nickel Strip Pure 2P 26x0.12 mm",
     "Image_Link": [
      "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -284,7 +284,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_2P_31*0.12",
+    "ProductCode": "Nickel Strip Pure 2P 31x0.12 mm",
     "Image_Link": [
      "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -302,7 +302,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_2P_46.5*0.12",
+    "ProductCode": "Nickel Strip Pure 2P 46.5x0.12 mm",
     "Image_Link": [
      "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -320,7 +320,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_2P_26*0.20",
+    "ProductCode": "Nickel Strip Pure 2P 26x0.20 mm",
     "Image_Link": [
      "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -338,7 +338,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_2P_31*0.20",
+    "ProductCode": "Nickel Strip Pure 2P 31x0.20 mm",
     "Image_Link": [
      "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -356,7 +356,7 @@
   },
   {
     "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure_2P_46.5*0.20",
+    "ProductCode": "Nickel Strip Pure 2P 46.5x0.20 mm",
     "Image_Link": [
      "assets/products/copper-bus-bars/cb-5-1.jpg",
             "assets/products/copper-bus-bars/cb-5-2.jpg",
@@ -381,7 +381,7 @@
       "products": [
   {
     "Category": "COPPER BUS BAR",
-    "ProductCode": "COPPER BUS BAR_Universal_2mm",
+    "ProductCode": "COPPER BUS BAR Universal 2mm",
     "Image_Link": [
       "assets/products/copper_busbar_1.jpg",
       "assets/products/copper_busbar_2.jpg"
@@ -394,7 +394,7 @@
   },
   {
     "Category": "COPPER BUS BAR",
-    "ProductCode": "COPPER BUS BAR_Universal_1.5mm",
+    "ProductCode": "COPPER BUS BAR Universal 1.5mm",
     "Image_Link": [
       "assets/products/copper_busbar_1.jpg",
       "assets/products/copper_busbar_2.jpg"
@@ -413,7 +413,7 @@
       "products": [
   {
     "Category": "Prismatic Battery Cell",
-    "ProductCode": "Prismatic Battery Cell_HighStar_3.2V 100Ah",
+    "ProductCode": "Prismatic Battery Cell HighStar 3.2V 100Ah",
     "Image_Link": [
         "assets/products/prismatic-batteries/pb-50-1.jpg",
                         "assets/products/prismatic-batteries/pb-50-2.jpg",
@@ -429,7 +429,7 @@
   },
   {
     "Category": "Prismatic Battery Cell",
-    "ProductCode": "Prismatic Battery Cell_Ganfeng_3.2V 100Ah",
+    "ProductCode": "Prismatic Battery Cell Ganfeng 3.2V 100Ah",
     "Image_Link": [
        "assets/products/prismatic-batteries/pb-50-1.jpg",
                         "assets/products/prismatic-batteries/pb-50-2.jpg",
