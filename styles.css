@@ -1086,7 +1086,7 @@ img {
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: grid;
-  grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
+  grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.62fr);
   gap: 16px;
   align-items: start;
 }
@@ -1230,7 +1230,7 @@ img {
   border: 1px solid var(--line);
   margin-bottom: 0;
   aspect-ratio: 5 / 4;
-  max-height: 220px;
+  max-height: 200px;
 }
 
 .carousel img {
