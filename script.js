@@ -1,7 +1,5 @@
 ﻿const categoryFilters = document.querySelector("#categoryFilters");
 const catalogGrid = document.querySelector("#catalogGrid");
-const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
-const catalogSearch = document.querySelector("#catalogSearch");
 const globalSearch = document.querySelector("#globalSearch");
 const orderList = document.querySelector("#orderList");
 const mobileOrderList = document.querySelector("#mobileOrderList");
@@ -609,12 +607,6 @@ const handleSearchInput = (value) => {
     document.body.classList.remove("search-active");
   }
 };
-
-if (catalogSearch) {
-  catalogSearch.addEventListener("input", (event) => {
-    handleSearchInput(event.target.value);
-  });
-}
 
 if (globalSearch) {
   globalSearch.addEventListener("input", (event) => {
