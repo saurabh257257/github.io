@@ -1,450 +1,441 @@
 ﻿{
-  "categories": [
-    {
-      "Category": "Nickel Strip Plated",
-      "products": [
-  {
-    "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated 1P 6x0.15 mm",
-    "Image_Link": [
-      "assets/products/nickel-pure/n-10-1.jpg",
-            "assets/products/nickel-pure/n-10-2.jpg",
-            "assets/products/nickel-pure/n-10-3.jpg"
-    ],
-    "Price": "440",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 6 x 0.15 mm thick.\nMaterial: Nickel-plated",
-    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
-  },
-  {
-    "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated 1P 8x0.15 mm",
-    "Image_Link": [
-     "assets/products/nickel-pure/n-10-1.jpg",
-            "assets/products/nickel-pure/n-10-2.jpg",
-            "assets/products/nickel-pure/n-10-3.jpg"
-    ],
-    "Price": "440",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 8 x 0.15 mm thick.\nMaterial: Nickel-plated",
-    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
-  },
-  {
-    "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated 1P 10x0.15 mm",
-    "Image_Link": [
-     "assets/products/nickel-pure/n-10-1.jpg",
-            "assets/products/nickel-pure/n-10-2.jpg",
-            "assets/products/nickel-pure/n-10-3.jpg"
-    ],
-    "Price": "440",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 10 x 0.15 mm thick.\nMaterial: Nickel-plated",
-    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
-  },
-  {
-    "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated 2P 26x0.15 mm",
-    "Image_Link": [
-     "assets/products/nickel-pure/n-10-1.jpg",
-            "assets/products/nickel-pure/n-10-2.jpg",
-            "assets/products/nickel-pure/n-10-3.jpg"
-    ],
-    "Price": "740",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 26 × 0.15 mm for 18650 2P (H-type) layout\nCentral depth: 12 mm with 19 mm pitch\nMaterial: Nickel-plated\nCompatible holder: 19 mm pitch cell holder",
-    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
-  },
-  {
-    "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated 2P 31x0.15 mm",
-    "Image_Link": [
-      "assets/products/nickel-pure/n-10-1.jpg",
-            "assets/products/nickel-pure/n-10-2.jpg",
-            "assets/products/nickel-pure/n-10-3.jpg"
-    ],
-    "Price": "740",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 31 × 0.15 mm for 21700 2P (H-type) layout\nCentral depth: 15 mm with 23 mm pitch\nMaterial: Nickel-plated\nCompatible holder: 23 mm pitch cell holder",
-    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
-  },
-  {
-    "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated 2P 46.5x0.15 mm",
-    "Image_Link": [
-      "assets/products/nickel-pure/n-10-1.jpg",
-            "assets/products/nickel-pure/n-10-2.jpg",
-            "assets/products/nickel-pure/n-10-3.jpg"
-    ],
-    "Price": "740",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 46.5 × 0.15 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Nickel-plated\nCompatible holder: 34.4 mm pitch cell holder",
-    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
-  },
-
-  {
-    "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated 1P 0.12mm custom widths",
-    "Image_Link": [
-     "assets/products/nickel-pure/n-10-1.jpg",
-            "assets/products/nickel-pure/n-10-2.jpg",
-            "assets/products/nickel-pure/n-10-3.jpg"
-    ],
-    "Price": "440",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: (2mm, 3mm, 4mm, 5mm, 6mm, 8mm, 10mm) x 0.12 mm thick.\nMaterial: Nickel-plated",
-    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
-  },
-
-  {
-    "Category": "Nickel Strip Plated",
-    "ProductCode": "Nickel Strip Plated 2P 46.5x0.20 mm",
-    "Image_Link": [
-      "assets/products/nickel-pure/n-10-1.jpg",
-            "assets/products/nickel-pure/n-10-2.jpg",
-            "assets/products/nickel-pure/n-10-3.jpg"
-    ],
-    "Price": "740",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 46.5 × 0.20 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Nickel-plated\nCompatible holder: 34.4 mm pitch cell holder",
-    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
-  }
-]
-
-    },
-    {
-      "Category": "Nickel Strip Pure",
-      "products": [
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 1P 6x0.15 mm",
-    "Image_Link": [
-    "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "2900",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 6 x 0.15 mm thick.\nMaterial: Pure Nickel",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 1P 8x0.15 mm",
-    "Image_Link": [
-      "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "2900",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 8 x 0.15 mm thick.\nMaterial: Pure Nickel",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 1P 10x0.15 mm",
-    "Image_Link": [
-      "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "2900",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 10 x 0.15 mm thick.\nMaterial: Pure Nickel",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 2P 26x0.15 mm",
-    "Image_Link": [
-    "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "3750",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 26 × 0.15 mm for 18650 2P (H-type) layout\nCentral depth: 12 mm with 19 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 19 mm pitch cell holder",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 2P 46.5x0.20 mm",
-    "Image_Link": [
-     "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "3750",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 46.5 × 0.20 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 34.4 mm pitch cell holder",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure ZigZag 32.96x.15 mm",
-    "Image_Link": [
-      "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "4600",
-    "Availability": "Now",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Width: 32.96 mm\nCentral depth: 19.00 mm\nMaterial: Pure Nickel",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 1P 0.12mm custom widths",
-    "Image_Link": [
-      "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: (2mm, 3mm, 4mm, 5mm, 6mm, 8mm, 10mm) x 0.12 mm thick.\nMaterial: Pure Nickel",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 1P 0.20mm custom width",
-    "Image_Link": [
-      "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: (2mm, 3mm, 4mm, 5mm, 6mm, 8mm, 10mm) x 0.20 mm thick.\nMaterial: Pure Nickel",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 2P 26x0.12 mm",
-    "Image_Link": [
-     "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "3750",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 26 × 0.12 mm for 18650 2P (H-type) layout\nCentral depth: 12 mm with 19 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 19 mm pitch cell holder",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 2P 31x0.12 mm",
-    "Image_Link": [
-     "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "3750",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 31 × 0.12 mm for 21700 2P (H-type) layout\nCentral depth: 15 mm with 23 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 23 mm pitch cell holder",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 2P 46.5x0.12 mm",
-    "Image_Link": [
-     "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "3750",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 46.5 × 0.12 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 34.4 mm pitch cell holder",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 2P 26x0.20 mm",
-    "Image_Link": [
-     "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "3750",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 26 × 0.20 mm for 18650 2P (H-type) layout\nCentral depth: 12 mm with 19 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 19 mm pitch cell holder",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 2P 31x0.20 mm",
-    "Image_Link": [
-     "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "3750",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 31 × 0.20 mm for 21700 2P (H-type) layout\nCentral depth: 15 mm with 23 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 23 mm pitch cell holder",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  },
-  {
-    "Category": "Nickel Strip Pure",
-    "ProductCode": "Nickel Strip Pure 2P 46.5x0.20 mm",
-    "Image_Link": [
-     "assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg",
-			"assets/products/copper-bus-bars/cb-5-1.jpg",
-            "assets/products/copper-bus-bars/cb-5-2.jpg",
-            "assets/products/copper-bus-bars/cb-5-3.jpg"
-    ],
-    "Price": "3750",
-    "Availability": "On Request",
-    "Unit": "KG",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Strip size: 46.5 × 0.20 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 34.4 mm pitch cell holder",
-    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-  }
-
-]
-
-    },
-    {
-      "Category": "Copper Bus Bars",
-      "products": [
-  {
-    "Category": "COPPER BUS BAR",
-    "ProductCode": "COPPER BUS BAR Universal 2mm",
-    "Image_Link": [
-      "assets/products/copper_busbar_1.jpg",
-      "assets/products/copper_busbar_2.jpg"
-    ],
-    "Price": "42",
-    "Availability": "On Request",
-    "Unit": "Piece",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Dimension: T 2mm\nMaterial: Pure Copper\nColor: Silver"
-  },
-  {
-    "Category": "COPPER BUS BAR",
-    "ProductCode": "COPPER BUS BAR Universal 1.5mm",
-    "Image_Link": [
-      "assets/products/copper_busbar_1.jpg",
-      "assets/products/copper_busbar_2.jpg"
-    ],
-    "Price": "21",
-    "Availability": "On Request",
-    "Unit": "Piece",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Dimension: T 1.5mm\nMaterial: Pure Copper\nColor: Silver"
-  }
-]
-
-    },
-    {
-      "Category": "Prismatic Batteries",
-      "products": [
-  {
-    "Category": "Prismatic Battery Cell",
-    "ProductCode": "Prismatic Battery Cell HighStar 3.2V 100Ah",
-    "Image_Link": [
-        "assets/products/prismatic-batteries/pb-50-1.jpg",
+    "categories": [
+        {
+            "Category": "Nickel Strip Plated",
+            "products": [
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 1P 6x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/nickel-plated/npl_.6x.15mm_1.jpg",
+                        "assets/products/nickel-plated/npl_.6x.15mm_2.jpg",
+                        "assets/products/nickel-plated/npl_.6x.15mm_3.jpg",
+                        "assets/products/nickel-plated/npl_.6x.15mm_4.jpg"
+                    ],
+                    "Price": "440",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 6 x 0.15 mm thick.\nMaterial: Nickel-plated",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                },
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 1P 8x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/nickel-pure/n-10-1.jpg",
+                        "assets/products/nickel-pure/n-10-2.jpg",
+                        "assets/products/nickel-pure/n-10-3.jpg"
+                    ],
+                    "Price": "440",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 8 x 0.15 mm thick.\nMaterial: Nickel-plated",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                },
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 1P 10x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/nickel-pure/n-10-1.jpg",
+                        "assets/products/nickel-pure/n-10-2.jpg",
+                        "assets/products/nickel-pure/n-10-3.jpg"
+                    ],
+                    "Price": "440",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 10 x 0.15 mm thick.\nMaterial: Nickel-plated",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                },
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 2P 26x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/nickel-pure/n-10-1.jpg",
+                        "assets/products/nickel-pure/n-10-2.jpg",
+                        "assets/products/nickel-pure/n-10-3.jpg"
+                    ],
+                    "Price": "740",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 26 × 0.15 mm for 18650 2P (H-type) layout\nCentral depth: 12 mm with 19 mm pitch\nMaterial: Nickel-plated\nCompatible holder: 19 mm pitch cell holder",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                },
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 2P 31x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/nickel-pure/n-10-1.jpg",
+                        "assets/products/nickel-pure/n-10-2.jpg",
+                        "assets/products/nickel-pure/n-10-3.jpg"
+                    ],
+                    "Price": "740",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 31 × 0.15 mm for 21700 2P (H-type) layout\nCentral depth: 15 mm with 23 mm pitch\nMaterial: Nickel-plated\nCompatible holder: 23 mm pitch cell holder",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                },
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 2P 46.5x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/nickel-pure/n-10-1.jpg",
+                        "assets/products/nickel-pure/n-10-2.jpg",
+                        "assets/products/nickel-pure/n-10-3.jpg"
+                    ],
+                    "Price": "740",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 46.5 × 0.15 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Nickel-plated\nCompatible holder: 34.4 mm pitch cell holder",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                },
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 1P 0.12mm custom widths",
+                    "Image_Link": [
+                        "assets/products/nickel-pure/n-10-1.jpg",
+                        "assets/products/nickel-pure/n-10-2.jpg",
+                        "assets/products/nickel-pure/n-10-3.jpg"
+                    ],
+                    "Price": "440",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: (2mm, 3mm, 4mm, 5mm, 6mm, 8mm, 10mm) x 0.12 mm thick.\nMaterial: Nickel-plated",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                },
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 2P 46.5x0.20 mm",
+                    "Image_Link": [
+                        "assets/products/nickel-pure/n-10-1.jpg",
+                        "assets/products/nickel-pure/n-10-2.jpg",
+                        "assets/products/nickel-pure/n-10-3.jpg"
+                    ],
+                    "Price": "740",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 46.5 × 0.20 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Nickel-plated\nCompatible holder: 34.4 mm pitch cell holder",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                }
+            ]
+        },
+        {
+            "Category": "Nickel Strip Pure",
+            "products": [
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 1P 6x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "2900",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 6 x 0.15 mm thick.\nMaterial: Pure Nickel",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 1P 8x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "2900",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 8 x 0.15 mm thick.\nMaterial: Pure Nickel",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 1P 10x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "2900",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 10 x 0.15 mm thick.\nMaterial: Pure Nickel",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P 26x0.15 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "3750",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 26 × 0.15 mm for 18650 2P (H-type) layout\nCentral depth: 12 mm with 19 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 19 mm pitch cell holder",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P 46.5x0.20 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "3750",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 46.5 × 0.20 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 34.4 mm pitch cell holder",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure ZigZag 32.96x.15 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "4600",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Width: 32.96 mm\nCentral depth: 19.00 mm\nMaterial: Pure Nickel",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 1P 0.12mm custom widths",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: (2mm, 3mm, 4mm, 5mm, 6mm, 8mm, 10mm) x 0.12 mm thick.\nMaterial: Pure Nickel",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 1P 0.20mm custom width",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: (2mm, 3mm, 4mm, 5mm, 6mm, 8mm, 10mm) x 0.20 mm thick.\nMaterial: Pure Nickel",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P 26x0.12 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "3750",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 26 × 0.12 mm for 18650 2P (H-type) layout\nCentral depth: 12 mm with 19 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 19 mm pitch cell holder",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P 31x0.12 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "3750",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 31 × 0.12 mm for 21700 2P (H-type) layout\nCentral depth: 15 mm with 23 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 23 mm pitch cell holder",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P 46.5x0.12 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "3750",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 46.5 × 0.12 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 34.4 mm pitch cell holder",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P 26x0.20 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "3750",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 26 × 0.20 mm for 18650 2P (H-type) layout\nCentral depth: 12 mm with 19 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 19 mm pitch cell holder",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P 31x0.20 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "3750",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 31 × 0.20 mm for 21700 2P (H-type) layout\nCentral depth: 15 mm with 23 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 23 mm pitch cell holder",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P 46.5x0.20 mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg",
+                        "assets/products/copper-bus-bars/cb-5-1.jpg",
+                        "assets/products/copper-bus-bars/cb-5-2.jpg",
+                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                    ],
+                    "Price": "3750",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 46.5 × 0.20 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 34.4 mm pitch cell holder",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                }
+            ]
+        },
+        {
+            "Category": "Copper Bus Bars",
+            "products": [
+                {
+                    "Category": "COPPER BUS BAR",
+                    "ProductCode": "COPPER BUS BAR Universal 2mm",
+                    "Image_Link": [
+                        "assets/products/copper_busbar_1.jpg",
+                        "assets/products/copper_busbar_2.jpg"
+                    ],
+                    "Price": "42",
+                    "Availability": "On Request",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Dimension: T 2mm\nMaterial: Pure Copper\nColor: Silver"
+                },
+                {
+                    "Category": "COPPER BUS BAR",
+                    "ProductCode": "COPPER BUS BAR Universal 1.5mm",
+                    "Image_Link": [
+                        "assets/products/copper_busbar_1.jpg",
+                        "assets/products/copper_busbar_2.jpg"
+                    ],
+                    "Price": "21",
+                    "Availability": "On Request",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Dimension: T 1.5mm\nMaterial: Pure Copper\nColor: Silver"
+                }
+            ]
+        },
+        {
+            "Category": "Prismatic Batteries",
+            "products": [
+                {
+                    "Category": "Prismatic Battery Cell",
+                    "ProductCode": "Prismatic Battery Cell HighStar 3.2V 100Ah",
+                    "Image_Link": [
+                        "assets/products/prismatic-batteries/pb-50-1.jpg",
                         "assets/products/prismatic-batteries/pb-50-2.jpg",
                         "assets/products/prismatic-batteries/pb-50-3.jpg"
-                 
-    ],
-    "Price": "2400",
-    "Availability": "On request",
-    "Unit": "Piece",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "Safest Lithium Chemistry.\nHigh specific energy and High capacity.\nLong Life Cycles and extended shelf life.\nHigh capacity, low internal resistance, good coulombic efficiency.",
-    "Additional_Details": "Safest Lithium Chemistry.\nHigh specific energy and High capacity.\nLong Life Cycles and extended shelf life.\nHigh capacity, low internal resistance, good coulombic efficiency."
-  },
-  {
-    "Category": "Prismatic Battery Cell",
-    "ProductCode": "Prismatic Battery Cell Ganfeng 3.2V 100Ah",
-    "Image_Link": [
-       "assets/products/prismatic-batteries/pb-50-1.jpg",
+                    ],
+                    "Price": "2400",
+                    "Availability": "On request",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Safest Lithium Chemistry.\nHigh specific energy and High capacity.\nLong Life Cycles and extended shelf life.\nHigh capacity, low internal resistance, good coulombic efficiency.",
+                    "Additional_Details": "Safest Lithium Chemistry.\nHigh specific energy and High capacity.\nLong Life Cycles and extended shelf life.\nHigh capacity, low internal resistance, good coulombic efficiency."
+                },
+                {
+                    "Category": "Prismatic Battery Cell",
+                    "ProductCode": "Prismatic Battery Cell Ganfeng 3.2V 100Ah",
+                    "Image_Link": [
+                        "assets/products/prismatic-batteries/pb-50-1.jpg",
                         "assets/products/prismatic-batteries/pb-50-2.jpg",
                         "assets/products/prismatic-batteries/pb-50-3.jpg"
-                 
-    ],
-    "Price": "2300",
-    "Availability": "On request",
-    "Unit": "Piece",
-    "Minimum Quantity": 3,
-    "Product_Dimensions": "High Capacity: 100Ah for extended usage periods.\nStable Voltage: Consistent 3.2V output for reliable operation.\nLong Cycle Life: Supports thousands of charge/discharge cycles.\nSafe Chemistry: LiFePO4 technology with excellent thermal stability.\nHigh Energy: 320Wh capacity for demanding applications.\nDurable Design: Prismatic form factor for easy integration.",
-    "Additional_Details": "High Capacity: 100Ah for extended usage periods.\nStable Voltage: Consistent 3.2V output for reliable operation.\nLong Cycle Life: Supports thousands of charge/discharge cycles.\nSafe Chemistry: LiFePO4 technology with excellent thermal stability.\nHigh Energy: 320Wh capacity for demanding applications.\nDurable Design: Prismatic form factor for easy integration."
-  }
-]
-
-    }
-  ]
+                    ],
+                    "Price": "2300",
+                    "Availability": "On request",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "High Capacity: 100Ah for extended usage periods.\nStable Voltage: Consistent 3.2V output for reliable operation.\nLong Cycle Life: Supports thousands of charge/discharge cycles.\nSafe Chemistry: LiFePO4 technology with excellent thermal stability.\nHigh Energy: 320Wh capacity for demanding applications.\nDurable Design: Prismatic form factor for easy integration.",
+                    "Additional_Details": "High Capacity: 100Ah for extended usage periods.\nStable Voltage: Consistent 3.2V output for reliable operation.\nLong Cycle Life: Supports thousands of charge/discharge cycles.\nSafe Chemistry: LiFePO4 technology with excellent thermal stability.\nHigh Energy: 320Wh capacity for demanding applications.\nDurable Design: Prismatic form factor for easy integration."
+                }
+            ]
+        }
+    ]
 }
