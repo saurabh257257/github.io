@@ -7,10 +7,10 @@
                     "Category": "Nickel Strip Plated",
                     "ProductCode": "Nickel Strip Plated 1P 6x0.15 mm",
                     "Image_Link": [
-                        "assets/products/nickel-plated/npl_.6x.15mm_1.jpg",
-                        "assets/products/nickel-plated/npl_.6x.15mm_2.jpg",
-                        "assets/products/nickel-plated/npl_.6x.15mm_3.jpg",
-                        "assets/products/nickel-plated/npl_.6x.15mm_4.jpg"
+                        "assets/products/nickel-plated/npl_6x.15mm_1.jpg",
+                        "assets/products/nickel-plated/npl_6x.15mm_2.jpg",
+                        "assets/products/nickel-plated/npl_6x.15mm_3.jpg",
+                        "assets/products/nickel-plated/npl_6x.15mm_4.jpg"
                     ],
                     "Price": "440",
                     "Availability": "Now",
@@ -23,9 +23,10 @@
                     "Category": "Nickel Strip Plated",
                     "ProductCode": "Nickel Strip Plated 1P 8x0.15 mm",
                     "Image_Link": [
-                        "assets/products/nickel-pure/n-10-1.jpg",
-                        "assets/products/nickel-pure/n-10-2.jpg",
-                        "assets/products/nickel-pure/n-10-3.jpg"
+                        "assets/products/nickel-plated/npl_8x.15mm_1.jpg",
+                        "assets/products/nickel-plated/npl_8x.15mm_2.jpg",
+                        "assets/products/nickel-plated/npl_8x.15mm_3.jpg",
+                        "assets/products/nickel-plated/npl_8x.15mm_4.jpg"
                     ],
                     "Price": "440",
                     "Availability": "Now",
@@ -38,9 +39,10 @@
                     "Category": "Nickel Strip Plated",
                     "ProductCode": "Nickel Strip Plated 1P 10x0.15 mm",
                     "Image_Link": [
-                        "assets/products/nickel-pure/n-10-1.jpg",
-                        "assets/products/nickel-pure/n-10-2.jpg",
-                        "assets/products/nickel-pure/n-10-3.jpg"
+                        "assets/products/nickel-plated/npl_10x.15mm_1.jpg",
+                        "assets/products/nickel-plated/npl_10x.15mm_2.jpg",
+                        "assets/products/nickel-plated/npl_10x.15mm_3.jpg",
+                        "assets/products/nickel-plated/npl_10x.15mm_4.jpg"
                     ],
                     "Price": "440",
                     "Availability": "Now",
@@ -98,15 +100,26 @@
                     "Category": "Nickel Strip Plated",
                     "ProductCode": "Nickel Strip Plated 1P 0.12mm custom widths",
                     "Image_Link": [
-                        "assets/products/nickel-pure/n-10-1.jpg",
-                        "assets/products/nickel-pure/n-10-2.jpg",
-                        "assets/products/nickel-pure/n-10-3.jpg"
+                        "assets/products/nickel-plated/npl x 0.12_1.jpg"
                     ],
                     "Price": "440",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
                     "Product_Dimensions": "Strip size: (2mm, 3mm, 4mm, 5mm, 6mm, 8mm, 10mm) x 0.12 mm thick.\nMaterial: Nickel-plated",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                },
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 1P 0.20mm custom widths",
+                    "Image_Link": [
+                        "assets/products/nickel-plated/npl x 0.20_1.jpg"
+                    ],
+                    "Price": "440",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: (2mm, 3mm, 4mm, 5mm, 6mm, 8mm, 10mm) x 0.20 mm thick.\nMaterial: Nickel-plated",
                     "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
                 },
                 {
@@ -133,9 +146,10 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 6x0.15 mm",
                     "Image_Link": [
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                        "assets/products/nickel-plated/npl_6x.15mm_1.jpg",
+                        "assets/products/nickel-plated/npl_6x.15mm_2.jpg",
+                        "assets/products/nickel-plated/npl_6x.15mm_3.jpg",
+                        "assets/products/nickel-plated/npl_6x.15mm_4.jpg"
                     ],
                     "Price": "2900",
                     "Availability": "Now",
@@ -148,9 +162,10 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 8x0.15 mm",
                     "Image_Link": [
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                        "assets/products/nickel-plated/npl_8x.15mm_1.jpg",
+                        "assets/products/nickel-plated/npl_8x.15mm_2.jpg",
+                        "assets/products/nickel-plated/npl_8x.15mm_3.jpg",
+                        "assets/products/nickel-plated/npl_8x.15mm_4.jpg"
                     ],
                     "Price": "2900",
                     "Availability": "Now",
@@ -163,9 +178,10 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 10x0.15 mm",
                     "Image_Link": [
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                        "assets/products/nickel-plated/npl_10x.15mm_1.jpg",
+                        "assets/products/nickel-plated/npl_10x.15mm_2.jpg",
+                        "assets/products/nickel-plated/npl_10x.15mm_3.jpg",
+                        "assets/products/nickel-plated/npl_10x.15mm_4.jpg"
                     ],
                     "Price": "2900",
                     "Availability": "Now",
@@ -229,12 +245,7 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 0.12mm custom widths",
                     "Image_Link": [
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg",
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                        "assets/products/nickel-plated/npl x 0.12_1.jpg"
                     ],
                     "Price": "",
                     "Availability": "On Request",
@@ -247,12 +258,7 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 0.20mm custom width",
                     "Image_Link": [
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg",
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                        "assets/products/nickel-plated/npl x 0.20_1.jpg"
                     ],
                     "Price": "",
                     "Availability": "On Request",
