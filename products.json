@@ -25,7 +25,7 @@
                     "Category": "Nickel Strip Plated",
                     "ProductCode": "Nickel Strip Plated 1P 8x0.15 mm",
                     "Image_Link": [
-                         "assets/products/nickel-plated/npl_8x.15mm_11.jpg",
+                        "assets/products/nickel-plated/npl_8x.15mm_11.jpg",
                         "assets/products/nickel-plated/npl_8x.15mm_1.jpg",
                         "assets/products/nickel-plated/npl_8x.15mm_2.jpg",
                         "assets/products/nickel-plated/npl_8x.15mm_3.jpg",
@@ -149,12 +149,12 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 6x0.15 mm",
                     "Image_Link": [
-                        "assets/products/nickel-plated/np_6x.15mm_11.jpg",
-                        "assets/products/nickel-plated/np_6x.15mm_12.jpg",
-                        "assets/products/nickel-plated/np_6x.15mm_1.jpg",
-                        "assets/products/nickel-plated/np_6x.15mm_2.jpg",
-                        "assets/products/nickel-plated/np_6x.15mm_3.jpg",
-                        "assets/products/nickel-plated/np_6x.15mm_4.jpg"
+                        "assets/products/nickel-pure/np_6x.15mm_11.jpg",
+                        "assets/products/nickel-pure/np_6x.15mm_12.jpg",
+                        "assets/products/nickel-pure/np_6x.15mm_1.jpg",
+                        "assets/products/nickel-pure/np_6x.15mm_2.jpg",
+                        "assets/products/nickel-pure/np_6x.15mm_3.jpg",
+                        "assets/products/nickel-pure/np_6x.15mm_4.jpg"
                     ],
                     "Price": "2900",
                     "Availability": "Now",
@@ -167,11 +167,11 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 8x0.15 mm",
                     "Image_Link": [
-                        "assets/products/nickel-plated/np_8x.15mm_11.jpg",
-                        "assets/products/nickel-plated/np_8x.15mm_1.jpg",
-                        "assets/products/nickel-plated/np_8x.15mm_2.jpg",
-                        "assets/products/nickel-plated/np_8x.15mm_3.jpg",
-                        "assets/products/nickel-plated/np_8x.15mm_4.jpg"
+                        "assets/products/nickel-pure/np_8x.15mm_11.jpg",
+                        "assets/products/nickel-pure/np_8x.15mm_1.jpg",
+                        "assets/products/nickel-pure/np_8x.15mm_2.jpg",
+                        "assets/products/nickel-pure/np_8x.15mm_3.jpg",
+                        "assets/products/nickel-pure/np_8x.15mm_4.jpg"
                     ],
                     "Price": "2900",
                     "Availability": "Now",
@@ -184,10 +184,10 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 10x0.15 mm",
                     "Image_Link": [
-                          "assets/products/nickel-plated/np_10x.15mm_1.jpg",
-                        "assets/products/nickel-plated/np_10x.15mm_2.jpg",
-                        "assets/products/nickel-plated/np_10x.15mm_3.jpg",
-                        "assets/products/nickel-plated/np_10x.15mm_4.jpg"
+                        "assets/products/nickel-pure/np_10x.15mm_1.jpg",
+                        "assets/products/nickel-pure/np_10x.15mm_2.jpg",
+                        "assets/products/nickel-pure/np_10x.15mm_3.jpg",
+                        "assets/products/nickel-pure/np_10x.15mm_4.jpg"
                     ],
                     "Price": "2900",
                     "Availability": "Now",
@@ -251,7 +251,7 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 0.12mm custom widths",
                     "Image_Link": [
-                        "assets/products/nickel-plated/np x 0.12_1.jpg"
+                        "assets/products/nickel-pure/np x 0.12_1.jpg"
                     ],
                     "Price": "",
                     "Availability": "On Request",
@@ -264,7 +264,7 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 1P 0.20mm custom width",
                     "Image_Link": [
-                        "assets/products/nickel-plated/np x 0.20_1.jpg"
+                        "assets/products/nickel-pure/np x 0.20_1.jpg"
                     ],
                     "Price": "",
                     "Availability": "On Request",
