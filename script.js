@@ -1,7 +1,6 @@
 ﻿const categoryFilters = document.querySelector("#categoryFilters");
 const catalogGrid = document.querySelector("#catalogGrid");
 const globalSearch = document.querySelector("#globalSearch");
-const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
 const searchSuggestions = document.querySelector("#searchSuggestions");
 const orderList = document.querySelector("#orderList");
 const mobileOrderList = document.querySelector("#mobileOrderList");
@@ -990,9 +989,6 @@ const generatePdf = async () => {
   pdfRoot.remove();
 };
 
-if (generateCatalogPdf) {
-  generateCatalogPdf.addEventListener("click", generatePdf);
-}
 
 const renderSuggestions = (term) => {
   if (!searchSuggestions) return;
