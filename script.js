@@ -892,10 +892,13 @@ const generatePdf = async () => {
   const capList = capItems
     .map(
       (item) => `
-      <li>
-        <h3>${item.title || ""}</h3>
-        <p class="pdf-tag">${item.tag || ""}</p>
-        <p>${item.line || ""}</p>
+      <li class="pdf-cap-item">
+        <img class="pdf-cap-image" src="${item.image || ""}" alt="${item.title || "Capability"}" />
+        <div>
+          <h3>${item.title || ""}</h3>
+          <p class="pdf-tag">${item.tag || ""}</p>
+          <p>${item.line || ""}</p>
+        </div>
       </li>
     `
     )

@@ -777,19 +777,26 @@ img {
 .pdf-cover-header {
   text-align: center;
   display: grid;
-  gap: 10px;
+  gap: 6px;
 }
 
 .pdf-logo {
-  height: 80px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   margin: 0 auto;
 }
 
+.pdf-cover-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
 .pdf-tagline {
   font-size: 0.95rem;
   color: #475569;
+  margin: 0;
 }
 
 .pdf-section h2 {
@@ -808,6 +815,21 @@ img {
   gap: 12px;
   padding: 0;
   margin: 0;
+}
+
+.pdf-cap-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.pdf-cap-image {
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
 }
 
 .pdf-list h3 {
