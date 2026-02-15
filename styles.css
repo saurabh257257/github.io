@@ -109,6 +109,7 @@ img {
   display: flex;
   gap: 18px;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .brand > div {
@@ -118,6 +119,8 @@ img {
 .brand-logo {
   height: 32px;
   width: auto;
+  max-width: 120px;
+  display: block;
   border-radius: 10px;
   object-fit: contain;
   background: transparent;
@@ -1552,6 +1555,7 @@ img {
 
   .brand-logo {
     height: 40px;
+    max-width: 140px;
   }
 
   .brand-tag {
