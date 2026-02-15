@@ -313,20 +313,20 @@
                 },
                 {
                     "Category": "Nickel Strip Pure",
-                    "ProductCode": "Nickel Strip Pure 2P 46.5x0.20 mm",
+                    "ProductCode": "Nickel Strip Pure 2P(32650) 46.5x0.15 mm",
                     "Image_Link": [
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg",
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                         "assets/products/nickel-pure/np_2p_46.5x.15mm_11.jpg",
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_1.jpg",
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_2.jpg",
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_3.jpg",
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_4.jpg"
+                
                     ],
                     "Price": "3750",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
-                    "Product_Dimensions": "Strip size: 46.5 × 0.20 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 34.4 mm pitch cell holder",
+                    "Product_Dimensions": "Strip size: 46.5 × 0.15 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 34.4 mm pitch cell holder",
                     "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
                 },
                 {
@@ -405,14 +405,11 @@
                 },
                 {
                     "Category": "Nickel Strip Pure",
-                    "ProductCode": "Nickel Strip Pure 2P 46.5x0.12 mm",
+                    "ProductCode": "Nickel Strip Pure 2P(32650) 46.5x0.12 mm",
                     "Image_Link": [
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg",
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                        "assets/products/nickel-pure/npl_2p_46.5x.12mm_1.jpg",
+                        "assets/products/nickel-pure/npl_2p_46.5x.12mm_2.jpg",
+                        "assets/products/nickel-pure/npl_2p_46.5x.12mm_3.jpg"
                     ],
                     "Price": "3750",
                     "Availability": "On Request",
@@ -453,14 +450,12 @@
                 },
                 {
                     "Category": "Nickel Strip Pure",
-                    "ProductCode": "Nickel Strip Pure 2P 46.5x0.20 mm",
+                    "ProductCode": "Nickel Strip Pure 2P(32650) 46.5x0.20 mm",
                     "Image_Link": [
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg",
-                        "assets/products/copper-bus-bars/cb-5-1.jpg",
-                        "assets/products/copper-bus-bars/cb-5-2.jpg",
-                        "assets/products/copper-bus-bars/cb-5-3.jpg"
+                        "assets/products/nickel-pure/npl_2p_46.5x.20mm_1.jpg",
+                        "assets/products/nickel-pure/npl_2p_46.5x.20mm_2.jpg",
+                        "assets/products/nickel-pure/npl_2p_46.5x.20mm_3.jpg"
+                
                     ],
                     "Price": "3750",
                     "Availability": "On Request",
