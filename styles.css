@@ -1473,7 +1473,7 @@ img {
 }
 
 .site-footer {
-  padding: 16px 0;
+  padding: 10px 0;
   border-top: 1px solid rgba(15, 23, 42, 0.2);
   background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
   color: #f8fbff;
@@ -1482,8 +1482,8 @@ img {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-  font-size: 0.82rem;
+  gap: 12px;
+  font-size: 0.8rem;
   align-items: start;
 }
 
@@ -1519,8 +1519,8 @@ img {
 
 .footer-title {
   font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 0.85rem;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
   letter-spacing: 0.3px;
   text-transform: uppercase;
   color: #dbe7ff;
