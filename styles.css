@@ -116,18 +116,10 @@ img {
   min-width: 0;
 }
 
-.brand-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: nowrap;
-  min-width: 0;
-}
-
 .brand-logo {
-  height: 28px;
+  height: 40px;
   width: auto;
-  max-width: 120px;
+  max-width: 180px;
   display: block;
   border-radius: 10px;
   object-fit: contain;
@@ -176,17 +168,8 @@ img {
   100% { transform: translate3d(0, 0, 0); }
 }
 
-.brand-name {
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  color: #ffffff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .brand-tag {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: #cbd5f1;
   white-space: nowrap;
   overflow: hidden;
@@ -1568,13 +1551,13 @@ img {
   }
 
   .brand-logo {
-    height: 32px;
-    max-width: 120px;
+    height: 44px;
+    max-width: 200px;
   }
 
   .brand-tag {
-    max-width: 240px;
-    font-size: 0.7rem;
+    max-width: 260px;
+    font-size: 0.68rem;
   }
 
   .nav-links {
