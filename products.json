@@ -472,11 +472,11 @@
                     "Category": "COPPER BUS BAR",
                     "ProductCode": "COPPER BUS BAR Universal 2mm",
                     "Image_Link": [
-                        "assets/products/copper_busbar_1.jpg",
-                        "assets/products/copper_busbar_2.jpg"
+                        "assets/products/copper-bus-bars/universe_2mm_1.jpg",
+                        "assets/products/copper-bus-bars/universe_2mm_2.jpg"
                     ],
                     "Price": "42",
-                    "Availability": "On Request",
+                    "Availability": "Now",
                     "Unit": "Piece",
                     "Minimum Quantity": 3,
                     "Product_Dimensions": "Dimension: T 2mm\nMaterial: Pure Copper\nColor: Silver"
@@ -485,14 +485,30 @@
                     "Category": "COPPER BUS BAR",
                     "ProductCode": "COPPER BUS BAR Universal 1.5mm",
                     "Image_Link": [
-                        "assets/products/copper_busbar_1.jpg",
-                        "assets/products/copper_busbar_2.jpg"
+                        "assets/products/copper-bus-bars/universe_1.5mm_1.jpg",
+                        "assets/products/copper-bus-bars/universe_1.5mm_2.jpg"
                     ],
                     "Price": "21",
-                    "Availability": "On Request",
+                    "Availability": "Now",
                     "Unit": "Piece",
                     "Minimum Quantity": 3,
                     "Product_Dimensions": "Dimension: T 1.5mm\nMaterial: Pure Copper\nColor: Silver"
+                },
+                {
+                    "Category": "COPPER BUS BAR",
+                    "ProductCode": "COPPER BUS BAR Offsets Options",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/custom_4.jpg",
+                        "assets/products/copper-bus-bars/custom_5.jpg",
+                        "assets/products/copper-bus-bars/custom_1.jpg",
+                        "assets/products/copper-bus-bars/custom_2.jpg",
+                        "assets/products/copper-bus-bars/custom_3.jpg"
+                    ],
+                    "Price": "Depends on Size",
+                    "Availability": "On Request",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Dimension: T multiple\nMaterial: Pure Copper\nColor: Silver"
                 }
             ]
         },
