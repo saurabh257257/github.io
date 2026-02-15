@@ -107,13 +107,16 @@ img {
 
 .brand {
   display: flex;
-  gap: 18px;
-  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
   flex-wrap: nowrap;
 }
 
-.brand > div {
-  margin-top: 0.2cm;
+.brand-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .brand-logo {
@@ -175,17 +178,12 @@ img {
 }
 
 .brand-tag {
-  font-size: 0.78rem;
-  margin-top: 2px;
+  font-size: 0.75rem;
   color: #cbd5f1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 420px;
-}
-
-.is-mobile .brand-tag {
-  display: none !important;
 }
 
 .nav-links {
@@ -1562,12 +1560,13 @@ img {
   }
 
   .brand-logo {
-    height: 34px;
+    height: 32px;
     max-width: 120px;
   }
 
   .brand-tag {
-    display: none;
+    max-width: 240px;
+    font-size: 0.7rem;
   }
 
   .nav-links {
