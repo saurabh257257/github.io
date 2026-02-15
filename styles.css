@@ -1542,6 +1542,14 @@ img {
     align-items: flex-start;
   }
 
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-logo {
+    height: 40px;
+  }
+
   .nav-links {
     flex-wrap: wrap;
   }

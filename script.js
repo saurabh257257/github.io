@@ -338,6 +338,11 @@ const applySiteConfig = (config) => {
   if (logo && brand.logo) {
     logo.src = brand.logo;
     if (mark) mark.classList.add("is-hidden");
+    logo.onerror = () => {
+      logo.onerror = null;
+      logo.removeAttribute("src");
+      if (mark) mark.classList.remove("is-hidden");
+    };
   }
   if (brandName && brand.name) {
     brandName.textContent = brand.name;
