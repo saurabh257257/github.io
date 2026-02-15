@@ -659,6 +659,7 @@ img {
 
 .search-suggestions.is-visible {
   display: flex;
+  flex-direction: column;
 }
 
 .suggestion-item {
@@ -670,6 +671,7 @@ img {
   cursor: pointer;
   font-size: 0.85rem;
   color: var(--ink);
+  width: 100%;
 }
 
 .suggestion-item:hover {
