@@ -890,6 +890,7 @@ const generatePdf = async () => {
       <img class="pdf-logo" src="${brand.logo || "assets/company_logo.jpg"}" alt="Logo" />
       <h1>${brand.name || "Arambhika Enablers"}</h1>
       <p class="pdf-tagline">${brand.tagline || ""}</p>
+      <p class="pdf-catalog-title">Company Catalog</p>
     </div>
     <div class="pdf-section">
       <h2>About Us</h2>
