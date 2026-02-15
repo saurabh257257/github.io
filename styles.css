@@ -117,7 +117,7 @@ img {
 }
 
 .brand-logo {
-  height: 32px;
+  height: 28px;
   width: auto;
   max-width: 120px;
   display: block;
@@ -171,7 +171,7 @@ img {
 }
 
 .brand-tag {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   margin-top: 2px;
   color: #cbd5f1;
   white-space: nowrap;
@@ -1554,12 +1554,13 @@ img {
   }
 
   .brand-logo {
-    height: 40px;
-    max-width: 140px;
+    height: 34px;
+    max-width: 120px;
   }
 
   .brand-tag {
-    max-width: 240px;
+    font-size: 0.72rem;
+    max-width: 220px;
   }
 
   .nav-links {
