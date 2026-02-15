@@ -171,6 +171,10 @@ img {
   font-size: 0.85rem;
   margin-top: 2px;
   color: #cbd5f1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 420px;
 }
 
 .nav-links {
@@ -1548,6 +1552,10 @@ img {
 
   .brand-logo {
     height: 40px;
+  }
+
+  .brand-tag {
+    max-width: 240px;
   }
 
   .nav-links {
