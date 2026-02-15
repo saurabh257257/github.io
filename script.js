@@ -429,7 +429,7 @@ const applySiteConfig = (config) => {
 
   if (solutionsNext) {
     solutionsNext.textContent = solutions.nextLabel || solutionsNext.textContent || "Next";
-    solutionsNext.addEventListener("click", () => {
+    const advanceSolutions = () => {
       const cards = document.querySelectorAll(".solution-card");
       if (!cards.length) return;
       const currentIndex = Array.from(cards).findIndex((card) =>
@@ -439,7 +439,9 @@ const applySiteConfig = (config) => {
       cards.forEach((card, index) => {
         card.classList.toggle("is-active", index === nextIndex);
       });
-    });
+    };
+    solutionsNext.addEventListener("click", advanceSolutions);
+    setInterval(advanceSolutions, 2000);
   }
 
   const about = config.about || {};
