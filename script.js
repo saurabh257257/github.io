@@ -335,13 +335,14 @@ const applySiteConfig = (config) => {
   const mark = document.getElementById("brandMark");
   const brandName = document.getElementById("brandName");
   const brandTag = document.getElementById("brandTag");
-  if (logo && brand.logo) {
-    logo.src = brand.logo;
+  if (logo) {
+    const logoSrc = brand.logo || "assets/company_logo.jpg";
+    logo.src = logoSrc;
     if (mark) mark.classList.add("is-hidden");
     logo.onerror = () => {
       logo.onerror = null;
-      logo.removeAttribute("src");
-      if (mark) mark.classList.remove("is-hidden");
+      logo.src = "assets/company_logo.jpg";
+      if (mark) mark.classList.add("is-hidden");
     };
   }
   if (brandName && brand.name) {

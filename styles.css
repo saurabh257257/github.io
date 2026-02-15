@@ -180,6 +180,10 @@ img {
   max-width: 420px;
 }
 
+.is-mobile .brand-tag {
+  display: none !important;
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
