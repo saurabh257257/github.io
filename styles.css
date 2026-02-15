@@ -67,6 +67,7 @@ img {
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
+  flex: 0 0 auto;
 }
 
 
@@ -111,12 +112,16 @@ img {
   gap: 6px;
   align-items: flex-start;
   flex-wrap: nowrap;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .brand-row {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .brand-logo {
@@ -175,6 +180,9 @@ img {
   font-weight: 600;
   letter-spacing: 0.4px;
   color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-tag {
