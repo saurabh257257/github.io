@@ -88,30 +88,37 @@
   },
   "capabilities": {
     "eyebrow": "Our Capabilities",
-    "title": "Manufacturing units built for precision and scale.",
-    "lead": "Tooling, slitting, stamping, and quality checks aligned to battery pack requirements.",
-    "cards": [
+    "title": "What Sets Us Apart in Battery Components",
+    "lead": "Speed, scale, and reliability — built in-house.",
+    "items": [
       {
-        "title": "Precision Slitting",
-        "text": "Consistent width control with clean edges for stable welding."
+        "id": "1",
+        "title": "Fully In-House Manufacturing",
+        "tag": "Integrated Plating Facility",
+        "line": "End-to-end in-house manufacturing with an integrated plating plant and capacity up to 25 tonnes per month.",
+        "image": "assets/solutions/image1.jpg"
       },
       {
-        "title": "Custom Stamping",
-        "text": "Tabs, holes, and bends tailored to your pack design."
+        "id": "2",
+        "title": "Emergency Production Support",
+        "tag": "Fast & Reliable Manufacturing",
+        "line": "Dedicated production support to meet emergency and urgent customer requirements without delays.",
+        "image": "assets/solutions/image2.jpg"
       },
       {
-        "title": "Surface Finish",
-        "text": "Bright, matte, or brushed finishes with inspection reports."
+        "id": "3",
+        "title": "Rapid Custom Development",
+        "tag": "Zero Tooling Cost",
+        "line": "No tooling charges and ultra-fast custom product development with lead times under 7 days.",
+        "image": "assets/solutions/image3.jpg"
       },
       {
-        "title": "Bulk Logistics",
-        "text": "Flexible MOQ, bulk reels, and repeatable deliveries."
+        "id": "4",
+        "title": "Trusted Industry Partner",
+        "tag": "Proven Brand Experience",
+        "line": "Proven track record serving leading energy brands.",
+        "image": "assets/solutions/image4.jpg"
       }
-    ],
-    "gallery": [
-      "assets/products/nickel-plated/np-10-1.jpg",
-      "assets/products/nickel-pure/n-10-1.jpg",
-      "assets/products/copper-bus-bars/cb-10-1.jpg"
     ]
   }
 }

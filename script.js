@@ -502,31 +502,34 @@ const applySiteConfig = (config) => {
   const capEyebrow = document.getElementById("capEyebrow");
   const capTitle = document.getElementById("capTitle");
   const capLead = document.getElementById("capLead");
-  const capGrid = document.getElementById("capGrid");
+  const capList = document.getElementById("capList");
   if (capEyebrow && capabilities.eyebrow) capEyebrow.textContent = capabilities.eyebrow;
   if (capTitle && capabilities.title) capTitle.textContent = capabilities.title;
   if (capLead && capabilities.lead) capLead.textContent = capabilities.lead;
 
-  if (capGrid && Array.isArray(capabilities.cards)) {
-    const gallery = Array.isArray(capabilities.gallery) ? capabilities.gallery : [];
-    capGrid.innerHTML = "";
-    capabilities.cards.forEach((card, index) => {
-      const capCard = document.createElement("div");
-      capCard.className = "cap-card";
-      const image = gallery[index] || gallery[0] || "";
-      capCard.innerHTML = `
-        <img class="cap-photo" src="${image}" alt="${card.title || "Capability"}" />
-        <h3>${card.title || ""}</h3>
-        <p>${card.text || ""}</p>
+  if (capList && Array.isArray(capabilities.items)) {
+    capList.innerHTML = "";
+    capabilities.items.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.className = "cap-item";
+      li.innerHTML = `
+        <div class="cap-item-media">
+          <img src="${item.image || ""}" alt="${item.title || "Capability"}" />
+        </div>
+        <div class="cap-item-content">
+          <h3>${item.title || ""}</h3>
+          <p class="cap-item-tag">${item.tag || ""}</p>
+          <p class="cap-item-line">${item.line || ""}</p>
+        </div>
       `;
-      const img = capCard.querySelector("img");
+      const img = li.querySelector("img");
       if (img) {
         img.onerror = () => {
           img.onerror = null;
-          img.src = placeholderImage(card.title || "Capability");
+          img.src = placeholderImage(item.title || `Capability ${index + 1}`);
         };
       }
-      capGrid.appendChild(capCard);
+      capList.appendChild(li);
     });
   }
 };
