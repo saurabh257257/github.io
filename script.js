@@ -345,6 +345,68 @@ const applySiteConfig = (config) => {
   if (brandTag && brand.tagline) {
     brandTag.textContent = brand.tagline;
   }
+
+  const solutions = config.solutions || {};
+  const solutionsEyebrow = document.getElementById("solutionsEyebrow");
+  const solutionsTitle = document.getElementById("solutionsTitle");
+  const solutionsSubtitle = document.getElementById("solutionsSubtitle");
+  const solutionsCarousel = document.getElementById("solutionsCarousel");
+  const solutionsNext = document.getElementById("solutionsNext");
+
+  if (solutionsEyebrow && solutions.eyebrow) {
+    solutionsEyebrow.textContent = solutions.eyebrow;
+  }
+  if (solutionsTitle && solutions.title) {
+    solutionsTitle.textContent = solutions.title;
+  }
+  if (solutionsSubtitle && solutions.subtitle) {
+    solutionsSubtitle.textContent = solutions.subtitle;
+  }
+
+  if (solutionsCarousel && Array.isArray(solutions.items)) {
+    const items = solutions.items;
+    const controls = solutionsCarousel.querySelector(".solutions-controls");
+    solutionsCarousel.innerHTML = "";
+    items.forEach((item, index) => {
+      const card = document.createElement("article");
+      card.className = `solution-card${index === 0 ? " is-active" : ""}`;
+      card.dataset.solution = item.id || `solution_${index}`;
+      card.innerHTML = `
+        <div class="solution-media">
+          <img src="${item.image || ""}" alt="${item.title || "Solution"}" />
+        </div>
+        <div class="solution-copy">
+          <h3>${item.title || ""}</h3>
+          <p class="solution-tag">${item.tag || ""}</p>
+          <p class="solution-line">${item.line || ""}</p>
+        </div>
+      `;
+      const img = card.querySelector("img");
+      if (img) {
+        img.onerror = () => {
+          img.onerror = null;
+          img.src = placeholderImage(item.title || "Solution");
+        };
+      }
+      solutionsCarousel.appendChild(card);
+    });
+    if (controls) solutionsCarousel.appendChild(controls);
+  }
+
+  if (solutionsNext) {
+    solutionsNext.textContent = solutions.nextLabel || solutionsNext.textContent || "Next";
+    solutionsNext.addEventListener("click", () => {
+      const cards = document.querySelectorAll(".solution-card");
+      if (!cards.length) return;
+      const currentIndex = Array.from(cards).findIndex((card) =>
+        card.classList.contains("is-active")
+      );
+      const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % cards.length;
+      cards.forEach((card, index) => {
+        card.classList.toggle("is-active", index === nextIndex);
+      });
+    });
+  }
 };
 
 const loadSiteConfig = async () => {
