@@ -922,38 +922,43 @@ const generatePdf = async () => {
   `);
 
   const catalogPages = [];
+  const chunkSize = 6;
   cachedCatalog.forEach((category) => {
-    const items = (category.products || []).map((product) => {
-      const image = Array.isArray(product.Image_Link) && product.Image_Link.length
-        ? product.Image_Link[0]
-        : "";
-      const priceText = product.Price || "";
-      const unit = product.Unit || "";
-      const moq = product["Minimum Quantity"] || "";
-      const dims = product.Product_Dimensions || "";
-      const availability = product.Availability || "";
-      const showUnit = priceText && !/per\s+/i.test(priceText) && !/\//.test(priceText);
-      return `
-        <div class="pdf-product">
-          <img src="${image}" alt="${product.ProductCode || "Product"}" />
-          <div>
-            <h4>${product.ProductCode || ""}</h4>
-            <p class="pdf-dim">${dims}</p>
-            <p class="pdf-meta">Price: ${priceText}${showUnit ? `/${unit}` : ""}</p>
-            <p class="pdf-meta">Min Qty: ${moq} ${unit}</p>
-            <p class="pdf-meta">Availability: ${availability}</p>
+    const products = category.products || [];
+    for (let i = 0; i < products.length; i += chunkSize) {
+      const chunk = products.slice(i, i + chunkSize);
+      const items = chunk.map((product) => {
+        const image = Array.isArray(product.Image_Link) && product.Image_Link.length
+          ? product.Image_Link[0]
+          : "";
+        const priceText = product.Price || "";
+        const unit = product.Unit || "";
+        const moq = product["Minimum Quantity"] || "";
+        const dims = product.Product_Dimensions || "";
+        const availability = product.Availability || "";
+        const showUnit = priceText && !/per\s+/i.test(priceText) && !/\//.test(priceText);
+        return `
+          <div class="pdf-product">
+            <img src="${image}" alt="${product.ProductCode || "Product"}" />
+            <div>
+              <h4>${product.ProductCode || ""}</h4>
+              <p class="pdf-dim">${dims}</p>
+              <p class="pdf-meta">Price: ${priceText}${showUnit ? `/${unit}` : ""}</p>
+              <p class="pdf-meta">Min Qty: ${moq} ${unit}</p>
+              <p class="pdf-meta">Availability: ${availability}</p>
+            </div>
           </div>
-        </div>
-      `;
-    }).join("");
-    catalogPages.push(
-      buildPdfPage("pdf-catalog", `
-        <div class="pdf-section">
-          <h2>${category.name || "Catalog"}</h2>
-          <div class="pdf-products">${items}</div>
-        </div>
-      `)
-    );
+        `;
+      }).join("");
+      catalogPages.push(
+        buildPdfPage("pdf-catalog", `
+          <div class="pdf-section">
+            <h2>${category.name || "Catalog"}</h2>
+            <div class="pdf-products">${items}</div>
+          </div>
+        `)
+      );
+    }
   });
 
   const footerBlocks = getFooterTextBlocks();
