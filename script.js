@@ -507,9 +507,16 @@ const applySiteConfig = (config) => {
   if (capTitle && capabilities.title) capTitle.textContent = capabilities.title;
   if (capLead && capabilities.lead) capLead.textContent = capabilities.lead;
 
-  if (capList && Array.isArray(capabilities.items)) {
+  const capItems = Array.isArray(capabilities.items) && capabilities.items.length
+    ? capabilities.items
+    : (Array.isArray(solutions.items) ? solutions.items : []);
+  if (capList) {
     capList.innerHTML = "";
-    capabilities.items.forEach((item, index) => {
+    if (!capItems.length) {
+      capList.innerHTML = "<li class='cap-item'>No capability items configured.</li>";
+      return;
+    }
+    capItems.forEach((item, index) => {
       const li = document.createElement("li");
       li.className = "cap-item";
       li.innerHTML = `
