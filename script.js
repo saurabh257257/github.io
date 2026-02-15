@@ -876,6 +876,15 @@ const generatePdf = async () => {
         ? cachedSiteConfig.solutions.items
         : []);
 
+  const aboutPoints = Array.isArray(about.whyItems)
+    ? about.whyItems.map((item) =>
+        typeof item === "string" ? item.replace(/^sub:\s*/i, "").trim() : ""
+      ).filter(Boolean)
+    : [];
+  const aboutList = aboutPoints.length
+    ? `<ul class="pdf-about-list">${aboutPoints.map((item) => `<li>${item}</li>`).join("")}</ul>`
+    : "";
+
   const cover = buildPdfPage("pdf-cover", `
     <div class="pdf-cover-header">
       <img class="pdf-logo" src="${brand.logo || "assets/company_logo.jpg"}" alt="Logo" />
@@ -886,6 +895,7 @@ const generatePdf = async () => {
       <h2>About Us</h2>
       <p class="pdf-lead">${about.title || ""}</p>
       <p>${about.lead || ""}</p>
+      ${aboutList}
     </div>
   `);
 

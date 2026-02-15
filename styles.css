@@ -777,18 +777,18 @@ img {
 .pdf-cover-header {
   text-align: center;
   display: grid;
-  gap: 6px;
+  gap: 0;
 }
 
 .pdf-logo {
-  height: 60px;
+  height: 90px;
   width: auto;
   object-fit: contain;
   margin: 0 auto;
 }
 
 .pdf-cover-header h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin: 0;
   letter-spacing: 0.5px;
 }
@@ -815,6 +815,16 @@ img {
   gap: 12px;
   padding: 0;
   margin: 0;
+}
+
+.pdf-about-list {
+  list-style: disc;
+  padding-left: 18px;
+  margin: 10px 0 0;
+  display: grid;
+  gap: 6px;
+  color: #475569;
+  font-size: 0.9rem;
 }
 
 .pdf-cap-item {
