@@ -1,6 +1,7 @@
 ﻿const categoryFilters = document.querySelector("#categoryFilters");
 const catalogGrid = document.querySelector("#catalogGrid");
 const globalSearch = document.querySelector("#globalSearch");
+const searchSuggestions = document.querySelector("#searchSuggestions");
 const orderList = document.querySelector("#orderList");
 const mobileOrderList = document.querySelector("#mobileOrderList");
 const orderForm = document.querySelector("#orderForm");
@@ -67,6 +68,7 @@ const normalizeCatalogData = (data) => {
 
 let currentCategoryFilter = "all";
 let currentSearchTerm = "";
+let productIndex = [];
 
 const renderFilters = (categories) => {
   if (!categoryFilters) return;
@@ -549,6 +551,8 @@ const createCard = (product, categoryName) => {
   const dataId = name
     ? name.toString().trim().replace(/[^a-z0-9_-]+/gi, "_")
     : `product_${Math.random().toString(36).slice(2, 9)}`;
+  card.id = `product-${dataId}`;
+  card.dataset.productCode = name;
   const unit = product.Unit || "KG";
   const minQty = Number(product["Minimum Quantity"]) || 1;
   const dimensions = product.Product_Dimensions || "";
@@ -653,10 +657,18 @@ const createCard = (product, categoryName) => {
 const renderCatalog = (categories) => {
   if (!catalogGrid) return;
   catalogGrid.innerHTML = "";
+  productIndex = [];
   let cardCount = 0;
   categories.forEach((category) => {
     (category.products || []).forEach((product) => {
-      catalogGrid.appendChild(createCard(product, category.name));
+      const card = createCard(product, category.name);
+      catalogGrid.appendChild(card);
+      if (card.dataset.productCode) {
+        productIndex.push({
+          code: card.dataset.productCode,
+          id: card.id
+        });
+      }
       cardCount += 1;
     });
   });
@@ -796,6 +808,7 @@ const handleSearchInput = (value) => {
   } else {
     document.body.classList.remove("search-active");
   }
+  renderSuggestions(currentSearchTerm);
 };
 
 if (globalSearch) {
@@ -803,3 +816,42 @@ if (globalSearch) {
     handleSearchInput(event.target.value);
   });
 }
+
+const renderSuggestions = (term) => {
+  if (!searchSuggestions) return;
+  searchSuggestions.innerHTML = "";
+  if (!term) {
+    searchSuggestions.classList.remove("is-visible");
+    return;
+  }
+  const matches = productIndex
+    .filter((item) => item.code.toLowerCase().includes(term))
+    .slice(0, 8);
+  if (!matches.length) {
+    searchSuggestions.classList.remove("is-visible");
+    return;
+  }
+  matches.forEach((item) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "suggestion-item";
+    btn.textContent = item.code;
+    btn.addEventListener("click", () => {
+      const target = document.getElementById(item.id);
+      if (target) {
+        document.body.classList.add("search-active");
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      searchSuggestions.classList.remove("is-visible");
+    });
+    searchSuggestions.appendChild(btn);
+  });
+  searchSuggestions.classList.add("is-visible");
+};
+
+document.addEventListener("click", (event) => {
+  if (!searchSuggestions) return;
+  if (!searchSuggestions.contains(event.target) && event.target !== globalSearch) {
+    searchSuggestions.classList.remove("is-visible");
+  }
+});
