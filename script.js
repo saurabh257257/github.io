@@ -333,9 +333,17 @@ const applySiteConfig = (config) => {
   const brand = config.brand || {};
   const logo = document.getElementById("brandLogo");
   const mark = document.getElementById("brandMark");
+  const brandName = document.getElementById("brandName");
+  const brandTag = document.getElementById("brandTag");
   if (logo && brand.logo) {
     logo.src = brand.logo;
     if (mark) mark.classList.add("is-hidden");
+  }
+  if (brandName && brand.name) {
+    brandName.textContent = brand.name;
+  }
+  if (brandTag && brand.tagline) {
+    brandTag.textContent = brand.tagline;
   }
 };
 
