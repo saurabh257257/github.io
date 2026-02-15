@@ -346,6 +346,40 @@ const applySiteConfig = (config) => {
     brandTag.textContent = brand.tagline;
   }
 
+  const navConfig = config.nav || {};
+  const navHome = document.getElementById("navHome");
+  const navCatalog = document.getElementById("navCatalog");
+  const navCapabilities = document.getElementById("navCapabilities");
+  const navAbout = document.getElementById("navAbout");
+  if (navHome && navConfig.home) navHome.textContent = navConfig.home;
+  if (navCatalog && navConfig.catalog) navCatalog.textContent = navConfig.catalog;
+  if (navCapabilities && navConfig.capabilities) navCapabilities.textContent = navConfig.capabilities;
+  if (navAbout && navConfig.about) navAbout.textContent = navConfig.about;
+
+  const topBar = config.topBar || {};
+  if (Array.isArray(topBar.phones)) {
+    const phoneEls = [
+      { phone: document.getElementById("topPhone1"), wa: document.getElementById("topWa1") },
+      { phone: document.getElementById("topPhone2"), wa: document.getElementById("topWa2") }
+    ];
+    phoneEls.forEach((els, idx) => {
+      const data = topBar.phones[idx];
+      if (!data) return;
+      if (els.phone) {
+        const svg = els.phone.querySelector("svg");
+        els.phone.textContent = data.label || data.tel || "";
+        if (svg) els.phone.appendChild(svg);
+        if (data.tel) els.phone.href = `tel:${data.tel}`;
+      }
+      if (els.wa && data.whatsapp) {
+        const svg = els.wa.querySelector("svg");
+        els.wa.textContent = "";
+        if (svg) els.wa.appendChild(svg);
+        els.wa.href = `https://wa.me/${data.whatsapp}`;
+      }
+    });
+  }
+
   const solutions = config.solutions || {};
   const solutionsEyebrow = document.getElementById("solutionsEyebrow");
   const solutionsTitle = document.getElementById("solutionsTitle");
@@ -405,6 +439,84 @@ const applySiteConfig = (config) => {
       cards.forEach((card, index) => {
         card.classList.toggle("is-active", index === nextIndex);
       });
+    });
+  }
+
+  const about = config.about || {};
+  const aboutEyebrow = document.getElementById("aboutEyebrow");
+  const aboutTitle = document.getElementById("aboutTitle");
+  const aboutLead = document.getElementById("aboutLead");
+  const aboutWhyTitle = document.getElementById("aboutWhyTitle");
+  const aboutWhyList = document.getElementById("aboutWhyList");
+
+  if (aboutEyebrow && about.eyebrow) aboutEyebrow.textContent = about.eyebrow;
+  if (aboutTitle && about.title) aboutTitle.textContent = about.title;
+  if (aboutLead && about.lead) aboutLead.textContent = about.lead;
+  if (aboutWhyTitle && about.whyTitle) aboutWhyTitle.textContent = about.whyTitle;
+
+  if (aboutWhyList && Array.isArray(about.whyItems)) {
+    aboutWhyList.innerHTML = "";
+    const mainItems = [];
+    const subItems = [];
+    about.whyItems.forEach((item) => {
+      if (typeof item !== "string") return;
+      if (item.trim().toLowerCase().startsWith("sub:")) {
+        subItems.push(item.replace(/^sub:\s*/i, "").trim());
+      } else {
+        mainItems.push(item);
+      }
+    });
+    mainItems.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      aboutWhyList.appendChild(li);
+    });
+    if (subItems.length) {
+      const lastItem = aboutWhyList.lastElementChild;
+      const subList = document.createElement("ul");
+      subList.className = "about-sublist";
+      subItems.forEach((sub) => {
+        const li = document.createElement("li");
+        li.textContent = sub;
+        subList.appendChild(li);
+      });
+      if (lastItem) {
+        lastItem.appendChild(subList);
+      } else {
+        aboutWhyList.appendChild(subList);
+      }
+    }
+  }
+
+  const capabilities = config.capabilities || {};
+  const capEyebrow = document.getElementById("capEyebrow");
+  const capTitle = document.getElementById("capTitle");
+  const capLead = document.getElementById("capLead");
+  const capGrid = document.getElementById("capGrid");
+  if (capEyebrow && capabilities.eyebrow) capEyebrow.textContent = capabilities.eyebrow;
+  if (capTitle && capabilities.title) capTitle.textContent = capabilities.title;
+  if (capLead && capabilities.lead) capLead.textContent = capabilities.lead;
+
+  if (capGrid && Array.isArray(capabilities.cards)) {
+    const gallery = Array.isArray(capabilities.gallery) ? capabilities.gallery : [];
+    capGrid.innerHTML = "";
+    capabilities.cards.forEach((card, index) => {
+      const capCard = document.createElement("div");
+      capCard.className = "cap-card";
+      const image = gallery[index] || gallery[0] || "";
+      capCard.innerHTML = `
+        <img class="cap-photo" src="${image}" alt="${card.title || "Capability"}" />
+        <h3>${card.title || ""}</h3>
+        <p>${card.text || ""}</p>
+      `;
+      const img = capCard.querySelector("img");
+      if (img) {
+        img.onerror = () => {
+          img.onerror = null;
+          img.src = placeholderImage(card.title || "Capability");
+        };
+      }
+      capGrid.appendChild(capCard);
     });
   }
 };
