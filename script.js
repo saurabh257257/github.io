@@ -746,6 +746,7 @@ const openWhatsApp = (items, form) => {
   const whatsapp = `https://wa.me/918112662827?text=${encodeURIComponent(body)}`;
   window.open(whatsapp, "_blank");
   form.reset();
+  window.location.href = "completed.html";
 };
 
 if (orderForm) {
