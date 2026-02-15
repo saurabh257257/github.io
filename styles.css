@@ -151,6 +151,10 @@ img {
   display: none;
 }
 
+.brand-mark {
+  display: none;
+}
+
 .mobile-fab.is-shake {
   animation: fab-shake 0.45s ease-in-out;
 }
