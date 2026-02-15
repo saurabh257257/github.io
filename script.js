@@ -1,6 +1,7 @@
 ﻿const categoryFilters = document.querySelector("#categoryFilters");
 const catalogGrid = document.querySelector("#catalogGrid");
 const globalSearch = document.querySelector("#globalSearch");
+const generateCatalogPdf = document.querySelector("#generateCatalogPdf");
 const searchSuggestions = document.querySelector("#searchSuggestions");
 const orderList = document.querySelector("#orderList");
 const mobileOrderList = document.querySelector("#mobileOrderList");
@@ -69,6 +70,8 @@ const normalizeCatalogData = (data) => {
 let currentCategoryFilter = "all";
 let currentSearchTerm = "";
 let productIndex = [];
+let cachedCatalog = [];
+let cachedSiteConfig = {};
 
 const renderFilters = (categories) => {
   if (!categoryFilters) return;
@@ -552,6 +555,7 @@ const loadSiteConfig = async () => {
     const response = await fetch("site.json", { cache: "no-store" });
     if (!response.ok) return;
     const data = await response.json();
+    cachedSiteConfig = data || {};
     applySiteConfig(data);
   } catch {
     // ignore config errors
@@ -706,6 +710,7 @@ const loadCatalog = async () => {
   if (!catalogGrid) return;
   try {
     const categories = await loadCatalogFromJson();
+    cachedCatalog = categories;
     renderCatalog(categories);
   } catch (error) {
     catalogGrid.innerHTML = "<p>Unable to load catalog. Please check products.json.</p>";
@@ -831,6 +836,143 @@ if (globalSearch) {
   globalSearch.addEventListener("input", (event) => {
     handleSearchInput(event.target.value);
   });
+}
+
+const buildPdfPage = (className, innerHtml) => {
+  const page = document.createElement("div");
+  page.className = `pdf-page ${className || ""}`.trim();
+  page.innerHTML = innerHtml;
+  return page;
+};
+
+const getFooterTextBlocks = () => {
+  const footer = document.querySelector(".site-footer");
+  if (!footer) return [];
+  const blocks = [];
+  footer.querySelectorAll(".footer-grid > div").forEach((col) => {
+    const text = col.innerText.trim();
+    if (text) blocks.push(text);
+  });
+  return blocks;
+};
+
+const generatePdf = async () => {
+  if (typeof window.jspdf === "undefined" || typeof window.html2canvas === "undefined") {
+    alert("PDF libraries not loaded. Please refresh and try again.");
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF("p", "pt", "a4");
+  const pdfRoot = document.createElement("div");
+  pdfRoot.className = "pdf-root";
+
+  const brand = cachedSiteConfig.brand || {};
+  const about = cachedSiteConfig.about || {};
+  const capabilities = cachedSiteConfig.capabilities || {};
+  const capItems = Array.isArray(capabilities.items) && capabilities.items.length
+    ? capabilities.items
+    : (cachedSiteConfig.solutions && Array.isArray(cachedSiteConfig.solutions.items)
+        ? cachedSiteConfig.solutions.items
+        : []);
+
+  const cover = buildPdfPage("pdf-cover", `
+    <div class="pdf-cover-header">
+      <img class="pdf-logo" src="${brand.logo || "assets/company_logo.jpg"}" alt="Logo" />
+      <h1>${brand.name || "Arambhika Enablers"}</h1>
+      <p class="pdf-tagline">${brand.tagline || ""}</p>
+    </div>
+    <div class="pdf-section">
+      <h2>About Us</h2>
+      <p class="pdf-lead">${about.title || ""}</p>
+      <p>${about.lead || ""}</p>
+    </div>
+  `);
+
+  const capList = capItems
+    .map(
+      (item) => `
+      <li>
+        <h3>${item.title || ""}</h3>
+        <p class="pdf-tag">${item.tag || ""}</p>
+        <p>${item.line || ""}</p>
+      </li>
+    `
+    )
+    .join("");
+  const capabilityPage = buildPdfPage("pdf-capabilities", `
+    <div class="pdf-section">
+      <h2>${capabilities.title || "Our Capabilities"}</h2>
+      <p class="pdf-lead">${capabilities.lead || ""}</p>
+      <ul class="pdf-list">${capList}</ul>
+    </div>
+  `);
+
+  const catalogPages = [];
+  cachedCatalog.forEach((category) => {
+    const items = (category.products || []).map((product) => {
+      const image = Array.isArray(product.Image_Link) && product.Image_Link.length
+        ? product.Image_Link[0]
+        : "";
+      const priceText = product.Price || "";
+      const unit = product.Unit || "";
+      const moq = product["Minimum Quantity"] || "";
+      const dims = product.Product_Dimensions || "";
+      const availability = product.Availability || "";
+      const showUnit = priceText && !/per\s+/i.test(priceText) && !/\//.test(priceText);
+      return `
+        <div class="pdf-product">
+          <img src="${image}" alt="${product.ProductCode || "Product"}" />
+          <div>
+            <h4>${product.ProductCode || ""}</h4>
+            <p class="pdf-dim">${dims}</p>
+            <p class="pdf-meta">Price: ${priceText}${showUnit ? `/${unit}` : ""}</p>
+            <p class="pdf-meta">Min Qty: ${moq} ${unit}</p>
+            <p class="pdf-meta">Availability: ${availability}</p>
+          </div>
+        </div>
+      `;
+    }).join("");
+    catalogPages.push(
+      buildPdfPage("pdf-catalog", `
+        <div class="pdf-section">
+          <h2>${category.name || "Catalog"}</h2>
+          <div class="pdf-products">${items}</div>
+        </div>
+      `)
+    );
+  });
+
+  const footerBlocks = getFooterTextBlocks();
+  const contactPage = buildPdfPage("pdf-contact", `
+    <div class="pdf-section">
+      <h2>Contact Us</h2>
+      ${footerBlocks.map((block) => `<pre class="pdf-contact-block">${block}</pre>`).join("")}
+    </div>
+  `);
+
+  [cover, capabilityPage, ...catalogPages, contactPage].forEach((page) =>
+    pdfRoot.appendChild(page)
+  );
+  document.body.appendChild(pdfRoot);
+
+  const pages = Array.from(pdfRoot.querySelectorAll(".pdf-page"));
+  for (let i = 0; i < pages.length; i += 1) {
+    const canvas = await window.html2canvas(pages[i], { scale: 2 });
+    const imgData = canvas.toDataURL("image/png");
+    const imgProps = doc.getImageProperties(imgData);
+    const pdfWidth = doc.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    if (i > 0) doc.addPage();
+    doc.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+  }
+
+  doc.save("catalog.pdf");
+  pdfRoot.remove();
+};
+
+if (generateCatalogPdf) {
+  generateCatalogPdf.addEventListener("click", generatePdf);
 }
 
 const renderSuggestions = (term) => {

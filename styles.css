@@ -764,6 +764,105 @@ img {
   font-family: "Inter", system-ui, sans-serif;
 }
 
+.pdf-page {
+  width: 100%;
+  min-height: 1550px;
+  padding: 40px;
+  background: #ffffff;
+  display: grid;
+  gap: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.pdf-cover-header {
+  text-align: center;
+  display: grid;
+  gap: 10px;
+}
+
+.pdf-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.pdf-tagline {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.pdf-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.pdf-lead {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pdf-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.pdf-list h3 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.pdf-tag {
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+}
+
+.pdf-products {
+  display: grid;
+  gap: 14px;
+}
+
+.pdf-product {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.pdf-product img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.pdf-dim {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.pdf-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.pdf-contact-block {
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  border-radius: 10px;
+}
+
 .pdf-root h1 {
   font-family: "Poppins", serif;
   font-size: 2.1rem;
