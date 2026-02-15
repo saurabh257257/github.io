@@ -281,11 +281,11 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 2P(21700) 31x0.15 mm",
                     "Image_Link": [
-                        "assets/products/nickel-plated/np_2p_31x.15mm_11.jpg",
-                        "assets/products/nickel-plated/np_2p_31x.15mm_1.jpg",
-                        "assets/products/nickel-plated/np_2p_31x.15mm_2.jpg",
-                        "assets/products/nickel-plated/np_2p_31x.15mm_3.jpg",
-                        "assets/products/nickel-plated/np_2p_31x.15mm_4.jpg"
+                        "assets/products/nickel-pure/np_2p_31x.15mm_11.jpg",
+                        "assets/products/nickel-pure/np_2p_31x.15mm_1.jpg",
+                        "assets/products/nickel-pure/np_2p_31x.15mm_2.jpg",
+                        "assets/products/nickel-pure/np_2p_31x.15mm_3.jpg",
+                        "assets/products/nickel-pure/np_2p_31x.15mm_4.jpg"
                     ],
                     "Price": "3750",
                     "Availability": "Now",
@@ -375,9 +375,9 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 2P(21700) 31x0.12 mm",
                     "Image_Link": [
-                        "assets/products/nickel-plated/npl_2p_31x.12mm_1.jpg",
-                        "assets/products/nickel-plated/npl_2p_31x.12mm_2.jpg",
-                        "assets/products/nickel-plated/npl_2p_31x.12mm_3.jpg"
+                        "assets/products/nickel-pure/np_2p_31x.12mm_1.jpg",
+                        "assets/products/nickel-pure/np_2p_31x.12mm_2.jpg",
+                        "assets/products/nickel-pure/np_2p_31x.12mm_3.jpg"
                     ],
                     "Price": "3750",
                     "Availability": "On Request",
@@ -423,9 +423,9 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 2P 31x0.20 mm",
                     "Image_Link": [
-                        "assets/products/nickel-plated/npl_2p_31x.20mm_1.jpg",
-                        "assets/products/nickel-plated/npl_2p_31x.20mm_2.jpg",
-                        "assets/products/nickel-plated/npl_2p_31x.20mm_3.jpg"
+                        "assets/products/nickel-pure/np_2p_31x.20mm_1.jpg",
+                        "assets/products/nickel-pure/np_2p_31x.20mm_2.jpg",
+                        "assets/products/nickel-pure/np_2p_31x.20mm_3.jpg"
                     ],
                     "Price": "3750",
                     "Availability": "On Request",
