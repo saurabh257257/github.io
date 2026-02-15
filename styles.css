@@ -1559,8 +1559,7 @@ img {
   }
 
   .brand-tag {
-    font-size: 0.56rem;
-    max-width: 220px;
+    display: none;
   }
 
   .nav-links {
