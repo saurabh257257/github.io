@@ -306,6 +306,12 @@ const addToOrder = (product, qty) => {
   order[name] = { id: name, name, qty, unit };
   setOrder(order);
   renderOrderList();
+  if (mobileFab) {
+    mobileFab.classList.remove("is-shake");
+    // trigger reflow to restart animation
+    void mobileFab.offsetWidth;
+    mobileFab.classList.add("is-shake");
+  }
 };
 
 const removeFromOrder = (productId) => {

@@ -159,12 +159,12 @@ img {
 }
 
 @keyframes fab-shake {
-  0% { transform: translate3d(0, 0, 0); }
-  20% { transform: translate3d(-6px, 0, 0); }
-  40% { transform: translate3d(6px, 0, 0); }
-  60% { transform: translate3d(-4px, 0, 0); }
-  80% { transform: translate3d(4px, 0, 0); }
-  100% { transform: translate3d(0, 0, 0); }
+  0% { transform: translate3d(-50%, 0, 0); }
+  20% { transform: translate3d(calc(-50% - 6px), 0, 0); }
+  40% { transform: translate3d(calc(-50% + 6px), 0, 0); }
+  60% { transform: translate3d(calc(-50% - 4px), 0, 0); }
+  80% { transform: translate3d(calc(-50% + 4px), 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 .brand-tag {
