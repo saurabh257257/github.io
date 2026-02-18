@@ -11,6 +11,30 @@ const mobileSheet = document.querySelector("#mobileSheet");
 const mobileSheetClose = document.querySelector("#mobileSheetClose");
 
 const ORDER_KEY = "orderCart";
+const PRODUCT_QUERY_KEY = "product";
+
+const slugify = (value) =>
+  String(value || "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const buildProductPageLink = (slug) => {
+  if (!slug) return "#catalog";
+  return `?${PRODUCT_QUERY_KEY}=${encodeURIComponent(slug)}#catalog`;
+};
+
+const getRequestedProductSlug = () => {
+  const params = new URLSearchParams(window.location.search);
+  const fromQuery = slugify(params.get(PRODUCT_QUERY_KEY) || "");
+  if (fromQuery) return fromQuery;
+  const rawHash = (window.location.hash || "").replace(/^#/, "");
+  if (rawHash.startsWith("product-")) {
+    return slugify(rawHash.slice("product-".length));
+  }
+  return "";
+};
 
 const getOrder = () => {
   const raw = sessionStorage.getItem(ORDER_KEY);
@@ -71,6 +95,8 @@ let currentSearchTerm = "";
 let productIndex = [];
 let cachedCatalog = [];
 let cachedSiteConfig = {};
+let pendingProductSlug = getRequestedProductSlug();
+let highlightResetTimer = null;
 
 const renderFilters = (categories) => {
   if (!categoryFilters) return;
@@ -115,6 +141,67 @@ const filterCatalog = () => {
       card.style.display = "none";
     }
   });
+};
+
+const setFilterButtonState = (filterValue) => {
+  if (!categoryFilters) return;
+  categoryFilters.querySelectorAll(".filter-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.filter === filterValue);
+  });
+};
+
+const focusProductBySlug = (slug, { smooth = true, updateUrl = true } = {}) => {
+  if (!catalogGrid || !slug) return false;
+  const normalizedSlug = slugify(slug);
+  if (!normalizedSlug) return false;
+
+  const card = catalogGrid.querySelector(
+    `.catalog-card[data-product-slug="${normalizedSlug}"]`
+  );
+  if (!card) return false;
+
+  currentCategoryFilter = "all";
+  currentSearchTerm = "";
+  if (globalSearch) globalSearch.value = "";
+  document.body.classList.remove("search-active");
+  setFilterButtonState("all");
+  filterCatalog();
+
+  const catalog = document.querySelector("#catalog");
+  if (catalog) {
+    catalog.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+  }
+  card.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
+
+  card.classList.add("is-highlighted");
+  if (highlightResetTimer) window.clearTimeout(highlightResetTimer);
+  highlightResetTimer = window.setTimeout(() => {
+    card.classList.remove("is-highlighted");
+  }, 1800);
+
+  if (updateUrl) {
+    const url = new URL(window.location.href);
+    url.searchParams.set(PRODUCT_QUERY_KEY, normalizedSlug);
+    url.hash = "catalog";
+    window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+  }
+
+  return true;
+};
+
+const createUniqueProductSlug = (product, categoryName, usedSlugs) => {
+  const baseText = [product.ProductCode, product.Product_Dimensions, categoryName]
+    .filter(Boolean)
+    .join(" ");
+  const baseSlug = slugify(baseText) || "product";
+  let nextSlug = baseSlug;
+  let suffix = 2;
+  while (usedSlugs.has(nextSlug)) {
+    nextSlug = `${baseSlug}-${suffix}`;
+    suffix += 1;
+  }
+  usedSlugs.add(nextSlug);
+  return nextSlug;
 };
 
 const placeholderImage = (label) => {
@@ -561,17 +648,17 @@ const loadSiteConfig = async () => {
   }
 };
 
-const createCard = (product, categoryName) => {
+const createCard = (product, categoryName, productSlug) => {
   const card = document.createElement("article");
   card.className = "catalog-card";
   card.dataset.category = categoryName;
+  card.dataset.productSlug = productSlug;
 
   const name = product.ProductCode || "";
-  const dataId = name
-    ? name.toString().trim().replace(/[^a-z0-9_-]+/gi, "_")
-    : `product_${Math.random().toString(36).slice(2, 9)}`;
+  const dataId = productSlug || "product";
   card.id = `product-${dataId}`;
   card.dataset.productCode = name;
+  card.dataset.productLink = buildProductPageLink(productSlug);
   const unit = product.Unit || "KG";
   const minQty = Number(product["Minimum Quantity"]) || 1;
   const dimensions = product.Product_Dimensions || "";
@@ -597,7 +684,11 @@ const createCard = (product, categoryName) => {
     <span class="badge badge-${availabilityClass}">${availabilityLabel}</span>
     <div class="catalog-body">
       <div class="details-bottom">
-        <h3>${name}</h3>
+        <h3>
+          <a class="product-title-link" href="${card.dataset.productLink}" data-product-link="${productSlug}">
+            ${name}
+          </a>
+        </h3>
         <p class="sku">${dimensionHtml}</p>
         <div class="price-row">
           ${priceLine}
@@ -670,6 +761,14 @@ const createCard = (product, categoryName) => {
     addToOrder(product, qty);
   });
 
+  const titleLink = card.querySelector("[data-product-link]");
+  if (titleLink) {
+    titleLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      focusProductBySlug(productSlug, { smooth: true, updateUrl: true });
+    });
+  }
+
   return card;
 };
 
@@ -677,15 +776,19 @@ const renderCatalog = (categories) => {
   if (!catalogGrid) return;
   catalogGrid.innerHTML = "";
   productIndex = [];
+  const usedSlugs = new Set();
   let cardCount = 0;
   categories.forEach((category) => {
     (category.products || []).forEach((product) => {
-      const card = createCard(product, category.name);
+      const productSlug = createUniqueProductSlug(product, category.name, usedSlugs);
+      const card = createCard(product, category.name, productSlug);
       catalogGrid.appendChild(card);
       if (card.dataset.productCode) {
         productIndex.push({
           code: card.dataset.productCode,
-          id: card.id
+          id: card.id,
+          slug: productSlug,
+          link: buildProductPageLink(productSlug)
         });
       }
       cardCount += 1;
@@ -696,6 +799,11 @@ const renderCatalog = (categories) => {
   }
   renderFilters(categories);
   filterCatalog();
+  if (pendingProductSlug) {
+    if (focusProductBySlug(pendingProductSlug, { smooth: false, updateUrl: true })) {
+      pendingProductSlug = "";
+    }
+  }
 };
 
 const loadCatalogFromJson = async () => {
@@ -1011,10 +1119,14 @@ const renderSuggestions = (term) => {
     btn.className = "suggestion-item";
     btn.textContent = item.code;
     btn.addEventListener("click", () => {
-      const target = document.getElementById(item.id);
-      if (target) {
-        document.body.classList.add("search-active");
-        target.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (item.slug) {
+        focusProductBySlug(item.slug, { smooth: true, updateUrl: true });
+      } else {
+        const target = document.getElementById(item.id);
+        if (target) {
+          document.body.classList.add("search-active");
+          target.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
       }
       searchSuggestions.classList.remove("is-visible");
     });
@@ -1027,5 +1139,21 @@ document.addEventListener("click", (event) => {
   if (!searchSuggestions) return;
   if (!searchSuggestions.contains(event.target) && event.target !== globalSearch) {
     searchSuggestions.classList.remove("is-visible");
+  }
+});
+
+window.addEventListener("popstate", () => {
+  const slug = getRequestedProductSlug();
+  if (!slug) return;
+  if (!focusProductBySlug(slug, { smooth: false, updateUrl: false })) {
+    pendingProductSlug = slug;
+  }
+});
+
+window.addEventListener("hashchange", () => {
+  const slug = getRequestedProductSlug();
+  if (!slug) return;
+  if (!focusProductBySlug(slug, { smooth: false, updateUrl: false })) {
+    pendingProductSlug = slug;
   }
 });
