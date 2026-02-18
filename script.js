@@ -13,25 +13,30 @@ const mobileSheetClose = document.querySelector("#mobileSheetClose");
 const ORDER_KEY = "orderCart";
 const PRODUCT_QUERY_KEY = "product";
 
-const slugify = (value) =>
+const normalizeProductCode = (value) =>
   String(value || "")
     .toLowerCase()
     .trim()
+    .replace(/\s+/g, " ");
+
+const toDomToken = (value) =>
+  normalizeProductCode(value)
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-const buildProductPageLink = (slug) => {
-  if (!slug) return "#catalog";
-  return `?${PRODUCT_QUERY_KEY}=${encodeURIComponent(slug)}#catalog`;
+const buildProductPageLink = (productCode) => {
+  const code = String(productCode || "").trim();
+  if (!code) return "#catalog";
+  return `?${PRODUCT_QUERY_KEY}=${encodeURIComponent(code)}#catalog`;
 };
 
-const getRequestedProductSlug = () => {
+const getRequestedProductCode = () => {
   const params = new URLSearchParams(window.location.search);
-  const fromQuery = slugify(params.get(PRODUCT_QUERY_KEY) || "");
+  const fromQuery = String(params.get(PRODUCT_QUERY_KEY) || "").trim();
   if (fromQuery) return fromQuery;
   const rawHash = (window.location.hash || "").replace(/^#/, "");
   if (rawHash.startsWith("product-")) {
-    return slugify(rawHash.slice("product-".length));
+    return decodeURIComponent(rawHash.slice("product-".length));
   }
   return "";
 };
@@ -95,7 +100,7 @@ let currentSearchTerm = "";
 let productIndex = [];
 let cachedCatalog = [];
 let cachedSiteConfig = {};
-let pendingProductSlug = getRequestedProductSlug();
+let pendingProductCode = getRequestedProductCode();
 let highlightResetTimer = null;
 
 const renderFilters = (categories) => {
@@ -150,13 +155,13 @@ const setFilterButtonState = (filterValue) => {
   });
 };
 
-const focusProductBySlug = (slug, { smooth = true, updateUrl = true } = {}) => {
-  if (!catalogGrid || !slug) return false;
-  const normalizedSlug = slugify(slug);
-  if (!normalizedSlug) return false;
+const focusProductByCode = (productCode, { smooth = true, updateUrl = true } = {}) => {
+  if (!catalogGrid || !productCode) return false;
+  const normalizedCode = normalizeProductCode(productCode);
+  if (!normalizedCode) return false;
 
   const card = catalogGrid.querySelector(
-    `.catalog-card[data-product-slug="${normalizedSlug}"]`
+    `.catalog-card[data-product-code-key="${normalizedCode}"]`
   );
   if (!card) return false;
 
@@ -181,27 +186,12 @@ const focusProductBySlug = (slug, { smooth = true, updateUrl = true } = {}) => {
 
   if (updateUrl) {
     const url = new URL(window.location.href);
-    url.searchParams.set(PRODUCT_QUERY_KEY, normalizedSlug);
+    url.searchParams.set(PRODUCT_QUERY_KEY, card.dataset.productCode || productCode);
     url.hash = "catalog";
     window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
   }
 
   return true;
-};
-
-const createUniqueProductSlug = (product, categoryName, usedSlugs) => {
-  const baseText = [product.ProductCode, product.Product_Dimensions, categoryName]
-    .filter(Boolean)
-    .join(" ");
-  const baseSlug = slugify(baseText) || "product";
-  let nextSlug = baseSlug;
-  let suffix = 2;
-  while (usedSlugs.has(nextSlug)) {
-    nextSlug = `${baseSlug}-${suffix}`;
-    suffix += 1;
-  }
-  usedSlugs.add(nextSlug);
-  return nextSlug;
 };
 
 const placeholderImage = (label) => {
@@ -648,17 +638,17 @@ const loadSiteConfig = async () => {
   }
 };
 
-const createCard = (product, categoryName, productSlug) => {
+const createCard = (product, categoryName) => {
   const card = document.createElement("article");
   card.className = "catalog-card";
   card.dataset.category = categoryName;
-  card.dataset.productSlug = productSlug;
 
   const name = product.ProductCode || "";
-  const dataId = productSlug || "product";
+  const dataId = toDomToken(name) || `product_${Math.random().toString(36).slice(2, 9)}`;
   card.id = `product-${dataId}`;
   card.dataset.productCode = name;
-  card.dataset.productLink = buildProductPageLink(productSlug);
+  card.dataset.productCodeKey = normalizeProductCode(name);
+  card.dataset.productLink = buildProductPageLink(name);
   const unit = product.Unit || "KG";
   const minQty = Number(product["Minimum Quantity"]) || 1;
   const dimensions = product.Product_Dimensions || "";
@@ -685,7 +675,7 @@ const createCard = (product, categoryName, productSlug) => {
     <div class="catalog-body">
       <div class="details-bottom">
         <h3>
-          <a class="product-title-link" href="${card.dataset.productLink}" data-product-link="${productSlug}">
+          <a class="product-title-link" href="${card.dataset.productLink}" data-product-link="${name}">
             ${name}
           </a>
         </h3>
@@ -765,7 +755,7 @@ const createCard = (product, categoryName, productSlug) => {
   if (titleLink) {
     titleLink.addEventListener("click", (event) => {
       event.preventDefault();
-      focusProductBySlug(productSlug, { smooth: true, updateUrl: true });
+      focusProductByCode(name, { smooth: true, updateUrl: true });
     });
   }
 
@@ -776,19 +766,17 @@ const renderCatalog = (categories) => {
   if (!catalogGrid) return;
   catalogGrid.innerHTML = "";
   productIndex = [];
-  const usedSlugs = new Set();
   let cardCount = 0;
   categories.forEach((category) => {
     (category.products || []).forEach((product) => {
-      const productSlug = createUniqueProductSlug(product, category.name, usedSlugs);
-      const card = createCard(product, category.name, productSlug);
+      const card = createCard(product, category.name);
       catalogGrid.appendChild(card);
       if (card.dataset.productCode) {
         productIndex.push({
           code: card.dataset.productCode,
           id: card.id,
-          slug: productSlug,
-          link: buildProductPageLink(productSlug)
+          key: card.dataset.productCodeKey,
+          link: buildProductPageLink(card.dataset.productCode)
         });
       }
       cardCount += 1;
@@ -799,9 +787,9 @@ const renderCatalog = (categories) => {
   }
   renderFilters(categories);
   filterCatalog();
-  if (pendingProductSlug) {
-    if (focusProductBySlug(pendingProductSlug, { smooth: false, updateUrl: true })) {
-      pendingProductSlug = "";
+  if (pendingProductCode) {
+    if (focusProductByCode(pendingProductCode, { smooth: false, updateUrl: true })) {
+      pendingProductCode = "";
     }
   }
 };
@@ -1119,8 +1107,8 @@ const renderSuggestions = (term) => {
     btn.className = "suggestion-item";
     btn.textContent = item.code;
     btn.addEventListener("click", () => {
-      if (item.slug) {
-        focusProductBySlug(item.slug, { smooth: true, updateUrl: true });
+      if (item.code) {
+        focusProductByCode(item.code, { smooth: true, updateUrl: true });
       } else {
         const target = document.getElementById(item.id);
         if (target) {
@@ -1143,17 +1131,17 @@ document.addEventListener("click", (event) => {
 });
 
 window.addEventListener("popstate", () => {
-  const slug = getRequestedProductSlug();
-  if (!slug) return;
-  if (!focusProductBySlug(slug, { smooth: false, updateUrl: false })) {
-    pendingProductSlug = slug;
+  const productCode = getRequestedProductCode();
+  if (!productCode) return;
+  if (!focusProductByCode(productCode, { smooth: false, updateUrl: false })) {
+    pendingProductCode = productCode;
   }
 });
 
 window.addEventListener("hashchange", () => {
-  const slug = getRequestedProductSlug();
-  if (!slug) return;
-  if (!focusProductBySlug(slug, { smooth: false, updateUrl: false })) {
-    pendingProductSlug = slug;
+  const productCode = getRequestedProductCode();
+  if (!productCode) return;
+  if (!focusProductByCode(productCode, { smooth: false, updateUrl: false })) {
+    pendingProductCode = productCode;
   }
 });
