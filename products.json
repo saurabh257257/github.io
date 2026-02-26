@@ -14,7 +14,7 @@
                         "assets/products/nickel-plated/npl_6x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_6x.15mm_4.jpg"
                     ],
-                    "Price": "440",
+                    "Price": "425",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -31,7 +31,7 @@
                         "assets/products/nickel-plated/npl_8x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_8x.15mm_4.jpg"
                     ],
-                    "Price": "440",
+                    "Price": "425",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -47,7 +47,7 @@
                         "assets/products/nickel-plated/npl_10x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_10x.15mm_4.jpg"
                     ],
-                    "Price": "440",
+                    "Price": "425",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -64,7 +64,7 @@
                         "assets/products/nickel-plated/npl_2p_26x.15mm_4.jpg",
                         "assets/products/nickel-plated/npl_2p_26x.15mm_5.jpg"
                     ],
-                    "Price": "740",
+                    "Price": "690",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -81,7 +81,7 @@
                         "assets/products/nickel-plated/npl_2p_31x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_2p_31x.15mm_4.jpg"
                     ],
-                    "Price": "740",
+                    "Price": "690",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -98,7 +98,7 @@
                         "assets/products/nickel-plated/npl_2p_46.5x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_2p_46.5x.15mm_4.jpg"
                     ],
-                    "Price": "740",
+                    "Price": "690",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -111,7 +111,7 @@
                     "Image_Link": [
                         "assets/products/nickel-plated/npl x 0.12_1.jpg"
                     ],
-                    "Price": "440",
+                    "Price": "425",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -124,7 +124,7 @@
                     "Image_Link": [
                         "assets/products/nickel-plated/npl x 0.20_1.jpg"
                     ],
-                    "Price": "440",
+                    "Price": "425",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -139,7 +139,7 @@
                         "assets/products/nickel-plated/npl_2p_26x.12mm_2.jpg",
                         "assets/products/nickel-plated/npl_2p_26x.12mm_3.jpg"
                     ],
-                    "Price": "740",
+                    "Price": "690",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -154,7 +154,7 @@
                         "assets/products/nickel-plated/npl_2p_26x.20mm_2.jpg",
                         "assets/products/nickel-plated/npl_2p_26x.20mm_3.jpg"
                     ],
-                    "Price": "740",
+                    "Price": "690",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -169,7 +169,7 @@
                         "assets/products/nickel-plated/npl_2p_31x.12mm_2.jpg",
                         "assets/products/nickel-plated/npl_2p_31x.12mm_3.jpg"
                     ],
-                    "Price": "740",
+                    "Price": "690",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -184,7 +184,7 @@
                         "assets/products/nickel-plated/npl_2p_31x.20mm_2.jpg",
                         "assets/products/nickel-plated/npl_2p_31x.20mm_3.jpg"
                     ],
-                    "Price": "740",
+                    "Price": "690",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -199,7 +199,7 @@
                         "assets/products/nickel-plated/npl_2p_46.5x.12mm_2.jpg",
                         "assets/products/nickel-plated/npl_2p_46.5x.12mm_3.jpg"
                     ],
-                    "Price": "740",
+                    "Price": "690",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -214,7 +214,7 @@
                         "assets/products/nickel-plated/npl_2p_46.5x.20mm_2.jpg",
                         "assets/products/nickel-plated/npl_2p_46.5x.20mm_3.jpg"
                     ],
-                    "Price": "740",
+                    "Price": "690",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -237,7 +237,7 @@
                         "assets/products/nickel-pure/np_6x.15mm_3.jpg",
                         "assets/products/nickel-pure/np_6x.15mm_4.jpg"
                     ],
-                    "Price": "2900",
+                    "Price": "2700",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -254,7 +254,7 @@
                         "assets/products/nickel-pure/np_8x.15mm_3.jpg",
                         "assets/products/nickel-pure/np_8x.15mm_4.jpg"
                     ],
-                    "Price": "2900",
+                    "Price": "2700",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -270,7 +270,7 @@
                         "assets/products/nickel-pure/np_10x.15mm_3.jpg",
                         "assets/products/nickel-pure/np_10x.15mm_4.jpg"
                     ],
-                    "Price": "2900",
+                    "Price": "2700",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -287,7 +287,7 @@
                         "assets/products/nickel-pure/np_2p_26x.15mm_4.jpg",
                         "assets/products/nickel-pure/np_2p_26x.15mm_5.jpg"
                     ],
-                    "Price": "3750",
+                    "Price": "3500",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -304,7 +304,7 @@
                         "assets/products/nickel-pure/np_2p_31x.15mm_3.jpg",
                         "assets/products/nickel-pure/np_2p_31x.15mm_4.jpg"
                     ],
-                    "Price": "3750",
+                    "Price": "3500",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -322,7 +322,7 @@
                         "assets/products/nickel-pure/np_2p_46.5x.15mm_4.jpg"
                 
                     ],
-                    "Price": "3750",
+                    "Price": "3500",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -380,7 +380,7 @@
                         "assets/products/nickel-pure/np_2p_26x.12mm_2.jpg",
                         "assets/products/nickel-pure/np_2p_26x.12mm_3.jpg"
                     ],
-                    "Price": "3750",
+                    "Price": "3500",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -395,7 +395,7 @@
                         "assets/products/nickel-pure/np_2p_31x.12mm_2.jpg",
                         "assets/products/nickel-pure/np_2p_31x.12mm_3.jpg"
                     ],
-                    "Price": "3750",
+                    "Price": "3500",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -410,7 +410,7 @@
                         "assets/products/nickel-pure/np_2p_46.5x.12mm_2.jpg",
                         "assets/products/nickel-pure/np_2p_46.5x.12mm_3.jpg"
                     ],
-                    "Price": "3750",
+                    "Price": "3500",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -425,7 +425,7 @@
                         "assets/products/nickel-pure/np_2p_26x.20mm_2.jpg",
                         "assets/products/nickel-pure/np_2p_26x.20mm_3.jpg"
                     ],
-                    "Price": "3750",
+                    "Price": "3500",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -440,7 +440,7 @@
                         "assets/products/nickel-pure/np_2p_31x.20mm_2.jpg",
                         "assets/products/nickel-pure/np_2p_31x.20mm_3.jpg"
                     ],
-                    "Price": "3750",
+                    "Price": "3500",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -456,7 +456,7 @@
                         "assets/products/nickel-pure/np_2p_46.5x.20mm_3.jpg"
                 
                     ],
-                    "Price": "3750",
+                    "Price": "3500",
                     "Availability": "On Request",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
