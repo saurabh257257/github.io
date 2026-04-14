@@ -237,29 +237,55 @@
             "Category": "Copper Bus Bars",
             "products": [
                 {
-                    "Category": "COPPER BUS BAR",
+                    "Category": "COPPER BUS BAR (55x20x2mm)",
                     "ProductCode": "COPPER BUS BAR Universal 2mm",
                     "Image_Link": [
                         "assets/products/copper-bus-bars/universe_2mm_1.jpg",
                         "assets/products/copper-bus-bars/universe_2mm_2.jpg"
                     ],
-                    "Price": "42",
+                    "Price": "31",
                     "Availability": "Now",
                     "Unit": "Piece",
-                    "Minimum Quantity": 3,
+                    "Minimum Quantity": 100,
                     "Product_Dimensions": "Dimension: T 2mm\nMaterial: Pure Copper\nColor: Silver"
                 },
                 {
-                    "Category": "COPPER BUS BAR",
+                    "Category": "COPPER BUS BAR(60x20x2mm)",
                     "ProductCode": "COPPER BUS BAR Universal 1.5mm",
                     "Image_Link": [
                         "assets/products/copper-bus-bars/universe_1.5mm_1.jpg",
                         "assets/products/copper-bus-bars/universe_1.5mm_2.jpg"
                     ],
-                    "Price": "21",
+                    "Price": "36",
                     "Availability": "Now",
                     "Unit": "Piece",
-                    "Minimum Quantity": 3,
+                    "Minimum Quantity": 100,
+                    "Product_Dimensions": "Dimension: T 1.5mm\nMaterial: Pure Copper\nColor: Silver"
+                },
+				{
+                    "Category": "COPPER BUS BAR(68x20x2mm)",
+                    "ProductCode": "COPPER BUS BAR Universal 1.5mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/universe_1.5mm_1.jpg",
+                        "assets/products/copper-bus-bars/universe_1.5mm_2.jpg"
+                    ],
+                    "Price": "40",
+                    "Availability": "Now",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 100,
+                    "Product_Dimensions": "Dimension: T 1.5mm\nMaterial: Pure Copper\nColor: Silver"
+                },
+				{
+                    "Category": "COPPER BUS BAR(82x20x2mm)",
+                    "ProductCode": "COPPER BUS BAR Universal 1.5mm",
+                    "Image_Link": [
+                        "assets/products/copper-bus-bars/universe_1.5mm_1.jpg",
+                        "assets/products/copper-bus-bars/universe_1.5mm_2.jpg"
+                    ],
+                    "Price": "48",
+                    "Availability": "Now",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 100,
                     "Product_Dimensions": "Dimension: T 1.5mm\nMaterial: Pure Copper\nColor: Silver"
                 }
                
