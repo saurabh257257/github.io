@@ -528,20 +528,6 @@
                     "Minimum Quantity": 3,
                     "Product_Dimensions": "Safest Lithium Chemistry.\nHigh specific energy and High capacity.\nLong Life Cycles and extended shelf life.\nHigh capacity, low internal resistance, good coulombic efficiency.",
                     "Additional_Details": "Safest Lithium Chemistry.\nHigh specific energy and High capacity.\nLong Life Cycles and extended shelf life.\nHigh capacity, low internal resistance, good coulombic efficiency."
-                },
-                {
-                    "Category": "Prismatic Battery Cell",
-                    "ProductCode": "Prismatic Battery Cell Ganfeng 3.2V 100Ah",
-                    "Image_Link": [
-                         "assets/products/prismatic-batteries/Gangfeng_1.jpg",
-                        "assets/products/prismatic-batteries/Gangfeng_2.jpg"
-                    ],
-                    "Price": "2300",
-                    "Availability": "On request",
-                    "Unit": "Piece",
-                    "Minimum Quantity": 3,
-                    "Product_Dimensions": "High Capacity: 100Ah for extended usage periods.\nStable Voltage: Consistent 3.2V output for reliable operation.\nLong Cycle Life: Supports thousands of charge/discharge cycles.\nSafe Chemistry: LiFePO4 technology with excellent thermal stability.\nHigh Energy: 320Wh capacity for demanding applications.\nDurable Design: Prismatic form factor for easy integration.",
-                    "Additional_Details": "High Capacity: 100Ah for extended usage periods.\nStable Voltage: Consistent 3.2V output for reliable operation.\nLong Cycle Life: Supports thousands of charge/discharge cycles.\nSafe Chemistry: LiFePO4 technology with excellent thermal stability.\nHigh Energy: 320Wh capacity for demanding applications.\nDurable Design: Prismatic form factor for easy integration."
                 }
             ]
         }
