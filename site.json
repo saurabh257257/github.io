@@ -31,27 +31,34 @@
     "items": [
       {
         "id": "1",
+        "title": "Arambhika Enablers / Swastik Metal Components",
+        "tag": "Battery Pack Connectors & Nickel Strip Solutions",
+        "line": "Participating in AutoTech Asia & Battery Tech India exhibition at Hall No. 6, Booth No. A20 from 17-19 April 2026 at Bharat Mandapam, New Delhi.",
+        "image": "assets/solutions/exhibitions.jpg"
+      },
+      {
+        "id": "2",
         "title": "Fully In-House Manufacturing",
         "tag": "Integrated Plating Facility",
         "line": "End-to-end in-house manufacturing with an integrated plating plant and capacity up to 25 tonnes per month.",
         "image": "assets/solutions/image1.jpg"
       },
       {
-        "id": "2",
+        "id": "3",
         "title": "Emergency Production Support",
         "tag": "Fast & Reliable Manufacturing",
         "line": "Dedicated production support to meet emergency and urgent customer requirements without delays.",
         "image": "assets/solutions/image2.jpg"
       },
       {
-        "id": "3",
+        "id": "4",
         "title": "Rapid Custom Development",
         "tag": "Zero Tooling Cost",
         "line": "No tooling charges and ultra-fast custom product development with lead times under 7 days.",
         "image": "assets/solutions/image3.jpg"
       },
       {
-        "id": "4",
+        "id": "5",
         "title": "Trusted Industry Partner",
         "tag": "Proven Brand Experience",
         "line": "Proven track record serving leading energy brands.",
