@@ -240,8 +240,7 @@
                     "Category": "COPPER BUS BAR",
                     "ProductCode": "COPPER BUS BAR Universal (55x20x2mm)",
                     "Image_Link": [
-                        "assets/products/copper-bus-bars/universe_2mm_1.jpg",
-                        "assets/products/copper-bus-bars/universe_2mm_2.jpg"
+                        "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
                     ],
                     "Price": "31",
                     "Availability": "Now",
@@ -253,8 +252,7 @@
                     "Category": "COPPER BUS BAR",
                     "ProductCode": "COPPER BUS BAR Universal (60x20x2mm)",
                     "Image_Link": [
-                           "assets/products/copper-bus-bars/universe_2mm_1.jpg",
-                        "assets/products/copper-bus-bars/universe_2mm_2.jpg"
+                          "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
                     ],
                     "Price": "36",
                     "Availability": "Now",
@@ -266,8 +264,7 @@
                     "Category": "COPPER BUS BAR",
                     "ProductCode": "COPPER BUS BAR Universal (68x20x2mm)",
                     "Image_Link": [
-                           "assets/products/copper-bus-bars/universe_2mm_2.jpg",
-                        "assets/products/copper-bus-bars/universe_2mm_1.jpg"
+                          "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
                     ],
                     "Price": "40",
                     "Availability": "Now",
@@ -279,8 +276,7 @@
                     "Category": "COPPER BUS BAR",
                     "ProductCode": "COPPER BUS BAR Universal (82x20x2mm)",
                     "Image_Link": [
-                       "assets/products/copper-bus-bars/universe_2mm_1.jpg",
-                        "assets/products/copper-bus-bars/universe_2mm_2.jpg"
+                       "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
                     ],
                     "Price": "48",
                     "Availability": "Now",
