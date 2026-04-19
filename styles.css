@@ -1966,3 +1966,56 @@ img {
 }
 
 
+
+/* Message from MD */
+.md-message-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 80px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.md-message-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.md-message-text h2 {
+  margin-bottom: 20px;
+}
+
+.md-message-text p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.md-signature {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 2px solid #dee2e6;
+  color: #333 !important;
+  line-height: 1.6 !important;
+}
+
+.md-message-video video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .md-message-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .md-message-text {
+    order: 1;
+  }
+
+  .md-message-video {
+    order: 0;
+  }
+}
