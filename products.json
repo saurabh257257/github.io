@@ -283,19 +283,6 @@
                     "Unit": "Piece",
                     "Minimum Quantity": 100,
                     "Product_Dimensions": "Dimension: (82x20x2mm)\nMaterial: Pure Copper\nColor: Silver"
-                },
-                {
-                    "Category": "COPPER BUS BAR",
-                    "ProductCode": "Sample",
-                    "Image_Link": [
-                        "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
-                    ],
-                    "Price": "0",
-                    "Availability": "On Request",
-                    "Unit": "Piece",
-                    "Minimum Quantity": 1,
-                    "Product_Dimensions": "Dimension: Sample\nMaterial: Pure Copper\nColor: Silver",
-                    "Additional_Details": "Sample product for testing and evaluation purposes\nMaterial: Pure Copper\nAvailable on request"
                 }
 
             ]
