@@ -1145,3 +1145,43 @@ window.addEventListener("hashchange", () => {
     pendingProductCode = productCode;
   }
 });
+
+// Exhibition carousel auto-rotate
+(function initExhibitionCarousel() {
+  const root = document.getElementById('exhibitionCarousel');
+  if (!root) return;
+  const slides = Array.from(root.querySelectorAll('.exhibition-slide'));
+  const dotsWrap = document.getElementById('exhibitionDots');
+  if (!slides.length || !dotsWrap) return;
+
+  let idx = 0;
+  let timer = null;
+
+  const dots = slides.map((_, i) => {
+    const d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'exhibition-dot' + (i === 0 ? ' is-active' : '');
+    d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    d.addEventListener('click', () => { go(i); restart(); });
+    dotsWrap.appendChild(d);
+    return d;
+  });
+
+  function go(n) {
+    slides[idx].classList.remove('is-active');
+    dots[idx].classList.remove('is-active');
+    idx = (n + slides.length) % slides.length;
+    slides[idx].classList.add('is-active');
+    dots[idx].classList.add('is-active');
+  }
+
+  function next() { go(idx + 1); }
+
+  function start() { timer = setInterval(next, 3500); }
+  function stop()  { if (timer) { clearInterval(timer); timer = null; } }
+  function restart() { stop(); start(); }
+
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  start();
+})();
