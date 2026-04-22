@@ -13,6 +13,35 @@
       color: #1a1a2e;
     }
 
+    /* ── PDF BUTTON ── */
+    .pdf-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a3a6b;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 22px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(26,58,107,0.35);
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .pdf-btn:hover {
+      background: #2d6abf;
+      transform: translateY(-2px);
+    }
+    .pdf-btn svg {
+      flex-shrink: 0;
+    }
+
     /* ── HEADER ── */
     .header {
       background: #fff;
@@ -197,16 +226,20 @@
     }
     .footer strong { color: #fff; }
 
-    /* ── PRINT STYLES ── */
+    /* ── PRINT / PDF STYLES ── */
+    @page {
+      size: A4 landscape;
+      margin: 12mm 10mm;
+    }
     @media print {
+      .pdf-btn { display: none !important; }
       body { background: #fff; }
-      .header { padding: 12px 24px; border-bottom: 2px solid #1a3a6b; }
-      .catalog-banner { padding: 10px 24px; }
-      .content { padding: 16px 12px 24px; max-width: 100%; }
-      .product-grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+      .header { padding: 10px 20px; border-bottom: 2px solid #1a3a6b; }
+      .catalog-banner { padding: 8px 20px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .content { padding: 12px 8px 20px; max-width: 100%; }
+      .product-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
       .product-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #ccc; }
       .footer { background: #1a3a6b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .catalog-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
 
     @media (max-width: 900px) {
@@ -216,10 +249,20 @@
       .product-grid { grid-template-columns: repeat(2, 1fr); }
       .header { flex-direction: column; align-items: flex-start; }
       .header-contact { text-align: left; }
+      .pdf-btn { bottom: 20px; right: 20px; font-size: 13px; padding: 11px 18px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- PDF DOWNLOAD BUTTON -->
+  <button class="pdf-btn" onclick="window.print()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 15V3m0 12-4-4m4 4 4-4"/>
+      <path d="M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/>
+    </svg>
+    Download as PDF
+  </button>
 
   <!-- HEADER -->
   <header class="header">
