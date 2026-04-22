@@ -90,7 +90,7 @@
                 },
                 {
                     "Category": "Nickel Strip Plated",
-                    "ProductCode": "Nickel Strip Plated 2P(32650) 46.5x0.15 mm",
+                    "ProductCode": "Nickel Strip Plated 2P(32650) without holder 46.5x0.15 mm CD 32.5",
                     "Image_Link": [
                         "assets/products/nickel-plated/npl_2p_46.5x.15mm_11.jpg",
                         "assets/products/nickel-plated/npl_2p_46.5x.15mm_1.jpg",
@@ -102,7 +102,24 @@
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
-                    "Product_Dimensions": "Strip size: 46.5 × 0.15 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Nickel-plated\nCompatible holder: 34.4 mm pitch cell holder",
+                    "Product_Dimensions": "46.5 x 0.15 mm for 32650 2P (H-type)\nCd 32.5 mm without holder\nMaterial: Nickel-plated",
+                    "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
+                },
+                {
+                    "Category": "Nickel Strip Plated",
+                    "ProductCode": "Nickel Strip Plated 2P(32650) with holder 46.5x0.15 mm CD 34.5",
+                    "Image_Link": [
+                        "assets/products/nickel-plated/npl_2p_46.5x.15mm_11.jpg",
+                        "assets/products/nickel-plated/npl_2p_46.5x.15mm_1.jpg",
+                        "assets/products/nickel-plated/npl_2p_46.5x.15mm_2.jpg",
+                        "assets/products/nickel-plated/npl_2p_46.5x.15mm_3.jpg",
+                        "assets/products/nickel-plated/npl_2p_46.5x.15mm_4.jpg"
+                    ],
+                    "Price": "720",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "46.5 x 0.15 mm for 32650 2P (H-type)\nDepth 22.4 mm, pitch 34.4 mm\n34.4 mm holder\nMaterial: Nickel-plated",
                     "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
                 }
                     ]
@@ -121,7 +138,7 @@
                         "assets/products/nickel-pure/np_6x.15mm_3.jpg",
                         "assets/products/nickel-pure/np_6x.15mm_4.jpg"
                     ],
-                    "Price": "2700",
+                    "Price": "2850",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -138,7 +155,7 @@
                         "assets/products/nickel-pure/np_8x.15mm_3.jpg",
                         "assets/products/nickel-pure/np_8x.15mm_4.jpg"
                     ],
-                    "Price": "2700",
+                    "Price": "2850",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -154,7 +171,7 @@
                         "assets/products/nickel-pure/np_10x.15mm_3.jpg",
                         "assets/products/nickel-pure/np_10x.15mm_4.jpg"
                     ],
-                    "Price": "2700",
+                    "Price": "2850",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,

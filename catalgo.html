@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Catalog — Arambhika Enablers</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: #fff;
+      border-bottom: 3px solid #1a3a6b;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .header-logo {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+    }
+    .header-brand h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a3a6b;
+      line-height: 1.2;
+    }
+    .header-brand p {
+      font-size: 12px;
+      color: #555;
+      margin-top: 3px;
+    }
+    .header-contact {
+      text-align: right;
+      font-size: 12px;
+      color: #333;
+      line-height: 1.8;
+    }
+    .header-contact strong {
+      color: #1a3a6b;
+    }
+
+    /* ── CATALOG TITLE BANNER ── */
+    .catalog-banner {
+      background: linear-gradient(135deg, #1a3a6b 0%, #2d6abf 100%);
+      color: #fff;
+      text-align: center;
+      padding: 18px 40px;
+    }
+    .catalog-banner h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .catalog-banner p {
+      font-size: 12px;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+    }
+
+    /* ── CATEGORY SECTION ── */
+    .category-section {
+      margin-bottom: 40px;
+    }
+    .category-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .category-heading h3 {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1a3a6b;
+    }
+    .category-heading::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 22px;
+      background: #2d6abf;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .category-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #d0d8e8;
+    }
+
+    /* ── PRODUCT GRID ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    /* ── PRODUCT CARD ── */
+    .product-card {
+      background: #fff;
+      border: 1px solid #e0e6f0;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s;
+    }
+    .product-card:hover {
+      box-shadow: 0 6px 24px rgba(26, 58, 107, 0.12);
+    }
+    .product-img-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #f8f9fc;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .product-info {
+      padding: 12px 14px 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .product-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1a3a6b;
+      line-height: 1.35;
+    }
+    .product-dims {
+      font-size: 11px;
+      color: #555;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+    .product-badge {
+      margin-top: auto;
+      padding-top: 8px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: #e8f0fb;
+      color: #1a3a6b;
+      border: 1px solid #c5d6f0;
+    }
+    .badge.avail-now { background: #e6f9f0; color: #1a7a4a; border-color: #b2e4cd; }
+    .badge.avail-request { background: #fff4e0; color: #a05c00; border-color: #f5d58a; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #1a3a6b;
+      color: #c5d6f0;
+      text-align: center;
+      padding: 18px 40px;
+      font-size: 11.5px;
+      line-height: 1.8;
+    }
+    .footer strong { color: #fff; }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      body { background: #fff; }
+      .header { padding: 12px 24px; border-bottom: 2px solid #1a3a6b; }
+      .catalog-banner { padding: 10px 24px; }
+      .content { padding: 16px 12px 24px; max-width: 100%; }
+      .product-grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+      .product-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #ccc; }
+      .footer { background: #1a3a6b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .catalog-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    @media (max-width: 900px) {
+      .product-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .header { flex-direction: column; align-items: flex-start; }
+      .header-contact { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <img class="header-logo" src="assets/company_logo.jpg" alt="Arambhika Enablers Logo" />
+      <div class="header-brand">
+        <h1>Arambhika Enablers</h1>
+        <p>Nickel &amp; Copper Battery Connectors: Mfg. &amp; Dist.</p>
+      </div>
+    </div>
+    <div class="header-contact">
+      <strong>Contact Us</strong><br />
+      +91-8112662827<br />
+      +91-9953255677
+    </div>
+  </header>
+
+  <!-- CATALOG BANNER -->
+  <div class="catalog-banner">
+    <h2>Product Catalog</h2>
+    <p>Battery Pack Connectors &amp; Nickel Strip Solutions</p>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ── NICKEL STRIP PLATED ── -->
+    <section class="category-section">
+      <div class="category-heading"><h3>Nickel Strip Plated</h3></div>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-plated/npl_6x.15mm_11.jpg" alt="Nickel Strip Plated 1P 6x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Plated 1P<br/>6 × 0.15 mm</div>
+            <div class="product-dims">Strip: 6 × 0.15 mm&#10;Material: Nickel-plated&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">1P</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-plated/npl_8x.15mm_11.jpg" alt="Nickel Strip Plated 1P 8x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Plated 1P<br/>8 × 0.15 mm</div>
+            <div class="product-dims">Strip: 8 × 0.15 mm&#10;Material: Nickel-plated&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">1P</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-plated/npl_10x.15mm_1.jpg" alt="Nickel Strip Plated 1P 10x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Plated 1P<br/>10 × 0.15 mm</div>
+            <div class="product-dims">Strip: 10 × 0.15 mm&#10;Material: Nickel-plated&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">1P</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-plated/npl_2p_26x.15mm_11.jpg" alt="Nickel Strip Plated 2P 18650 26x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Plated 2P (18650)<br/>26 × 0.15 mm</div>
+            <div class="product-dims">Strip: 26 × 0.15 mm (H-type)&#10;Depth: 12 mm | Pitch: 19 mm&#10;Holder: 19 mm pitch&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">2P</span><span class="badge">18650</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-plated/npl_2p_31x.15mm_11.jpg" alt="Nickel Strip Plated 2P 21700 31x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Plated 2P (21700)<br/>31 × 0.15 mm</div>
+            <div class="product-dims">Strip: 31 × 0.15 mm (H-type)&#10;Depth: 15 mm | Pitch: 23 mm&#10;Holder: 23 mm pitch&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">2P</span><span class="badge">21700</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-plated/npl_2p_46.5x.15mm_11.jpg" alt="Nickel Strip Plated 2P 32650 without holder" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Plated 2P (32650)<br/>46.5 × 0.15 mm — Without Holder</div>
+            <div class="product-dims">Strip: 46.5 × 0.15 mm (H-type)&#10;Cd: 32.5 mm | No holder&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">2P</span><span class="badge">32650</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-plated/npl_2p_46.5x.15mm_11.jpg" alt="Nickel Strip Plated 2P 32650 with holder" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Plated 2P (32650)<br/>46.5 × 0.15 mm — With Holder</div>
+            <div class="product-dims">Strip: 46.5 × 0.15 mm (H-type)&#10;Depth: 22.4 mm | Pitch: 34.4 mm&#10;Holder: 34.4 mm pitch&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">2P</span><span class="badge">32650</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── NICKEL STRIP PURE ── -->
+    <section class="category-section">
+      <div class="category-heading"><h3>Nickel Strip Pure</h3></div>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-pure/np_6x.15mm_11.jpg" alt="Nickel Strip Pure 1P 6x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Pure 1P<br/>6 × 0.15 mm</div>
+            <div class="product-dims">Strip: 6 × 0.15 mm&#10;Material: Pure Nickel&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">1P</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-pure/np_8x.15mm_11.jpg" alt="Nickel Strip Pure 1P 8x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Pure 1P<br/>8 × 0.15 mm</div>
+            <div class="product-dims">Strip: 8 × 0.15 mm&#10;Material: Pure Nickel&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">1P</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-pure/np_10x.15mm_1.jpg" alt="Nickel Strip Pure 1P 10x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Pure 1P<br/>10 × 0.15 mm</div>
+            <div class="product-dims">Strip: 10 × 0.15 mm&#10;Material: Pure Nickel&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">1P</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-pure/np_2p_26x.15mm_11.jpg" alt="Nickel Strip Pure 2P 18650 26x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Pure 2P (18650)<br/>26 × 0.15 mm</div>
+            <div class="product-dims">Strip: 26 × 0.15 mm (H-type)&#10;Depth: 12 mm | Pitch: 19 mm&#10;Holder: 19 mm pitch&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">2P</span><span class="badge">18650</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-pure/np_2p_31x.15mm_11.jpg" alt="Nickel Strip Pure 2P 21700 31x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Pure 2P (21700)<br/>31 × 0.15 mm</div>
+            <div class="product-dims">Strip: 31 × 0.15 mm (H-type)&#10;Depth: 15 mm | Pitch: 23 mm&#10;Holder: 23 mm pitch&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">2P</span><span class="badge">21700</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-pure/np_2p_46.5x.15mm_11.jpg" alt="Nickel Strip Pure 2P 32650 46.5x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Pure 2P (32650)<br/>46.5 × 0.15 mm</div>
+            <div class="product-dims">Strip: 46.5 × 0.15 mm (H-type)&#10;Depth: 22.4 mm | Pitch: 34.4 mm&#10;Holder: 34.4 mm pitch&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-request">On Request</span><span class="badge">2P</span><span class="badge">32650</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/nickel-pure/np_zigzag_1.jpg" alt="Nickel Strip Pure ZigZag 32.96x0.15 mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Nickel Strip Pure ZigZag<br/>32.96 × 0.15 mm</div>
+            <div class="product-dims">Width: 32.96 mm&#10;Central depth: 19.00 mm&#10;Material: Pure Nickel&#10;Unit: KG | Min Qty: 3</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">ZigZag</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── COPPER BUS BARS ── -->
+    <section class="category-section">
+      <div class="category-heading"><h3>Copper Bus Bars</h3></div>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg" alt="Copper Bus Bar 55x20x2mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Copper Bus Bar Universal<br/>55 × 20 × 2 mm</div>
+            <div class="product-dims">Dimension: 55 × 20 × 2 mm&#10;Material: Pure Copper&#10;Color: Silver&#10;Unit: Piece | Min Qty: 100</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">Pure Copper</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg" alt="Copper Bus Bar 60x20x2mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Copper Bus Bar Universal<br/>60 × 20 × 2 mm</div>
+            <div class="product-dims">Dimension: 60 × 20 × 2 mm&#10;Material: Pure Copper&#10;Color: Silver&#10;Unit: Piece | Min Qty: 100</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">Pure Copper</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg" alt="Copper Bus Bar 68x20x2mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Copper Bus Bar Universal<br/>68 × 20 × 2 mm</div>
+            <div class="product-dims">Dimension: 68 × 20 × 2 mm&#10;Material: Pure Copper&#10;Color: Silver&#10;Unit: Piece | Min Qty: 100</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">Pure Copper</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg" alt="Copper Bus Bar 82x20x2mm" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">Copper Bus Bar Universal<br/>82 × 20 × 2 mm</div>
+            <div class="product-dims">Dimension: 82 × 20 × 2 mm&#10;Material: Pure Copper&#10;Color: Silver&#10;Unit: Piece | Min Qty: 100</div>
+            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">Pure Copper</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <strong>Arambhika Enablers / Swastik Metal Components</strong><br />
+    Battery Pack Connectors &amp; Nickel Strip Solutions<br />
+    +91-8112662827 &nbsp;|&nbsp; +91-9953255677<br />
+    <span style="opacity:0.7;font-size:10px;">Prices available on request &mdash; contact us for a customized quote.</span>
+  </footer>
+
+</body>
+</html>
