@@ -1,4 +1,4 @@
-﻿{
+{
     "categories": [
         {
             "Category": "Nickel Strip Plated",
@@ -14,7 +14,7 @@
                         "assets/products/nickel-plated/npl_6x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_6x.15mm_4.jpg"
                     ],
-                    "Price": "460",
+                    "Price": "480",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -31,7 +31,7 @@
                         "assets/products/nickel-plated/npl_8x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_8x.15mm_4.jpg"
                     ],
-                    "Price": "460",
+                    "Price": "480",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -47,7 +47,7 @@
                         "assets/products/nickel-plated/npl_10x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_10x.15mm_4.jpg"
                     ],
-                    "Price": "460",
+                    "Price": "480",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -64,7 +64,7 @@
                         "assets/products/nickel-plated/npl_2p_26x.15mm_4.jpg",
                         "assets/products/nickel-plated/npl_2p_26x.15mm_5.jpg"
                     ],
-                    "Price": "720",
+                    "Price": "740",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -81,7 +81,7 @@
                         "assets/products/nickel-plated/npl_2p_31x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_2p_31x.15mm_4.jpg"
                     ],
-                    "Price": "720",
+                    "Price": "740",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -98,7 +98,7 @@
                         "assets/products/nickel-plated/npl_2p_46.5x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_2p_46.5x.15mm_4.jpg"
                     ],
-                    "Price": "720",
+                    "Price": "740",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -115,7 +115,7 @@
                         "assets/products/nickel-plated/npl_2p_46.5x.15mm_3.jpg",
                         "assets/products/nickel-plated/npl_2p_46.5x.15mm_4.jpg"
                     ],
-                    "Price": "720",
+                    "Price": "740",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
@@ -131,14 +131,14 @@
                         "assets/products/nickel-plated/npl_2p_49.5x.20mm_2.jpg",
                         "assets/products/nickel-plated/npl_2p_49.5x.20mm_3.jpg"
                     ],
-                    "Price": "720",
+                    "Price": "740",
                     "Availability": "Now",
                     "Unit": "KG",
                     "Minimum Quantity": 3,
                     "Product_Dimensions": "Strip: 49.5 × 0.2 mm for 32650 2P (H-type) with holder\nPitch: 34.5 mm | Inner cutout pitch: 15.0 mm\nEdge offset: 7.0 / 1.0 mm | Cell spacing: 19.5 mm\nTolerance: ±0.2 mm\nMaterial: Nickel-plated",
                     "Additional_Details": "Material: Nickel-plated for enhanced corrosion resistance\nThickness: Offering a balance of strength and flexibility\nConductivity: Good electrical performance for efficient power transfer\nApplications: Battery packs, EV systems, and energy storage solutions\nFeatures: Durable, flexible, and easy to handle or solder"
                 }
-                    ]
+            ]
         },
         {
             "Category": "Nickel Strip Pure",
@@ -232,12 +232,11 @@
                     "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 2P(32650) 46.5x0.15 mm",
                     "Image_Link": [
-                         "assets/products/nickel-pure/np_2p_46.5x.15mm_11.jpg",
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_11.jpg",
                         "assets/products/nickel-pure/np_2p_46.5x.15mm_1.jpg",
                         "assets/products/nickel-pure/np_2p_46.5x.15mm_2.jpg",
                         "assets/products/nickel-pure/np_2p_46.5x.15mm_3.jpg",
                         "assets/products/nickel-pure/np_2p_46.5x.15mm_4.jpg"
-                
                     ],
                     "Price": "3850",
                     "Availability": "On Request",
@@ -278,8 +277,7 @@
                     "Minimum Quantity": 3,
                     "Product_Dimensions": "Width: 32.96 mm\nCentral depth: 19.00 mm\nMaterial: Pure Nickel",
                     "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
-                }            
-              
+                }
             ]
         },
         {
@@ -301,7 +299,7 @@
                     "Category": "COPPER BUS BAR",
                     "ProductCode": "COPPER BUS BAR Universal (60x20x2mm)",
                     "Image_Link": [
-                          "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
+                        "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
                     ],
                     "Price": "36",
                     "Availability": "Now",
@@ -309,11 +307,11 @@
                     "Minimum Quantity": 100,
                     "Product_Dimensions": "Dimension: (60x20x2mm)\nMaterial: Pure Copper\nColor: Silver"
                 },
-				{
+                {
                     "Category": "COPPER BUS BAR",
                     "ProductCode": "COPPER BUS BAR Universal (68x20x2mm)",
                     "Image_Link": [
-                          "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
+                        "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
                     ],
                     "Price": "40",
                     "Availability": "Now",
@@ -321,11 +319,11 @@
                     "Minimum Quantity": 100,
                     "Product_Dimensions": "Dimension: (68x20x2mm)\nMaterial: Pure Copper\nColor: Silver"
                 },
-				{
+                {
                     "Category": "COPPER BUS BAR",
                     "ProductCode": "COPPER BUS BAR Universal (82x20x2mm)",
                     "Image_Link": [
-                       "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
+                        "assets/products/copper-bus-bars/Copper_Bus_Bar_2mm.jpg"
                     ],
                     "Price": "48",
                     "Availability": "Now",
@@ -333,9 +331,7 @@
                     "Minimum Quantity": 100,
                     "Product_Dimensions": "Dimension: (82x20x2mm)\nMaterial: Pure Copper\nColor: Silver"
                 }
-
             ]
         }
-        
     ]
 }
