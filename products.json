@@ -332,6 +332,85 @@
                     "Product_Dimensions": "Dimension: (82x20x2mm)\nMaterial: Pure Copper\nColor: Silver"
                 }
             ]
+        },
+        {
+            "Category": "LiFePo4 Prismatic Cells",
+            "products": [
+                {
+                    "Category": "LiFePo4 Prismatic Cells",
+                    "ProductCode": "LiFePo4 Prismatic Cell 3.2V 100Ah",
+                    "Image_Link": [
+                        "assets/products/lifepo4-prismatic/prismatic_100ah_1.jpg",
+                        "assets/products/lifepo4-prismatic/prismatic_100ah_2.jpg"
+                    ],
+                    "Price": "",
+                    "Availability": "Now",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 16,
+                    "Product_Dimensions": "Type: Prismatic\nNominal Voltage: 3.2V\nNominal Capacity: 100Ah\nCharging Voltage: 3.65V\nCut-off Voltage: 2.0V\nDischarge Rating: 1C / 3C\nConnection: Stud Type / Laser Spot Welding\nBrands: HIGHSTAR / GANFENG",
+                    "Additional_Details": "Chemistry: LiFePO4 (Lithium Iron Phosphate)\nSafe, thermally stable chemistry with no risk of thermal runaway\nCycle Life: 3500+ cycles\nApplications: Solar energy storage, EV battery packs, E-rickshaw, backup power\nAluminum alloy casing for durability\nGrade A cells — 100% authentic"
+                },
+                {
+                    "Category": "LiFePo4 Prismatic Cells",
+                    "ProductCode": "LiFePo4 Prismatic Cell 3.2V 150Ah",
+                    "Image_Link": [
+                        "assets/products/lifepo4-prismatic/prismatic_150ah_1.jpg",
+                        "assets/products/lifepo4-prismatic/prismatic_150ah_2.jpg"
+                    ],
+                    "Price": "",
+                    "Availability": "Now",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 16,
+                    "Product_Dimensions": "Type: Prismatic\nNominal Voltage: 3.2V\nNominal Capacity: 150Ah\nCharging Voltage: 3.65V\nCut-off Voltage: 2.0V\nDischarge Rating: 1C / 3C\nConnection: Stud Type / Laser Spot Welding\nBrands: HIGHSTAR / GANFENG",
+                    "Additional_Details": "Chemistry: LiFePO4 (Lithium Iron Phosphate)\nSafe, thermally stable chemistry with no risk of thermal runaway\nCycle Life: 3500+ cycles\nApplications: Solar energy storage, EV battery packs, E-rickshaw, backup power\nAluminum alloy casing for durability\nGrade A cells — 100% authentic"
+                },
+                {
+                    "Category": "LiFePo4 Prismatic Cells",
+                    "ProductCode": "LiFePo4 Prismatic Cell 3.2V 230Ah",
+                    "Image_Link": [
+                        "assets/products/lifepo4-prismatic/prismatic_230ah_1.jpg",
+                        "assets/products/lifepo4-prismatic/prismatic_230ah_2.jpg"
+                    ],
+                    "Price": "",
+                    "Availability": "Now",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 16,
+                    "Product_Dimensions": "Type: Prismatic\nNominal Voltage: 3.2V\nNominal Capacity: 230Ah\nCharging Voltage: 3.65V\nCut-off Voltage: 2.0V\nDischarge Rating: 1C / 3C\nConnection: Stud Type / Laser Spot Welding\nBrands: HIGHSTAR / GANFENG",
+                    "Additional_Details": "Chemistry: LiFePO4 (Lithium Iron Phosphate)\nSafe, thermally stable chemistry with no risk of thermal runaway\nCycle Life: 3500+ cycles\nApplications: Solar energy storage, EV battery packs, E-rickshaw, backup power\nAluminum alloy casing for durability\nGrade A cells — 100% authentic"
+                },
+                {
+                    "Category": "LiFePo4 Prismatic Cells",
+                    "ProductCode": "LiFePo4 Prismatic Cell 3.2V 314Ah",
+                    "Image_Link": [
+                        "assets/products/lifepo4-prismatic/prismatic_314ah_1.jpg",
+                        "assets/products/lifepo4-prismatic/prismatic_314ah_2.jpg"
+                    ],
+                    "Price": "",
+                    "Availability": "Now",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 16,
+                    "Product_Dimensions": "Type: Prismatic\nNominal Voltage: 3.2V\nNominal Capacity: 314Ah\nCharging Voltage: 3.65V\nCut-off Voltage: 2.0V\nDischarge Rating: 1C / 3C\nConnection: Stud Type / Laser Spot Welding\nBrands: HIGHSTAR / GANFENG\nDimensions (Ganfeng): 174.2 x 71.8 x 207.1 mm\nWeight (Ganfeng): 5.65 kg",
+                    "Additional_Details": "Chemistry: LiFePO4 (Lithium Iron Phosphate)\nSafe, thermally stable chemistry with no risk of thermal runaway\nCycle Life: 3500+ cycles\nHighstar 314Ah: Semi-solid flagship cell — world's first 1kWh-class cell to pass nail penetration safety test\nGanfeng 314Ah: Internal resistance ≤0.25mΩ, operating temp -30°C to 60°C\nApplications: Solar energy storage, EV battery packs, E-rickshaw, backup power\nAluminum alloy casing for durability\nGrade A cells — 100% authentic"
+                }
+            ]
+        },
+        {
+            "Category": "Aluminium Bus Bars",
+            "products": [
+                {
+                    "Category": "Aluminium Bus Bars",
+                    "ProductCode": "Aluminium Bus Bar (ST1) Universal (81×35×2mm)",
+                    "Image_Link": [
+                        "assets/products/aluminium-bus-bars/st1-81x35x2mm.jpg"
+                    ],
+                    "Price": "50",
+                    "Availability": "Now",
+                    "Unit": "Piece",
+                    "Minimum Quantity": 10,
+                    "Product_Dimensions": "Dimensions: 81 × 35 × 2 mm\nMaterial: AL-1060 (Aluminium)\nThickness: 2.00 mm",
+                    "Additional_Details": "Features: 2x Clinch Nut M3\nCell series design\n50.50mm center distance\nManufacturer: STEFEN ELECTRIC PVT LTD\nPart Number: BB-11-0078\nApplications: Battery packs, electrical connections, cell series busbar"
+                }
+            ]
         }
     ]
 }
