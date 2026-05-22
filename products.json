@@ -247,6 +247,23 @@
                 },
                 {
                     "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P(32650) 46.5x.3 mm",
+                    "Image_Link": [
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_11.jpg",
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_1.jpg",
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_2.jpg",
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_3.jpg",
+                        "assets/products/nickel-pure/np_2p_46.5x.15mm_4.jpg"
+                    ],
+                    "Price": "4150",
+                    "Availability": "On Request",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 46.5 × 0.3 mm for 32650 2P (H-type) layout\nCentral depth: 22.4 mm with 34.4 mm pitch\nMaterial: Pure Nickel\nCompatible holder: 34.4 mm pitch cell holder",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 2P(32650) with holder 49.5x0.2 mm",
                     "Image_Link": [
                         "assets/products/nickel-pure/np_2p_49.5x.20mm_11.jpg",
