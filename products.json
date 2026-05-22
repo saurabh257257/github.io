@@ -196,6 +196,22 @@
                 },
                 {
                     "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 1P 10x0.3 mm",
+                    "Image_Link": [
+                        "assets/products/nickel-pure/np_10x.3mm_1.jpg",
+                        "assets/products/nickel-pure/np_10x.3mm_2.jpg",
+                        "assets/products/nickel-pure/np_10x.3mm_3.jpg",
+                        "assets/products/nickel-pure/np_10x.3mm_4.jpg"
+                    ],
+                    "Price": "3150",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 3,
+                    "Product_Dimensions": "Strip size: 10 x 0.3 mm thick.\nMaterial: Pure Nickel",
+                    "Additional_Details": "Material: Pure nickel for stable electrical performance\nConductivity: Low resistance with corrosion resistance\nDesign: Balanced thickness for strength, flexibility, and easy soldering\nApplications: Battery packs, EVs, power tools, energy storage\nPerformance: Safe current flow with long-term reliability"
+                },
+                {
+                    "Category": "Nickel Strip Pure",
                     "ProductCode": "Nickel Strip Pure 2P(18650) 26x0.15 mm",
                     "Image_Link": [
                         "assets/products/nickel-pure/np_2p_26x.15mm_11.jpg",
