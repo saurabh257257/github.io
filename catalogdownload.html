@@ -180,20 +180,21 @@
   </div>
 
   <script>
-    // Generate QR code pointing to the catalog page
-    const catalogUrl = 'https://www.arambhikaenablers.in/catalog.html';
+    // QR points to catalog with autoprint flag — download starts automatically on scan
+    const catalogUrl = 'https://www.arambhikaenablers.in/catalog.html?autoprint=1';
+
     new QRCode(document.getElementById('qrcode'), {
       text: catalogUrl,
-      width: 220,
-      height: 220,
+      width: 280,
+      height: 280,
       colorDark: '#1a3a6b',
       colorLight: '#f8faff',
       correctLevel: QRCode.CorrectLevel.H
     });
 
-    // If opened on mobile (scanned), redirect straight to catalog
+    // If opened on mobile (scanned), go straight to catalog — print fires there
     if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
-      window.location.replace('catalog.html');
+      window.location.replace(catalogUrl);
     }
   </script>
 

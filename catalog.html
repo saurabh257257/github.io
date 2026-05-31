@@ -162,6 +162,20 @@
   </footer>
 
 <script>
+// Auto-print if ?autoprint=1 is in the URL (triggered by QR scan)
+const AUTO_PRINT = new URLSearchParams(location.search).get('autoprint') === '1';
+
+if (AUTO_PRINT) {
+  // Show a loading banner so user knows what's happening
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.createElement('div');
+    banner.id = 'autoBanner';
+    banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#1a3a6b;color:#fff;text-align:center;padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:.5px;';
+    banner.textContent = '⏳ Loading catalog — PDF download will start automatically…';
+    document.body.prepend(banner);
+  });
+}
+
 // Compress an img to a canvas JPEG — only called right before printing
 function compressImg(imgEl, size, quality) {
   try {
@@ -243,6 +257,34 @@ fetch('products.json?v=' + Date.now(), { cache: 'no-store' })
       sec.appendChild(grid);
       root.appendChild(sec);
     });
+
+    // Auto-print: wait for images to load then trigger print dialog
+    if (AUTO_PRINT) {
+      const allImgs = Array.from(root.querySelectorAll('img'));
+      let loaded = 0;
+      const total = allImgs.length;
+
+      function tryPrint() {
+        loaded++;
+        if (loaded >= total) {
+          // Extra 800ms buffer for render to settle
+          setTimeout(() => {
+            const b = document.getElementById('autoBanner');
+            if (b) b.textContent = '📄 Opening download dialog…';
+            setTimeout(() => window.print(), 400);
+          }, 800);
+        }
+      }
+
+      if (total === 0) {
+        setTimeout(() => window.print(), 1200);
+      } else {
+        allImgs.forEach(img => {
+          if (img.complete) { tryPrint(); }
+          else { img.addEventListener('load', tryPrint); img.addEventListener('error', tryPrint); }
+        });
+      }
+    }
   })
   .catch(() => {
     document.getElementById('catalogRoot').innerHTML =
