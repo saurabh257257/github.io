@@ -162,22 +162,32 @@
   </footer>
 
 <script>
-// Compress an <img> element to a tiny canvas JPEG (used before PDF print)
+// Compress an img to a canvas JPEG — only called right before printing
 function compressImg(imgEl, size, quality) {
   try {
     const c = document.createElement('canvas');
     c.width = size; c.height = size;
     c.getContext('2d').drawImage(imgEl, 0, 0, size, size);
+    imgEl.dataset.origSrc = imgEl.src;           // save original
     imgEl.src = c.toDataURL('image/jpeg', quality);
-  } catch(e) { /* cross-origin: leave original */ }
+  } catch(e) { /* cross-origin: skip */ }
 }
 
-// Compress all catalog images before print dialog opens
+// Restore originals after print so screen stays sharp
+function restoreImgs() {
+  document.querySelectorAll('.product-img-wrap img[data-orig-src]').forEach(img => {
+    img.src = img.dataset.origSrc;
+    delete img.dataset.origSrc;
+  });
+}
+
+// Before print: compress for PDF size; after print: restore crisp originals
 window.addEventListener('beforeprint', () => {
   document.querySelectorAll('.product-img-wrap img').forEach(img => {
-    if (img.complete && img.naturalWidth) compressImg(img, 150, 0.82);
+    if (img.complete && img.naturalWidth) compressImg(img, 180, 0.78);
   });
 });
+window.addEventListener('afterprint', restoreImgs);
 
 fetch('products.json?v=' + Date.now(), { cache: 'no-store' })
   .then(r => r.json())
@@ -225,8 +235,7 @@ fetch('products.json?v=' + Date.now(), { cache: 'no-store' })
         // Load image and immediately compress to 88px canvas dataURL
         const imgEl = card.querySelector('img');
         imgEl.crossOrigin = 'anonymous';
-        imgEl.onload = () => compressImg(imgEl, 200, 0.88);
-        imgEl.src = imgSrc;
+        imgEl.src = imgSrc;   // full-res — only compressed at print time
 
         grid.appendChild(card);
       });
