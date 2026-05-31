@@ -644,6 +644,7 @@ const createCard = (product, categoryName) => {
   card.dataset.category = categoryName;
 
   const name = product.ProductCode || "";
+  const sku  = product.SKU || "";
   const dataId = toDomToken(name) || `product_${Math.random().toString(36).slice(2, 9)}`;
   card.id = `product-${dataId}`;
   card.dataset.productCode = name;
@@ -676,7 +677,7 @@ const createCard = (product, categoryName) => {
       <div class="details-bottom">
         <h3>
           <a class="product-title-link" href="${card.dataset.productLink}" data-product-link="${name}">
-            ${name}
+            ${name}${sku ? ` <span style="color:#2d6abf;font-size:0.78em;font-weight:500;">(${sku})</span>` : ""}
           </a>
         </h3>
         <p class="sku">${dimensionHtml}</p>
