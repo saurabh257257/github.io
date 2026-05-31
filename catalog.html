@@ -162,6 +162,23 @@
   </footer>
 
 <script>
+// Compress an <img> element to a tiny canvas JPEG (used before PDF print)
+function compressImg(imgEl, size, quality) {
+  try {
+    const c = document.createElement('canvas');
+    c.width = size; c.height = size;
+    c.getContext('2d').drawImage(imgEl, 0, 0, size, size);
+    imgEl.src = c.toDataURL('image/jpeg', quality);
+  } catch(e) { /* cross-origin: leave original */ }
+}
+
+// Compress all catalog images before print dialog opens
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('.product-img-wrap img').forEach(img => {
+    if (img.complete && img.naturalWidth) compressImg(img, 72, 0.35);
+  });
+});
+
 fetch('products.json?v=' + Date.now(), { cache: 'no-store' })
   .then(r => r.json())
   .then(data => {
@@ -181,27 +198,37 @@ fetch('products.json?v=' + Date.now(), { cache: 'no-store' })
       grid.className = 'product-grid';
 
       (cat.products || []).forEach(p => {
-        const img = (p.Image_Link && p.Image_Link[0]) ? p.Image_Link[0] : 'assets/company_logo.jpg';
+        const imgSrc = (p.Image_Link && p.Image_Link[0]) ? p.Image_Link[0] : 'assets/company_logo.jpg';
         const avail = (p.Availability || '').toLowerCase() === 'now' ? 'avail-now' : 'avail-request';
         const availLabel = avail === 'avail-now' ? 'Available' : 'On Request';
         const dims = (p.Product_Dimensions || '') + '\nUnit: ' + (p.Unit || '') + ' | Min Qty: ' + (p['Minimum Quantity'] || 1);
         const price = p.Price ? '&#8377;' + Number(p.Price).toLocaleString('en-IN') + '<span>/ ' + (p.Unit || '') + '</span>' : '';
 
-        grid.innerHTML += `
-          <div class="product-card" data-sku="${p.ProductCode}">
-            <div class="product-img-wrap">
-              <img src="${img}" alt="${p.ProductCode}" loading="lazy" />
-            </div>
-            <div class="product-info">
-              <div class="product-name">${p.ProductCode} <span style="color:#2d6abf;font-weight:500;font-size:.85em;">(${p.SKU})</span></div>
-              <div class="product-dims">${dims.trim()}</div>
-              ${price ? '<div class="product-price">' + price + '</div>' : ''}
-              <div class="product-badge">
-                <span class="badge ${avail}">${availLabel}</span>
-                <span class="badge">${p.SKU}</span>
-              </div>
+        // Create card element (not via innerHTML so we can attach load handler)
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.dataset.sku = p.ProductCode;
+        card.innerHTML = `
+          <div class="product-img-wrap">
+            <img alt="${p.ProductCode}" />
+          </div>
+          <div class="product-info">
+            <div class="product-name">${p.ProductCode} <span style="color:#2d6abf;font-weight:500;font-size:.85em;">(${p.SKU})</span></div>
+            <div class="product-dims">${dims.trim()}</div>
+            ${price ? '<div class="product-price">' + price + '</div>' : ''}
+            <div class="product-badge">
+              <span class="badge ${avail}">${availLabel}</span>
+              <span class="badge">${p.SKU}</span>
             </div>
           </div>`;
+
+        // Load image and immediately compress to 88px canvas dataURL
+        const imgEl = card.querySelector('img');
+        imgEl.crossOrigin = 'anonymous';
+        imgEl.onload = () => compressImg(imgEl, 88, 0.5);
+        imgEl.src = imgSrc;
+
+        grid.appendChild(card);
       });
 
       sec.appendChild(grid);
