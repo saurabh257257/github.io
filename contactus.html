@@ -6,7 +6,7 @@
   <title>Contact Us — Arambhika Enablers</title>
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="assets/fabicon.jpg" />
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -179,23 +179,28 @@
 
     <div class="scan-label">💬 Scan to Chat on WhatsApp</div>
 
-    <div class="qr-wrap">
-      <canvas id="qrCanvas"></canvas>
-    </div>
-
+    <div class="qr-wrap" id="qrWrap"></div>
 
   </div>
 
   <script>
-    const waUrl = ‘https://wa.me/918112662827?text=’ +
-      encodeURIComponent(‘Hi, I would like to know more about your products.’);
-
-    QRCode.toCanvas(document.getElementById(‘qrCanvas’), waUrl, {
-      width: 280,
-      margin: 2,
-      color: { dark: ‘#0a5c1f’, light: ‘#f2fbf5’ },
-      errorCorrectionLevel: ‘H’
-    });
+    const waUrl = ‘https://wa.me/918112662827’;
+    var qr = qrcode(0, ‘M’);
+    qr.addData(waUrl);
+    qr.make();
+    // createSvgTag(cellSize, margin, alt)
+    document.getElementById(‘qrWrap’).innerHTML = qr.createSvgTag(7, 4, ‘WhatsApp QR’);
+    // Style the generated SVG
+    var svg = document.querySelector(‘#qrWrap svg’);
+    if (svg) {
+      svg.style.width  = ‘280px’;
+      svg.style.height = ‘280px’;
+      svg.style.borderRadius = ‘8px’;
+      // Recolour: default is black — patch fill attributes
+      svg.querySelectorAll(‘rect[fill="#000000"], rect[fill="black"]’).forEach(function(r){
+        r.setAttribute(‘fill’,’#0a5c1f’);
+      });
+    }
   </script>
 
 </body>

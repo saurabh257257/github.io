@@ -6,7 +6,7 @@
   <title>Scan to Download Catalog — Arambhika Enablers</title>
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="assets/fabicon.jpg" />
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -151,21 +151,26 @@
 
     <div class="scan-label">📱 Scan to Download Catalog</div>
 
-    <div class="qr-wrap">
-      <canvas id="qrCanvas"></canvas>
-    </div>
+    <div class="qr-wrap" id="qrWrap"></div>
 
   </div>
 
   <script>
     const catalogUrl = 'https://www.arambhikaenablers.in/catalog.html?autoprint=1';
 
-    QRCode.toCanvas(document.getElementById('qrCanvas'), catalogUrl, {
-      width: 280,
-      margin: 2,
-      color: { dark: '#1a3a6b', light: '#f8faff' },
-      errorCorrectionLevel: 'H'
-    });
+    var qr = qrcode(0, 'M');
+    qr.addData(catalogUrl);
+    qr.make();
+    document.getElementById('qrWrap').innerHTML = qr.createSvgTag(7, 4, 'Catalog QR');
+    var svg = document.querySelector('#qrWrap svg');
+    if (svg) {
+      svg.style.width  = '280px';
+      svg.style.height = '280px';
+      svg.style.borderRadius = '8px';
+      svg.querySelectorAll('rect[fill="#000000"], rect[fill="black"]').forEach(function(r){
+        r.setAttribute('fill','#1a3a6b');
+      });
+    }
 
     // If opened on mobile (scanned), go straight to catalog — print fires there
     if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
