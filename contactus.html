@@ -6,7 +6,6 @@
   <title>Contact Us — Arambhika Enablers</title>
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="assets/fabicon.jpg" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -180,30 +179,20 @@
     <div class="scan-label">💬 Scan to Chat on WhatsApp</div>
 
     <div class="qr-wrap">
-      <div id="qrcode"></div>
+      <img id="qrImg" src="" alt="WhatsApp QR Code" width="280" height="280" style="display:block;border-radius:8px;" />
     </div>
 
 
   </div>
 
   <script>
-    const waNumber = '918112662827';
-    const waMsg = encodeURIComponent(
-      ‘Hi, I found you via your catalog. I would like to know more about your products.\n\n’ +
-      ‘Website: www.arambhikaenablers.in\n’ +
-      ‘Catalog: www.arambhikaenablers.in/catalog.html’
-    );
-    const waUrl = ‘https://wa.me/’ + waNumber + ‘?text=’ + waMsg;
+    const waUrl = ‘https://wa.me/918112662827?text=’ +
+      encodeURIComponent(‘Hi, I would like to know more about your products.’);
 
-    // Generate big dark-green QR code
-    new QRCode(document.getElementById(‘qrcode’), {
-      text: waUrl,
-      width: 280,
-      height: 280,
-      colorDark:  '#0a5c1f',
-      colorLight: '#f2fbf5',
-      correctLevel: QRCode.CorrectLevel.H
-    });
+    // Use QR Server API — reliable, no JS library needed
+    document.getElementById(‘qrImg’).src =
+      ‘https://api.qrserver.com/v1/create-qr-code/?size=280x280&margin=10&color=0a5c1f&data=’ +
+      encodeURIComponent(waUrl);
   </script>
 
 </body>
