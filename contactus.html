@@ -6,7 +6,6 @@
   <title>Contact Us — Arambhika Enablers</title>
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="assets/fabicon.jpg" />
-  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -66,102 +65,18 @@
       margin-bottom: 16px;
     }
 
-    /* ── BIG QR ── */
     .qr-wrap {
       display: inline-block;
       padding: 16px;
       border: 2.5px solid #b2dfbe;
       border-radius: 18px;
       background: #f2fbf5;
-      margin-bottom: 24px;
     }
 
-    #qrcode canvas, #qrcode img {
+    .qr-wrap img {
       display: block;
       border-radius: 8px;
     }
-
-    /* ── INFO CARDS ── */
-    .info-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 26px;
-      text-align: left;
-    }
-
-    .info-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #f7f9fc;
-      border: 1.5px solid #e0e8f5;
-      border-radius: 12px;
-      padding: 13px 16px;
-      text-decoration: none;
-      color: inherit;
-      transition: background 0.15s, border-color 0.15s;
-    }
-    .info-row:hover {
-      background: #eef2fb;
-      border-color: #b8cef0;
-    }
-
-    .info-icon {
-      font-size: 22px;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      flex-shrink: 0;
-    }
-    .info-icon.green  { background: #e4f8eb; }
-    .info-icon.blue   { background: #e6eefb; }
-    .info-icon.orange { background: #fff4e0; }
-
-    .info-label {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #999;
-      margin-bottom: 3px;
-    }
-    .info-value {
-      font-size: 14px;
-      font-weight: 700;
-      color: #1a3a6b;
-    }
-
-    /* ── MAIN CTA BUTTON ── */
-    .btn-wa {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      font-size: 15px;
-      font-weight: 700;
-      padding: 15px 24px;
-      border-radius: 40px;
-      text-decoration: none;
-      background: #25d366;
-      color: #fff;
-      box-shadow: 0 6px 20px rgba(37,211,102,0.38);
-      transition: opacity 0.2s, transform 0.15s;
-      margin-bottom: 10px;
-    }
-    .btn-wa:hover { opacity: 0.9; transform: translateY(-2px); }
-
-    .footer-note {
-      margin-top: 20px;
-      font-size: 11px;
-      color: #bbb;
-      line-height: 1.8;
-    }
-    .footer-note a { color: #2d6abf; text-decoration: none; }
 
     @media (max-width: 480px) {
       .card { padding: 28px 16px 28px; }
@@ -171,7 +86,6 @@
 <body>
 
   <div class="card">
-
     <img class="logo" src="assets/company_logo.jpg" alt="Arambhika Enablers" />
     <div class="company-name">Arambhika Enablers</div>
     <div class="tagline">EV Battery Component Manufacturer</div>
@@ -179,29 +93,15 @@
 
     <div class="scan-label">💬 Scan to Chat on WhatsApp</div>
 
-    <div class="qr-wrap" id="qrWrap"></div>
-
+    <div class="qr-wrap">
+      <img
+        src="https://chart.googleapis.com/chart?cht=qr&chs=300x300&choe=UTF-8&chl=https%3A%2F%2Fwa.me%2F918112662827"
+        width="280"
+        height="280"
+        alt="WhatsApp QR Code"
+      />
+    </div>
   </div>
-
-  <script>
-    const waUrl = ‘https://wa.me/918112662827’;
-    var qr = qrcode(0, ‘M’);
-    qr.addData(waUrl);
-    qr.make();
-    // createSvgTag(cellSize, margin, alt)
-    document.getElementById(‘qrWrap’).innerHTML = qr.createSvgTag(7, 4, ‘WhatsApp QR’);
-    // Style the generated SVG
-    var svg = document.querySelector(‘#qrWrap svg’);
-    if (svg) {
-      svg.style.width  = ‘280px’;
-      svg.style.height = ‘280px’;
-      svg.style.borderRadius = ‘8px’;
-      // Recolour: default is black — patch fill attributes
-      svg.querySelectorAll(‘rect[fill="#000000"], rect[fill="black"]’).forEach(function(r){
-        r.setAttribute(‘fill’,’#0a5c1f’);
-      });
-    }
-  </script>
 
 </body>
 </html>

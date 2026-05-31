@@ -81,6 +81,7 @@ const normalizeCatalogData = (data) => {
           Unit: product.Unit || "KG",
           "Minimum Quantity": Number(product["Minimum Quantity"] || 1),
           Product_Dimensions: String(product.Product_Dimensions || "").trim(),
+          SKU: product.SKU || "",
           Additional_Details: Array.isArray(product.Additional_Details)
             ? product.Additional_Details
             : product.Additional_Details
