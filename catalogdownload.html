@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scan to Download Catalog — Arambhika Enablers</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="assets/fabicon.jpg" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(145deg, #0f1f45 0%, #1a3a6b 55%, #2d6abf 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 44px 52px;
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+    }
+
+    .logo {
+      height: 70px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 18px;
+    }
+
+    .company-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a3a6b;
+      margin-bottom: 4px;
+      letter-spacing: -0.3px;
+    }
+
+    .tagline {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 28px;
+    }
+
+    .divider {
+      border: none;
+      height: 1px;
+      background: #e8edf5;
+      margin: 0 0 28px;
+    }
+
+    .scan-label {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #2d6abf;
+      margin-bottom: 20px;
+    }
+
+    .qr-wrap {
+      display: inline-block;
+      padding: 14px;
+      border: 2px solid #e0e8f8;
+      border-radius: 14px;
+      background: #f8faff;
+      margin-bottom: 24px;
+    }
+
+    #qrcode canvas, #qrcode img {
+      display: block;
+      border-radius: 6px;
+    }
+
+    .welcome-text {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a3a6b;
+      margin-bottom: 6px;
+    }
+
+    .welcome-url {
+      font-size: 13px;
+      color: #2d6abf;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .btn-catalog {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a3a6b;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(26,58,107,0.3);
+    }
+    .btn-catalog:hover {
+      background: #2d6abf;
+      transform: translateY(-2px);
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      font-size: 11px;
+      color: #999;
+      line-height: 1.7;
+    }
+    .footer-note a {
+      color: #2d6abf;
+      text-decoration: none;
+    }
+
+    /* Mobile: if user scans and lands here, auto-redirect to catalog */
+    @media (max-width: 600px) {
+      .card { padding: 32px 24px; }
+      .company-name { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img class="logo" src="assets/company_logo.jpg" alt="Arambhika Enablers" />
+    <div class="company-name">Arambhika Enablers</div>
+    <div class="tagline">Nickel &amp; Copper Battery Connectors — Mfg. &amp; Dist.</div>
+    <hr class="divider" />
+
+    <div class="scan-label">📱 Scan to Download Catalog</div>
+
+    <div class="qr-wrap">
+      <div id="qrcode"></div>
+    </div>
+
+    <div class="welcome-text">Welcome to</div>
+    <a class="welcome-url" href="https://www.arambhikaenablers.in" target="_blank">
+      www.arambhikaenablers.in
+    </a>
+
+    <p class="desc">
+      Scan the QR code with your phone camera to open our <strong>Product Catalog</strong>.<br />
+      View all SKUs with specs, pricing &amp; availability — then download as PDF.
+    </p>
+
+    <a class="btn-catalog" href="catalog.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 15V3m0 12-4-4m4 4 4-4"/>
+        <path d="M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/>
+      </svg>
+      Open Catalog &amp; Download PDF
+    </a>
+
+    <div class="footer-note">
+      📞 +91-8112662827 &nbsp;|&nbsp; +91-9953255677<br />
+      <a href="mailto:info@arambhikaenablers.in">info@arambhikaenablers.in</a>
+    </div>
+  </div>
+
+  <script>
+    // Generate QR code pointing to the catalog page
+    const catalogUrl = 'https://www.arambhikaenablers.in/catalog.html';
+    new QRCode(document.getElementById('qrcode'), {
+      text: catalogUrl,
+      width: 220,
+      height: 220,
+      colorDark: '#1a3a6b',
+      colorLight: '#f8faff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    // If opened on mobile (scanned), redirect straight to catalog
+    if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+      window.location.replace('catalog.html');
+    }
+  </script>
+
+</body>
+</html>
