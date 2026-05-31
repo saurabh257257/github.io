@@ -83,6 +83,47 @@
 
   <main>
     <section id="home" class="home-anchor"></section>
+
+
+    <section id="catalog" class="catalog">
+      <div class="container catalog-layout">
+        <aside class="catalog-filters">
+          <h3>Categories</h3>
+          <div class="filters" id="categoryFilters"></div>
+        </aside>
+        <div class="catalog-main">
+        <div class="section-head catalog-head">
+          <p class="eyebrow">Product Store</p>
+          <a class="catalog-link" href="assets/catalog.pdf" download>Catalog</a>
+        </div>
+
+        <div class="catalog-grid" id="catalogGrid"></div>
+        </div>
+        <aside class="catalog-side">
+          <div class="side-panel is-active" id="orderPanel" data-panel="order">
+            <div class="panel-header">
+              <h3>View Quote</h3>
+              <button class="button ghost tiny" type="button" data-clear="order">Clear</button>
+            </div>
+            <div id="orderList" class="panel-list"></div>
+            <form class="panel-form" id="orderForm">
+              <label>
+                Mobile Number
+                <div class="phone-row">
+                  <select name="countryCode" aria-label="Country code"></select>
+                </div>
+                <input type="tel" name="mobile" required placeholder="Mobile number" />
+              </label>
+              <div class="form-actions">
+                <button class="button tiny" type="submit">Proceed</button>
+              </div>
+              <p class="form-note">Opens WhatsApp with your quote details.</p>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </section>
+
     <section class="solutions" id="solutions">
       <div class="container solutions-layout">
         <div class="solutions-label">
@@ -128,44 +169,6 @@
       </div>
     </section>
 
-    <section id="catalog" class="catalog">
-      <div class="container catalog-layout">
-        <aside class="catalog-filters">
-          <h3>Categories</h3>
-          <div class="filters" id="categoryFilters"></div>
-        </aside>
-        <div class="catalog-main">
-        <div class="section-head catalog-head">
-          <p class="eyebrow">Product Store</p>
-          <a class="catalog-link" href="assets/catalog.pdf" download>Catalog</a>
-        </div>
-
-        <div class="catalog-grid" id="catalogGrid"></div>
-        </div>
-        <aside class="catalog-side">
-          <div class="side-panel is-active" id="orderPanel" data-panel="order">
-            <div class="panel-header">
-              <h3>View Quote</h3>
-              <button class="button ghost tiny" type="button" data-clear="order">Clear</button>
-            </div>
-            <div id="orderList" class="panel-list"></div>
-            <form class="panel-form" id="orderForm">
-              <label>
-                Mobile Number
-                <div class="phone-row">
-                  <select name="countryCode" aria-label="Country code"></select>
-                </div>
-                <input type="tel" name="mobile" required placeholder="Mobile number" />
-              </label>
-              <div class="form-actions">
-                <button class="button tiny" type="submit">Proceed</button>
-              </div>
-              <p class="form-note">Opens WhatsApp with your quote details.</p>
-            </form>
-          </div>
-        </aside>
-      </div>
-    </section>
 
   </main>
 

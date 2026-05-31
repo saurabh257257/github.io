@@ -380,6 +380,7 @@
         (data.categories || []).forEach(cat => {
           (cat.products || []).forEach(p => {
             PRODUCTS.push({
+              sku: p.SKU || '',
               code: p.ProductCode,
               category: p.Category,
               price: parseFloat(p.Price) || 0,
@@ -443,9 +444,37 @@
 
       const sel = tr.querySelector('.it-product');
       sel.innerHTML = '<option value="">Select product...</option>' +
-        PRODUCTS.map((p, i) => `<option value="${i}">${p.code}</option>`).join('');
+        PRODUCTS.map((p, i) => {
+          const label = p.sku ? p.sku + ' – ' + p.code : p.code;
+          return `<option value="${i}">${label}</option>`;
+        }).join('') +
+        '<option value="__others__" style="font-style:italic;color:#999;">─── Others (free text) ───</option>';
 
       sel.addEventListener('change', () => {
+        if (sel.value === '__others__') {
+          // Convert this row to a free-text custom row
+          const rowIdx = tr.firstElementChild.textContent;
+          const newTr = document.createElement('tr');
+          newTr.dataset.rowType = 'custom';
+          newTr.style.background = '#fffdf0';
+          newTr.innerHTML = `
+            <td>${rowIdx}</td>
+            <td><input type="text" class="it-product-text" placeholder="Enter product description..."
+              style="width:100%;font-size:0.85rem;padding:6px 8px;border:1px solid #f0c040;border-radius:6px;font-family:inherit;" /></td>
+            <td><input type="text" class="it-hsn" value="${HSN_DEFAULT}" /></td>
+            <td><input type="text" class="it-grade" value="" placeholder="Grade" /></td>
+            <td><input type="number" class="it-qty" value="1" min="0" step="0.01" /></td>
+            <td><input type="text" class="it-unit" value="KG" /></td>
+            <td><input type="number" class="it-rate" value="0" min="0" step="0.01" /></td>
+            <td><input type="number" class="it-pf" value="0" min="0" step="0.01" /></td>
+            <td class="line-total">₹0</td>
+            <td><button type="button" class="remove-btn" title="Remove">✕</button></td>
+          `;
+          tr.replaceWith(newTr);
+          attachRowListeners(newTr);
+          newTr.querySelector('.it-product-text').focus();
+          return;
+        }
         const p = PRODUCTS[sel.value];
         if (!p) return;
         tr.querySelector('.it-rate').value = p.price;
@@ -661,7 +690,8 @@
           prodCode = tr.querySelector('.it-product-text')?.value?.trim() || '';
         } else {
           const prod = tr.querySelector('.it-product');
-          prodCode = prod.options[prod.selectedIndex]?.text || '';
+          const p_sel = PRODUCTS[prod.value];
+          prodCode = p_sel ? (p_sel.sku ? p_sel.sku + ' - ' + p_sel.code : p_sel.code) : (prod.options[prod.selectedIndex]?.text || '');
           const p = PRODUCTS[prod.value];
           dims = p ? parseDims(p.dims) : { width: '', thickness: '' };
         }

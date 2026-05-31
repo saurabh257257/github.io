@@ -977,12 +977,23 @@
         const priceMap = {};
         data.categories.forEach(cat => {
           cat.products.forEach(p => {
-            priceMap[p.ProductCode] = { price: p.Price, unit: p.Unit };
+            priceMap[p.ProductCode] = { price: p.Price, unit: p.Unit, sku: p.SKU };
           });
         });
         document.querySelectorAll('.product-card[data-sku]').forEach(card => {
           const info = priceMap[card.dataset.sku];
           if (!info) return;
+
+          // Append (SKU) to product name
+          if (info.sku) {
+            const nameEl = card.querySelector('.product-name');
+            if (nameEl && !nameEl.textContent.includes('(' + info.sku + ')')) {
+              nameEl.innerHTML = nameEl.textContent.trim() +
+                ' <span style="color:#2d6abf;font-weight:500;font-size:0.85em;">(' + info.sku + ')</span>';
+            }
+          }
+
+          // Inject price
           const priceEl = document.createElement('div');
           priceEl.className = 'product-price';
           priceEl.innerHTML = '₹' + Number(info.price).toLocaleString('en-IN') + '<span>/ ' + info.unit + '</span>';
