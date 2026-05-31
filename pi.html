@@ -301,7 +301,10 @@
     <!-- Line Items -->
     <div class="items-head">
       <h3>Line Items</h3>
-      <button type="button" class="btn btn-ghost" id="addRow">+ Add Product</button>
+      <div style="display:flex;gap:8px;">
+        <button type="button" class="btn btn-ghost" id="addRow">+ From Catalog</button>
+        <button type="button" class="btn btn-ghost" id="addFreeRow">+ Custom Product</button>
+      </div>
     </div>
     <div style="overflow-x:auto;">
       <table class="items-table" id="itemsTable">
@@ -407,9 +410,21 @@
       return { width: '', thickness: '' };
     }
 
+    function attachRowListeners(tr) {
+      ['it-qty','it-rate','it-pf'].forEach(cls => {
+        tr.querySelector('.'+cls).addEventListener('input', recalc);
+      });
+      tr.querySelector('.remove-btn').addEventListener('click', () => {
+        tr.remove();
+        renumber();
+        recalc();
+      });
+    }
+
     function addRow() {
       const idx = tbody.children.length + 1;
       const tr = document.createElement('tr');
+      tr.dataset.rowType = 'catalog';
       tr.innerHTML = `
         <td>${idx}</td>
         <td>
@@ -444,15 +459,31 @@
         recalc();
       });
 
-      ['it-qty','it-rate','it-pf'].forEach(cls => {
-        tr.querySelector('.'+cls).addEventListener('input', recalc);
-      });
+      attachRowListeners(tr);
+    }
 
-      tr.querySelector('.remove-btn').addEventListener('click', () => {
-        tr.remove();
-        renumber();
-        recalc();
-      });
+    function addFreeRow() {
+      const idx = tbody.children.length + 1;
+      const tr = document.createElement('tr');
+      tr.dataset.rowType = 'custom';
+      tr.style.background = '#fffdf0';
+      tr.innerHTML = `
+        <td>${idx}</td>
+        <td>
+          <input type="text" class="it-product-text" placeholder="Enter product description..." style="width:100%;font-size:0.85rem;padding:6px 8px;border:1px solid #f0c040;border-radius:6px;font-family:inherit;" />
+        </td>
+        <td><input type="text" class="it-hsn" value="${HSN_DEFAULT}" /></td>
+        <td><input type="text" class="it-grade" value="" placeholder="Grade" /></td>
+        <td><input type="number" class="it-qty" value="1" min="0" step="0.01" /></td>
+        <td><input type="text" class="it-unit" value="KG" /></td>
+        <td><input type="number" class="it-rate" value="0" min="0" step="0.01" /></td>
+        <td><input type="number" class="it-pf" value="0" min="0" step="0.01" /></td>
+        <td class="line-total">₹0</td>
+        <td><button type="button" class="remove-btn" title="Remove">✕</button></td>
+      `;
+      tbody.appendChild(tr);
+      attachRowListeners(tr);
+      tr.querySelector('.it-product-text').focus();
     }
 
     function renumber() {
@@ -483,6 +514,7 @@
     }
 
     document.getElementById('addRow').addEventListener('click', addRow);
+    document.getElementById('addFreeRow').addEventListener('click', addFreeRow);
     document.getElementById('freight').addEventListener('input', recalc);
 
     document.getElementById('resetBtn').addEventListener('click', () => {
@@ -623,10 +655,16 @@
       const items = [];
       let taxable = 0, pf = 0;
       Array.from(tbody.children).forEach((tr, i) => {
-        const prod = tr.querySelector('.it-product');
-        const prodCode = prod.options[prod.selectedIndex]?.text || '';
-        const p = PRODUCTS[prod.value];
-        const dims = p ? parseDims(p.dims) : { width: '', thickness: '' };
+        const isFree = tr.dataset.rowType === 'custom';
+        let prodCode = '', dims = { width: '', thickness: '' };
+        if (isFree) {
+          prodCode = tr.querySelector('.it-product-text')?.value?.trim() || '';
+        } else {
+          const prod = tr.querySelector('.it-product');
+          prodCode = prod.options[prod.selectedIndex]?.text || '';
+          const p = PRODUCTS[prod.value];
+          dims = p ? parseDims(p.dims) : { width: '', thickness: '' };
+        }
         const hsn = tr.querySelector('.it-hsn').value;
         const grade = tr.querySelector('.it-grade').value;
         const qty = parseFloat(tr.querySelector('.it-qty').value) || 0;
