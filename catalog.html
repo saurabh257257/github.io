@@ -175,7 +175,7 @@ function compressImg(imgEl, size, quality) {
 // Compress all catalog images before print dialog opens
 window.addEventListener('beforeprint', () => {
   document.querySelectorAll('.product-img-wrap img').forEach(img => {
-    if (img.complete && img.naturalWidth) compressImg(img, 72, 0.35);
+    if (img.complete && img.naturalWidth) compressImg(img, 96, 0.6);
   });
 });
 
@@ -225,7 +225,7 @@ fetch('products.json?v=' + Date.now(), { cache: 'no-store' })
         // Load image and immediately compress to 88px canvas dataURL
         const imgEl = card.querySelector('img');
         imgEl.crossOrigin = 'anonymous';
-        imgEl.onload = () => compressImg(imgEl, 88, 0.5);
+        imgEl.onload = () => compressImg(imgEl, 120, 0.72);
         imgEl.src = imgSrc;
 
         grid.appendChild(card);

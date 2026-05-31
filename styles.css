@@ -346,11 +346,14 @@ img {
 }
 
 .capabilities,
-.catalog,
 .applications,
 .contact,
 .specs {
   padding: 70px 0;
+}
+
+.catalog {
+  padding: 16px 0 40px;
 }
 
 .solutions,
@@ -663,6 +666,18 @@ img {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 12px;
+}
+
+.catalog-head .eyebrow {
+  display: inline-block;
+  background: #1a3a6b;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  padding: 5px 16px;
+  border-radius: 6px;
+  margin-bottom: 0;
 }
 
 .catalog-search {
