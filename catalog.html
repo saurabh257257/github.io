@@ -6,248 +6,89 @@
   <title>Product Catalog — Arambhika Enablers</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f9; color: #1a1a2e; }
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f6f9;
-      color: #1a1a2e;
-    }
-
-    /* ── PDF BUTTON ── */
     .pdf-btn {
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #1a3a6b;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 13px 22px;
-      border: none;
-      border-radius: 40px;
-      cursor: pointer;
-      box-shadow: 0 4px 18px rgba(26,58,107,0.35);
-      transition: background 0.2s, transform 0.15s;
-      text-decoration: none;
+      position: fixed; bottom: 32px; right: 32px; z-index: 999;
+      display: flex; align-items: center; gap: 8px;
+      background: #1a3a6b; color: #fff; font-size: 14px; font-weight: 600;
+      padding: 13px 22px; border: none; border-radius: 40px; cursor: pointer;
+      box-shadow: 0 4px 18px rgba(26,58,107,.35); transition: background .2s, transform .15s;
     }
-    .pdf-btn:hover {
-      background: #2d6abf;
-      transform: translateY(-2px);
-    }
-    .pdf-btn svg {
-      flex-shrink: 0;
-    }
+    .pdf-btn:hover { background: #2d6abf; transform: translateY(-2px); }
+    .pdf-btn svg { flex-shrink: 0; }
 
-    /* ── HEADER ── */
     .header {
-      background: #fff;
-      border-bottom: 3px solid #1a3a6b;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      background: #fff; border-bottom: 3px solid #1a3a6b;
+      padding: 20px 40px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
     }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .header-logo {
-      height: 72px;
-      width: auto;
-      object-fit: contain;
-    }
-    .header-brand h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1a3a6b;
-      line-height: 1.2;
-    }
-    .header-brand p {
-      font-size: 12px;
-      color: #555;
-      margin-top: 3px;
-    }
-    .header-contact {
-      text-align: right;
-      font-size: 12px;
-      color: #333;
-      line-height: 1.8;
-    }
-    .header-contact strong {
-      color: #1a3a6b;
-    }
+    .header-left { display: flex; align-items: center; gap: 20px; }
+    .header-logo { height: 72px; width: auto; object-fit: contain; }
+    .header-brand h1 { font-size: 22px; font-weight: 700; color: #1a3a6b; line-height: 1.2; }
+    .header-brand p { font-size: 12px; color: #555; margin-top: 3px; }
+    .header-contact { text-align: right; font-size: 12px; color: #333; line-height: 1.8; }
+    .header-contact strong { color: #1a3a6b; }
 
-    /* ── CATALOG TITLE BANNER ── */
     .catalog-banner {
       background: linear-gradient(135deg, #1a3a6b 0%, #2d6abf 100%);
-      color: #fff;
-      text-align: center;
-      padding: 18px 40px;
+      color: #fff; text-align: center; padding: 18px 40px;
     }
-    .catalog-banner h2 {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .catalog-banner p {
-      font-size: 12px;
-      opacity: 0.85;
-      margin-top: 4px;
-    }
+    .catalog-banner h2 { font-size: 20px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    .catalog-banner p { font-size: 12px; opacity: .85; margin-top: 4px; }
 
-    /* ── MAIN CONTENT ── */
-    .content {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 16px 16px 32px;
-    }
+    .content { max-width: 1280px; margin: 0 auto; padding: 16px 16px 32px; }
 
-    /* ── CATEGORY SECTION ── */
-    .category-section {
-      margin-bottom: 18px;
-    }
-    .category-heading {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
+    .category-section { margin-bottom: 18px; }
+    .category-heading { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
     .category-heading h3 {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: #1a3a6b;
-      white-space: nowrap;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.2px; color: #1a3a6b; white-space: nowrap;
     }
     .category-heading::before {
-      content: '';
-      display: block;
-      width: 3px;
-      height: 16px;
-      background: #2d6abf;
-      border-radius: 2px;
-      flex-shrink: 0;
+      content: ''; display: block; width: 3px; height: 16px;
+      background: #2d6abf; border-radius: 2px; flex-shrink: 0;
     }
-    .category-heading::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #d0d8e8;
-    }
+    .category-heading::after { content: ''; flex: 1; height: 1px; background: #d0d8e8; }
 
-    /* ── PRODUCT GRID ── */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 7px;
-    }
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
 
-    /* ── PRODUCT CARD — horizontal layout ── */
     .product-card {
-      background: #fff;
-      border: 1px solid #dde4f0;
-      border-radius: 7px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      transition: box-shadow 0.18s;
-      min-height: 0;
+      background: #fff; border: 1px solid #dde4f0; border-radius: 7px;
+      overflow: hidden; display: flex; flex-direction: row; align-items: stretch;
+      transition: box-shadow .18s; min-height: 0;
     }
-    .product-card:hover {
-      box-shadow: 0 4px 14px rgba(26, 58, 107, 0.11);
-    }
+    .product-card:hover { box-shadow: 0 4px 14px rgba(26,58,107,.11); }
+
     .product-img-wrap {
-      width: 88px;
-      min-width: 88px;
-      background: #f4f6fb;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width: 88px; min-width: 88px; background: #f4f6fb;
+      overflow: hidden; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
     }
-    .product-img-wrap img {
-      width: 88px;
-      height: 88px;
-      object-fit: cover;
-      display: block;
-    }
-    .product-info {
-      padding: 7px 9px 7px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      min-width: 0;
-    }
-    .product-name {
-      font-size: 10px;
-      font-weight: 700;
-      color: #1a3a6b;
-      line-height: 1.3;
-    }
-    .product-price {
-      font-size: 11px;
-      font-weight: 700;
-      color: #1a7a4a;
-      letter-spacing: 0.2px;
-    }
-    .product-price span {
-      font-size: 9px;
-      font-weight: 400;
-      color: #777;
-      margin-left: 2px;
-    }
-    .product-dims {
-      font-size: 9px;
-      color: #555;
-      line-height: 1.45;
-      white-space: pre-line;
-    }
-    .product-badge {
-      margin-top: auto;
-      padding-top: 4px;
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-    }
+    .product-img-wrap img { width: 88px; height: 88px; object-fit: cover; display: block; }
+
+    .product-info { padding: 7px 9px; flex: 1; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+    .product-name { font-size: 10px; font-weight: 700; color: #1a3a6b; line-height: 1.3; }
+    .product-price { font-size: 11px; font-weight: 700; color: #1a7a4a; letter-spacing: .2px; }
+    .product-price span { font-size: 9px; font-weight: 400; color: #777; margin-left: 2px; }
+    .product-dims { font-size: 9px; color: #555; line-height: 1.45; white-space: pre-line; }
+    .product-badge { margin-top: auto; padding-top: 4px; display: flex; gap: 4px; flex-wrap: wrap; }
     .badge {
-      font-size: 8px;
-      font-weight: 600;
-      padding: 1px 5px;
-      border-radius: 20px;
-      background: #e8f0fb;
-      color: #1a3a6b;
-      border: 1px solid #c5d6f0;
+      font-size: 8px; font-weight: 600; padding: 1px 5px; border-radius: 20px;
+      background: #e8f0fb; color: #1a3a6b; border: 1px solid #c5d6f0;
     }
     .badge.avail-now { background: #e6f9f0; color: #1a7a4a; border-color: #b2e4cd; }
     .badge.avail-request { background: #fff4e0; color: #a05c00; border-color: #f5d58a; }
 
-    /* ── FOOTER ── */
     .footer {
-      background: #1a3a6b;
-      color: #c5d6f0;
-      text-align: center;
-      padding: 12px 40px;
-      font-size: 10.5px;
-      line-height: 1.8;
+      background: #1a3a6b; color: #c5d6f0; text-align: center;
+      padding: 12px 40px; font-size: 10.5px; line-height: 1.8;
     }
     .footer strong { color: #fff; }
 
-    /* ── PRINT / PDF STYLES ── */
-    @page {
-      size: A4 landscape;
-      margin: 8mm 8mm;
-    }
+    .loading { text-align: center; padding: 60px; color: #888; font-size: 14px; }
+
+    @page { size: A4 landscape; margin: 8mm 8mm; }
     @media print {
       .pdf-btn { display: none !important; }
       body { background: #fff; }
@@ -271,33 +112,25 @@
       .badge { font-size: 7px; padding: 1px 4px; }
       .footer { background: #1a3a6b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 8px 16px; font-size: 9px; }
     }
-
-    @media (max-width: 1100px) {
-      .product-grid { grid-template-columns: repeat(3, 1fr); }
-    }
+    @media (max-width: 1100px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 700px) {
       .product-grid { grid-template-columns: repeat(2, 1fr); }
       .header { flex-direction: column; align-items: flex-start; }
       .header-contact { text-align: left; }
       .pdf-btn { bottom: 20px; right: 20px; font-size: 13px; padding: 11px 18px; }
     }
-    @media (max-width: 420px) {
-      .product-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 420px) { .product-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-  <!-- PDF DOWNLOAD BUTTON -->
   <button class="pdf-btn" onclick="window.print()">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 15V3m0 12-4-4m4 4 4-4"/>
-      <path d="M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/>
+      <path d="M12 15V3m0 12-4-4m4 4 4-4"/><path d="M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/>
     </svg>
     Download as PDF
   </button>
 
-  <!-- HEADER -->
   <header class="header">
     <div class="header-left">
       <img class="header-logo" src="assets/company_logo.jpg" alt="Arambhika Enablers Logo" />
@@ -313,695 +146,73 @@
     </div>
   </header>
 
-  <!-- CATALOG BANNER -->
   <div class="catalog-banner">
     <h2>Product Catalog</h2>
     <p>Battery Pack Connectors &amp; Nickel Strip Solutions</p>
   </div>
 
-  <!-- MAIN CONTENT -->
-    <main class="content">
-
-    <!-- ── NICKEL STRIP PLATED ── -->
-    <section class="category-section">
-      <div class="category-heading"><h3>Nickel Strip Plated</h3></div>
-      <div class="product-grid">
-
-        <div class="product-card" data-sku="Nickel Strip Plated 1P 6x0.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPT1-Nickel Strip Plated-Nickel Strip Plated 1P 6x0.15 mm_1.jpg" alt="Nickel Strip Plated 1P 6x0.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated 1P 6x0.15 mm</div>
-            <div class="product-dims">Strip size: 6 x 0.15 mm thick; Nickel-plated&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPT1</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Plated 1P 8x0.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPT2-Nickel Strip Plated-Nickel Strip Plated 1P 8x0.15 mm_1.jpg" alt="Nickel Strip Plated 1P 8x0.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated 1P 8x0.15 mm</div>
-            <div class="product-dims">Strip size: 8 x 0.15 mm thick; Nickel-plated&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPT2</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Plated 1P 10x0.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPT3-Nickel Strip Plated-Nickel Strip Plated 1P 10x0.15 mm_1.jpg" alt="Nickel Strip Plated 1P 10x0.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated 1P 10x0.15 mm</div>
-            <div class="product-dims">Strip size: 10 x 0.15 mm thick; Nickel-plated&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPT3</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Plated 2P(18650) 26x0.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPTH1-Nickel Strip Plated-Nickel Strip Plated 2P(18650) 26x0.15 mm_1.jpg" alt="Nickel Strip Plated 2P(18650) 26x0.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated 2P(18650) 26x0.15 mm</div>
-            <div class="product-dims">26 x 0.15 mm for 18650 2P (H-type);&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPTH1</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Plated 2P(21700) 31x0.15 mm without holder CD 22.5">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPTH2-Nickel Strip Plated-Nickel Strip Plated 2P(21700) 31x0.15 mm without CD 22.5_1.jpg" alt="Nickel Strip Plated 2P(21700) 31x0.15 mm without holder CD 22.5" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated 2P(21700) 31x0.15 mm without holder CD 22.5</div>
-            <div class="product-dims">31x0.15 mm without CD 22.5&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPTH2</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Plated 2P(21700) 31x0.15 mm with holder CD 23">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPTH3-Nickel Strip Plated-Nickel Strip Plated 2P(21700) 31x0.15 mm with holder CD 23_1.jpg" alt="Nickel Strip Plated 2P(21700) 31x0.15 mm with holder CD 23" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated 2P(21700) 31x0.15 mm with holder CD 23</div>
-            <div class="product-dims">31x0.15 mm with holder CD 23&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPTH3</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Plated 2P(32650) with holder 46.5x0.15 mm CD 34.5">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPTH4-Nickel Strip Plated-Nickel Strip Plated 2P(32650) with holder 46.5x0.15 mm CD 34.5_1.jpg" alt="Nickel Strip Plated 2P(32650) with holder 46.5x0.15 mm CD 34.5" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated 2P(32650) with holder 46.5x0.15 mm CD 34.5</div>
-            <div class="product-dims">with holder 46.5x0.15 mm CD 34.5&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPTH4</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Plated 2P(32650) without holder 46.5x0.15 mm CD 32.8">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPTH5-Nickel Strip Plated-Nickel Strip Plated 2P(32650) without holder 46.5x0.15 mm CD 32.8_1.jpg" alt="Nickel Strip Plated 2P(32650) without holder 46.5x0.15 mm CD 32.8" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated 2P(32650) without holder 46.5x0.15 mm CD 32.8</div>
-            <div class="product-dims">without holder 46.5x0.15 mm CD 32.8&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPTH5</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Plated 2P(32650) 36.5x0.15 mm - Fuse Type CD 22.5">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPTH6-Nickel Strip Plated-Nickel Strip Plated 2P(32650) 36.5x0.15 mm - Fuse Type CD 22.5_1.jpg" alt="Nickel Strip Plated 2P(32650) 36.5x0.15 mm - Fuse Type CD 22.5" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated 2P(32650) 36.5x0.15 mm - Fuse Type CD 22.5</div>
-            <div class="product-dims">36.5x0.15 mm - Fuse Type CD 22.5&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPTH6</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Plated ZigZag ( 18650) 19.01 x.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Plated/NPTH7-Nickel Strip Plated-Nickel Strip Plated ZigZag ( 18650) 19.01 x.15 mm_1.jpg" alt="Nickel Strip Plated ZigZag ( 18650) 19.01 x.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Plated ZigZag ( 18650) 19.01 x.15 mm</div>
-            <div class="product-dims">46.5x0.3 mm - Zig Zag&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPTH7</span></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── NICKEL STRIP PURE ── -->
-    <section class="category-section">
-      <div class="category-heading"><h3>Nickel Strip Pure</h3></div>
-      <div class="product-grid">
-
-        <div class="product-card" data-sku="Nickel Strip Pure 1P 6x0.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NP1-Nickel Strip Pure-Nickel Strip Pure 1P 6x0.15 mm_1.jpg" alt="Nickel Strip Pure 1P 6x0.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 1P 6x0.15 mm</div>
-            <div class="product-dims">Strip size: 6 x 0.15 mm thick; Pure Nickel&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NP1</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 1P 8x0.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NP2-Nickel Strip Pure-Nickel Strip Pure 1P 8x0.15 mm_1.jpg" alt="Nickel Strip Pure 1P 8x0.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 1P 8x0.15 mm</div>
-            <div class="product-dims">Strip size: 8 x 0.15 mm thick; Pure Nickel&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NP2</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 1P 10x0.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NP3-Nickel Strip Pure-Nickel Strip Pure 1P 10x0.15 mm_1.jpg" alt="Nickel Strip Pure 1P 10x0.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 1P 10x0.15 mm</div>
-            <div class="product-dims">Strip size: 10 x 0.15 mm thick; Pure Nickel&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NP3</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 1P 8x 0.3 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NP4-Nickel Strip Pure-Nickel Strip Pure 1P 8x 0.3 mm_1.jpg" alt="Nickel Strip Pure 1P 8x 0.3 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 1P 8x 0.3 mm</div>
-            <div class="product-dims">Strip size: 8 x 0.3 mm thick; Pure Nickel&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NP4</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 1P 10 x 0.3 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NP5-Nickel Strip Pure-Nickel Strip Pure 1P 10 x 0.3 mm_1.jpg" alt="Nickel Strip Pure 1P 10 x 0.3 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 1P 10 x 0.3 mm</div>
-            <div class="product-dims">Strip size: 10 x 0.3 mm thick; Pure Nickel&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NP5</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 2P(18650) 26x0.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH1-Nickel Strip Pure-Nickel Strip Pure 2P(18650) 26x0.15 mm_1.jpg" alt="Nickel Strip Pure 2P(18650) 26x0.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 2P(18650) 26x0.15 mm</div>
-            <div class="product-dims">26 x 0.15 mm for 18650 2P (H-type);&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH1</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 2P(21700) 31x0.15 mm without holder CD 22.5">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH2-Nickel Strip Pure-Nickel Strip Pure 2P(21700) 31x0.15 mm without holder CD 22.5_1.jpg" alt="Nickel Strip Pure 2P(21700) 31x0.15 mm without holder CD 22.5" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 2P(21700) 31x0.15 mm without holder CD 22.5</div>
-            <div class="product-dims">31x0.15 mm without CD 22.5&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH2</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 2P(21700) 31x0.15 mm with holder CD 23">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH3-Nickel Strip Pure-Nickel Strip Pure 2P(21700) 31x0.15 mm with holder CD 23_1.jpg" alt="Nickel Strip Pure 2P(21700) 31x0.15 mm with holder CD 23" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 2P(21700) 31x0.15 mm with holder CD 23</div>
-            <div class="product-dims">31x0.15 mm with holder CD 23&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH3</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 2P(32650) with holder 46.5x0.15 mm CD 34.5">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH4-Nickel Strip Pure-Nickel Strip Pure 2P(32650) with holder 46.5x0.15 mm CD 34.5_1.jpg" alt="Nickel Strip Pure 2P(32650) with holder 46.5x0.15 mm CD 34.5" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 2P(32650) with holder 46.5x0.15 mm CD 34.5</div>
-            <div class="product-dims">with holder 46.5x0.15 mm CD 34.5&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH4</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 2P(32650) without holder 46.5x0.15 mm CD 32.8">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH5-Nickel Strip Pure-Nickel Strip Pure 2P(32650) without holder 46.5x0.15 mm CD 32.8_1.jpg" alt="Nickel Strip Pure 2P(32650) without holder 46.5x0.15 mm CD 32.8" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 2P(32650) without holder 46.5x0.15 mm CD 32.8</div>
-            <div class="product-dims">without holder 46.5x0.15 mm CD 32.8&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH5</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 2P(32650) 36.5x0.15 mm - Fuse Type CD 22.5">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH6-Nickel Strip Pure-Nickel Strip Pure 2P(32650) 36.5x0.15 mm - Fuse Type CD 22.5_1.jpg" alt="Nickel Strip Pure 2P(32650) 36.5x0.15 mm - Fuse Type CD 22.5" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 2P(32650) 36.5x0.15 mm - Fuse Type CD 22.5</div>
-            <div class="product-dims">36.5x0.15 mm - Fuse Type CD 22.5&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH6</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 2P(33140) 46.5x0.3 mm H Type">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH7-Nickel Strip Pure-Nickel Strip Pure 2P(33140) 46.5x0.3 mm H Type_1.jpg" alt="Nickel Strip Pure 2P(33140) 46.5x0.3 mm H Type" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 2P(33140) 46.5x0.3 mm H Type</div>
-            <div class="product-dims">46.5x0.3 mm H Type&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH7</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 2P(33140) 46.5x0.3 mm - Zig Zag">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH8-Nickel Strip Pure-Nickel Strip Pure 2P(33140) 46.5x0.3 mm - Zig Zag_1.jpg" alt="Nickel Strip Pure 2P(33140) 46.5x0.3 mm - Zig Zag" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 2P(33140) 46.5x0.3 mm - Zig Zag</div>
-            <div class="product-dims">46.5x0.3 mm - Zig Zag&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH8</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure ZigZag ( 18650) 19.01 x.15 mm">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH9-Nickel Strip Pure-Nickel Strip Pure ZigZag ( 18650) 19.01 x.15 mm_1.jpg" alt="Nickel Strip Pure ZigZag ( 18650) 19.01 x.15 mm" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure ZigZag ( 18650) 19.01 x.15 mm</div>
-            <div class="product-dims">Width 32.96 mm; Central depth 19.00 mm; Pure Nickel&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH9</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Nickel Strip Pure 2P(33140) 46.5x0.3 mm H Type without fuse">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Nickel Strip Pure/NPH10-Nickel Strip Pure-Nickel Strip Pure 2P(33140) 46.5x0.3 mm H Type without fuse_1.jpg" alt="Nickel Strip Pure 2P(33140) 46.5x0.3 mm H Type without fuse" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Nickel Strip Pure 2P(33140) 46.5x0.3 mm H Type without fuse</div>
-            <div class="product-dims">46.5x0.3 mm H Type without fuse&#10;Unit: KG | Min Qty: 4</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">NPH10</span></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── COPPER BUS BAR ── -->
-    <section class="category-section">
-      <div class="category-heading"><h3>Copper Busbar</h3></div>
-      <div class="product-grid">
-
-        <div class="product-card" data-sku="COPPER BUS BAR Universal (55x20x2mm) - Tin Coated">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Copper Busbar/CP1-COPPER BUS BAR-COPPER BUS BAR Universal (55x20x2mm) - Tin Coated_1.jpeg" alt="COPPER BUS BAR Universal (55x20x2mm) - Tin Coated" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">COPPER BUS BAR Universal (55x20x2mm) - Tin Coated</div>
-            <div class="product-dims">55x20x2 mm; Pure Copper; Silver&#10;Unit: Piece | Min Qty: 100</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CP1</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="COPPER BUS BAR Universal (60x20x2mm) - Tin Coated">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Copper Busbar/CP2-COPPER BUS BAR-COPPER BUS BAR Universal (60x20x2mm) - Tin Coated_1.jpeg" alt="COPPER BUS BAR Universal (60x20x2mm) - Tin Coated" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">COPPER BUS BAR Universal (60x20x2mm) - Tin Coated</div>
-            <div class="product-dims">60x20x2 mm; Pure Copper; Silver&#10;Unit: Piece | Min Qty: 100</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CP2</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="COPPER BUS BAR Universal (68x20x2mm)- Tin Coated">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Copper Busbar/CP3-COPPER BUS BAR-COPPER BUS BAR Universal (68x20x2mm)- Tin Coated_1.jpeg" alt="COPPER BUS BAR Universal (68x20x2mm)- Tin Coated" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">COPPER BUS BAR Universal (68x20x2mm)- Tin Coated</div>
-            <div class="product-dims">68x20x2 mm; Pure Copper; Silver&#10;Unit: Piece | Min Qty: 100</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CP3</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="COPPER BUS BAR Universal (82x20x2mm)- Tin Coated">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Copper Busbar/CP3-COPPER BUS BAR-COPPER BUS BAR Universal (82x20x2mm)- Tin Coated_1.jpeg" alt="COPPER BUS BAR Universal (82x20x2mm)- Tin Coated" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">COPPER BUS BAR Universal (82x20x2mm)- Tin Coated</div>
-            <div class="product-dims">82x20x2 mm; Pure Copper; Silver&#10;Unit: Piece | Min Qty: 100</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CP4</span></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── ALUMINIUM BUSBAR ── -->
-    <section class="category-section">
-      <div class="category-heading"><h3>Aluminium Busbar</h3></div>
-      <div class="product-grid">
-
-        <div class="product-card" data-sku="Model 1 - C2C series busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS11-Aluminium Busbar-Model 1 - C2C series busbar_1.jpeg" alt="Model 1 - C2C series busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 1 - C2C series busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 14</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS11</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 1 - C2C parellel busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS12-Aluminium Busbar-Model 1 - C2C parellel busbar_1.jpeg" alt="Model 1 - C2C parellel busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 1 - C2C parellel busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 1</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS12</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 1 - C2C L shape busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS13-Aluminium Busbar-Model 1 - C2C L shape busbar_1.jpeg" alt="Model 1 - C2C L shape busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 1 - C2C L shape busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 2</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS13</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 1- C2C terminal extension busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS14-Aluminium Busbar-Model 1- C2C terminal extension busbar_1.jpeg" alt="Model 1- C2C terminal extension busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 1- C2C terminal extension busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 2</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS14</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 1 - All">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS15-Aluminium Busbar-Model 1 - All_1.jpeg" alt="Model 1 - All" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 1 - All</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics for 14 piece prismatic pack&#10;Unit: Set | Min Qty: 1</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS15</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 2 - C2C series busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS21-Aluminium Busbar-Model 2 - C2C series busbar_1.jpeg" alt="Model 2 - C2C series busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 2 - C2C series busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 14</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS21</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 2 - C2C parellel busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS22-Aluminium Busbar-Model 2 - C2C parellel busbar_1.jpeg" alt="Model 2 - C2C parellel busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 2 - C2C parellel busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 1</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS22</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 2 - C2C L shape busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS23-Aluminium Busbar-Model 2 - C2C L shape busbar_1.jpeg" alt="Model 2 - C2C L shape busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 2 - C2C L shape busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 2</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS23</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 2- C2C terminal extension busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS24-Aluminium Busbar-Model 2- C2C terminal extension busbar_1.jpeg" alt="Model 2- C2C terminal extension busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 2- C2C terminal extension busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 2</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS24</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 2-All">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS24-Aluminium Busbar-Model 2- C2C terminal extension busbar_1.jpeg" alt="Model 2-All" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 2-All</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Set | Min Qty: 1</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS24</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 3 - C2C series busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS31-Aluminium Busbar-Model 3 - C2C series busbar_1.jpeg" alt="Model 3 - C2C series busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 3 - C2C series busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics for 14 piece prismatic pack&#10;Unit: Piece | Min Qty: 14</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS31</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 3 - C2C parellel busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS32-Aluminium Busbar-Model 3 - C2C parellel busbar_1.jpeg" alt="Model 3 - C2C parellel busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 3 - C2C parellel busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 1</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS32</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 3 - C2C L shape busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS33-Aluminium Busbar-Model 3 - C2C L shape busbar_1.jpeg" alt="Model 3 - C2C L shape busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 3 - C2C L shape busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 2</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS33</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 3- C2C terminal extension busbar">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS34-Aluminium Busbar-Model 3 - C2C series busbar_1.jpeg" alt="Model 3- C2C terminal extension busbar" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 3- C2C terminal extension busbar</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics&#10;Unit: Piece | Min Qty: 2</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS34</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Model 3- All">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Aluminium Busbar/AS35-Aluminium Busbar-Model 3- All_1.jpeg" alt="Model 3- All" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Model 3- All</div>
-            <div class="product-dims">Aluminium 1200 grade busbars for prismatics for 14 piece prismatic pack&#10;Unit: Set | Min Qty: 14</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">AS35</span></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── CELL PRISMATIC ── -->
-    <section class="category-section">
-      <div class="category-heading"><h3>Cell Prismatic</h3></div>
-      <div class="product-grid">
-
-        <div class="product-card" data-sku="Ganfeng - 100Ah Prismatic Cell">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Cell Prismatic/CP1-Cell Prismatic-Ganfeng - 100Ah Prismatic Cell_1.jpg" alt="Ganfeng - 100Ah Prismatic Cell" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Ganfeng - 100Ah Prismatic Cell</div>
-            <div class="product-dims">GANFENG PRISMATIC CELL LiFePO4 100Ah 3.2V – High-Capacity & Long Life&#10;Unit: Piece | Min Qty: 10</div>
-            <div class="product-badge"><span class="badge avail-request">On Request</span><span class="badge">CP1</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="High Power - 100Ah Prismatic Cell">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Cell Prismatic/CP2-Cell Prismatic-High Power - 100Ah Prismatic Cell_1.jpg" alt="High Power - 100Ah Prismatic Cell" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">High Power - 100Ah Prismatic Cell</div>
-            <div class="product-dims">High Power 100Ah prismatic LiFePO4 cell with low internal resistance, fast charge-discharge capability, and aluminium casing for EVs, solar, UPS, and industrial energy storage.&#10;Unit: Piece | Min Qty: 10</div>
-            <div class="product-badge"><span class="badge avail-request">On Request</span><span class="badge">CP2</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Highstar - 100Ah Big Prismatic Cell- Laser">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Cell Prismatic/CP3-Cell Prismatic-Highstar - 100Ah Big Prismatic Cell- Laser_1.jpg" alt="Highstar - 100Ah Big Prismatic Cell- Laser" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Highstar - 100Ah Big Prismatic Cell- Laser</div>
-            <div class="product-dims">Highstar 100Ah prismatic LiFePO4 cell delivering stable 3.2V power for solar storage, EVs, e-rickshaws, inverters, and industrial energy systems.&#10;Unit: Piece | Min Qty: 10</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CP3</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="Highstar - 100Ah Small Prismatic Cell- Screw">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Cell Prismatic/CP4-Cell-Prismatic-Highstar - 100Ah Small Prismatic Cell- Screw_1.jpg" alt="Highstar - 100Ah Small Prismatic Cell- Screw" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">Highstar - 100Ah Small Prismatic Cell- Screw</div>
-            <div class="product-dims">Highstar 100Ah small prismatic LiFePO4 screw-type cell with aluminium casing, high energy density, and long cycle life for solar, EVs, e-rickshaws, UPS, and industrial energy storage.&#10;Unit: Piece | Min Qty: 10</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CP4</span></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── CELL LI-ION ── -->
-    <section class="category-section">
-      <div class="category-heading"><h3>Cell Li-ion</h3></div>
-      <div class="product-grid">
-
-        <div class="product-card" data-sku="LITHUM-ION CELL 2900 mAh DMEGC 18650 ">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Cell Li-ion/CLI1-Lithium-Ion-LITHUM-ION CELL 2900 mAh DMEGC 18650 _1.jpg" alt="LITHUM-ION CELL 2900 mAh DMEGC 18650 " loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">LITHUM-ION CELL 2900 mAh DMEGC 18650 </div>
-            <div class="product-dims">High-cycle 18650 lithium-ion cell delivering 2900mAh for portable electronics, power tools, e-bikes, and energy storage systems.&#10;Unit: Piece | Min Qty: 1000</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CLI1</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="LITHUM-ION CELL 3200 mAh DMEGC 18650">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Cell Li-ion/CLI2-Cell Li-ion-LITHUM-ION CELL 3200 mAh DMEGC 18650_1.jpg" alt="LITHUM-ION CELL 3200 mAh DMEGC 18650" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">LITHUM-ION CELL 3200 mAh DMEGC 18650</div>
-            <div class="product-dims">High-cycle 18650 lithium-ion cell delivering 3200mAh for portable electronics, power tools, e-bikes, and energy storage systems.&#10;Unit: Piece | Min Qty: 1000</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CLI2</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="LITHIUM-ION CELL 2600 mAh DMEGC 18650">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Cell Li-ion/CLI3-Cell Li-ion-LITHIUM-ION CELL 2600 mAh DMEGC 18650_1.jpg" alt="LITHIUM-ION CELL 2600 mAh DMEGC 18650" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">LITHIUM-ION CELL 2600 mAh DMEGC 18650</div>
-            <div class="product-dims">High-cycle 18650 lithium-ion cell delivering 2600mAh for portable electronics, power tools, e-bikes, and energy storage systems.&#10;Unit: Piece | Min Qty: 1000</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CLI3</span></div>
-          </div>
-        </div>
-
-        <div class="product-card" data-sku="LITHIUM-ION CELL 4500 mAh DMEGC 21700">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Cell Li-ion/CLI4-Cell Li-ion-LITHIUM-ION CELL 4500 mAh DMEGC 21700_1.jpg" alt="LITHIUM-ION CELL 4500 mAh DMEGC 21700" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">LITHIUM-ION CELL 4500 mAh DMEGC 21700</div>
-            <div class="product-dims">High-capacity 21700 lithium-ion cell delivering 4500mAh for power tools, electric vehicles, e-bikes, and custom energy storage packs.&#10;Unit: Piece | Min Qty: 1000</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CLI4</span></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── CELL LFP ── -->
-    <section class="category-section">
-      <div class="category-heading"><h3>Cell LFP</h3></div>
-      <div class="product-grid">
-
-        <div class="product-card" data-sku="LFP CELL 3.2V 15AH CNAE 32140 ESS A GRADE">
-          <div class="product-img-wrap">
-            <img src="assets/skuimages/Cell LFP/CLFP1-Cell LFP-LFP CELL 3.2V 15AH CNAE 32140 ESS A GRADE_1.jpg" alt="LFP CELL 3.2V 15AH CNAE 32140 ESS A GRADE" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-name">LFP CELL 3.2V 15AH CNAE 32140 ESS A GRADE</div>
-            <div class="product-dims">A-Grade LiFePO4 cell with 15Ah capacity and 3,000+ cycle life, ideal for solar storage, EVs, UPS, and industrial power applications.&#10;Unit: Piece | Min Qty: 1000</div>
-            <div class="product-badge"><span class="badge avail-now">Available</span><span class="badge">CLFP1</span></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
+  <main class="content" id="catalogRoot">
+    <div class="loading">Loading catalog…</div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <strong>Arambhika Enablers / Swastik Metal Components</strong><br />
     Battery Pack Connectors &amp; Nickel Strip Solutions<br />
-    +91-8112662827 &nbsp;|&nbsp; +91-9953255677<br />
+    +91-8112662827 &nbsp;|&nbsp; +91-9953255677
   </footer>
 
 <script>
-    fetch('products.json?v=' + Date.now(), { cache: 'no-store' })
-      .then(r => r.json())
-      .then(data => {
-        const priceMap = {};
-        data.categories.forEach(cat => {
-          cat.products.forEach(p => {
-            priceMap[p.ProductCode] = { price: p.Price, unit: p.Unit, sku: p.SKU };
-          });
-        });
-        document.querySelectorAll('.product-card[data-sku]').forEach(card => {
-          const info = priceMap[card.dataset.sku];
-          if (!info) return;
+fetch('products.json?v=' + Date.now(), { cache: 'no-store' })
+  .then(r => r.json())
+  .then(data => {
+    const root = document.getElementById('catalogRoot');
+    root.innerHTML = '';
 
-          // Append (SKU) to product name
-          if (info.sku) {
-            const nameEl = card.querySelector('.product-name');
-            if (nameEl && !nameEl.textContent.includes('(' + info.sku + ')')) {
-              nameEl.innerHTML = nameEl.textContent.trim() +
-                ' <span style="color:#2d6abf;font-weight:500;font-size:0.85em;">(' + info.sku + ')</span>';
-            }
-          }
+    (data.categories || []).forEach(cat => {
+      const sec = document.createElement('section');
+      sec.className = 'category-section';
 
-          // Inject price
-          const priceEl = document.createElement('div');
-          priceEl.className = 'product-price';
-          priceEl.innerHTML = '₹' + Number(info.price).toLocaleString('en-IN') + '<span>/ ' + info.unit + '</span>';
-          const dims = card.querySelector('.product-dims');
-          dims.insertAdjacentElement('afterend', priceEl);
-        });
+      const heading = document.createElement('div');
+      heading.className = 'category-heading';
+      heading.innerHTML = '<h3>' + cat.Category + '</h3>';
+      sec.appendChild(heading);
+
+      const grid = document.createElement('div');
+      grid.className = 'product-grid';
+
+      (cat.products || []).forEach(p => {
+        const img = (p.Image_Link && p.Image_Link[0]) ? p.Image_Link[0] : 'assets/company_logo.jpg';
+        const avail = (p.Availability || '').toLowerCase() === 'now' ? 'avail-now' : 'avail-request';
+        const availLabel = avail === 'avail-now' ? 'Available' : 'On Request';
+        const dims = (p.Product_Dimensions || '') + '\nUnit: ' + (p.Unit || '') + ' | Min Qty: ' + (p['Minimum Quantity'] || 1);
+        const price = p.Price ? '&#8377;' + Number(p.Price).toLocaleString('en-IN') + '<span>/ ' + (p.Unit || '') + '</span>' : '';
+
+        grid.innerHTML += `
+          <div class="product-card" data-sku="${p.ProductCode}">
+            <div class="product-img-wrap">
+              <img src="${img}" alt="${p.ProductCode}" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <div class="product-name">${p.ProductCode} <span style="color:#2d6abf;font-weight:500;font-size:.85em;">(${p.SKU})</span></div>
+              <div class="product-dims">${dims.trim()}</div>
+              ${price ? '<div class="product-price">' + price + '</div>' : ''}
+              <div class="product-badge">
+                <span class="badge ${avail}">${availLabel}</span>
+                <span class="badge">${p.SKU}</span>
+              </div>
+            </div>
+          </div>`;
       });
-  </script>
+
+      sec.appendChild(grid);
+      root.appendChild(sec);
+    });
+  })
+  .catch(() => {
+    document.getElementById('catalogRoot').innerHTML =
+      '<div class="loading">Could not load catalog. Please refresh.</div>';
+  });
+</script>
 
 </body>
 </html>
