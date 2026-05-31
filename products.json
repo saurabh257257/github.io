@@ -411,11 +411,11 @@
             ]
         },
         {
-            "Category": "COPPER BUS BAR",
+            "Category": "Copper Busbar",
             "products": [
                 {
                     "SKU": "CP1",
-                    "Category": "COPPER BUS BAR",
+                    "Category": "Copper Busbar",
                     "ProductCode": "COPPER BUS BAR Universal (55x20x2mm) - Tin Coated",
                     "Image_Link": [
                         "assets/skuimages/Copper Busbar/CP1-COPPER BUS BAR-COPPER BUS BAR Universal (55x20x2mm) - Tin Coated_1.jpeg",
@@ -431,7 +431,7 @@
                 },
                 {
                     "SKU": "CP2",
-                    "Category": "COPPER BUS BAR",
+                    "Category": "Copper Busbar",
                     "ProductCode": "COPPER BUS BAR Universal (60x20x2mm) - Tin Coated",
                     "Image_Link": [
                         "assets/skuimages/Copper Busbar/CP2-COPPER BUS BAR-COPPER BUS BAR Universal (60x20x2mm) - Tin Coated_1.jpeg",
@@ -447,7 +447,7 @@
                 },
                 {
                     "SKU": "CP3",
-                    "Category": "COPPER BUS BAR",
+                    "Category": "Copper Busbar",
                     "ProductCode": "COPPER BUS BAR Universal (68x20x2mm)- Tin Coated",
                     "Image_Link": [
                         "assets/skuimages/Copper Busbar/CP3-COPPER BUS BAR-COPPER BUS BAR Universal (68x20x2mm)- Tin Coated_1.jpeg",
@@ -463,7 +463,7 @@
                 },
                 {
                     "SKU": "CP4",
-                    "Category": "COPPER BUS BAR",
+                    "Category": "Copper Busbar",
                     "ProductCode": "COPPER BUS BAR Universal (82x20x2mm)- Tin Coated",
                     "Image_Link": [
                         "assets/skuimages/Copper Busbar/CP3-COPPER BUS BAR-COPPER BUS BAR Universal (82x20x2mm)- Tin Coated_1.jpeg",

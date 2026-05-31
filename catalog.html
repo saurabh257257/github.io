@@ -104,33 +104,34 @@
 
     /* ── MAIN CONTENT ── */
     .content {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 32px 24px 48px;
+      padding: 16px 16px 32px;
     }
 
     /* ── CATEGORY SECTION ── */
     .category-section {
-      margin-bottom: 40px;
+      margin-bottom: 18px;
     }
     .category-heading {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 8px;
+      margin-bottom: 8px;
     }
     .category-heading h3 {
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       color: #1a3a6b;
+      white-space: nowrap;
     }
     .category-heading::before {
       content: '';
       display: block;
-      width: 4px;
-      height: 22px;
+      width: 3px;
+      height: 16px;
       background: #2d6abf;
       border-radius: 2px;
       flex-shrink: 0;
@@ -146,79 +147,83 @@
     .product-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 7px;
     }
 
-    /* ── PRODUCT CARD ── */
+    /* ── PRODUCT CARD — horizontal layout ── */
     .product-card {
       background: #fff;
-      border: 1px solid #e0e6f0;
-      border-radius: 10px;
+      border: 1px solid #dde4f0;
+      border-radius: 7px;
       overflow: hidden;
       display: flex;
-      flex-direction: column;
-      transition: box-shadow 0.2s;
+      flex-direction: row;
+      align-items: stretch;
+      transition: box-shadow 0.18s;
+      min-height: 0;
     }
     .product-card:hover {
-      box-shadow: 0 6px 24px rgba(26, 58, 107, 0.12);
+      box-shadow: 0 4px 14px rgba(26, 58, 107, 0.11);
     }
     .product-img-wrap {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #f8f9fc;
+      width: 88px;
+      min-width: 88px;
+      background: #f4f6fb;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
     .product-img-wrap img {
-      width: 100%;
-      height: 100%;
+      width: 88px;
+      height: 88px;
       object-fit: cover;
       display: block;
     }
     .product-info {
-      padding: 12px 14px 14px;
+      padding: 7px 9px 7px;
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 3px;
+      min-width: 0;
     }
     .product-name {
-      font-size: 12.5px;
+      font-size: 10px;
       font-weight: 700;
       color: #1a3a6b;
-      line-height: 1.35;
+      line-height: 1.3;
     }
     .product-price {
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 700;
       color: #1a7a4a;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
     }
     .product-price span {
-      font-size: 10.5px;
+      font-size: 9px;
       font-weight: 400;
       color: #777;
       margin-left: 2px;
     }
     .product-dims {
-      font-size: 11px;
+      font-size: 9px;
       color: #555;
-      line-height: 1.55;
+      line-height: 1.45;
       white-space: pre-line;
     }
     .product-badge {
       margin-top: auto;
-      padding-top: 8px;
+      padding-top: 4px;
       display: flex;
-      gap: 6px;
+      gap: 4px;
       flex-wrap: wrap;
     }
     .badge {
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 600;
-      padding: 2px 8px;
+      padding: 1px 5px;
       border-radius: 20px;
       background: #e8f0fb;
       color: #1a3a6b;
@@ -232,8 +237,8 @@
       background: #1a3a6b;
       color: #c5d6f0;
       text-align: center;
-      padding: 18px 40px;
-      font-size: 11.5px;
+      padding: 12px 40px;
+      font-size: 10.5px;
       line-height: 1.8;
     }
     .footer strong { color: #fff; }
@@ -241,27 +246,43 @@
     /* ── PRINT / PDF STYLES ── */
     @page {
       size: A4 landscape;
-      margin: 12mm 10mm;
+      margin: 8mm 8mm;
     }
     @media print {
       .pdf-btn { display: none !important; }
       body { background: #fff; }
-      .header { padding: 10px 20px; border-bottom: 2px solid #1a3a6b; }
-      .catalog-banner { padding: 8px 20px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .content { padding: 12px 8px 20px; max-width: 100%; }
-      .product-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+      .header { padding: 6px 16px; border-bottom: 2px solid #1a3a6b; }
+      .header-logo { height: 48px; }
+      .header-brand h1 { font-size: 16px; }
+      .catalog-banner { padding: 5px 16px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .catalog-banner h2 { font-size: 14px; }
+      .catalog-banner p { font-size: 9px; }
+      .content { padding: 8px 6px 12px; max-width: 100%; }
+      .category-section { margin-bottom: 10px; }
+      .category-heading { margin-bottom: 5px; }
+      .product-grid { grid-template-columns: repeat(4, 1fr); gap: 5px; }
       .product-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #ccc; }
-      .footer { background: #1a3a6b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .product-img-wrap { width: 72px; min-width: 72px; }
+      .product-img-wrap img { width: 72px; height: 72px; }
+      .product-info { padding: 5px 7px; gap: 2px; }
+      .product-name { font-size: 8.5px; }
+      .product-dims { font-size: 7.5px; }
+      .product-price { font-size: 9px; }
+      .badge { font-size: 7px; padding: 1px 4px; }
+      .footer { background: #1a3a6b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 8px 16px; font-size: 9px; }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       .product-grid { grid-template-columns: repeat(3, 1fr); }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .product-grid { grid-template-columns: repeat(2, 1fr); }
       .header { flex-direction: column; align-items: flex-start; }
       .header-contact { text-align: left; }
       .pdf-btn { bottom: 20px; right: 20px; font-size: 13px; padding: 11px 18px; }
+    }
+    @media (max-width: 420px) {
+      .product-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -594,7 +615,7 @@
 
     <!-- ── COPPER BUS BAR ── -->
     <section class="category-section">
-      <div class="category-heading"><h3>COPPER BUS BAR</h3></div>
+      <div class="category-heading"><h3>Copper Busbar</h3></div>
       <div class="product-grid">
 
         <div class="product-card" data-sku="COPPER BUS BAR Universal (55x20x2mm) - Tin Coated">
