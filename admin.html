@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel — Arambhika Enablers</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="assets/fabicon.jpg" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f4fa;
+      color: #1a1a2e;
+      min-height: 100vh;
+      padding: 32px 16px 48px;
+    }
+
+    .top {
+      max-width: 800px;
+      margin: 0 auto 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .top img { height: 52px; width: auto; object-fit: contain; }
+    .top-text h1 { font-size: 20px; font-weight: 700; color: #1a3a6b; }
+    .top-text p  { font-size: 12px; color: #888; margin-top: 2px; }
+
+    .grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .section-label {
+      max-width: 800px;
+      margin: 0 auto 10px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #aaa;
+      padding-left: 2px;
+    }
+    .section-label:not(:first-of-type) { margin-top: 28px; }
+
+    .tile {
+      background: #fff;
+      border: 1.5px solid #e0e8f5;
+      border-radius: 14px;
+      padding: 20px 20px 18px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: box-shadow 0.18s, border-color 0.18s, transform 0.15s;
+      cursor: pointer;
+    }
+    .tile:hover {
+      box-shadow: 0 6px 24px rgba(26,58,107,0.12);
+      border-color: #a8c0e8;
+      transform: translateY(-2px);
+    }
+
+    .tile-icon {
+      font-size: 26px;
+      line-height: 1;
+    }
+    .tile-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a3a6b;
+    }
+    .tile-desc {
+      font-size: 11.5px;
+      color: #777;
+      line-height: 1.5;
+    }
+    .tile-url {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 2px;
+      word-break: break-all;
+    }
+
+    /* accent left border per section */
+    .tile.blue   { border-left: 4px solid #1a3a6b; }
+    .tile.green  { border-left: 4px solid #25a244; }
+    .tile.orange { border-left: 4px solid #e07b00; }
+    .tile.purple { border-left: 4px solid #6b3aab; }
+
+    .badge-new {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      background: #e6f9ee;
+      color: #1a7a3c;
+      border: 1px solid #b2e4cd;
+      border-radius: 20px;
+      padding: 1px 7px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <img src="assets/company_logo.jpg" alt="Arambhika Enablers" />
+    <div class="top-text">
+      <h1>Admin Panel</h1>
+      <p>Arambhika Enablers — Internal Links</p>
+    </div>
+  </div>
+
+  <!-- ── CUSTOMER FACING ── -->
+  <div class="section-label">Customer Facing</div>
+  <div class="grid">
+
+    <a class="tile blue" href="index.html" target="_blank">
+      <div class="tile-icon">🏠</div>
+      <div class="tile-name">Main Website</div>
+      <div class="tile-desc">Home, Product Store, About & Contact</div>
+      <div class="tile-url">arambhikaenablers.in</div>
+    </a>
+
+    <a class="tile blue" href="catalog.html" target="_blank">
+      <div class="tile-icon">📋</div>
+      <div class="tile-name">Product Catalog</div>
+      <div class="tile-desc">All 53 SKUs with specs, price & PDF download</div>
+      <div class="tile-url">/catalog.html</div>
+    </a>
+
+    <a class="tile blue" href="capabilities.html" target="_blank">
+      <div class="tile-icon">⚙️</div>
+      <div class="tile-name">Our Capabilities</div>
+      <div class="tile-desc">Manufacturing strengths & certifications</div>
+      <div class="tile-url">/capabilities.html</div>
+    </a>
+
+    <a class="tile blue" href="about.html" target="_blank">
+      <div class="tile-icon">🏢</div>
+      <div class="tile-name">About & Contact</div>
+      <div class="tile-desc">Company info, team, location</div>
+      <div class="tile-url">/about.html</div>
+    </a>
+
+  </div>
+
+  <!-- ── QR / SCANNER PAGES ── -->
+  <div class="section-label">QR / Scanner Pages</div>
+  <div class="grid">
+
+    <a class="tile green" href="catalogdownload.html" target="_blank">
+      <div class="tile-icon">📥</div>
+      <div class="tile-name">Catalog QR <span class="badge-new">Print</span></div>
+      <div class="tile-desc">Scan → opens catalog & auto-downloads PDF</div>
+      <div class="tile-url">/catalogdownload.html</div>
+    </a>
+
+    <a class="tile green" href="contactus.html" target="_blank">
+      <div class="tile-icon">💬</div>
+      <div class="tile-name">WhatsApp QR <span class="badge-new">Print</span></div>
+      <div class="tile-desc">Scan → opens WhatsApp chat directly</div>
+      <div class="tile-url">/contactus.html</div>
+    </a>
+
+  </div>
+
+  <!-- ── INTERNAL TOOLS ── -->
+  <div class="section-label">Internal Tools</div>
+  <div class="grid">
+
+    <a class="tile orange" href="pi.html" target="_blank">
+      <div class="tile-icon">🧾</div>
+      <div class="tile-name">Proforma Invoice</div>
+      <div class="tile-desc">Generate & download PI PDF for customers</div>
+      <div class="tile-url">/pi.html</div>
+    </a>
+
+    <a class="tile orange" href="products.json" target="_blank">
+      <div class="tile-icon">📦</div>
+      <div class="tile-name">Products JSON</div>
+      <div class="tile-desc">Master product data — source of truth for all pages</div>
+      <div class="tile-url">/products.json</div>
+    </a>
+
+  </div>
+
+  <!-- ── QUICK COPY ── -->
+  <div class="section-label">Quick Copy Links</div>
+  <div class="grid" id="copyGrid">
+
+    <div class="tile purple" onclick="copy('https://www.arambhikaenablers.in')">
+      <div class="tile-icon">🔗</div>
+      <div class="tile-name">Website URL</div>
+      <div class="tile-desc">www.arambhikaenablers.in</div>
+      <div class="tile-url">Click to copy</div>
+    </div>
+
+    <div class="tile purple" onclick="copy('https://www.arambhikaenablers.in/catalog.html')">
+      <div class="tile-icon">🔗</div>
+      <div class="tile-name">Catalog URL</div>
+      <div class="tile-desc">Direct link to product catalog</div>
+      <div class="tile-url">Click to copy</div>
+    </div>
+
+    <div class="tile purple" onclick="copy('https://www.arambhikaenablers.in/pi.html')">
+      <div class="tile-icon">🔗</div>
+      <div class="tile-name">PI URL</div>
+      <div class="tile-desc">Direct link to proforma invoice tool</div>
+      <div class="tile-url">Click to copy</div>
+    </div>
+
+    <div class="tile purple" onclick="copy('https://wa.me/918112662827')">
+      <div class="tile-icon">🔗</div>
+      <div class="tile-name">WhatsApp Link</div>
+      <div class="tile-desc">Direct WhatsApp: +91-8112662827</div>
+      <div class="tile-url">Click to copy</div>
+    </div>
+
+  </div>
+
+  <script>
+    function copy(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const prev = event.currentTarget.querySelector('.tile-url');
+        const orig = prev.textContent;
+        prev.textContent = '✅ Copied!';
+        prev.style.color = '#1a7a3c';
+        setTimeout(() => { prev.textContent = orig; prev.style.color = ''; }, 1800);
+      });
+    }
+  </script>
+
+</body>
+</html>
