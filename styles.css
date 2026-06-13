@@ -726,6 +726,9 @@ img {
 }
 
 .suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   border: none;
   background: transparent;
   text-align: left;
@@ -739,6 +742,21 @@ img {
 
 .suggestion-item:hover {
   background: #f1f5ff;
+}
+
+.suggestion-thumb {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.suggestion-label {
+  flex: 1;
+  min-width: 0;
 }
 
 .global-search-bar input {

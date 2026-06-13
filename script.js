@@ -774,11 +774,13 @@ const renderCatalog = (categories) => {
       const card = createCard(product, category.name);
       catalogGrid.appendChild(card);
       if (card.dataset.productCode) {
+        const thumbImg = card.querySelector(".carousel img");
         productIndex.push({
           code: card.dataset.productCode,
           id: card.id,
           key: card.dataset.productCodeKey,
-          link: buildProductPageLink(card.dataset.productCode)
+          link: buildProductPageLink(card.dataset.productCode),
+          image: thumbImg ? thumbImg.getAttribute("src") : ""
         });
       }
       cardCount += 1;
@@ -1107,7 +1109,21 @@ const renderSuggestions = (term) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "suggestion-item";
-    btn.textContent = item.code;
+
+    if (item.image) {
+      const thumb = document.createElement("img");
+      thumb.className = "suggestion-thumb";
+      thumb.src = item.image;
+      thumb.alt = "";
+      thumb.loading = "lazy";
+      btn.appendChild(thumb);
+    }
+
+    const label = document.createElement("span");
+    label.className = "suggestion-label";
+    label.textContent = item.code;
+    btn.appendChild(label);
+
     btn.addEventListener("click", () => {
       if (item.code) {
         focusProductByCode(item.code, { smooth: true, updateUrl: true });
