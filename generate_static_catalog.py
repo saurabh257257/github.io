@@ -13,6 +13,9 @@ Run this whenever products.json changes, before committing/pushing.
 import json
 import re
 import html
+import urllib.parse
+
+SITE = "https://www.arambhikaenablers.in/"
 
 with open("products.json", encoding="utf-8") as f:
     data = json.load(f)
@@ -32,7 +35,15 @@ def normalize_code(value):
     return re.sub(r"\s+", " ", str(value or "").lower().strip())
 
 
+def abs_url(path):
+    """Build an absolute, percent-encoded URL for an asset path."""
+    quoted = urllib.parse.quote(path, safe="/")
+    return SITE + quoted
+
+
 cards_html = []
+product_schemas = []
+image_sitemap_entries = []
 
 for cat in data.get("categories", []):
     cat_name = cat.get("Category", "Category")
@@ -90,11 +101,59 @@ for cat in data.get("categories", []):
 </article>'''
         cards_html.append(card)
 
+        # --- Product schema (JSON-LD) ---
+        images = p.get("Image_Link") or []
+        if not images:
+            images = ["assets/company_logo.jpg"]
+        availability_url = (
+            "https://schema.org/PreOrder" if is_request else "https://schema.org/InStock"
+        )
+        price_value = re.sub(r"[^\d.]", "", price) or "0"
+        product_url = f"{SITE}?product={urllib.parse.quote(name)}#catalog"
+
+        description_parts = [d for d in details]
+        if dims:
+            description_parts.insert(0, dims)
+        description = " | ".join(description_parts) or name
+
+        product_schemas.append({
+            "@type": "Product",
+            "name": name,
+            "sku": sku,
+            "image": [abs_url(img) for img in images],
+            "description": description,
+            "category": cat_name,
+            "url": product_url,
+            "offers": {
+                "@type": "Offer",
+                "url": product_url,
+                "priceCurrency": "INR",
+                "price": price_value,
+                "availability": availability_url,
+                "itemCondition": "https://schema.org/NewCondition",
+                "eligibleQuantity": {
+                    "@type": "QuantitativeValue",
+                    "minValue": min_qty,
+                    "unitCode": unit,
+                },
+            },
+        })
+
+        # --- Image sitemap entries ---
+        for img in images:
+            image_sitemap_entries.append({
+                "loc": SITE,
+                "image_loc": abs_url(img),
+                "title": name,
+                "caption": description[:300],
+            })
+
 static_catalog = "\n".join(cards_html)
 
 with open("index.html", encoding="utf-8") as f:
     index_html = f.read()
 
+# --- Inject static product cards into #catalogGrid ---
 pattern = re.compile(r'(<div class="catalog-grid" id="catalogGrid">)(.*?)(</div>)', re.DOTALL)
 new_index_html, count = pattern.subn(
     lambda m: m.group(1) + "\n" + static_catalog + "\n" + m.group(3),
@@ -105,7 +164,58 @@ new_index_html, count = pattern.subn(
 if count == 0:
     raise SystemExit("Could not find #catalogGrid div in index.html")
 
+# --- Inject Product schema (JSON-LD ItemList) ---
+item_list = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "item": prod}
+        for i, prod in enumerate(product_schemas)
+    ],
+}
+schema_json = json.dumps(item_list, indent=2, ensure_ascii=False)
+schema_block = (
+    "<!-- PRODUCT_SCHEMA_START -->\n"
+    '  <!-- Structured data: Product catalog -->\n'
+    '  <script type="application/ld+json">\n'
+    f"{schema_json}\n"
+    "  </script>\n"
+    "  <!-- PRODUCT_SCHEMA_END -->"
+)
+
+schema_pattern = re.compile(
+    r"<!-- PRODUCT_SCHEMA_START -->.*?<!-- PRODUCT_SCHEMA_END -->", re.DOTALL
+)
+new_index_html, schema_count = schema_pattern.subn(schema_block, new_index_html, count=1)
+
+if schema_count == 0:
+    raise SystemExit("Could not find PRODUCT_SCHEMA placeholder in index.html")
+
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(new_index_html)
 
 print(f"Injected {len(cards_html)} static product cards into index.html")
+print(f"Injected Product schema (JSON-LD) for {len(product_schemas)} products into index.html")
+
+# --- Generate image sitemap ---
+img_sitemap_lines = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+    '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
+    "  <url>",
+    f"    <loc>{html.escape(SITE)}</loc>",
+]
+for entry in image_sitemap_entries:
+    img_sitemap_lines.append("    <image:image>")
+    img_sitemap_lines.append(f"      <image:loc>{html.escape(entry['image_loc'])}</image:loc>")
+    img_sitemap_lines.append(f"      <image:title>{html.escape(entry['title'])}</image:title>")
+    img_sitemap_lines.append(f"      <image:caption>{html.escape(entry['caption'])}</image:caption>")
+    img_sitemap_lines.append("    </image:image>")
+img_sitemap_lines.append("  </url>")
+img_sitemap_lines.append("</urlset>")
+img_sitemap_lines.append("")
+
+with open("image-sitemap.xml", "w", encoding="utf-8") as f:
+    f.write("\n".join(img_sitemap_lines))
+
+print(f"Generated image-sitemap.xml with {len(image_sitemap_entries)} images")

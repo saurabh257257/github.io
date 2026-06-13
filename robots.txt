@@ -5,3 +5,4 @@ Disallow: /pi.html
 Disallow: /completed.html
 
 Sitemap: https://www.arambhikaenablers.in/sitemap.xml
+Sitemap: https://www.arambhikaenablers.in/image-sitemap.xml
