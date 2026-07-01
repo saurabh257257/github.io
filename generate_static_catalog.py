@@ -154,15 +154,40 @@ with open("index.html", encoding="utf-8") as f:
     index_html = f.read()
 
 # --- Inject static product cards into #catalogGrid ---
-pattern = re.compile(r'(<div class="catalog-grid" id="catalogGrid">)(.*?)(</div>)', re.DOTALL)
-new_index_html, count = pattern.subn(
-    lambda m: m.group(1) + "\n" + static_catalog + "\n" + m.group(3),
-    index_html,
-    count=1
-)
-
-if count == 0:
+# Use depth tracking to find the MATCHING </div> for catalogGrid (not just the first one)
+GRID_OPEN = '<div class="catalog-grid" id="catalogGrid">'
+grid_start = index_html.find(GRID_OPEN)
+if grid_start == -1:
     raise SystemExit("Could not find #catalogGrid div in index.html")
+
+search_from = grid_start + len(GRID_OPEN)
+depth = 1
+grid_end = -1
+i = search_from
+while i < len(index_html):
+    open_pos = index_html.find('<div', i)
+    close_pos = index_html.find('</div>', i)
+    if close_pos == -1:
+        break
+    if open_pos != -1 and open_pos < close_pos:
+        depth += 1
+        i = open_pos + 4
+    else:
+        depth -= 1
+        if depth == 0:
+            grid_end = close_pos + len('</div>')
+            break
+        i = close_pos + 6
+
+if grid_end == -1:
+    raise SystemExit("Could not find closing </div> for #catalogGrid")
+
+new_index_html = (
+    index_html[:grid_start]
+    + GRID_OPEN + "\n" + static_catalog + "\n</div>"
+    + index_html[grid_end:]
+)
+count = 1
 
 # --- Inject Product schema (JSON-LD ItemList) ---
 item_list = {
