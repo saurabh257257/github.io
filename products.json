@@ -407,6 +407,22 @@
                     "Minimum Quantity": 4,
                     "Product_Dimensions": "46.5x0.3 mm H Type without fuse",
                     "Additional_Details": "Pure nickel; low resistance + corrosion resistance; easy soldering; battery packs, EVs, power tools, ESS"
+                },
+                {
+                    "SKU": "NPH11",
+                    "Category": "Nickel Strip Pure",
+                    "ProductCode": "Nickel Strip Pure 2P(32650) with holder 46.5x0.20 mm CD 34.5",
+                    "Image_Link": [
+                        "assets/skuimages/Nickel Strip Pure/NPH11-Nickel Strip Pure-Nickel Strip Pure 2P(32650) with holder 46.5x0.20 mm CD 34.5_1.jpg",
+                        "assets/skuimages/Nickel Strip Pure/NPH11-Nickel Strip Pure-Nickel Strip Pure 2P(32650) with holder 46.5x0.20 mm CD 34.5_2.jpg",
+                        "assets/skuimages/Nickel Strip Pure/NPH11-Nickel Strip Pure-Nickel Strip Pure 2P(32650) with holder 46.5x0.20 mm CD 34.5_3.jpg"
+                    ],
+                    "Price": "4200",
+                    "Availability": "Now",
+                    "Unit": "KG",
+                    "Minimum Quantity": 4,
+                    "Product_Dimensions": "46.5 x 0.20 mm thick; 32650 cell; CD 34.5 mm; with holder",
+                    "Additional_Details": "Pure nickel; low resistance + corrosion resistance; easy soldering; battery packs, EVs, power tools, ESS"
                 }
             ]
         },
