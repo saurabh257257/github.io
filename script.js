@@ -24,10 +24,10 @@ const toDomToken = (value) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-const STORE_BASE = "http://168.144.189.151/store";
-
 const buildProductPageLink = (productCode) => {
-  return STORE_BASE;
+  const code = String(productCode || "").trim();
+  if (!code) return "#catalog";
+  return `?${PRODUCT_QUERY_KEY}=${encodeURIComponent(code)}#catalog`;
 };
 
 const getRequestedProductCode = () => {
